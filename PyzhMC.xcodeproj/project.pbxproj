@@ -7,135 +7,135 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		6407E6382A2791F100BB9AEA /* ImgurSharingServiceDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407E6372A2791F100BB9AEA /* ImgurSharingServiceDelegate.swift */; };
-		6407E63A2A285B6C00BB9AEA /* ScreenshotShareButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407E6392A285B6B00BB9AEA /* ScreenshotShareButton.swift */; };
+		6407E6382A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407E6372A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift */; };
+		6407E63A2A285B6C00BB9AEA /* Screenshot Share Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */; };
 		640A758D2A208BE3005CDE49 /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A758C2A208BE3005CDE49 /* Mod.swift */; };
-		640A758F2A20E969005CDE49 /* InstanceModsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A758E2A20E969005CDE49 /* InstanceModsView.swift */; };
-		640A75912A2115BA005CDE49 /* RunOnce.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75902A2115BA005CDE49 /* RunOnce.swift */; };
+		640A758F2A20E969005CDE49 /* Instance Mods View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A758E2A20E969005CDE49 /* Instance Mods View.swift */; };
+		640A75912A2115BA005CDE49 /* Run Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75902A2115BA005CDE49 /* Run Once.swift */; };
 		640A75942A21CEFD005CDE49 /* Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75932A21CEFD005CDE49 /* Screenshot.swift */; };
-		640A75962A21D021005CDE49 /* InstanceScreenshotsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75952A21D021005CDE49 /* InstanceScreenshotsView.swift */; };
-		640A75B92A226F2C005CDE49 /* InstanceWorldsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75B82A226F2C005CDE49 /* InstanceWorldsView.swift */; };
+		640A75962A21D021005CDE49 /* Instance Screenshots View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75952A21D021005CDE49 /* Instance Screenshots View.swift */; };
+		640A75B92A226F2C005CDE49 /* Instance Worlds View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75B82A226F2C005CDE49 /* Instance Worlds View.swift */; };
 		640A75BC2A226F80005CDE49 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75BB2A226F80005CDE49 /* World.swift */; };
-		640CCF552A09F0FA0080F574 /* SettingsFetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CCF542A09F0FA0080F574 /* SettingsFetch.swift */; };
-		640DC1ED2934EC2300943213 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640DC1EC2934EC2300943213 /* AppDelegate.swift */; };
-		640DC1F12934F14200943213 /* NewInstanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640DC1F02934F14200943213 /* NewInstanceView.swift */; };
-		64148DDA296E80E400E5EAD3 /* GlobalPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64148DD9296E80E400E5EAD3 /* GlobalPreferences.swift */; };
-		641678512923B6D40012C9CC /* RuntimePreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641678502923B6D40012C9CC /* RuntimePreferencesView.swift */; };
-		641678532923B6FA0012C9CC /* AccountsPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641678522923B6F90012C9CC /* AccountsPreferencesView.swift */; };
+		640CCF552A09F0FA0080F574 /* Settings Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CCF542A09F0FA0080F574 /* Settings Fetch.swift */; };
+		640DC1ED2934EC2300943213 /* App Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640DC1EC2934EC2300943213 /* App Delegate.swift */; };
+		640DC1F12934F14200943213 /* New Instance View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640DC1F02934F14200943213 /* New Instance View.swift */; };
+		64148DDA296E80E400E5EAD3 /* Global Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64148DD9296E80E400E5EAD3 /* Global Preferences.swift */; };
+		641678512923B6D40012C9CC /* Runtime Preferences View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641678502923B6D40012C9CC /* Runtime Preferences View.swift */; };
+		641678532923B6FA0012C9CC /* Accounts Preferences View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 641678522923B6F90012C9CC /* Accounts Preferences View.swift */; };
 		64337EE92A17A4EF0017BCB0 /* Rule.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EE82A17A4EF0017BCB0 /* Rule.swift */; };
-		64337EEB2A17A62A0017BCB0 /* ConditionalArgument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EEA2A17A62A0017BCB0 /* ConditionalArgument.swift */; };
-		64337EED2A17A6AA0017BCB0 /* ArgumentElement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EEC2A17A6AA0017BCB0 /* ArgumentElement.swift */; };
+		64337EEB2A17A62A0017BCB0 /* Conditional Argument.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EEA2A17A62A0017BCB0 /* Conditional Argument.swift */; };
+		64337EED2A17A6AA0017BCB0 /* Argument Element.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EEC2A17A6AA0017BCB0 /* Argument Element.swift */; };
 		64337EEF2A17A80B0017BCB0 /* Arguments.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EEE2A17A80B0017BCB0 /* Arguments.swift */; };
 		64337EF12A17C9AD0017BCB0 /* Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF02A17C9AD0017BCB0 /* Version.swift */; };
 		64337EF32A17CA040017BCB0 /* Artifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF22A17CA040017BCB0 /* Artifact.swift */; };
-		64337EF52A17CA6C0017BCB0 /* MainDownloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF42A17CA6C0017BCB0 /* MainDownloads.swift */; };
-		64337EF72A17CADB0017BCB0 /* PreferredJavaVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF62A17CADB0017BCB0 /* PreferredJavaVersion.swift */; };
+		64337EF52A17CA6C0017BCB0 /* Main Downloads.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF42A17CA6C0017BCB0 /* Main Downloads.swift */; };
+		64337EF72A17CADB0017BCB0 /* Preferred Java Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF62A17CADB0017BCB0 /* Preferred Java Version.swift */; };
 		64337EFB2A17D66A0017BCB0 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EFA2A17D6690017BCB0 /* Library.swift */; };
-		64337EFD2A17DB630017BCB0 /* LoggingConfig.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EFC2A17DB620017BCB0 /* LoggingConfig.swift */; };
-		64373BA329C0A430001DBD4C /* InstanceTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64373BA229C0A430001DBD4C /* InstanceTests.swift */; };
-		643E454C2A1291CC00687839 /* LaunchError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454B2A1291CC00687839 /* LaunchError.swift */; };
-		643E454E2A13300900687839 /* InstanceLogoPickerSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454D2A13300900687839 /* InstanceLogoPickerSheet.swift */; };
-		643E45502A13308700687839 /* InstanceInterativeLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454F2A13308700687839 /* InstanceInterativeLogoView.swift */; };
-		643E45522A1330F600687839 /* InstanceChooseAccountSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45512A1330F600687839 /* InstanceChooseAccountSheet.swift */; };
-		643E45542A13314E00687839 /* LaunchErrorSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45532A13314E00687839 /* LaunchErrorSheet.swift */; };
-		643E45562A1331B700687839 /* InteractiveStarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45552A1331B700687839 /* InteractiveStarView.swift */; };
-		643E45582A13327900687839 /* InstanceNotesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45572A13327900687839 /* InstanceNotesView.swift */; };
-		643E455A2A1332BE00687839 /* InstanceSynopsisView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45592A1332BE00687839 /* InstanceSynopsisView.swift */; };
-		643E455C2A13331100687839 /* InstanceTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E455B2A13331100687839 /* InstanceTitleView.swift */; };
-		643E45632A133A3F00687839 /* InstanceSpecificCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45622A133A3F00687839 /* InstanceSpecificCommands.swift */; };
-		643E45662A13A61000687839 /* MiscPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45652A13A60F00687839 /* MiscPreferencesView.swift */; };
-		643E45682A13A9A800687839 /* DeveloperModeCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45672A13A9A800687839 /* DeveloperModeCommands.swift */; };
-		644DE1D42937C93600C4A03E /* InstanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DE1D32937C93600C4A03E /* InstanceView.swift */; };
-		644FC66E29375853003797D9 /* InstanceNavigationLink.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644FC66D29375852003797D9 /* InstanceNavigationLink.swift */; };
-		644FC6722937B243003797D9 /* UiPreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644FC6712937B243003797D9 /* UiPreferencesView.swift */; };
+		64337EFD2A17DB630017BCB0 /* Logging Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EFC2A17DB620017BCB0 /* Logging Config.swift */; };
+		64373BA329C0A430001DBD4C /* Instance Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64373BA229C0A430001DBD4C /* Instance Tests.swift */; };
+		643E454C2A1291CC00687839 /* Launch Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454B2A1291CC00687839 /* Launch Error.swift */; };
+		643E454E2A13300900687839 /* Instance Logo Picker Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454D2A13300900687839 /* Instance Logo Picker Sheet.swift */; };
+		643E45502A13308700687839 /* Instance Interative Logo View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454F2A13308700687839 /* Instance Interative Logo View.swift */; };
+		643E45522A1330F600687839 /* Instance Choose Account Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45512A1330F600687839 /* Instance Choose Account Sheet.swift */; };
+		643E45542A13314E00687839 /* Launch Error Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45532A13314E00687839 /* Launch Error Sheet.swift */; };
+		643E45562A1331B700687839 /* Interactive Star View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45552A1331B700687839 /* Interactive Star View.swift */; };
+		643E45582A13327900687839 /* Instance Notes View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45572A13327900687839 /* Instance Notes View.swift */; };
+		643E455A2A1332BE00687839 /* Instance Synopsis View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45592A1332BE00687839 /* Instance Synopsis View.swift */; };
+		643E455C2A13331100687839 /* Instance Title View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E455B2A13331100687839 /* Instance Title View.swift */; };
+		643E45632A133A3F00687839 /* Instance Specific Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45622A133A3F00687839 /* Instance Specific Commands.swift */; };
+		643E45662A13A61000687839 /* Misc Preferences View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45652A13A60F00687839 /* Misc Preferences View.swift */; };
+		643E45682A13A9A800687839 /* Developer Mode Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E45672A13A9A800687839 /* Developer Mode Commands.swift */; };
+		644DE1D42937C93600C4A03E /* Instance View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644DE1D32937C93600C4A03E /* Instance View.swift */; };
+		644FC66E29375853003797D9 /* Instance Navigation Link.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644FC66D29375852003797D9 /* Instance Navigation Link.swift */; };
+		644FC6722937B243003797D9 /* Ui Preferences View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 644FC6712937B243003797D9 /* Ui Preferences View.swift */; };
 		64515B732A78DF34000D17A8 /* FileWatcher in Frameworks */ = {isa = PBXBuildFile; productRef = 64515B722A78DF34000D17A8 /* FileWatcher */; };
-		6459E125297700D5006DB3A4 /* InstanceLogoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459E124297700D5006DB3A4 /* InstanceLogoView.swift */; };
-		646139E02977E3A700BA9477 /* SymbolPicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139DF2977E3A700BA9477 /* SymbolPicker.swift */; };
-		646139E22977E88700BA9477 /* SFSymbols12List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139E12977E88700BA9477 /* SFSymbols12List.swift */; };
-		646139E42977E95300BA9477 /* SFSymbols13List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139E32977E95300BA9477 /* SFSymbols13List.swift */; };
-		646139E62977EA0300BA9477 /* SFSymbolsList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139E52977EA0300BA9477 /* SFSymbolsList.swift */; };
-		6472E47029E2BF5F00B4C65B /* ParallelDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472E46F29E2BF5F00B4C65B /* ParallelDownloader.swift */; };
-		6472E47229E2C35200B4C65B /* DownloadTask.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472E47129E2C35200B4C65B /* DownloadTask.swift */; };
-		6474DC1C2A150D36001FCD4D /* ErrorTracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC1B2A150D35001FCD4D /* ErrorTracker.swift */; };
-		6474DC1E2A150D63001FCD4D /* ErrorTrackerEntry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC1D2A150D63001FCD4D /* ErrorTrackerEntry.swift */; };
-		6474DC202A150D77001FCD4D /* TrackedErrorType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC1F2A150D77001FCD4D /* TrackedErrorType.swift */; };
-		6474DC242A15F952001FCD4D /* ErrorTrackerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC232A15F952001FCD4D /* ErrorTrackerView.swift */; };
-		6474DC262A15FB83001FCD4D /* ErrorTrackerWindowController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC252A15FB83001FCD4D /* ErrorTrackerWindowController.swift */; };
-		647A796A29E8166700497CE1 /* ConsoleTextView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A796929E8166600497CE1 /* ConsoleTextView.swift */; };
-		64821E0A29E44B78006012F7 /* MinecraftAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821E0929E44B78006012F7 /* MinecraftAccount.swift */; };
-		64821E0C29E44C14006012F7 /* OfflineAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821E0B29E44C13006012F7 /* OfflineAccount.swift */; };
-		64821E0E29E459FC006012F7 /* AccountManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821E0D29E459FA006012F7 /* AccountManager.swift */; };
-		648445772A10C25D00049986 /* AccountManager+Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445762A10C25D00049986 /* AccountManager+Auth.swift */; };
-		6484457C2A10D03200049986 /* XboxAuthResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484457B2A10D03200049986 /* XboxAuthResponse.swift */; };
-		6484457E2A10D12400049986 /* XstsAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484457D2A10D12400049986 /* XstsAuth.swift */; };
-		648445802A10D44A00049986 /* MinecraftTokenResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484457F2A10D44A00049986 /* MinecraftTokenResponse.swift */; };
-		648445822A10D4FD00049986 /* MinecraftAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445812A10D4FD00049986 /* MinecraftAuth.swift */; };
-		648445842A10D69F00049986 /* Dictionary+Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445832A10D69F00049986 /* Dictionary+Encoding.swift */; };
-		648445862A10D6B100049986 /* CharacterSet+EncodingValidation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445852A10D6B100049986 /* CharacterSet+EncodingValidation.swift */; };
-		648445882A10DE9300049986 /* MinecraftProfile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445872A10DE9200049986 /* MinecraftProfile.swift */; };
-		6484458A2A10F69600049986 /* AccountManager+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445892A10F69600049986 /* AccountManager+Storage.swift */; };
-		6484458C2A10F6BC00049986 /* AccountManager+Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484458B2A10F6BC00049986 /* AccountManager+Server.swift */; };
-		648EDF512A1881CE00E40B03 /* PartialVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648EDF502A1881CE00E40B03 /* PartialVersion.swift */; };
-		649620D02A124EA500733AB6 /* InstanceExportSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649620CF2A124EA500733AB6 /* InstanceExportSheet.swift */; };
-		6497595C29F0570000D0194E /* AddOfflineAccountView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497595B29F056FF00D0194E /* AddOfflineAccountView.swift */; };
-		6497595E29F25AD000D0194E /* InstanceEditingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497595D29F25AD000D0194E /* InstanceEditingViewModel.swift */; };
-		649762C02935A46E00977467 /* NewVanillaInstanceView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649762BF2935A46E00977467 /* NewVanillaInstanceView.swift */; };
-		649EA76729EC27F300BD77EA /* UIPreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EA76629EC27F300BD77EA /* UIPreferences.swift */; };
-		64A1139E2A110ACD00E48761 /* MicrosoftAccount.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1139D2A110ACC00E48761 /* MicrosoftAccount.swift */; };
-		64A113A02A110D2500E48761 /* MinecraftAccountType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1139F2A110D2500E48761 /* MinecraftAccountType.swift */; };
-		64A5150E29E2DED100AFE3AE /* MinecraftJar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5150D29E2DED100AFE3AE /* MinecraftJar.swift */; };
-		64A5151029E2DEE900AFE3AE /* LibraryArtifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5150F29E2DEE900AFE3AE /* LibraryArtifact.swift */; };
-		64A5151229E2DEFD00AFE3AE /* PartialAssetIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151129E2DEFD00AFE3AE /* PartialAssetIndex.swift */; };
-		64A5151629E2DF2300AFE3AE /* InstanceLogo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151529E2DF2300AFE3AE /* InstanceLogo.swift */; };
-		64A5151829E2DF3300AFE3AE /* FileType.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151729E2DF3300AFE3AE /* FileType.swift */; };
-		64A5151A29E2DF6500AFE3AE /* Published+Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151929E2DF6500AFE3AE /* Published+Coding.swift */; };
-		64A5151C29E2DFAD00AFE3AE /* Instance+Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151B29E2DFAD00AFE3AE /* Instance+Storage.swift */; };
-		64A5151E29E2DFE000AFE3AE /* Instance+Prelaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151D29E2DFE000AFE3AE /* Instance+Prelaunch.swift */; };
-		64A5152029E2E6A300AFE3AE /* InstanceData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151F29E2E6A300AFE3AE /* InstanceData.swift */; };
-		64A62C8D2977B454007A9597 /* SymbolLogoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A62C8C2977B454007A9597 /* SymbolLogoPickerView.swift */; };
-		64B01AE52940961F00B3E670 /* InstanceRuntimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B01AE42940961F00B3E670 /* InstanceRuntimeView.swift */; };
+		6459E125297700D5006DB3A4 /* Instance Logo View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6459E124297700D5006DB3A4 /* Instance Logo View.swift */; };
+		646139E02977E3A700BA9477 /* Symbol Picker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139DF2977E3A700BA9477 /* Symbol Picker.swift */; };
+		646139E22977E88700BA9477 /* SF Symbols 12 List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139E12977E88700BA9477 /* SF Symbols 12 List.swift */; };
+		646139E42977E95300BA9477 /* SF Symbols 13 List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139E32977E95300BA9477 /* SF Symbols 13 List.swift */; };
+		646139E62977EA0300BA9477 /* SF Symbols List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 646139E52977EA0300BA9477 /* SF Symbols List.swift */; };
+		6472E47029E2BF5F00B4C65B /* Parallel Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472E46F29E2BF5F00B4C65B /* Parallel Downloader.swift */; };
+		6472E47229E2C35200B4C65B /* Download Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6472E47129E2C35200B4C65B /* Download Task.swift */; };
+		6474DC1C2A150D36001FCD4D /* Error Tracker.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC1B2A150D35001FCD4D /* Error Tracker.swift */; };
+		6474DC1E2A150D63001FCD4D /* Error Tracker Entry.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC1D2A150D63001FCD4D /* Error Tracker Entry.swift */; };
+		6474DC202A150D77001FCD4D /* Tracked Error Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC1F2A150D77001FCD4D /* Tracked Error Type.swift */; };
+		6474DC242A15F952001FCD4D /* Error Tracker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC232A15F952001FCD4D /* Error Tracker View.swift */; };
+		6474DC262A15FB83001FCD4D /* Error Tracker Window Controller.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6474DC252A15FB83001FCD4D /* Error Tracker Window Controller.swift */; };
+		647A796A29E8166700497CE1 /* Console Text View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 647A796929E8166600497CE1 /* Console Text View.swift */; };
+		64821E0A29E44B78006012F7 /* Minecraft Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821E0929E44B78006012F7 /* Minecraft Account.swift */; };
+		64821E0C29E44C14006012F7 /* Offline Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821E0B29E44C13006012F7 /* Offline Account.swift */; };
+		64821E0E29E459FC006012F7 /* Account Manager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64821E0D29E459FA006012F7 /* Account Manager.swift */; };
+		648445772A10C25D00049986 /* Account Manager + Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445762A10C25D00049986 /* Account Manager + Auth.swift */; };
+		6484457C2A10D03200049986 /* Xbox Auth Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484457B2A10D03200049986 /* Xbox Auth Response.swift */; };
+		6484457E2A10D12400049986 /* Xsts Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484457D2A10D12400049986 /* Xsts Auth.swift */; };
+		648445802A10D44A00049986 /* Minecraft Token Response.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484457F2A10D44A00049986 /* Minecraft Token Response.swift */; };
+		648445822A10D4FD00049986 /* Minecraft Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445812A10D4FD00049986 /* Minecraft Auth.swift */; };
+		648445842A10D69F00049986 /* Dictionary + Encoding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445832A10D69F00049986 /* Dictionary + Encoding.swift */; };
+		648445862A10D6B100049986 /* Character Set + Encoding Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445852A10D6B100049986 /* Character Set + Encoding Validation.swift */; };
+		648445882A10DE9300049986 /* Minecraft Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445872A10DE9200049986 /* Minecraft Profile.swift */; };
+		6484458A2A10F69600049986 /* Account Manager + Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648445892A10F69600049986 /* Account Manager + Storage.swift */; };
+		6484458C2A10F6BC00049986 /* Account Manager + Server.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6484458B2A10F6BC00049986 /* Account Manager + Server.swift */; };
+		648EDF512A1881CE00E40B03 /* Partial Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 648EDF502A1881CE00E40B03 /* Partial Version.swift */; };
+		649620D02A124EA500733AB6 /* Instance Export Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649620CF2A124EA500733AB6 /* Instance Export Sheet.swift */; };
+		6497595C29F0570000D0194E /* Add Offline Account View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497595B29F056FF00D0194E /* Add Offline Account View.swift */; };
+		6497595E29F25AD000D0194E /* Instance Editing View Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6497595D29F25AD000D0194E /* Instance Editing View Model.swift */; };
+		649762C02935A46E00977467 /* New Vanilla Instance View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649762BF2935A46E00977467 /* New Vanilla Instance View.swift */; };
+		649EA76729EC27F300BD77EA /* UI Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 649EA76629EC27F300BD77EA /* UI Preferences.swift */; };
+		64A1139E2A110ACD00E48761 /* Microsoft Account.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1139D2A110ACC00E48761 /* Microsoft Account.swift */; };
+		64A113A02A110D2500E48761 /* Minecraft Account Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A1139F2A110D2500E48761 /* Minecraft Account Type.swift */; };
+		64A5150E29E2DED100AFE3AE /* Minecraft Jar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5150D29E2DED100AFE3AE /* Minecraft Jar.swift */; };
+		64A5151029E2DEE900AFE3AE /* Library Artifact.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5150F29E2DEE900AFE3AE /* Library Artifact.swift */; };
+		64A5151229E2DEFD00AFE3AE /* Partial Asset Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151129E2DEFD00AFE3AE /* Partial Asset Index.swift */; };
+		64A5151629E2DF2300AFE3AE /* Instance Logo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151529E2DF2300AFE3AE /* Instance Logo.swift */; };
+		64A5151829E2DF3300AFE3AE /* File Type.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151729E2DF3300AFE3AE /* File Type.swift */; };
+		64A5151A29E2DF6500AFE3AE /* Published + Coding.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151929E2DF6500AFE3AE /* Published + Coding.swift */; };
+		64A5151C29E2DFAD00AFE3AE /* Instance + Storage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151B29E2DFAD00AFE3AE /* Instance + Storage.swift */; };
+		64A5151E29E2DFE000AFE3AE /* Instance + Prelaunch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151D29E2DFE000AFE3AE /* Instance + Prelaunch.swift */; };
+		64A5152029E2E6A300AFE3AE /* Instance Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A5151F29E2E6A300AFE3AE /* Instance Data.swift */; };
+		64A62C8D2977B454007A9597 /* Symbol Logo Picker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64A62C8C2977B454007A9597 /* Symbol Logo Picker View.swift */; };
+		64B01AE52940961F00B3E670 /* Instance Runtime View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64B01AE42940961F00B3E670 /* Instance Runtime View.swift */; };
 		64BACB952A1C6EE500F7AA1C /* Http.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB942A1C6EE500F7AA1C /* Http.swift */; };
-		64BACB972A1C6EF700F7AA1C /* HttpMethod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB962A1C6EF700F7AA1C /* HttpMethod.swift */; };
-		64BACB9A2A1C9F3000F7AA1C /* FabricLoaderVersion.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB992A1C9F3000F7AA1C /* FabricLoaderVersion.swift */; };
-		64BACB9C2A1C9F5D00F7AA1C /* FabricMeta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB9B2A1C9F5D00F7AA1C /* FabricMeta.swift */; };
-		64C09B6C2A1212CF00867038 /* InstanceDuplicationSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C09B6B2A1212CF00867038 /* InstanceDuplicationSheet.swift */; };
-		64C09B702A12145900867038 /* InstanceDeleteSheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C09B6F2A12145900867038 /* InstanceDeleteSheet.swift */; };
-		64C334D92922523600BB8570 /* InnateMCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334D82922523600BB8570 /* InnateMCApp.swift */; };
-		64C334DB2922523600BB8570 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334DA2922523600BB8570 /* ContentView.swift */; };
+		64BACB972A1C6EF700F7AA1C /* Http Method.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB962A1C6EF700F7AA1C /* Http Method.swift */; };
+		64BACB9A2A1C9F3000F7AA1C /* Fabric Loader Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB992A1C9F3000F7AA1C /* Fabric Loader Version.swift */; };
+		64BACB9C2A1C9F5D00F7AA1C /* Fabric Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB9B2A1C9F5D00F7AA1C /* Fabric Meta.swift */; };
+		64C09B6C2A1212CF00867038 /* Instance Duplication Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C09B6B2A1212CF00867038 /* Instance Duplication Sheet.swift */; };
+		64C09B702A12145900867038 /* Instance Delete Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C09B6F2A12145900867038 /* Instance Delete Sheet.swift */; };
+		64C334D92922523600BB8570 /* Pyzh MC App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334D82922523600BB8570 /* Pyzh MC App.swift */; };
+		64C334DB2922523600BB8570 /* Content View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334DA2922523600BB8570 /* Content View.swift */; };
 		64C334DD2922523F00BB8570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C334DC2922523F00BB8570 /* Assets.xcassets */; };
-		64C33505292252B500BB8570 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33504292252B500BB8570 /* PreferencesView.swift */; };
-		64C33507292256C500BB8570 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33506292256C500BB8570 /* TodoView.swift */; };
+		64C33505292252B500BB8570 /* Preferences View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33504292252B500BB8570 /* Preferences View.swift */; };
+		64C33507292256C500BB8570 /* Todo View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33506292256C500BB8570 /* Todo View.swift */; };
 		64C33509292272F600BB8570 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 64C33508292272F500BB8570 /* .gitignore */; };
 		64C3350C2922B0B500BB8570 /* LICENSE in Resources */ = {isa = PBXBuildFile; fileRef = 64C3350B2922B0B400BB8570 /* LICENSE */; };
-		64C41C1429366CAF00014E0F /* ValueKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C41C1329366CAF00014E0F /* ValueKeys.swift */; };
-		64C5621429C083AA003402F0 /* InstanceProcess.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5621329C083AA003402F0 /* InstanceProcess.swift */; };
-		64CE1092297864A700366372 /* ImageLogoPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE1091297864A700366372 /* ImageLogoPickerView.swift */; };
+		64C41C1429366CAF00014E0F /* Value Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C41C1329366CAF00014E0F /* Value Keys.swift */; };
+		64C5621429C083AA003402F0 /* Instance Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5621329C083AA003402F0 /* Instance Process.swift */; };
+		64CE1092297864A700366372 /* Image Logo Picker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE1091297864A700366372 /* Image Logo Picker View.swift */; };
 		64DC9E4829E67427005DE585 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64DC9E4A29E67427005DE585 /* Localizable.strings */; };
-		64E1F8C72A0FBB31006D68B6 /* MicrosoftAccessToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E1F8C62A0FBB31006D68B6 /* MicrosoftAccessToken.swift */; };
-		64E1F8C92A0FBDE7006D68B6 /* MicrosoftAuthError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E1F8C82A0FBDE7006D68B6 /* MicrosoftAuthError.swift */; };
-		64E459EF2938BBEF00F82A2B /* InstanceCommands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E459EE2938BBEF00F82A2B /* InstanceCommands.swift */; };
-		64E459F32938C7AC00F82A2B /* LauncherData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E459F22938C7AC00F82A2B /* LauncherData.swift */; };
-		64F7C5ED297D63D00086ABC1 /* ArgumentProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5EC297D63D00086ABC1 /* ArgumentProvider.swift */; };
-		64F7C5F1297D641C0086ABC1 /* AssetIndex.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F0297D641C0086ABC1 /* AssetIndex.swift */; };
-		64F7C5F3297D64370086ABC1 /* TaskProgress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F2297D64370086ABC1 /* TaskProgress.swift */; };
-		64F7C5F5297D64490086ABC1 /* FileHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F4297D64490086ABC1 /* FileHandler.swift */; };
-		64F7C5F7297D645A0086ABC1 /* ParallelExecutor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F6297D645A0086ABC1 /* ParallelExecutor.swift */; };
-		64F7C5FB297D64810086ABC1 /* VersionManifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5FA297D64810086ABC1 /* VersionManifest.swift */; };
+		64E1F8C72A0FBB31006D68B6 /* Microsoft Access Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E1F8C62A0FBB31006D68B6 /* Microsoft Access Token.swift */; };
+		64E1F8C92A0FBDE7006D68B6 /* Microsoft Auth Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E1F8C82A0FBDE7006D68B6 /* Microsoft Auth Error.swift */; };
+		64E459EF2938BBEF00F82A2B /* Instance Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E459EE2938BBEF00F82A2B /* Instance Commands.swift */; };
+		64E459F32938C7AC00F82A2B /* Launcher Data.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E459F22938C7AC00F82A2B /* Launcher Data.swift */; };
+		64F7C5ED297D63D00086ABC1 /* Argument Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5EC297D63D00086ABC1 /* Argument Provider.swift */; };
+		64F7C5F1297D641C0086ABC1 /* Asset Index.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F0297D641C0086ABC1 /* Asset Index.swift */; };
+		64F7C5F3297D64370086ABC1 /* Task Progress.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F2297D64370086ABC1 /* Task Progress.swift */; };
+		64F7C5F5297D64490086ABC1 /* File Handler.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F4297D64490086ABC1 /* File Handler.swift */; };
+		64F7C5F7297D645A0086ABC1 /* Parallel Executor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5F6297D645A0086ABC1 /* Parallel Executor.swift */; };
+		64F7C5FB297D64810086ABC1 /* Version Manifest.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5FA297D64810086ABC1 /* Version Manifest.swift */; };
 		64F7C5FE297D64A40086ABC1 /* Instance.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5FD297D64A40086ABC1 /* Instance.swift */; };
-		64F7C600297D64B50086ABC1 /* InstanceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5FF297D64B50086ABC1 /* InstanceCreator.swift */; };
-		64F7C602297D64CA0086ABC1 /* InstancePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C601297D64CA0086ABC1 /* InstancePreferences.swift */; };
-		64F7C604297D64DD0086ABC1 /* VanillaInstanceCreator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C603297D64DD0086ABC1 /* VanillaInstanceCreator.swift */; };
-		64F7C607297D65080086ABC1 /* DownloadedJavaInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C606297D65080086ABC1 /* DownloadedJavaInstallation.swift */; };
-		64F7C60B297D65390086ABC1 /* LinkedJavaInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C60A297D65390086ABC1 /* LinkedJavaInstallation.swift */; };
-		64F7C60D297D654A0086ABC1 /* JreDownloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C60C297D654A0086ABC1 /* JreDownloader.swift */; };
-		64F7C60F297D65620086ABC1 /* SavedJavaInstallation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C60E297D65620086ABC1 /* SavedJavaInstallation.swift */; };
-		64F7C612297D658D0086ABC1 /* RuntimePreferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C611297D658D0086ABC1 /* RuntimePreferences.swift */; };
+		64F7C600297D64B50086ABC1 /* Instance Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C5FF297D64B50086ABC1 /* Instance Creator.swift */; };
+		64F7C602297D64CA0086ABC1 /* Instance Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C601297D64CA0086ABC1 /* Instance Preferences.swift */; };
+		64F7C604297D64DD0086ABC1 /* Vanilla Instance Creator.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C603297D64DD0086ABC1 /* Vanilla Instance Creator.swift */; };
+		64F7C607297D65080086ABC1 /* Downloaded Java Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C606297D65080086ABC1 /* Downloaded Java Installation.swift */; };
+		64F7C60B297D65390086ABC1 /* Linked Java Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C60A297D65390086ABC1 /* Linked Java Installation.swift */; };
+		64F7C60D297D654A0086ABC1 /* Jre Downloader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C60C297D654A0086ABC1 /* Jre Downloader.swift */; };
+		64F7C60F297D65620086ABC1 /* Saved Java Installation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C60E297D65620086ABC1 /* Saved Java Installation.swift */; };
+		64F7C612297D658D0086ABC1 /* Runtime Preferences.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64F7C611297D658D0086ABC1 /* Runtime Preferences.swift */; };
 		64FA2A922A0F73BD0042A4A7 /* Swifter in Frameworks */ = {isa = PBXBuildFile; productRef = 64FA2A912A0F73BD0042A4A7 /* Swifter */; };
-		64FA2A942A0F767F0042A4A7 /* WebViewWindow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A932A0F767E0042A4A7 /* WebViewWindow.swift */; };
-		64FA2A962A0F76FA0042A4A7 /* MicrosoftAccountViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A952A0F76FA0042A4A7 /* MicrosoftAccountViewModel.swift */; };
-		64FA2A982A0F81D50042A4A7 /* XboxLiveAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A972A0F81D50042A4A7 /* XboxLiveAuth.swift */; };
+		64FA2A942A0F767F0042A4A7 /* Web View Window.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A932A0F767E0042A4A7 /* Web View Window.swift */; };
+		64FA2A962A0F76FA0042A4A7 /* Microsoft Account View Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A952A0F76FA0042A4A7 /* Microsoft Account View Model.swift */; };
+		64FA2A982A0F81D50042A4A7 /* Xbox Live Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */; };
 		64FC5B292A5805FB009D0050 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 64FC5B282A5805FB009D0050 /* Zip */; };
-		64FE2D40293BA78B007414CB /* InstanceConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* InstanceConsoleView.swift */; };
+		64FE2D40293BA78B007414CB /* Instance Console View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* Instance Console View.swift */; };
 		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
 /* End PBXBuildFile section */
 
@@ -150,142 +150,142 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		64037CA8297C724D00F7FE79 /* ArgumentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentTests.swift; sourceTree = "<group>"; };
-		64065A942971CD85000BCE24 /* JavaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JavaTests.swift; sourceTree = "<group>"; };
-		6407E6372A2791F100BB9AEA /* ImgurSharingServiceDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImgurSharingServiceDelegate.swift; sourceTree = "<group>"; };
-		6407E6392A285B6B00BB9AEA /* ScreenshotShareButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenshotShareButton.swift; sourceTree = "<group>"; };
+		64037CA8297C724D00F7FE79 /* Argument Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Argument Tests.swift"; sourceTree = "<group>"; };
+		64065A942971CD85000BCE24 /* Java Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Java Tests.swift"; sourceTree = "<group>"; };
+		6407E6372A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Imgur Sharing Service Delegate.swift"; sourceTree = "<group>"; };
+		6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screenshot Share Button.swift"; sourceTree = "<group>"; };
 		640A758C2A208BE3005CDE49 /* Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
-		640A758E2A20E969005CDE49 /* InstanceModsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceModsView.swift; sourceTree = "<group>"; };
-		640A75902A2115BA005CDE49 /* RunOnce.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RunOnce.swift; sourceTree = "<group>"; };
+		640A758E2A20E969005CDE49 /* Instance Mods View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Mods View.swift"; sourceTree = "<group>"; };
+		640A75902A2115BA005CDE49 /* Run Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run Once.swift"; sourceTree = "<group>"; };
 		640A75932A21CEFD005CDE49 /* Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshot.swift; sourceTree = "<group>"; };
-		640A75952A21D021005CDE49 /* InstanceScreenshotsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceScreenshotsView.swift; sourceTree = "<group>"; };
-		640A75B82A226F2C005CDE49 /* InstanceWorldsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceWorldsView.swift; sourceTree = "<group>"; };
+		640A75952A21D021005CDE49 /* Instance Screenshots View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Screenshots View.swift"; sourceTree = "<group>"; };
+		640A75B82A226F2C005CDE49 /* Instance Worlds View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Worlds View.swift"; sourceTree = "<group>"; };
 		640A75BB2A226F80005CDE49 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
-		640CCF542A09F0FA0080F574 /* SettingsFetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsFetch.swift; sourceTree = "<group>"; };
-		640DC1EC2934EC2300943213 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		640DC1F02934F14200943213 /* NewInstanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewInstanceView.swift; sourceTree = "<group>"; };
-		64148DD9296E80E400E5EAD3 /* GlobalPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalPreferences.swift; sourceTree = "<group>"; };
-		641678502923B6D40012C9CC /* RuntimePreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimePreferencesView.swift; sourceTree = "<group>"; };
-		641678522923B6F90012C9CC /* AccountsPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountsPreferencesView.swift; sourceTree = "<group>"; };
+		640CCF542A09F0FA0080F574 /* Settings Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings Fetch.swift"; sourceTree = "<group>"; };
+		640DC1EC2934EC2300943213 /* App Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Delegate.swift"; sourceTree = "<group>"; };
+		640DC1F02934F14200943213 /* New Instance View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Instance View.swift"; sourceTree = "<group>"; };
+		64148DD9296E80E400E5EAD3 /* Global Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Global Preferences.swift"; sourceTree = "<group>"; };
+		641678502923B6D40012C9CC /* Runtime Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime Preferences View.swift"; sourceTree = "<group>"; };
+		641678522923B6F90012C9CC /* Accounts Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Accounts Preferences View.swift"; sourceTree = "<group>"; };
 		64337EE82A17A4EF0017BCB0 /* Rule.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Rule.swift; sourceTree = "<group>"; };
-		64337EEA2A17A62A0017BCB0 /* ConditionalArgument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConditionalArgument.swift; sourceTree = "<group>"; };
-		64337EEC2A17A6AA0017BCB0 /* ArgumentElement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentElement.swift; sourceTree = "<group>"; };
+		64337EEA2A17A62A0017BCB0 /* Conditional Argument.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Conditional Argument.swift"; sourceTree = "<group>"; };
+		64337EEC2A17A6AA0017BCB0 /* Argument Element.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Argument Element.swift"; sourceTree = "<group>"; };
 		64337EEE2A17A80B0017BCB0 /* Arguments.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arguments.swift; sourceTree = "<group>"; };
 		64337EF02A17C9AD0017BCB0 /* Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Version.swift; sourceTree = "<group>"; };
 		64337EF22A17CA040017BCB0 /* Artifact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artifact.swift; sourceTree = "<group>"; };
-		64337EF42A17CA6C0017BCB0 /* MainDownloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainDownloads.swift; sourceTree = "<group>"; };
-		64337EF62A17CADB0017BCB0 /* PreferredJavaVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferredJavaVersion.swift; sourceTree = "<group>"; };
+		64337EF42A17CA6C0017BCB0 /* Main Downloads.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Main Downloads.swift"; sourceTree = "<group>"; };
+		64337EF62A17CADB0017BCB0 /* Preferred Java Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preferred Java Version.swift"; sourceTree = "<group>"; };
 		64337EFA2A17D6690017BCB0 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
-		64337EFC2A17DB620017BCB0 /* LoggingConfig.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoggingConfig.swift; sourceTree = "<group>"; };
-		64373BA229C0A430001DBD4C /* InstanceTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceTests.swift; sourceTree = "<group>"; };
-		643E454B2A1291CC00687839 /* LaunchError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchError.swift; sourceTree = "<group>"; };
-		643E454D2A13300900687839 /* InstanceLogoPickerSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceLogoPickerSheet.swift; sourceTree = "<group>"; };
-		643E454F2A13308700687839 /* InstanceInterativeLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceInterativeLogoView.swift; sourceTree = "<group>"; };
-		643E45512A1330F600687839 /* InstanceChooseAccountSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceChooseAccountSheet.swift; sourceTree = "<group>"; };
-		643E45532A13314E00687839 /* LaunchErrorSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LaunchErrorSheet.swift; sourceTree = "<group>"; };
-		643E45552A1331B700687839 /* InteractiveStarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InteractiveStarView.swift; sourceTree = "<group>"; };
-		643E45572A13327900687839 /* InstanceNotesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceNotesView.swift; sourceTree = "<group>"; };
-		643E45592A1332BE00687839 /* InstanceSynopsisView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSynopsisView.swift; sourceTree = "<group>"; };
-		643E455B2A13331100687839 /* InstanceTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceTitleView.swift; sourceTree = "<group>"; };
-		643E45622A133A3F00687839 /* InstanceSpecificCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceSpecificCommands.swift; sourceTree = "<group>"; };
-		643E45652A13A60F00687839 /* MiscPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MiscPreferencesView.swift; sourceTree = "<group>"; };
-		643E45672A13A9A800687839 /* DeveloperModeCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeveloperModeCommands.swift; sourceTree = "<group>"; };
-		644DE1D32937C93600C4A03E /* InstanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceView.swift; sourceTree = "<group>"; };
-		644FC66D29375852003797D9 /* InstanceNavigationLink.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceNavigationLink.swift; sourceTree = "<group>"; };
-		644FC6712937B243003797D9 /* UiPreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UiPreferencesView.swift; sourceTree = "<group>"; };
-		6459E124297700D5006DB3A4 /* InstanceLogoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceLogoView.swift; sourceTree = "<group>"; };
+		64337EFC2A17DB620017BCB0 /* Logging Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logging Config.swift"; sourceTree = "<group>"; };
+		64373BA229C0A430001DBD4C /* Instance Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Tests.swift"; sourceTree = "<group>"; };
+		643E454B2A1291CC00687839 /* Launch Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch Error.swift"; sourceTree = "<group>"; };
+		643E454D2A13300900687839 /* Instance Logo Picker Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Logo Picker Sheet.swift"; sourceTree = "<group>"; };
+		643E454F2A13308700687839 /* Instance Interative Logo View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Interative Logo View.swift"; sourceTree = "<group>"; };
+		643E45512A1330F600687839 /* Instance Choose Account Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Choose Account Sheet.swift"; sourceTree = "<group>"; };
+		643E45532A13314E00687839 /* Launch Error Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch Error Sheet.swift"; sourceTree = "<group>"; };
+		643E45552A1331B700687839 /* Interactive Star View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Interactive Star View.swift"; sourceTree = "<group>"; };
+		643E45572A13327900687839 /* Instance Notes View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Notes View.swift"; sourceTree = "<group>"; };
+		643E45592A1332BE00687839 /* Instance Synopsis View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Synopsis View.swift"; sourceTree = "<group>"; };
+		643E455B2A13331100687839 /* Instance Title View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Title View.swift"; sourceTree = "<group>"; };
+		643E45622A133A3F00687839 /* Instance Specific Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Specific Commands.swift"; sourceTree = "<group>"; };
+		643E45652A13A60F00687839 /* Misc Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Misc Preferences View.swift"; sourceTree = "<group>"; };
+		643E45672A13A9A800687839 /* Developer Mode Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Developer Mode Commands.swift"; sourceTree = "<group>"; };
+		644DE1D32937C93600C4A03E /* Instance View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance View.swift"; sourceTree = "<group>"; };
+		644FC66D29375852003797D9 /* Instance Navigation Link.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Navigation Link.swift"; sourceTree = "<group>"; };
+		644FC6712937B243003797D9 /* Ui Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Ui Preferences View.swift"; sourceTree = "<group>"; };
+		6459E124297700D5006DB3A4 /* Instance Logo View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Logo View.swift"; sourceTree = "<group>"; };
 		645AFA94292C9E1500CD3F7E /* HEADER */ = {isa = PBXFileReference; lastKnownFileType = text; path = HEADER; sourceTree = "<group>"; };
-		646139DF2977E3A700BA9477 /* SymbolPicker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolPicker.swift; sourceTree = "<group>"; };
-		646139E12977E88700BA9477 /* SFSymbols12List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols12List.swift; sourceTree = "<group>"; };
-		646139E32977E95300BA9477 /* SFSymbols13List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbols13List.swift; sourceTree = "<group>"; };
-		646139E52977EA0300BA9477 /* SFSymbolsList.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbolsList.swift; sourceTree = "<group>"; };
-		6472E46F29E2BF5F00B4C65B /* ParallelDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelDownloader.swift; sourceTree = "<group>"; };
-		6472E47129E2C35200B4C65B /* DownloadTask.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTask.swift; sourceTree = "<group>"; };
-		6474DC1B2A150D35001FCD4D /* ErrorTracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTracker.swift; sourceTree = "<group>"; };
-		6474DC1D2A150D63001FCD4D /* ErrorTrackerEntry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTrackerEntry.swift; sourceTree = "<group>"; };
-		6474DC1F2A150D77001FCD4D /* TrackedErrorType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrackedErrorType.swift; sourceTree = "<group>"; };
-		6474DC232A15F952001FCD4D /* ErrorTrackerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTrackerView.swift; sourceTree = "<group>"; };
-		6474DC252A15FB83001FCD4D /* ErrorTrackerWindowController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ErrorTrackerWindowController.swift; sourceTree = "<group>"; };
-		647A796929E8166600497CE1 /* ConsoleTextView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConsoleTextView.swift; sourceTree = "<group>"; };
-		64821E0929E44B78006012F7 /* MinecraftAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftAccount.swift; sourceTree = "<group>"; };
-		64821E0B29E44C13006012F7 /* OfflineAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OfflineAccount.swift; sourceTree = "<group>"; };
-		64821E0D29E459FA006012F7 /* AccountManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AccountManager.swift; sourceTree = "<group>"; };
-		648445762A10C25D00049986 /* AccountManager+Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountManager+Auth.swift"; sourceTree = "<group>"; };
-		6484457B2A10D03200049986 /* XboxAuthResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XboxAuthResponse.swift; sourceTree = "<group>"; };
-		6484457D2A10D12400049986 /* XstsAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XstsAuth.swift; sourceTree = "<group>"; };
-		6484457F2A10D44A00049986 /* MinecraftTokenResponse.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftTokenResponse.swift; sourceTree = "<group>"; };
-		648445812A10D4FD00049986 /* MinecraftAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftAuth.swift; sourceTree = "<group>"; };
-		648445832A10D69F00049986 /* Dictionary+Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary+Encoding.swift"; sourceTree = "<group>"; };
-		648445852A10D6B100049986 /* CharacterSet+EncodingValidation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CharacterSet+EncodingValidation.swift"; sourceTree = "<group>"; };
-		648445872A10DE9200049986 /* MinecraftProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftProfile.swift; sourceTree = "<group>"; };
-		648445892A10F69600049986 /* AccountManager+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountManager+Storage.swift"; sourceTree = "<group>"; };
-		6484458B2A10F6BC00049986 /* AccountManager+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountManager+Server.swift"; sourceTree = "<group>"; };
+		646139DF2977E3A700BA9477 /* Symbol Picker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Symbol Picker.swift"; sourceTree = "<group>"; };
+		646139E12977E88700BA9477 /* SF Symbols 12 List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SF Symbols 12 List.swift"; sourceTree = "<group>"; };
+		646139E32977E95300BA9477 /* SF Symbols 13 List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SF Symbols 13 List.swift"; sourceTree = "<group>"; };
+		646139E52977EA0300BA9477 /* SF Symbols List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "SF Symbols List.swift"; sourceTree = "<group>"; };
+		6472E46F29E2BF5F00B4C65B /* Parallel Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parallel Downloader.swift"; sourceTree = "<group>"; };
+		6472E47129E2C35200B4C65B /* Download Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Download Task.swift"; sourceTree = "<group>"; };
+		6474DC1B2A150D35001FCD4D /* Error Tracker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error Tracker.swift"; sourceTree = "<group>"; };
+		6474DC1D2A150D63001FCD4D /* Error Tracker Entry.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error Tracker Entry.swift"; sourceTree = "<group>"; };
+		6474DC1F2A150D77001FCD4D /* Tracked Error Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tracked Error Type.swift"; sourceTree = "<group>"; };
+		6474DC232A15F952001FCD4D /* Error Tracker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error Tracker View.swift"; sourceTree = "<group>"; };
+		6474DC252A15FB83001FCD4D /* Error Tracker Window Controller.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Error Tracker Window Controller.swift"; sourceTree = "<group>"; };
+		647A796929E8166600497CE1 /* Console Text View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Console Text View.swift"; sourceTree = "<group>"; };
+		64821E0929E44B78006012F7 /* Minecraft Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Account.swift"; sourceTree = "<group>"; };
+		64821E0B29E44C13006012F7 /* Offline Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Offline Account.swift"; sourceTree = "<group>"; };
+		64821E0D29E459FA006012F7 /* Account Manager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account Manager.swift"; sourceTree = "<group>"; };
+		648445762A10C25D00049986 /* Account Manager + Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account Manager + Auth.swift"; sourceTree = "<group>"; };
+		6484457B2A10D03200049986 /* Xbox Auth Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xbox Auth Response.swift"; sourceTree = "<group>"; };
+		6484457D2A10D12400049986 /* Xsts Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xsts Auth.swift"; sourceTree = "<group>"; };
+		6484457F2A10D44A00049986 /* Minecraft Token Response.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Token Response.swift"; sourceTree = "<group>"; };
+		648445812A10D4FD00049986 /* Minecraft Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Auth.swift"; sourceTree = "<group>"; };
+		648445832A10D69F00049986 /* Dictionary + Encoding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Dictionary + Encoding.swift"; sourceTree = "<group>"; };
+		648445852A10D6B100049986 /* Character Set + Encoding Validation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Character Set + Encoding Validation.swift"; sourceTree = "<group>"; };
+		648445872A10DE9200049986 /* Minecraft Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Profile.swift"; sourceTree = "<group>"; };
+		648445892A10F69600049986 /* Account Manager + Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account Manager + Storage.swift"; sourceTree = "<group>"; };
+		6484458B2A10F6BC00049986 /* Account Manager + Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Account Manager + Server.swift"; sourceTree = "<group>"; };
 		648C831529DBDD6A00007603 /* libzip.5.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzip.5.5.dylib; path = ../../../../../usr/local/lib/libzip.5.5.dylib; sourceTree = "<group>"; };
 		648C831E29DBEE9900007603 /* libzip.5.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzip.5.5.dylib; path = ../../../Desktop/libzip.5.5.dylib; sourceTree = "<group>"; };
-		648EDF502A1881CE00E40B03 /* PartialVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialVersion.swift; sourceTree = "<group>"; };
-		649620CF2A124EA500733AB6 /* InstanceExportSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceExportSheet.swift; sourceTree = "<group>"; };
-		6497595B29F056FF00D0194E /* AddOfflineAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfflineAccountView.swift; sourceTree = "<group>"; };
-		6497595D29F25AD000D0194E /* InstanceEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceEditingViewModel.swift; sourceTree = "<group>"; };
-		649762BF2935A46E00977467 /* NewVanillaInstanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVanillaInstanceView.swift; sourceTree = "<group>"; };
+		648EDF502A1881CE00E40B03 /* Partial Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partial Version.swift"; sourceTree = "<group>"; };
+		649620CF2A124EA500733AB6 /* Instance Export Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Export Sheet.swift"; sourceTree = "<group>"; };
+		6497595B29F056FF00D0194E /* Add Offline Account View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Offline Account View.swift"; sourceTree = "<group>"; };
+		6497595D29F25AD000D0194E /* Instance Editing View Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Editing View Model.swift"; sourceTree = "<group>"; };
+		649762BF2935A46E00977467 /* New Vanilla Instance View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Vanilla Instance View.swift"; sourceTree = "<group>"; };
 		649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PyzhMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		649EA76629EC27F300BD77EA /* UIPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPreferences.swift; sourceTree = "<group>"; };
-		64A1139D2A110ACC00E48761 /* MicrosoftAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftAccount.swift; sourceTree = "<group>"; };
-		64A1139F2A110D2500E48761 /* MinecraftAccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftAccountType.swift; sourceTree = "<group>"; };
-		64A5150D29E2DED100AFE3AE /* MinecraftJar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftJar.swift; sourceTree = "<group>"; };
-		64A5150F29E2DEE900AFE3AE /* LibraryArtifact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryArtifact.swift; sourceTree = "<group>"; };
-		64A5151129E2DEFD00AFE3AE /* PartialAssetIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialAssetIndex.swift; sourceTree = "<group>"; };
-		64A5151529E2DF2300AFE3AE /* InstanceLogo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceLogo.swift; sourceTree = "<group>"; };
-		64A5151729E2DF3300AFE3AE /* FileType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileType.swift; sourceTree = "<group>"; };
-		64A5151929E2DF6500AFE3AE /* Published+Coding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published+Coding.swift"; sourceTree = "<group>"; };
-		64A5151B29E2DFAD00AFE3AE /* Instance+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance+Storage.swift"; sourceTree = "<group>"; };
-		64A5151D29E2DFE000AFE3AE /* Instance+Prelaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance+Prelaunch.swift"; sourceTree = "<group>"; };
-		64A5151F29E2E6A300AFE3AE /* InstanceData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceData.swift; sourceTree = "<group>"; };
-		64A62C8C2977B454007A9597 /* SymbolLogoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SymbolLogoPickerView.swift; sourceTree = "<group>"; };
-		64B01AE42940961F00B3E670 /* InstanceRuntimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceRuntimeView.swift; sourceTree = "<group>"; };
+		649EA76629EC27F300BD77EA /* UI Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI Preferences.swift"; sourceTree = "<group>"; };
+		64A1139D2A110ACC00E48761 /* Microsoft Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Account.swift"; sourceTree = "<group>"; };
+		64A1139F2A110D2500E48761 /* Minecraft Account Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Account Type.swift"; sourceTree = "<group>"; };
+		64A5150D29E2DED100AFE3AE /* Minecraft Jar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Jar.swift"; sourceTree = "<group>"; };
+		64A5150F29E2DEE900AFE3AE /* Library Artifact.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Library Artifact.swift"; sourceTree = "<group>"; };
+		64A5151129E2DEFD00AFE3AE /* Partial Asset Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Partial Asset Index.swift"; sourceTree = "<group>"; };
+		64A5151529E2DF2300AFE3AE /* Instance Logo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Logo.swift"; sourceTree = "<group>"; };
+		64A5151729E2DF3300AFE3AE /* File Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Type.swift"; sourceTree = "<group>"; };
+		64A5151929E2DF6500AFE3AE /* Published + Coding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Published + Coding.swift"; sourceTree = "<group>"; };
+		64A5151B29E2DFAD00AFE3AE /* Instance + Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance + Storage.swift"; sourceTree = "<group>"; };
+		64A5151D29E2DFE000AFE3AE /* Instance + Prelaunch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance + Prelaunch.swift"; sourceTree = "<group>"; };
+		64A5151F29E2E6A300AFE3AE /* Instance Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Data.swift"; sourceTree = "<group>"; };
+		64A62C8C2977B454007A9597 /* Symbol Logo Picker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Symbol Logo Picker View.swift"; sourceTree = "<group>"; };
+		64B01AE42940961F00B3E670 /* Instance Runtime View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Runtime View.swift"; sourceTree = "<group>"; };
 		64BACB942A1C6EE500F7AA1C /* Http.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Http.swift; sourceTree = "<group>"; };
-		64BACB962A1C6EF700F7AA1C /* HttpMethod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HttpMethod.swift; sourceTree = "<group>"; };
-		64BACB992A1C9F3000F7AA1C /* FabricLoaderVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricLoaderVersion.swift; sourceTree = "<group>"; };
-		64BACB9B2A1C9F5D00F7AA1C /* FabricMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricMeta.swift; sourceTree = "<group>"; };
-		64C09B6B2A1212CF00867038 /* InstanceDuplicationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceDuplicationSheet.swift; sourceTree = "<group>"; };
-		64C09B6F2A12145900867038 /* InstanceDeleteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceDeleteSheet.swift; sourceTree = "<group>"; };
+		64BACB962A1C6EF700F7AA1C /* Http Method.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Http Method.swift"; sourceTree = "<group>"; };
+		64BACB992A1C9F3000F7AA1C /* Fabric Loader Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fabric Loader Version.swift"; sourceTree = "<group>"; };
+		64BACB9B2A1C9F5D00F7AA1C /* Fabric Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fabric Meta.swift"; sourceTree = "<group>"; };
+		64C09B6B2A1212CF00867038 /* Instance Duplication Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Duplication Sheet.swift"; sourceTree = "<group>"; };
+		64C09B6F2A12145900867038 /* Instance Delete Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Delete Sheet.swift"; sourceTree = "<group>"; };
 		64C334D52922523600BB8570 /* PyzhMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PyzhMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		64C334D82922523600BB8570 /* InnateMCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnateMCApp.swift; sourceTree = "<group>"; };
-		64C334DA2922523600BB8570 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
+		64C334D82922523600BB8570 /* Pyzh MC App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pyzh MC App.swift"; sourceTree = "<group>"; };
+		64C334DA2922523600BB8570 /* Content View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Content View.swift"; sourceTree = "<group>"; };
 		64C334DC2922523F00BB8570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		64C334E12922523F00BB8570 /* InnateMC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InnateMC.entitlements; sourceTree = "<group>"; };
-		64C33504292252B500BB8570 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
-		64C33506292256C500BB8570 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
+		64C33504292252B500BB8570 /* Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preferences View.swift"; sourceTree = "<group>"; };
+		64C33506292256C500BB8570 /* Todo View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo View.swift"; sourceTree = "<group>"; };
 		64C33508292272F500BB8570 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
 		64C3350A2922734400BB8570 /* README.md */ = {isa = PBXFileReference; lastKnownFileType = net.daringfireball.markdown; path = README.md; sourceTree = "<group>"; };
 		64C3350B2922B0B400BB8570 /* LICENSE */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = LICENSE; sourceTree = "<group>"; };
-		64C41C1329366CAF00014E0F /* ValueKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ValueKeys.swift; sourceTree = "<group>"; };
-		64C5621329C083AA003402F0 /* InstanceProcess.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceProcess.swift; sourceTree = "<group>"; };
-		64CE1091297864A700366372 /* ImageLogoPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLogoPickerView.swift; sourceTree = "<group>"; };
+		64C41C1329366CAF00014E0F /* Value Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Keys.swift"; sourceTree = "<group>"; };
+		64C5621329C083AA003402F0 /* Instance Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Process.swift"; sourceTree = "<group>"; };
+		64CE1091297864A700366372 /* Image Logo Picker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Logo Picker View.swift"; sourceTree = "<group>"; };
 		64DC9E4929E67427005DE585 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
-		64E1F8C62A0FBB31006D68B6 /* MicrosoftAccessToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftAccessToken.swift; sourceTree = "<group>"; };
-		64E1F8C82A0FBDE7006D68B6 /* MicrosoftAuthError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftAuthError.swift; sourceTree = "<group>"; };
-		64E459EE2938BBEF00F82A2B /* InstanceCommands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceCommands.swift; sourceTree = "<group>"; };
-		64E459F22938C7AC00F82A2B /* LauncherData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LauncherData.swift; sourceTree = "<group>"; };
-		64EB537E2929CD7800D6CDDD /* DownloadTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadTests.swift; sourceTree = "<group>"; };
-		64F7C5EC297D63D00086ABC1 /* ArgumentProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArgumentProvider.swift; sourceTree = "<group>"; };
-		64F7C5F0297D641C0086ABC1 /* AssetIndex.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssetIndex.swift; sourceTree = "<group>"; };
-		64F7C5F2297D64370086ABC1 /* TaskProgress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskProgress.swift; sourceTree = "<group>"; };
-		64F7C5F4297D64490086ABC1 /* FileHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FileHandler.swift; sourceTree = "<group>"; };
-		64F7C5F6297D645A0086ABC1 /* ParallelExecutor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParallelExecutor.swift; sourceTree = "<group>"; };
-		64F7C5FA297D64810086ABC1 /* VersionManifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VersionManifest.swift; sourceTree = "<group>"; };
+		64E1F8C62A0FBB31006D68B6 /* Microsoft Access Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Access Token.swift"; sourceTree = "<group>"; };
+		64E1F8C82A0FBDE7006D68B6 /* Microsoft Auth Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Auth Error.swift"; sourceTree = "<group>"; };
+		64E459EE2938BBEF00F82A2B /* Instance Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Commands.swift"; sourceTree = "<group>"; };
+		64E459F22938C7AC00F82A2B /* Launcher Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launcher Data.swift"; sourceTree = "<group>"; };
+		64EB537E2929CD7800D6CDDD /* Download Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Download Tests.swift"; sourceTree = "<group>"; };
+		64F7C5EC297D63D00086ABC1 /* Argument Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Argument Provider.swift"; sourceTree = "<group>"; };
+		64F7C5F0297D641C0086ABC1 /* Asset Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset Index.swift"; sourceTree = "<group>"; };
+		64F7C5F2297D64370086ABC1 /* Task Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Progress.swift"; sourceTree = "<group>"; };
+		64F7C5F4297D64490086ABC1 /* File Handler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "File Handler.swift"; sourceTree = "<group>"; };
+		64F7C5F6297D645A0086ABC1 /* Parallel Executor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Parallel Executor.swift"; sourceTree = "<group>"; };
+		64F7C5FA297D64810086ABC1 /* Version Manifest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Version Manifest.swift"; sourceTree = "<group>"; };
 		64F7C5FD297D64A40086ABC1 /* Instance.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instance.swift; sourceTree = "<group>"; };
-		64F7C5FF297D64B50086ABC1 /* InstanceCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceCreator.swift; sourceTree = "<group>"; };
-		64F7C601297D64CA0086ABC1 /* InstancePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstancePreferences.swift; sourceTree = "<group>"; };
-		64F7C603297D64DD0086ABC1 /* VanillaInstanceCreator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = VanillaInstanceCreator.swift; sourceTree = "<group>"; };
-		64F7C606297D65080086ABC1 /* DownloadedJavaInstallation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadedJavaInstallation.swift; sourceTree = "<group>"; };
-		64F7C60A297D65390086ABC1 /* LinkedJavaInstallation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LinkedJavaInstallation.swift; sourceTree = "<group>"; };
-		64F7C60C297D654A0086ABC1 /* JreDownloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = JreDownloader.swift; sourceTree = "<group>"; };
-		64F7C60E297D65620086ABC1 /* SavedJavaInstallation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedJavaInstallation.swift; sourceTree = "<group>"; };
-		64F7C611297D658D0086ABC1 /* RuntimePreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimePreferences.swift; sourceTree = "<group>"; };
-		64FA2A932A0F767E0042A4A7 /* WebViewWindow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WebViewWindow.swift; sourceTree = "<group>"; };
-		64FA2A952A0F76FA0042A4A7 /* MicrosoftAccountViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftAccountViewModel.swift; sourceTree = "<group>"; };
-		64FA2A972A0F81D50042A4A7 /* XboxLiveAuth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = XboxLiveAuth.swift; sourceTree = "<group>"; };
-		64FE2D3F293BA78B007414CB /* InstanceConsoleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceConsoleView.swift; sourceTree = "<group>"; };
+		64F7C5FF297D64B50086ABC1 /* Instance Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Creator.swift"; sourceTree = "<group>"; };
+		64F7C601297D64CA0086ABC1 /* Instance Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Preferences.swift"; sourceTree = "<group>"; };
+		64F7C603297D64DD0086ABC1 /* Vanilla Instance Creator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Vanilla Instance Creator.swift"; sourceTree = "<group>"; };
+		64F7C606297D65080086ABC1 /* Downloaded Java Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Downloaded Java Installation.swift"; sourceTree = "<group>"; };
+		64F7C60A297D65390086ABC1 /* Linked Java Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Linked Java Installation.swift"; sourceTree = "<group>"; };
+		64F7C60C297D654A0086ABC1 /* Jre Downloader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Jre Downloader.swift"; sourceTree = "<group>"; };
+		64F7C60E297D65620086ABC1 /* Saved Java Installation.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Saved Java Installation.swift"; sourceTree = "<group>"; };
+		64F7C611297D658D0086ABC1 /* Runtime Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Runtime Preferences.swift"; sourceTree = "<group>"; };
+		64FA2A932A0F767E0042A4A7 /* Web View Window.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Web View Window.swift"; sourceTree = "<group>"; };
+		64FA2A952A0F76FA0042A4A7 /* Microsoft Account View Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Account View Model.swift"; sourceTree = "<group>"; };
+		64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xbox Live Auth.swift"; sourceTree = "<group>"; };
+		64FE2D3F293BA78B007414CB /* Instance Console View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Console View.swift"; sourceTree = "<group>"; };
 		FB618B9329EB3ACD005418E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -330,8 +330,8 @@
 		640A75B02A2263D5005CDE49 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				640A75952A21D021005CDE49 /* InstanceScreenshotsView.swift */,
-				6407E6392A285B6B00BB9AEA /* ScreenshotShareButton.swift */,
+				640A75952A21D021005CDE49 /* Instance Screenshots View.swift */,
+				6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */,
 			);
 			path = Screenshots;
 			sourceTree = "<group>";
@@ -339,7 +339,7 @@
 		640A75B72A226E76005CDE49 /* Worlds */ = {
 			isa = PBXGroup;
 			children = (
-				640A75B82A226F2C005CDE49 /* InstanceWorldsView.swift */,
+				640A75B82A226F2C005CDE49 /* Instance Worlds View.swift */,
 			);
 			path = Worlds;
 			sourceTree = "<group>";
@@ -355,11 +355,11 @@
 		6416784F2923B6450012C9CC /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				64C33504292252B500BB8570 /* PreferencesView.swift */,
-				641678502923B6D40012C9CC /* RuntimePreferencesView.swift */,
+				64C33504292252B500BB8570 /* Preferences View.swift */,
+				641678502923B6D40012C9CC /* Runtime Preferences View.swift */,
 				6497595A29F056CF00D0194E /* Accounts */,
-				644FC6712937B243003797D9 /* UiPreferencesView.swift */,
-				643E45652A13A60F00687839 /* MiscPreferencesView.swift */,
+				644FC6712937B243003797D9 /* Ui Preferences View.swift */,
+				643E45652A13A60F00687839 /* Misc Preferences View.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -368,21 +368,21 @@
 			isa = PBXGroup;
 			children = (
 				64BACB982A1C9F0100F7AA1C /* Fabric */,
-				64F7C5F0297D641C0086ABC1 /* AssetIndex.swift */,
-				64F7C5FA297D64810086ABC1 /* VersionManifest.swift */,
-				64A5150F29E2DEE900AFE3AE /* LibraryArtifact.swift */,
-				64A5151129E2DEFD00AFE3AE /* PartialAssetIndex.swift */,
+				64F7C5F0297D641C0086ABC1 /* Asset Index.swift */,
+				64F7C5FA297D64810086ABC1 /* Version Manifest.swift */,
+				64A5150F29E2DEE900AFE3AE /* Library Artifact.swift */,
+				64A5151129E2DEFD00AFE3AE /* Partial Asset Index.swift */,
 				64337EE82A17A4EF0017BCB0 /* Rule.swift */,
-				64337EEA2A17A62A0017BCB0 /* ConditionalArgument.swift */,
-				64337EEC2A17A6AA0017BCB0 /* ArgumentElement.swift */,
+				64337EEA2A17A62A0017BCB0 /* Conditional Argument.swift */,
+				64337EEC2A17A6AA0017BCB0 /* Argument Element.swift */,
 				64337EEE2A17A80B0017BCB0 /* Arguments.swift */,
 				64337EF02A17C9AD0017BCB0 /* Version.swift */,
 				64337EF22A17CA040017BCB0 /* Artifact.swift */,
-				64337EF42A17CA6C0017BCB0 /* MainDownloads.swift */,
-				64337EF62A17CADB0017BCB0 /* PreferredJavaVersion.swift */,
+				64337EF42A17CA6C0017BCB0 /* Main Downloads.swift */,
+				64337EF62A17CADB0017BCB0 /* Preferred Java Version.swift */,
 				64337EFA2A17D6690017BCB0 /* Library.swift */,
-				64337EFC2A17DB620017BCB0 /* LoggingConfig.swift */,
-				648EDF502A1881CE00E40B03 /* PartialVersion.swift */,
+				64337EFC2A17DB620017BCB0 /* Logging Config.swift */,
+				648EDF502A1881CE00E40B03 /* Partial Version.swift */,
 			);
 			path = Version;
 			sourceTree = "<group>";
@@ -399,11 +399,11 @@
 		643E455D2A1338CC00687839 /* Description */ = {
 			isa = PBXGroup;
 			children = (
-				6497595D29F25AD000D0194E /* InstanceEditingViewModel.swift */,
-				643E45552A1331B700687839 /* InteractiveStarView.swift */,
-				643E45572A13327900687839 /* InstanceNotesView.swift */,
-				643E45592A1332BE00687839 /* InstanceSynopsisView.swift */,
-				643E455B2A13331100687839 /* InstanceTitleView.swift */,
+				6497595D29F25AD000D0194E /* Instance Editing View Model.swift */,
+				643E45552A1331B700687839 /* Interactive Star View.swift */,
+				643E45572A13327900687839 /* Instance Notes View.swift */,
+				643E45592A1332BE00687839 /* Instance Synopsis View.swift */,
+				643E455B2A13331100687839 /* Instance Title View.swift */,
 			);
 			name = Description;
 			sourceTree = "<group>";
@@ -411,9 +411,9 @@
 		643E45602A13396D00687839 /* Action */ = {
 			isa = PBXGroup;
 			children = (
-				64C09B6B2A1212CF00867038 /* InstanceDuplicationSheet.swift */,
-				64C09B6F2A12145900867038 /* InstanceDeleteSheet.swift */,
-				649620CF2A124EA500733AB6 /* InstanceExportSheet.swift */,
+				64C09B6B2A1212CF00867038 /* Instance Duplication Sheet.swift */,
+				64C09B6F2A12145900867038 /* Instance Delete Sheet.swift */,
+				649620CF2A124EA500733AB6 /* Instance Export Sheet.swift */,
 			);
 			path = Action;
 			sourceTree = "<group>";
@@ -421,9 +421,9 @@
 		643E45612A1339AD00687839 /* Commands */ = {
 			isa = PBXGroup;
 			children = (
-				64E459EE2938BBEF00F82A2B /* InstanceCommands.swift */,
-				643E45622A133A3F00687839 /* InstanceSpecificCommands.swift */,
-				643E45672A13A9A800687839 /* DeveloperModeCommands.swift */,
+				64E459EE2938BBEF00F82A2B /* Instance Commands.swift */,
+				643E45622A133A3F00687839 /* Instance Specific Commands.swift */,
+				643E45672A13A9A800687839 /* Developer Mode Commands.swift */,
 			);
 			path = Commands;
 			sourceTree = "<group>";
@@ -431,8 +431,8 @@
 		643E45642A1341A900687839 /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				643E45532A13314E00687839 /* LaunchErrorSheet.swift */,
-				643E45512A1330F600687839 /* InstanceChooseAccountSheet.swift */,
+				643E45532A13314E00687839 /* Launch Error Sheet.swift */,
+				643E45512A1330F600687839 /* Instance Choose Account Sheet.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -442,13 +442,13 @@
 			children = (
 				64BACB932A1C692400F7AA1C /* Http */,
 				64F7C615297D7EE40086ABC1 /* Symbols */,
-				646139DF2977E3A700BA9477 /* SymbolPicker.swift */,
-				64C33506292256C500BB8570 /* TodoView.swift */,
-				647A796929E8166600497CE1 /* ConsoleTextView.swift */,
-				640CCF542A09F0FA0080F574 /* SettingsFetch.swift */,
-				64FA2A932A0F767E0042A4A7 /* WebViewWindow.swift */,
-				640A75902A2115BA005CDE49 /* RunOnce.swift */,
-				6407E6372A2791F100BB9AEA /* ImgurSharingServiceDelegate.swift */,
+				646139DF2977E3A700BA9477 /* Symbol Picker.swift */,
+				64C33506292256C500BB8570 /* Todo View.swift */,
+				647A796929E8166600497CE1 /* Console Text View.swift */,
+				640CCF542A09F0FA0080F574 /* Settings Fetch.swift */,
+				64FA2A932A0F767E0042A4A7 /* Web View Window.swift */,
+				640A75902A2115BA005CDE49 /* Run Once.swift */,
+				6407E6372A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift */,
 			);
 			path = Util;
 			sourceTree = "<group>";
@@ -462,11 +462,11 @@
 				643E45642A1341A900687839 /* Error */,
 				649762BC2935A2D600977467 /* Create */,
 				64F7C614297D7E320086ABC1 /* Logo */,
-				644FC66D29375852003797D9 /* InstanceNavigationLink.swift */,
-				644DE1D32937C93600C4A03E /* InstanceView.swift */,
-				64FE2D3F293BA78B007414CB /* InstanceConsoleView.swift */,
+				644FC66D29375852003797D9 /* Instance Navigation Link.swift */,
+				644DE1D32937C93600C4A03E /* Instance View.swift */,
+				64FE2D3F293BA78B007414CB /* Instance Console View.swift */,
 				6459E11A2976E215006DB3A4 /* Preferences */,
-				640A758E2A20E969005CDE49 /* InstanceModsView.swift */,
+				640A758E2A20E969005CDE49 /* Instance Mods View.swift */,
 				640A75B72A226E76005CDE49 /* Worlds */,
 				640A75B02A2263D5005CDE49 /* Screenshots */,
 			);
@@ -476,7 +476,7 @@
 		6459E11A2976E215006DB3A4 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				64B01AE42940961F00B3E670 /* InstanceRuntimeView.swift */,
+				64B01AE42940961F00B3E670 /* Instance Runtime View.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -484,11 +484,11 @@
 		6474DC1A2A150D13001FCD4D /* Error */ = {
 			isa = PBXGroup;
 			children = (
-				6474DC1B2A150D35001FCD4D /* ErrorTracker.swift */,
-				6474DC1D2A150D63001FCD4D /* ErrorTrackerEntry.swift */,
-				6474DC1F2A150D77001FCD4D /* TrackedErrorType.swift */,
-				6474DC232A15F952001FCD4D /* ErrorTrackerView.swift */,
-				6474DC252A15FB83001FCD4D /* ErrorTrackerWindowController.swift */,
+				6474DC1B2A150D35001FCD4D /* Error Tracker.swift */,
+				6474DC1D2A150D63001FCD4D /* Error Tracker Entry.swift */,
+				6474DC1F2A150D77001FCD4D /* Tracked Error Type.swift */,
+				6474DC232A15F952001FCD4D /* Error Tracker View.swift */,
+				6474DC252A15FB83001FCD4D /* Error Tracker Window Controller.swift */,
 			);
 			path = Error;
 			sourceTree = "<group>";
@@ -496,24 +496,24 @@
 		64821E0829E44B4E006012F7 /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				64821E0929E44B78006012F7 /* MinecraftAccount.swift */,
-				64A1139F2A110D2500E48761 /* MinecraftAccountType.swift */,
-				64821E0B29E44C13006012F7 /* OfflineAccount.swift */,
-				64A1139D2A110ACC00E48761 /* MicrosoftAccount.swift */,
-				64821E0D29E459FA006012F7 /* AccountManager.swift */,
-				648445892A10F69600049986 /* AccountManager+Storage.swift */,
-				6484458B2A10F6BC00049986 /* AccountManager+Server.swift */,
-				648445762A10C25D00049986 /* AccountManager+Auth.swift */,
-				64FA2A972A0F81D50042A4A7 /* XboxLiveAuth.swift */,
-				64E1F8C82A0FBDE7006D68B6 /* MicrosoftAuthError.swift */,
-				6484457B2A10D03200049986 /* XboxAuthResponse.swift */,
-				6484457D2A10D12400049986 /* XstsAuth.swift */,
-				6484457F2A10D44A00049986 /* MinecraftTokenResponse.swift */,
-				648445812A10D4FD00049986 /* MinecraftAuth.swift */,
-				648445832A10D69F00049986 /* Dictionary+Encoding.swift */,
-				648445852A10D6B100049986 /* CharacterSet+EncodingValidation.swift */,
-				648445872A10DE9200049986 /* MinecraftProfile.swift */,
-				64E1F8C62A0FBB31006D68B6 /* MicrosoftAccessToken.swift */,
+				64821E0929E44B78006012F7 /* Minecraft Account.swift */,
+				64A1139F2A110D2500E48761 /* Minecraft Account Type.swift */,
+				64821E0B29E44C13006012F7 /* Offline Account.swift */,
+				64A1139D2A110ACC00E48761 /* Microsoft Account.swift */,
+				64821E0D29E459FA006012F7 /* Account Manager.swift */,
+				648445892A10F69600049986 /* Account Manager + Storage.swift */,
+				6484458B2A10F6BC00049986 /* Account Manager + Server.swift */,
+				648445762A10C25D00049986 /* Account Manager + Auth.swift */,
+				64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */,
+				64E1F8C82A0FBDE7006D68B6 /* Microsoft Auth Error.swift */,
+				6484457B2A10D03200049986 /* Xbox Auth Response.swift */,
+				6484457D2A10D12400049986 /* Xsts Auth.swift */,
+				6484457F2A10D44A00049986 /* Minecraft Token Response.swift */,
+				648445812A10D4FD00049986 /* Minecraft Auth.swift */,
+				648445832A10D69F00049986 /* Dictionary + Encoding.swift */,
+				648445852A10D6B100049986 /* Character Set + Encoding Validation.swift */,
+				648445872A10DE9200049986 /* Minecraft Profile.swift */,
+				64E1F8C62A0FBB31006D68B6 /* Microsoft Access Token.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -521,9 +521,9 @@
 		6497595A29F056CF00D0194E /* Accounts */ = {
 			isa = PBXGroup;
 			children = (
-				641678522923B6F90012C9CC /* AccountsPreferencesView.swift */,
-				6497595B29F056FF00D0194E /* AddOfflineAccountView.swift */,
-				64FA2A952A0F76FA0042A4A7 /* MicrosoftAccountViewModel.swift */,
+				641678522923B6F90012C9CC /* Accounts Preferences View.swift */,
+				6497595B29F056FF00D0194E /* Add Offline Account View.swift */,
+				64FA2A952A0F76FA0042A4A7 /* Microsoft Account View Model.swift */,
 			);
 			path = Accounts;
 			sourceTree = "<group>";
@@ -531,28 +531,28 @@
 		649762BC2935A2D600977467 /* Create */ = {
 			isa = PBXGroup;
 			children = (
-				640DC1F02934F14200943213 /* NewInstanceView.swift */,
-				649762BF2935A46E00977467 /* NewVanillaInstanceView.swift */,
+				640DC1F02934F14200943213 /* New Instance View.swift */,
+				649762BF2935A46E00977467 /* New Vanilla Instance View.swift */,
 			);
 			path = Create;
 			sourceTree = "<group>";
 		};
-		649C8DD3297D5ABE000352F2 /* InnateMCTests */ = {
+		649C8DD3297D5ABE000352F2 /* Innate MC Tests */ = {
 			isa = PBXGroup;
 			children = (
-				64037CA8297C724D00F7FE79 /* ArgumentTests.swift */,
-				64EB537E2929CD7800D6CDDD /* DownloadTests.swift */,
-				64065A942971CD85000BCE24 /* JavaTests.swift */,
-				64373BA229C0A430001DBD4C /* InstanceTests.swift */,
+				64037CA8297C724D00F7FE79 /* Argument Tests.swift */,
+				64EB537E2929CD7800D6CDDD /* Download Tests.swift */,
+				64065A942971CD85000BCE24 /* Java Tests.swift */,
+				64373BA229C0A430001DBD4C /* Instance Tests.swift */,
 			);
-			path = InnateMCTests;
+			path = "Innate MC Tests";
 			sourceTree = "<group>";
 		};
 		64BACB932A1C692400F7AA1C /* Http */ = {
 			isa = PBXGroup;
 			children = (
 				64BACB942A1C6EE500F7AA1C /* Http.swift */,
-				64BACB962A1C6EF700F7AA1C /* HttpMethod.swift */,
+				64BACB962A1C6EF700F7AA1C /* Http Method.swift */,
 			);
 			path = Http;
 			sourceTree = "<group>";
@@ -560,8 +560,8 @@
 		64BACB982A1C9F0100F7AA1C /* Fabric */ = {
 			isa = PBXGroup;
 			children = (
-				64BACB992A1C9F3000F7AA1C /* FabricLoaderVersion.swift */,
-				64BACB9B2A1C9F5D00F7AA1C /* FabricMeta.swift */,
+				64BACB992A1C9F3000F7AA1C /* Fabric Loader Version.swift */,
+				64BACB9B2A1C9F5D00F7AA1C /* Fabric Meta.swift */,
 			);
 			path = Fabric;
 			sourceTree = "<group>";
@@ -574,7 +574,7 @@
 				64C3350A2922734400BB8570 /* README.md */,
 				64C33508292272F500BB8570 /* .gitignore */,
 				64C334D72922523600BB8570 /* InnateMC */,
-				649C8DD3297D5ABE000352F2 /* InnateMCTests */,
+				649C8DD3297D5ABE000352F2 /* Innate MC Tests */,
 				64C334D62922523600BB8570 /* Products */,
 				643B39FA29274F6100AEC71C /* Frameworks */,
 			);
@@ -592,19 +592,19 @@
 		64C334D72922523600BB8570 /* InnateMC */ = {
 			isa = PBXGroup;
 			children = (
+				64C334DC2922523F00BB8570 /* Assets.xcassets */,
+				64C334E12922523F00BB8570 /* InnateMC.entitlements */,
+				64DC9E4A29E67427005DE585 /* Localizable.strings */,
+				640DC1EC2934EC2300943213 /* App Delegate.swift */,
+				64C334DA2922523600BB8570 /* Content View.swift */,
+				64C41C1329366CAF00014E0F /* Value Keys.swift */,
+				64C334D82922523600BB8570 /* Pyzh MC App.swift */,
+				64E459F22938C7AC00F82A2B /* Launcher Data.swift */,
 				64F7C5EA297D63800086ABC1 /* Data */,
 				644DE1D22937C13F00C4A03E /* Instance */,
 				6416784F2923B6450012C9CC /* Preferences */,
 				6474DC1A2A150D13001FCD4D /* Error */,
 				644DE1D12937C0D300C4A03E /* Util */,
-				640DC1EC2934EC2300943213 /* AppDelegate.swift */,
-				64C334DA2922523600BB8570 /* ContentView.swift */,
-				64C41C1329366CAF00014E0F /* ValueKeys.swift */,
-				64C334D82922523600BB8570 /* InnateMCApp.swift */,
-				64E459F22938C7AC00F82A2B /* LauncherData.swift */,
-				64C334DC2922523F00BB8570 /* Assets.xcassets */,
-				64C334E12922523F00BB8570 /* InnateMC.entitlements */,
-				64DC9E4A29E67427005DE585 /* Localizable.strings */,
 			);
 			path = InnateMC;
 			sourceTree = "<group>";
@@ -612,7 +612,7 @@
 		64F7C5EA297D63800086ABC1 /* Data */ = {
 			isa = PBXGroup;
 			children = (
-				64F7C5F4297D64490086ABC1 /* FileHandler.swift */,
+				64F7C5F4297D64490086ABC1 /* File Handler.swift */,
 				64821E0829E44B4E006012F7 /* Accounts */,
 				64F7C613297D7D470086ABC1 /* Download */,
 				64F7C610297D657E0086ABC1 /* Preferences */,
@@ -623,7 +623,7 @@
 				64F7C5FC297D64920086ABC1 /* Instance */,
 				64F7C5EB297D63A70086ABC1 /* Launch */,
 				64337EE72A17A4D10017BCB0 /* Version */,
-				64A5151929E2DF6500AFE3AE /* Published+Coding.swift */,
+				64A5151929E2DF6500AFE3AE /* Published + Coding.swift */,
 			);
 			path = Data;
 			sourceTree = "<group>";
@@ -631,8 +631,8 @@
 		64F7C5EB297D63A70086ABC1 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
-				64C5621329C083AA003402F0 /* InstanceProcess.swift */,
-				64F7C5EC297D63D00086ABC1 /* ArgumentProvider.swift */,
+				64C5621329C083AA003402F0 /* Instance Process.swift */,
+				64F7C5EC297D63D00086ABC1 /* Argument Provider.swift */,
 			);
 			path = Launch;
 			sourceTree = "<group>";
@@ -640,16 +640,16 @@
 		64F7C5FC297D64920086ABC1 /* Instance */ = {
 			isa = PBXGroup;
 			children = (
-				64A5150D29E2DED100AFE3AE /* MinecraftJar.swift */,
-				64A5151529E2DF2300AFE3AE /* InstanceLogo.swift */,
-				64A5151729E2DF3300AFE3AE /* FileType.swift */,
-				64A5151F29E2E6A300AFE3AE /* InstanceData.swift */,
+				64A5150D29E2DED100AFE3AE /* Minecraft Jar.swift */,
+				64A5151529E2DF2300AFE3AE /* Instance Logo.swift */,
+				64A5151729E2DF3300AFE3AE /* File Type.swift */,
+				64A5151F29E2E6A300AFE3AE /* Instance Data.swift */,
 				64F7C5FD297D64A40086ABC1 /* Instance.swift */,
-				64A5151D29E2DFE000AFE3AE /* Instance+Prelaunch.swift */,
-				64A5151B29E2DFAD00AFE3AE /* Instance+Storage.swift */,
-				64F7C5FF297D64B50086ABC1 /* InstanceCreator.swift */,
-				64F7C601297D64CA0086ABC1 /* InstancePreferences.swift */,
-				64F7C603297D64DD0086ABC1 /* VanillaInstanceCreator.swift */,
+				64A5151D29E2DFE000AFE3AE /* Instance + Prelaunch.swift */,
+				64A5151B29E2DFAD00AFE3AE /* Instance + Storage.swift */,
+				64F7C5FF297D64B50086ABC1 /* Instance Creator.swift */,
+				64F7C601297D64CA0086ABC1 /* Instance Preferences.swift */,
+				64F7C603297D64DD0086ABC1 /* Vanilla Instance Creator.swift */,
 			);
 			path = Instance;
 			sourceTree = "<group>";
@@ -657,10 +657,10 @@
 		64F7C605297D64FC0086ABC1 /* Java */ = {
 			isa = PBXGroup;
 			children = (
-				64F7C606297D65080086ABC1 /* DownloadedJavaInstallation.swift */,
-				64F7C60C297D654A0086ABC1 /* JreDownloader.swift */,
-				64F7C60A297D65390086ABC1 /* LinkedJavaInstallation.swift */,
-				64F7C60E297D65620086ABC1 /* SavedJavaInstallation.swift */,
+				64F7C606297D65080086ABC1 /* Downloaded Java Installation.swift */,
+				64F7C60C297D654A0086ABC1 /* Jre Downloader.swift */,
+				64F7C60A297D65390086ABC1 /* Linked Java Installation.swift */,
+				64F7C60E297D65620086ABC1 /* Saved Java Installation.swift */,
 			);
 			path = Java;
 			sourceTree = "<group>";
@@ -668,9 +668,9 @@
 		64F7C610297D657E0086ABC1 /* Preferences */ = {
 			isa = PBXGroup;
 			children = (
-				64148DD9296E80E400E5EAD3 /* GlobalPreferences.swift */,
-				64F7C611297D658D0086ABC1 /* RuntimePreferences.swift */,
-				649EA76629EC27F300BD77EA /* UIPreferences.swift */,
+				64148DD9296E80E400E5EAD3 /* Global Preferences.swift */,
+				64F7C611297D658D0086ABC1 /* Runtime Preferences.swift */,
+				649EA76629EC27F300BD77EA /* UI Preferences.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -678,11 +678,11 @@
 		64F7C613297D7D470086ABC1 /* Download */ = {
 			isa = PBXGroup;
 			children = (
-				64F7C5F2297D64370086ABC1 /* TaskProgress.swift */,
-				64F7C5F6297D645A0086ABC1 /* ParallelExecutor.swift */,
-				6472E46F29E2BF5F00B4C65B /* ParallelDownloader.swift */,
-				6472E47129E2C35200B4C65B /* DownloadTask.swift */,
-				643E454B2A1291CC00687839 /* LaunchError.swift */,
+				64F7C5F2297D64370086ABC1 /* Task Progress.swift */,
+				64F7C5F6297D645A0086ABC1 /* Parallel Executor.swift */,
+				6472E46F29E2BF5F00B4C65B /* Parallel Downloader.swift */,
+				6472E47129E2C35200B4C65B /* Download Task.swift */,
+				643E454B2A1291CC00687839 /* Launch Error.swift */,
 			);
 			path = Download;
 			sourceTree = "<group>";
@@ -690,11 +690,11 @@
 		64F7C614297D7E320086ABC1 /* Logo */ = {
 			isa = PBXGroup;
 			children = (
-				6459E124297700D5006DB3A4 /* InstanceLogoView.swift */,
-				64A62C8C2977B454007A9597 /* SymbolLogoPickerView.swift */,
-				64CE1091297864A700366372 /* ImageLogoPickerView.swift */,
-				643E454D2A13300900687839 /* InstanceLogoPickerSheet.swift */,
-				643E454F2A13308700687839 /* InstanceInterativeLogoView.swift */,
+				6459E124297700D5006DB3A4 /* Instance Logo View.swift */,
+				64A62C8C2977B454007A9597 /* Symbol Logo Picker View.swift */,
+				64CE1091297864A700366372 /* Image Logo Picker View.swift */,
+				643E454D2A13300900687839 /* Instance Logo Picker Sheet.swift */,
+				643E454F2A13308700687839 /* Instance Interative Logo View.swift */,
 			);
 			path = Logo;
 			sourceTree = "<group>";
@@ -702,9 +702,9 @@
 		64F7C615297D7EE40086ABC1 /* Symbols */ = {
 			isa = PBXGroup;
 			children = (
-				646139E52977EA0300BA9477 /* SFSymbolsList.swift */,
-				646139E12977E88700BA9477 /* SFSymbols12List.swift */,
-				646139E32977E95300BA9477 /* SFSymbols13List.swift */,
+				646139E52977EA0300BA9477 /* SF Symbols List.swift */,
+				646139E12977E88700BA9477 /* SF Symbols 12 List.swift */,
+				646139E32977E95300BA9477 /* SF Symbols 13 List.swift */,
 			);
 			path = Symbols;
 			sourceTree = "<group>";
@@ -832,7 +832,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64373BA329C0A430001DBD4C /* InstanceTests.swift in Sources */,
+				64373BA329C0A430001DBD4C /* Instance Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -840,127 +840,127 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				6484458C2A10F6BC00049986 /* AccountManager+Server.swift in Sources */,
-				64CE1092297864A700366372 /* ImageLogoPickerView.swift in Sources */,
-				64A5151029E2DEE900AFE3AE /* LibraryArtifact.swift in Sources */,
-				64F7C60B297D65390086ABC1 /* LinkedJavaInstallation.swift in Sources */,
-				6474DC262A15FB83001FCD4D /* ErrorTrackerWindowController.swift in Sources */,
-				64F7C5F5297D64490086ABC1 /* FileHandler.swift in Sources */,
-				64A5151629E2DF2300AFE3AE /* InstanceLogo.swift in Sources */,
-				64F7C602297D64CA0086ABC1 /* InstancePreferences.swift in Sources */,
-				64A113A02A110D2500E48761 /* MinecraftAccountType.swift in Sources */,
-				6407E6382A2791F100BB9AEA /* ImgurSharingServiceDelegate.swift in Sources */,
-				64A62C8D2977B454007A9597 /* SymbolLogoPickerView.swift in Sources */,
-				64A5151229E2DEFD00AFE3AE /* PartialAssetIndex.swift in Sources */,
+				6484458C2A10F6BC00049986 /* Account Manager + Server.swift in Sources */,
+				64CE1092297864A700366372 /* Image Logo Picker View.swift in Sources */,
+				64A5151029E2DEE900AFE3AE /* Library Artifact.swift in Sources */,
+				64F7C60B297D65390086ABC1 /* Linked Java Installation.swift in Sources */,
+				6474DC262A15FB83001FCD4D /* Error Tracker Window Controller.swift in Sources */,
+				64F7C5F5297D64490086ABC1 /* File Handler.swift in Sources */,
+				64A5151629E2DF2300AFE3AE /* Instance Logo.swift in Sources */,
+				64F7C602297D64CA0086ABC1 /* Instance Preferences.swift in Sources */,
+				64A113A02A110D2500E48761 /* Minecraft Account Type.swift in Sources */,
+				6407E6382A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift in Sources */,
+				64A62C8D2977B454007A9597 /* Symbol Logo Picker View.swift in Sources */,
+				64A5151229E2DEFD00AFE3AE /* Partial Asset Index.swift in Sources */,
 				64F7C5FE297D64A40086ABC1 /* Instance.swift in Sources */,
-				6484457C2A10D03200049986 /* XboxAuthResponse.swift in Sources */,
-				64FA2A942A0F767F0042A4A7 /* WebViewWindow.swift in Sources */,
-				64821E0A29E44B78006012F7 /* MinecraftAccount.swift in Sources */,
-				6474DC1C2A150D36001FCD4D /* ErrorTracker.swift in Sources */,
-				644FC6722937B243003797D9 /* UiPreferencesView.swift in Sources */,
-				6484458A2A10F69600049986 /* AccountManager+Storage.swift in Sources */,
-				64A5151C29E2DFAD00AFE3AE /* Instance+Storage.swift in Sources */,
-				643E454C2A1291CC00687839 /* LaunchError.swift in Sources */,
-				643E455C2A13331100687839 /* InstanceTitleView.swift in Sources */,
-				648445802A10D44A00049986 /* MinecraftTokenResponse.swift in Sources */,
+				6484457C2A10D03200049986 /* Xbox Auth Response.swift in Sources */,
+				64FA2A942A0F767F0042A4A7 /* Web View Window.swift in Sources */,
+				64821E0A29E44B78006012F7 /* Minecraft Account.swift in Sources */,
+				6474DC1C2A150D36001FCD4D /* Error Tracker.swift in Sources */,
+				644FC6722937B243003797D9 /* Ui Preferences View.swift in Sources */,
+				6484458A2A10F69600049986 /* Account Manager + Storage.swift in Sources */,
+				64A5151C29E2DFAD00AFE3AE /* Instance + Storage.swift in Sources */,
+				643E454C2A1291CC00687839 /* Launch Error.swift in Sources */,
+				643E455C2A13331100687839 /* Instance Title View.swift in Sources */,
+				648445802A10D44A00049986 /* Minecraft Token Response.swift in Sources */,
 				64337EF32A17CA040017BCB0 /* Artifact.swift in Sources */,
-				64BACB972A1C6EF700F7AA1C /* HttpMethod.swift in Sources */,
-				64A5152029E2E6A300AFE3AE /* InstanceData.swift in Sources */,
-				64BACB9C2A1C9F5D00F7AA1C /* FabricMeta.swift in Sources */,
-				640A75B92A226F2C005CDE49 /* InstanceWorldsView.swift in Sources */,
+				64BACB972A1C6EF700F7AA1C /* Http Method.swift in Sources */,
+				64A5152029E2E6A300AFE3AE /* Instance Data.swift in Sources */,
+				64BACB9C2A1C9F5D00F7AA1C /* Fabric Meta.swift in Sources */,
+				640A75B92A226F2C005CDE49 /* Instance Worlds View.swift in Sources */,
 				640A758D2A208BE3005CDE49 /* Mod.swift in Sources */,
-				646139E02977E3A700BA9477 /* SymbolPicker.swift in Sources */,
-				648445882A10DE9300049986 /* MinecraftProfile.swift in Sources */,
-				64FA2A982A0F81D50042A4A7 /* XboxLiveAuth.swift in Sources */,
-				6474DC1E2A150D63001FCD4D /* ErrorTrackerEntry.swift in Sources */,
-				6472E47229E2C35200B4C65B /* DownloadTask.swift in Sources */,
-				648445842A10D69F00049986 /* Dictionary+Encoding.swift in Sources */,
-				649762C02935A46E00977467 /* NewVanillaInstanceView.swift in Sources */,
-				641678512923B6D40012C9CC /* RuntimePreferencesView.swift in Sources */,
-				648445862A10D6B100049986 /* CharacterSet+EncodingValidation.swift in Sources */,
-				648445822A10D4FD00049986 /* MinecraftAuth.swift in Sources */,
-				643E454E2A13300900687839 /* InstanceLogoPickerSheet.swift in Sources */,
-				64F7C60F297D65620086ABC1 /* SavedJavaInstallation.swift in Sources */,
-				646139E22977E88700BA9477 /* SFSymbols12List.swift in Sources */,
-				648EDF512A1881CE00E40B03 /* PartialVersion.swift in Sources */,
-				6459E125297700D5006DB3A4 /* InstanceLogoView.swift in Sources */,
-				64E1F8C92A0FBDE7006D68B6 /* MicrosoftAuthError.swift in Sources */,
-				649620D02A124EA500733AB6 /* InstanceExportSheet.swift in Sources */,
-				64F7C5ED297D63D00086ABC1 /* ArgumentProvider.swift in Sources */,
-				64C334DB2922523600BB8570 /* ContentView.swift in Sources */,
-				643E45682A13A9A800687839 /* DeveloperModeCommands.swift in Sources */,
-				64E1F8C72A0FBB31006D68B6 /* MicrosoftAccessToken.swift in Sources */,
-				643E45542A13314E00687839 /* LaunchErrorSheet.swift in Sources */,
-				643E45522A1330F600687839 /* InstanceChooseAccountSheet.swift in Sources */,
-				6474DC202A150D77001FCD4D /* TrackedErrorType.swift in Sources */,
-				64F7C5F7297D645A0086ABC1 /* ParallelExecutor.swift in Sources */,
+				646139E02977E3A700BA9477 /* Symbol Picker.swift in Sources */,
+				648445882A10DE9300049986 /* Minecraft Profile.swift in Sources */,
+				64FA2A982A0F81D50042A4A7 /* Xbox Live Auth.swift in Sources */,
+				6474DC1E2A150D63001FCD4D /* Error Tracker Entry.swift in Sources */,
+				6472E47229E2C35200B4C65B /* Download Task.swift in Sources */,
+				648445842A10D69F00049986 /* Dictionary + Encoding.swift in Sources */,
+				649762C02935A46E00977467 /* New Vanilla Instance View.swift in Sources */,
+				641678512923B6D40012C9CC /* Runtime Preferences View.swift in Sources */,
+				648445862A10D6B100049986 /* Character Set + Encoding Validation.swift in Sources */,
+				648445822A10D4FD00049986 /* Minecraft Auth.swift in Sources */,
+				643E454E2A13300900687839 /* Instance Logo Picker Sheet.swift in Sources */,
+				64F7C60F297D65620086ABC1 /* Saved Java Installation.swift in Sources */,
+				646139E22977E88700BA9477 /* SF Symbols 12 List.swift in Sources */,
+				648EDF512A1881CE00E40B03 /* Partial Version.swift in Sources */,
+				6459E125297700D5006DB3A4 /* Instance Logo View.swift in Sources */,
+				64E1F8C92A0FBDE7006D68B6 /* Microsoft Auth Error.swift in Sources */,
+				649620D02A124EA500733AB6 /* Instance Export Sheet.swift in Sources */,
+				64F7C5ED297D63D00086ABC1 /* Argument Provider.swift in Sources */,
+				64C334DB2922523600BB8570 /* Content View.swift in Sources */,
+				643E45682A13A9A800687839 /* Developer Mode Commands.swift in Sources */,
+				64E1F8C72A0FBB31006D68B6 /* Microsoft Access Token.swift in Sources */,
+				643E45542A13314E00687839 /* Launch Error Sheet.swift in Sources */,
+				643E45522A1330F600687839 /* Instance Choose Account Sheet.swift in Sources */,
+				6474DC202A150D77001FCD4D /* Tracked Error Type.swift in Sources */,
+				64F7C5F7297D645A0086ABC1 /* Parallel Executor.swift in Sources */,
 				640A75BC2A226F80005CDE49 /* World.swift in Sources */,
-				646139E62977EA0300BA9477 /* SFSymbolsList.swift in Sources */,
-				6407E63A2A285B6C00BB9AEA /* ScreenshotShareButton.swift in Sources */,
+				646139E62977EA0300BA9477 /* SF Symbols List.swift in Sources */,
+				6407E63A2A285B6C00BB9AEA /* Screenshot Share Button.swift in Sources */,
 				64337EEF2A17A80B0017BCB0 /* Arguments.swift in Sources */,
-				64E459F32938C7AC00F82A2B /* LauncherData.swift in Sources */,
-				64F7C607297D65080086ABC1 /* DownloadedJavaInstallation.swift in Sources */,
-				64BACB9A2A1C9F3000F7AA1C /* FabricLoaderVersion.swift in Sources */,
+				64E459F32938C7AC00F82A2B /* Launcher Data.swift in Sources */,
+				64F7C607297D65080086ABC1 /* Downloaded Java Installation.swift in Sources */,
+				64BACB9A2A1C9F3000F7AA1C /* Fabric Loader Version.swift in Sources */,
 				64337EFB2A17D66A0017BCB0 /* Library.swift in Sources */,
-				64B01AE52940961F00B3E670 /* InstanceRuntimeView.swift in Sources */,
-				640A75912A2115BA005CDE49 /* RunOnce.swift in Sources */,
-				640CCF552A09F0FA0080F574 /* SettingsFetch.swift in Sources */,
-				64C33505292252B500BB8570 /* PreferencesView.swift in Sources */,
-				64337EEB2A17A62A0017BCB0 /* ConditionalArgument.swift in Sources */,
-				64F7C604297D64DD0086ABC1 /* VanillaInstanceCreator.swift in Sources */,
-				64C09B702A12145900867038 /* InstanceDeleteSheet.swift in Sources */,
+				64B01AE52940961F00B3E670 /* Instance Runtime View.swift in Sources */,
+				640A75912A2115BA005CDE49 /* Run Once.swift in Sources */,
+				640CCF552A09F0FA0080F574 /* Settings Fetch.swift in Sources */,
+				64C33505292252B500BB8570 /* Preferences View.swift in Sources */,
+				64337EEB2A17A62A0017BCB0 /* Conditional Argument.swift in Sources */,
+				64F7C604297D64DD0086ABC1 /* Vanilla Instance Creator.swift in Sources */,
+				64C09B702A12145900867038 /* Instance Delete Sheet.swift in Sources */,
 				640A75942A21CEFD005CDE49 /* Screenshot.swift in Sources */,
-				6497595C29F0570000D0194E /* AddOfflineAccountView.swift in Sources */,
-				647A796A29E8166700497CE1 /* ConsoleTextView.swift in Sources */,
-				64A5151E29E2DFE000AFE3AE /* Instance+Prelaunch.swift in Sources */,
-				64E459EF2938BBEF00F82A2B /* InstanceCommands.swift in Sources */,
-				643E45582A13327900687839 /* InstanceNotesView.swift in Sources */,
-				64A5150E29E2DED100AFE3AE /* MinecraftJar.swift in Sources */,
-				640A758F2A20E969005CDE49 /* InstanceModsView.swift in Sources */,
-				64F7C5FB297D64810086ABC1 /* VersionManifest.swift in Sources */,
-				64337EED2A17A6AA0017BCB0 /* ArgumentElement.swift in Sources */,
-				646139E42977E95300BA9477 /* SFSymbols13List.swift in Sources */,
-				64A5151829E2DF3300AFE3AE /* FileType.swift in Sources */,
+				6497595C29F0570000D0194E /* Add Offline Account View.swift in Sources */,
+				647A796A29E8166700497CE1 /* Console Text View.swift in Sources */,
+				64A5151E29E2DFE000AFE3AE /* Instance + Prelaunch.swift in Sources */,
+				64E459EF2938BBEF00F82A2B /* Instance Commands.swift in Sources */,
+				643E45582A13327900687839 /* Instance Notes View.swift in Sources */,
+				64A5150E29E2DED100AFE3AE /* Minecraft Jar.swift in Sources */,
+				640A758F2A20E969005CDE49 /* Instance Mods View.swift in Sources */,
+				64F7C5FB297D64810086ABC1 /* Version Manifest.swift in Sources */,
+				64337EED2A17A6AA0017BCB0 /* Argument Element.swift in Sources */,
+				646139E42977E95300BA9477 /* SF Symbols 13 List.swift in Sources */,
+				64A5151829E2DF3300AFE3AE /* File Type.swift in Sources */,
 				64BACB952A1C6EE500F7AA1C /* Http.swift in Sources */,
-				64F7C60D297D654A0086ABC1 /* JreDownloader.swift in Sources */,
-				644DE1D42937C93600C4A03E /* InstanceView.swift in Sources */,
+				64F7C60D297D654A0086ABC1 /* Jre Downloader.swift in Sources */,
+				644DE1D42937C93600C4A03E /* Instance View.swift in Sources */,
 				64337EF12A17C9AD0017BCB0 /* Version.swift in Sources */,
-				641678532923B6FA0012C9CC /* AccountsPreferencesView.swift in Sources */,
-				6472E47029E2BF5F00B4C65B /* ParallelDownloader.swift in Sources */,
-				64C33507292256C500BB8570 /* TodoView.swift in Sources */,
-				64148DDA296E80E400E5EAD3 /* GlobalPreferences.swift in Sources */,
-				64821E0C29E44C14006012F7 /* OfflineAccount.swift in Sources */,
-				64F7C612297D658D0086ABC1 /* RuntimePreferences.swift in Sources */,
-				64C5621429C083AA003402F0 /* InstanceProcess.swift in Sources */,
-				64821E0E29E459FC006012F7 /* AccountManager.swift in Sources */,
-				640DC1F12934F14200943213 /* NewInstanceView.swift in Sources */,
-				64F7C5F1297D641C0086ABC1 /* AssetIndex.swift in Sources */,
-				64337EF72A17CADB0017BCB0 /* PreferredJavaVersion.swift in Sources */,
-				643E45502A13308700687839 /* InstanceInterativeLogoView.swift in Sources */,
-				644FC66E29375853003797D9 /* InstanceNavigationLink.swift in Sources */,
-				64F7C5F3297D64370086ABC1 /* TaskProgress.swift in Sources */,
+				641678532923B6FA0012C9CC /* Accounts Preferences View.swift in Sources */,
+				6472E47029E2BF5F00B4C65B /* Parallel Downloader.swift in Sources */,
+				64C33507292256C500BB8570 /* Todo View.swift in Sources */,
+				64148DDA296E80E400E5EAD3 /* Global Preferences.swift in Sources */,
+				64821E0C29E44C14006012F7 /* Offline Account.swift in Sources */,
+				64F7C612297D658D0086ABC1 /* Runtime Preferences.swift in Sources */,
+				64C5621429C083AA003402F0 /* Instance Process.swift in Sources */,
+				64821E0E29E459FC006012F7 /* Account Manager.swift in Sources */,
+				640DC1F12934F14200943213 /* New Instance View.swift in Sources */,
+				64F7C5F1297D641C0086ABC1 /* Asset Index.swift in Sources */,
+				64337EF72A17CADB0017BCB0 /* Preferred Java Version.swift in Sources */,
+				643E45502A13308700687839 /* Instance Interative Logo View.swift in Sources */,
+				644FC66E29375853003797D9 /* Instance Navigation Link.swift in Sources */,
+				64F7C5F3297D64370086ABC1 /* Task Progress.swift in Sources */,
 				64337EE92A17A4EF0017BCB0 /* Rule.swift in Sources */,
-				64F7C600297D64B50086ABC1 /* InstanceCreator.swift in Sources */,
-				64FA2A962A0F76FA0042A4A7 /* MicrosoftAccountViewModel.swift in Sources */,
-				640A75962A21D021005CDE49 /* InstanceScreenshotsView.swift in Sources */,
-				64C334D92922523600BB8570 /* InnateMCApp.swift in Sources */,
-				64337EFD2A17DB630017BCB0 /* LoggingConfig.swift in Sources */,
-				64C41C1429366CAF00014E0F /* ValueKeys.swift in Sources */,
-				648445772A10C25D00049986 /* AccountManager+Auth.swift in Sources */,
-				64A5151A29E2DF6500AFE3AE /* Published+Coding.swift in Sources */,
-				643E455A2A1332BE00687839 /* InstanceSynopsisView.swift in Sources */,
-				640DC1ED2934EC2300943213 /* AppDelegate.swift in Sources */,
-				64C09B6C2A1212CF00867038 /* InstanceDuplicationSheet.swift in Sources */,
-				64FE2D40293BA78B007414CB /* InstanceConsoleView.swift in Sources */,
-				643E45632A133A3F00687839 /* InstanceSpecificCommands.swift in Sources */,
-				64A1139E2A110ACD00E48761 /* MicrosoftAccount.swift in Sources */,
-				6474DC242A15F952001FCD4D /* ErrorTrackerView.swift in Sources */,
-				64337EF52A17CA6C0017BCB0 /* MainDownloads.swift in Sources */,
-				643E45562A1331B700687839 /* InteractiveStarView.swift in Sources */,
-				643E45662A13A61000687839 /* MiscPreferencesView.swift in Sources */,
-				649EA76729EC27F300BD77EA /* UIPreferences.swift in Sources */,
-				6497595E29F25AD000D0194E /* InstanceEditingViewModel.swift in Sources */,
-				6484457E2A10D12400049986 /* XstsAuth.swift in Sources */,
+				64F7C600297D64B50086ABC1 /* Instance Creator.swift in Sources */,
+				64FA2A962A0F76FA0042A4A7 /* Microsoft Account View Model.swift in Sources */,
+				640A75962A21D021005CDE49 /* Instance Screenshots View.swift in Sources */,
+				64C334D92922523600BB8570 /* Pyzh MC App.swift in Sources */,
+				64337EFD2A17DB630017BCB0 /* Logging Config.swift in Sources */,
+				64C41C1429366CAF00014E0F /* Value Keys.swift in Sources */,
+				648445772A10C25D00049986 /* Account Manager + Auth.swift in Sources */,
+				64A5151A29E2DF6500AFE3AE /* Published + Coding.swift in Sources */,
+				643E455A2A1332BE00687839 /* Instance Synopsis View.swift in Sources */,
+				640DC1ED2934EC2300943213 /* App Delegate.swift in Sources */,
+				64C09B6C2A1212CF00867038 /* Instance Duplication Sheet.swift in Sources */,
+				64FE2D40293BA78B007414CB /* Instance Console View.swift in Sources */,
+				643E45632A133A3F00687839 /* Instance Specific Commands.swift in Sources */,
+				64A1139E2A110ACD00E48761 /* Microsoft Account.swift in Sources */,
+				6474DC242A15F952001FCD4D /* Error Tracker View.swift in Sources */,
+				64337EF52A17CA6C0017BCB0 /* Main Downloads.swift in Sources */,
+				643E45562A1331B700687839 /* Interactive Star View.swift in Sources */,
+				643E45662A13A61000687839 /* Misc Preferences View.swift in Sources */,
+				649EA76729EC27F300BD77EA /* UI Preferences.swift in Sources */,
+				6497595E29F25AD000D0194E /* Instance Editing View Model.swift in Sources */,
+				6484457E2A10D12400049986 /* Xsts Auth.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

@@ -8,11 +8,11 @@ class AppDelegate: NSObject, NSApplicationDelegate {
         Zip.addCustomFileExtension("jar")
     }
     
-    func applicationWillFinishLaunching(_ notification: Notification) {
-        
-    }
-    
-    func applicationWillTerminate(_ aNotification: Notification) {
-        
-    }
+    //    func applicationWillFinishLaunching(_ notification: Notification) {
+    //
+    //    }
+    //
+    //    func applicationWillTerminate(_ aNotification: Notification) {
+    //
+    //    }
 }
