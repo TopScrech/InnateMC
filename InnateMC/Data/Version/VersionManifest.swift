@@ -1,24 +1,7 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see <http://www.gnu.org/licenses/>.
-//
-
 import Foundation
 
 public class VersionManifest {
-    private static let cache: URL = try! FileHandler.getOrCreateFolder().appendingPathComponent("ManifestCache.plist")
+    private static let cache = try! FileHandler.getOrCreateFolder().appendingPathComponent("ManifestCache.plist")
     private static var cached: [PartialVersion]? = nil
     private static let decoder = JSONDecoder()
     
@@ -26,6 +9,7 @@ public class VersionManifest {
         if cached == nil {
             cached = try await download()
         }
+        
         return cached!
     }
     
@@ -40,15 +24,21 @@ public class VersionManifest {
             data = try await URLSession.shared.data(from: url).0
         } catch {
             logger.error("Could not download version manifest", error: error)
+            
             ErrorTracker.instance.error(error: error, description: "Could not download version manifest")
             logger.error("Trying to load cached version manifest")
+            
             let parsed = try fetchCache()
+            
             return parsed
         }
+        
         let parsed = try readFromData(data)
+        
         Task {
             try FileHandler.saveData(cache, PropertyListEncoder().encode(parsed))
         }
+        
         return parsed
     }
     
@@ -57,11 +47,13 @@ public class VersionManifest {
             logger.error("Did not find cached version manifest")
             throw VersionManifestError.noCacheFound
         }
+        
         return try PropertyListDecoder().decode([PartialVersion].self, from: data)
     }
     
     public static func readFromData(_ data: Data) throws -> [PartialVersion] {
         let root = try decoder.decode(RootJSON.self, from: data)
+        
         return root.versions
     }
     
@@ -71,7 +63,7 @@ public class VersionManifest {
         var localizedDescription: String {
             switch(self) {
             case .noCacheFound:
-                return "Missing version manifest cache and could not download from version manifest"
+                "Missing version manifest cache and could not download from version manifest"
             }
         }
     }

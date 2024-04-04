@@ -1,20 +1,3 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/
-//
-
 import Foundation
 import Swifter
 
@@ -34,10 +17,12 @@ extension AccountManager {
                     print(self.stateCallbacks)
                     return HttpResponse.movedTemporarily("http://youtube.com/watch?v=dQw4w9WgXcQ")
                 }
+                
                 DispatchQueue.main.async {
                     WebViewWindow.current?.window?.close()
                     WebViewWindow.current = nil
                 }
+                
                 logger.debug("Received succesful authentication redirect")
                 return HttpResponse.ok(.text("<html><body>You may close this window now</body></html>"))
             } else {
@@ -73,6 +58,7 @@ extension AccountManager {
         
         let authUrl = urlComponents.url!
         let window: WebViewWindow = .init(url: authUrl)
+        
         return window
     }
     
@@ -83,6 +69,7 @@ extension AccountManager {
         let randomString = randomData.base64EncodedString()
             .filter { characters.contains($0) }
             .prefix(24)
+        
         return String(randomString)
     }
 }

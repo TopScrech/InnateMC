@@ -1,20 +1,3 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/
-//
-
 import Foundation
 
 public struct Version: Decodable, Equatable {
@@ -32,32 +15,36 @@ public struct Version: Decodable, Equatable {
     public let time: String
     public let type: String
     public let inheritsFrom: String?
-    public var isInheritor: Bool { inheritsFrom != nil }
+    
+    public var isInheritor: Bool {
+        inheritsFrom != nil
+    }
     
     public init(arguments: Arguments, assetIndex: PartialAssetIndex, assets: String, complianceLevel: Int, downloads: MainDownloads, id: String, libraries: [Library], logging: LoggingConfig?, mainClass: String, minimumLauncherVersion: Int, releaseTime: String, time: String, type: String, inheritsFrom: String?) {
-            self.arguments = arguments
-            self.assetIndex = assetIndex
-            self.assets = assets
-            self.complianceLevel = complianceLevel
-            self.downloads = downloads
-            self.id = id
-            self.libraries = libraries
-            self.logging = logging
-            self.mainClass = mainClass
-            self.minimumLauncherVersion = minimumLauncherVersion
-            self.releaseTime = releaseTime
-            self.time = time
-            self.type = type
-            self.inheritsFrom = inheritsFrom
-        }
+        self.arguments = arguments
+        self.assetIndex = assetIndex
+        self.assets = assets
+        self.complianceLevel = complianceLevel
+        self.downloads = downloads
+        self.id = id
+        self.libraries = libraries
+        self.logging = logging
+        self.mainClass = mainClass
+        self.minimumLauncherVersion = minimumLauncherVersion
+        self.releaseTime = releaseTime
+        self.time = time
+        self.type = type
+        self.inheritsFrom = inheritsFrom
+    }
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var arguments = try container.decodeIfPresent(Arguments.self, forKey: .arguments)
+        
         if arguments == nil {
             let mcArgs: String? = try container.decodeIfPresent(String.self, forKey: .minecraftArguments)
-            if let mcArgs = mcArgs {
-                arguments = Arguments(game: mcArgs.split(separator: " ").map({ ArgumentElement.string(String($0)) }), jvm: [])
+            if let mcArgs {
+                arguments = .init(game: mcArgs.split(separator: " ").map { ArgumentElement.string(String($0)) }, jvm: [])
             }
         }
         self.arguments = arguments ?? Arguments.none
@@ -77,21 +64,21 @@ public struct Version: Decodable, Equatable {
     }
     
     enum CodingKeys: String, CodingKey {
-        case arguments
-        case assetIndex
-        case assets
-        case complianceLevel
-        case downloads
-        case id
-        case libraries
-        case logging
-        case mainClass
-        case minimumLauncherVersion
-        case releaseTime
-        case time
-        case type
-        case inheritsFrom
-        case minecraftArguments
+        case arguments,
+             assetIndex,
+             assets,
+             complianceLevel,
+             downloads,
+             id,
+             libraries,
+             logging,
+             mainClass,
+             minimumLauncherVersion,
+             releaseTime,
+             time,
+             type,
+             inheritsFrom,
+             minecraftArguments
     }
     
     public func validate() -> Bool {
@@ -121,12 +108,13 @@ public struct Version: Decodable, Equatable {
         }
         return true
     }
-        
+    
     public func flatten(provider: @escaping ((String) throws -> Version)) throws -> Version {
         guard let parentId = self.inheritsFrom else {
-            if (!self.validate()) {
+            if !self.validate() {
                 throw VersionError.invalidVersionData
             }
+            
             return self
         }
         
@@ -141,31 +129,50 @@ public struct Version: Decodable, Equatable {
         let newMainClass = self.mainClass == "none" ? parent.mainClass : self.mainClass
         let newNewMinLauncherVersion = self.minimumLauncherVersion
         let newType = self.type.isEmpty ? parent.type : self.type
-        return Version(arguments: newArguments, assetIndex: newAssetIndex, assets: newAssets, complianceLevel: self.complianceLevel, downloads: newDownloads, id: self.id, libraries: newLibraries, logging: newLogging, mainClass: newMainClass, minimumLauncherVersion: newNewMinLauncherVersion, releaseTime: self.releaseTime, time: self.time, type: newType, inheritsFrom: nil)
+        
+        return .init(
+            arguments: newArguments,
+            assetIndex: newAssetIndex,
+            assets: newAssets,
+            complianceLevel: self.complianceLevel,
+            downloads: newDownloads,
+            id: self.id,
+            libraries: newLibraries,
+            logging: newLogging,
+            mainClass: newMainClass,
+            minimumLauncherVersion: newNewMinLauncherVersion,
+            releaseTime: self.releaseTime,
+            time: self.time,
+            type: newType,
+            inheritsFrom: nil
+        )
     }
     
     public func flatten() throws -> Version {
-        return try self.flatten { versionId in
+        try self.flatten { versionId in
             let parentPartial = LauncherData.instance.versionManifest.filter {
                 $0.version == versionId
             }.first
+            
             guard let parentPartial = parentPartial else {
                 throw VersionError.invalidParent
             }
+            
             return try Version.downloadRaw(URL(string: parentPartial.url)!, sha1: parentPartial.sha1)
         }
     }
     
     public enum VersionError: Error {
-        case invalidVersionData
-        case invalidParent
+        case invalidVersionData,
+             invalidParent
         
         var localizedDescription: String {
             switch(self) {
             case .invalidVersionData:
-                return "Invalid version data"
+                "Invalid version data"
+                
             case .invalidParent:
-                return "Invalid parent"
+                "Invalid parent"
             }
         }
     }
@@ -174,22 +181,29 @@ public struct Version: Decodable, Equatable {
     
     public static func download(_ url: URL, sha1: String?) throws -> Version {
         let rawVersion = try downloadRaw(url, sha1: sha1)
+        
         let version = try rawVersion.flatten { versionId in
             let parentPartial = LauncherData.instance.versionManifest.filter {
                 $0.version == versionId
             }.first
+            
             guard let parentPartial = parentPartial else {
                 throw VersionError.invalidParent
             }
+            
             return try downloadRaw(URL(string: parentPartial.url)!, sha1: parentPartial.sha1)
         }
+        
         return version
     }
     
     private static func downloadRaw(_ url: URL, sha1: String?) throws -> Version {
         let data = try Data(contentsOf: url)
+        
         print(String(data: data, encoding: .utf8)!)
+        
         let rawVersion = try jsonDecoder.decode(Version.self, from: data)
+        
         return rawVersion
     }
 }

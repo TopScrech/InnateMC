@@ -1,20 +1,3 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see http://www.gnu.org/licenses/
-//
-
 import Foundation
 
 public struct PartialVersion: Codable, Hashable, Identifiable {
@@ -29,17 +12,17 @@ public struct PartialVersion: Codable, Hashable, Identifiable {
     public var complianceLevel: Int
     
     enum CodingKeys: String, CodingKey {
-        case version = "id"
-        case type
-        case url
-        case time
-        case releaseTime
-        case sha1
-        case complianceLevel
+        case version = "id",
+             type,
+             url,
+             time,
+             releaseTime,
+             sha1,
+             complianceLevel
     }
     
     public static func createBlank() -> PartialVersion {
-        return PartialVersion(id: "no", version: "no", type: "no", url: "no", time: "no", releaseTime: "no", sha1: "no", complianceLevel: 0)
+        PartialVersion(id: "no", version: "no", type: "no", url: "no", time: "no", releaseTime: "no", sha1: "no", complianceLevel: 0)
     }
     
     public init(id: String, version: String, type: String, url: String, time: String, releaseTime: String, sha1: String, complianceLevel: Int) {
@@ -54,6 +37,7 @@ public struct PartialVersion: Codable, Hashable, Identifiable {
     
     public init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         version = try container.decode(String.self, forKey: .version)
         type = try container.decode(String.self, forKey: .type)
         url = try container.decode(String.self, forKey: .url)

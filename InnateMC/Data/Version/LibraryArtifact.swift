@@ -1,20 +1,3 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-//
-
 import Foundation
 
 public struct LibraryArtifact: Codable, Equatable {
@@ -31,10 +14,10 @@ public struct LibraryArtifact: Codable, Equatable {
     }
     
     private enum CodingKeys: String, CodingKey {
-        case path
-        case url
-        case sha1
-        case size
+        case path,
+             url,
+             sha1,
+             size
     }
     
     public init(from decoder: Decoder) throws {
@@ -60,10 +43,10 @@ public struct LibraryArtifact: Codable, Equatable {
     }
     
     public func getAbsolutePath() -> URL {
-        return FileHandler.librariesFolder.appendingPathComponent(self.path, isDirectory: false)
+        FileHandler.librariesFolder.appendingPathComponent(self.path, isDirectory: false)
     }
     
     public func asDownloadTask() -> DownloadTask {
-        return DownloadTask(sourceUrl: url, filePath: self.getAbsolutePath(), sha1: self.sha1) // TODO: fix sha1 checking for libraries
+        DownloadTask(sourceUrl: url, filePath: self.getAbsolutePath(), sha1: self.sha1) // TODO: fix sha1 checking for libraries
     }
 }

@@ -1,22 +1,3 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-//
-
-import SwiftUI
-
 import SwiftUI
 
 struct ConsoleTextView: NSViewRepresentable {
@@ -25,7 +6,7 @@ struct ConsoleTextView: NSViewRepresentable {
     var text: String
     var layoutManager: NSLayoutManager
     var textContainer: NSTextContainer
-    var font: NSFont = NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
+    var font = NSFont.monospacedSystemFont(ofSize: NSFont.systemFontSize, weight: .regular)
     
     func makeNSView(context: Context) -> NSTextView {
         let textView = NSTextView()
@@ -38,6 +19,7 @@ struct ConsoleTextView: NSViewRepresentable {
         textView.string = text
         textView.allowsUndo = false
         textView.textContainer = self.textContainer
+        
         return textView
     }
     
@@ -52,13 +34,14 @@ struct ConsoleTextView: NSViewRepresentable {
 struct ConsoleTextView_Previews: PreviewProvider {
     static var ints = Array(1...10)
     static let layoutManager = NSLayoutManager()
+    
     static let textContainer: NSTextContainer = {
         var cont = NSTextContainer()
         layoutManager.addTextContainer(cont)
         layoutManager.allowsNonContiguousLayout = true
         return cont
     }()
-
+    
     static var previews: some View {
         VStack(spacing: 0) {
             ForEach(ints, id: \.self) { i in

@@ -1,40 +1,27 @@
-//
-// Copyright © 2022 InnateMC and contributors
-//
-// This program is free software: you can redistribute it and/or modify
-// it under the terms of the GNU General Public License as published by
-// the Free Software Foundation, either version 3 of the License, or
-// (at your option) any later version.
-//
-// This program is distributed in the hope that it will be useful,
-// but WITHOUT ANY WARRANTY; without even the implied warranty of
-// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-// GNU General Public License for more details.
-//
-// You should have received a copy of the GNU General Public License
-// along with this program.  If not, see &lt;http://www.gnu.org/licenses/&gt;.
-//
-
 import SwiftUI
 
 struct NewVanillaInstanceView: View {
     @EnvironmentObject var launcherData: LauncherData
+    
     @State var versionManifest: [PartialVersion] = []
     @State var showSnapshots = false
     @State var showBeta = false
     @State var showAlpha = false
-    @State var selectedVersion: PartialVersion = PartialVersion.createBlank()
+    @State var selectedVersion = PartialVersion.createBlank()
+    
     @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("new_instance_default", comment: "New Instance")
-    @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId: String = ""
+    @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
+    
     @State var versions: [PartialVersion] = []
     @Binding var showNewInstanceSheet: Bool
     @State var showNoNamePopover = false
     @State var showDuplicateNamePopover = false
     @State var showInvalidVersionPopover = false
-
+    
     var body: some View {
         VStack {
             Spacer()
+            
             Form {
                 TextField(i18n("name"), text: $name).frame(width: 400, height: nil, alignment: .leading).textFieldStyle(RoundedBorderTextFieldStyle())
                     .popover(isPresented: $showNoNamePopover, arrowEdge: .bottom) {
@@ -56,33 +43,47 @@ struct NewVanillaInstanceView: View {
                     Text(i18n("choose_valid_version"))
                         .padding()
                 }
+                
                 Toggle(i18n("show_snapshots"), isOn: $showSnapshots)
+                
                 Toggle(i18n("show_old_beta"), isOn: $showBeta)
+                
                 Toggle(i18n("show_old_alpha"), isOn: $showAlpha)
-            }.padding()
-            HStack{
+            }
+            .padding()
+            
+            HStack {
                 Spacer()
-                HStack{
+                
+                HStack {
                     Button(i18n("cancel")) {
                         showNewInstanceSheet = false
-                    }.keyboardShortcut(.cancelAction)
+                    }
+                    .keyboardShortcut(.cancelAction)
+                    
                     Button(i18n("done")) {
                         let trimmedName = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
+                        
                         if trimmedName.isEmpty { // TODO: also check for spaces
                             self.showNoNamePopover = true
                             return
                         }
+                        
                         if launcherData.instances.map({ $0.name }).contains(where: { $0.lowercased() == trimmedName.lowercased()}) {
                             self.showDuplicateNamePopover = true
                             return
                         }
+                        
                         if !self.versionManifest.contains(where: { $0 == self.selectedVersion }) {
                             self.showInvalidVersionPopover = true
+                            
                             return
                         }
+                        
                         self.showNoNamePopover = false
                         self.showDuplicateNamePopover = false
                         self.showInvalidVersionPopover = false
+                        
                         let instance = VanillaInstanceCreator(name: trimmedName, versionUrl: URL(string: self.selectedVersion.url)!, sha1: self.selectedVersion.sha1, notes: nil, data: self.launcherData)
                         do {
                             self.launcherData.instances.append(try instance.install())
@@ -92,19 +93,21 @@ struct NewVanillaInstanceView: View {
                         } catch {
                             ErrorTracker.instance.error(error: error, description: "Error creating instance")
                         }
-                    }.keyboardShortcut(.defaultAction)
-                }.padding(.trailing).padding(.bottom)
-                
+                    }
+                    .keyboardShortcut(.defaultAction)
+                }
+                .padding(.trailing)
+                .padding(.bottom)
             }
         }
         .onAppear {
             self.versionManifest = self.launcherData.versionManifest
             recomputeVersions()
         }
-        .onReceive(self.launcherData.$versionManifest, perform: {
+        .onReceive(self.launcherData.$versionManifest) {
             self.versionManifest = $0
             recomputeVersions()
-        })
+        }
         .onChange(of: showAlpha) { _ in
             recomputeVersions()
         }
@@ -123,6 +126,7 @@ struct NewVanillaInstanceView: View {
         if versionManifest.isEmpty {
             return
         }
+        
         DispatchQueue.global(qos: .userInteractive).async {
             let newVersions = self.versionManifest.filter { version in
                 return version.type == "old_alpha" && showAlpha ||
@@ -130,9 +134,12 @@ struct NewVanillaInstanceView: View {
                 version.type == "snapshot" && showSnapshots ||
                 version.type == "release"
             }
+            
             let notContained = !newVersions.contains(self.selectedVersion)
+            
             DispatchQueue.main.async {
                 self.versions = newVersions
+                
                 if let cached = self.versions.filter({ $0.version == self.cachedVersionId}).first {
                     self.selectedVersion = cached
                 } else if notContained {
@@ -143,8 +150,6 @@ struct NewVanillaInstanceView: View {
     }
 }
 
-struct NewVanillaInstanceView_Previews: PreviewProvider {
-    static var previews: some View {
-        NewVanillaInstanceView(showNewInstanceSheet: Binding.constant(true))
-    }
+#Preview {
+    NewVanillaInstanceView(showNewInstanceSheet: .constant(true))
 }

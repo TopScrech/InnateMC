@@ -103,7 +103,6 @@
 		64C334D92922523600BB8570 /* InnateMCApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334D82922523600BB8570 /* InnateMCApp.swift */; };
 		64C334DB2922523600BB8570 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334DA2922523600BB8570 /* ContentView.swift */; };
 		64C334DD2922523F00BB8570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C334DC2922523F00BB8570 /* Assets.xcassets */; };
-		64C334E02922523F00BB8570 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C334DF2922523F00BB8570 /* Preview Assets.xcassets */; };
 		64C33505292252B500BB8570 /* PreferencesView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33504292252B500BB8570 /* PreferencesView.swift */; };
 		64C33507292256C500BB8570 /* TodoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33506292256C500BB8570 /* TodoView.swift */; };
 		64C33509292272F600BB8570 /* .gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 64C33508292272F500BB8570 /* .gitignore */; };
@@ -137,6 +136,7 @@
 		64FA2A982A0F81D50042A4A7 /* XboxLiveAuth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A972A0F81D50042A4A7 /* XboxLiveAuth.swift */; };
 		64FC5B292A5805FB009D0050 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 64FC5B282A5805FB009D0050 /* Zip */; };
 		64FE2D40293BA78B007414CB /* InstanceConsoleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* InstanceConsoleView.swift */; };
+		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -228,7 +228,7 @@
 		6497595B29F056FF00D0194E /* AddOfflineAccountView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddOfflineAccountView.swift; sourceTree = "<group>"; };
 		6497595D29F25AD000D0194E /* InstanceEditingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceEditingViewModel.swift; sourceTree = "<group>"; };
 		649762BF2935A46E00977467 /* NewVanillaInstanceView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NewVanillaInstanceView.swift; sourceTree = "<group>"; };
-		649C8DD2297D5ABE000352F2 /* InnateMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = InnateMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PyzhMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		649EA76629EC27F300BD77EA /* UIPreferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UIPreferences.swift; sourceTree = "<group>"; };
 		64A1139D2A110ACC00E48761 /* MicrosoftAccount.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MicrosoftAccount.swift; sourceTree = "<group>"; };
 		64A1139F2A110D2500E48761 /* MinecraftAccountType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftAccountType.swift; sourceTree = "<group>"; };
@@ -249,11 +249,10 @@
 		64BACB9B2A1C9F5D00F7AA1C /* FabricMeta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FabricMeta.swift; sourceTree = "<group>"; };
 		64C09B6B2A1212CF00867038 /* InstanceDuplicationSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceDuplicationSheet.swift; sourceTree = "<group>"; };
 		64C09B6F2A12145900867038 /* InstanceDeleteSheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstanceDeleteSheet.swift; sourceTree = "<group>"; };
-		64C334D52922523600BB8570 /* InnateMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = InnateMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		64C334D52922523600BB8570 /* PyzhMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PyzhMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		64C334D82922523600BB8570 /* InnateMCApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InnateMCApp.swift; sourceTree = "<group>"; };
 		64C334DA2922523600BB8570 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		64C334DC2922523F00BB8570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		64C334DF2922523F00BB8570 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		64C334E12922523F00BB8570 /* InnateMC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InnateMC.entitlements; sourceTree = "<group>"; };
 		64C33504292252B500BB8570 /* PreferencesView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PreferencesView.swift; sourceTree = "<group>"; };
 		64C33506292256C500BB8570 /* TodoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodoView.swift; sourceTree = "<group>"; };
@@ -304,6 +303,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				64515B732A78DF34000D17A8 /* FileWatcher in Frameworks */,
+				F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */,
 				64FC5B292A5805FB009D0050 /* Zip in Frameworks */,
 				64FA2A922A0F73BD0042A4A7 /* Swifter in Frameworks */,
 			);
@@ -584,8 +584,8 @@
 		64C334D62922523600BB8570 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64C334D52922523600BB8570 /* InnateMC.app */,
-				649C8DD2297D5ABE000352F2 /* InnateMCTests.xctest */,
+				64C334D52922523600BB8570 /* PyzhMC.app */,
+				649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -606,18 +606,9 @@
 				64E459F22938C7AC00F82A2B /* LauncherData.swift */,
 				64C334DC2922523F00BB8570 /* Assets.xcassets */,
 				64C334E12922523F00BB8570 /* InnateMC.entitlements */,
-				64C334DE2922523F00BB8570 /* Preview Content */,
 				64DC9E4A29E67427005DE585 /* Localizable.strings */,
 			);
 			path = InnateMC;
-			sourceTree = "<group>";
-		};
-		64C334DE2922523F00BB8570 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				64C334DF2922523F00BB8570 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		64F7C5EA297D63800086ABC1 /* Data */ = {
@@ -723,9 +714,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		649C8DD1297D5ABE000352F2 /* InnateMCTests */ = {
+		649C8DD1297D5ABE000352F2 /* PyzhMCTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "InnateMCTests" */;
+			buildConfigurationList = 649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "PyzhMCTests" */;
 			buildPhases = (
 				649C8DCE297D5ABE000352F2 /* Sources */,
 				649C8DCF297D5ABE000352F2 /* Frameworks */,
@@ -736,14 +727,14 @@
 			dependencies = (
 				649C8DD7297D5ABE000352F2 /* PBXTargetDependency */,
 			);
-			name = InnateMCTests;
+			name = PyzhMCTests;
 			productName = InnateMCTests;
-			productReference = 649C8DD2297D5ABE000352F2 /* InnateMCTests.xctest */;
+			productReference = 649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		64C334D42922523600BB8570 /* InnateMC */ = {
+		64C334D42922523600BB8570 /* PyzhMC */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "InnateMC" */;
+			buildConfigurationList = 64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "PyzhMC" */;
 			buildPhases = (
 				64C334D12922523600BB8570 /* Sources */,
 				64C334D22922523600BB8570 /* Frameworks */,
@@ -753,14 +744,15 @@
 			);
 			dependencies = (
 			);
-			name = InnateMC;
+			name = PyzhMC;
 			packageProductDependencies = (
 				64FA2A912A0F73BD0042A4A7 /* Swifter */,
 				64FC5B282A5805FB009D0050 /* Zip */,
 				64515B722A78DF34000D17A8 /* FileWatcher */,
+				F337D6262BBEEA8C004B52C5 /* ScrechKit */,
 			);
 			productName = InnateMC;
-			productReference = 64C334D52922523600BB8570 /* InnateMC.app */;
+			productReference = 64C334D52922523600BB8570 /* PyzhMC.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -771,7 +763,7 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1320;
-				LastUpgradeCheck = 1420;
+				LastUpgradeCheck = 1530;
 				TargetAttributes = {
 					649C8DD1297D5ABE000352F2 = {
 						CreatedOnToolsVersion = 13.2.1;
@@ -784,7 +776,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 64C334D02922523500BB8570 /* Build configuration list for PBXProject "InnateMC" */;
+			buildConfigurationList = 64C334D02922523500BB8570 /* Build configuration list for PBXProject "PyzhMC" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -804,13 +796,14 @@
 				648445782A10C95100049986 /* XCRemoteSwiftPackageReference "async-http-client" */,
 				64FC5B272A5805FA009D0050 /* XCRemoteSwiftPackageReference "Zip" */,
 				64515B712A78DF34000D17A8 /* XCRemoteSwiftPackageReference "FileWatcher" */,
+				F337D6252BBEEA8C004B52C5 /* XCRemoteSwiftPackageReference "ScrechKit" */,
 			);
 			productRefGroup = 64C334D62922523600BB8570 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				64C334D42922523600BB8570 /* InnateMC */,
-				649C8DD1297D5ABE000352F2 /* InnateMCTests */,
+				64C334D42922523600BB8570 /* PyzhMC */,
+				649C8DD1297D5ABE000352F2 /* PyzhMCTests */,
 			);
 		};
 /* End PBXProject section */
@@ -828,7 +821,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				64DC9E4829E67427005DE585 /* Localizable.strings in Resources */,
-				64C334E02922523F00BB8570 /* Preview Assets.xcassets in Resources */,
 				64C33509292272F600BB8570 /* .gitignore in Resources */,
 				64C3350C2922B0B500BB8570 /* LICENSE in Resources */,
 				64C334DD2922523F00BB8570 /* Assets.xcassets in Resources */,
@@ -979,7 +971,7 @@
 /* Begin PBXTargetDependency section */
 		649C8DD7297D5ABE000352F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64C334D42922523600BB8570 /* InnateMC */;
+			target = 64C334D42922523600BB8570 /* PyzhMC */;
 			targetProxy = 649C8DD6297D5ABE000352F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1016,7 +1008,7 @@
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InnateMC.app/Contents/MacOS/InnateMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PyzhMC.app/Contents/MacOS/PyzhMC";
 			};
 			name = Debug;
 		};
@@ -1038,7 +1030,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/InnateMC.app/Contents/MacOS/InnateMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PyzhMC.app/Contents/MacOS/PyzhMC";
 			};
 			name = Release;
 		};
@@ -1081,6 +1073,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -1144,6 +1137,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -1169,18 +1163,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = InnateMC/InnateMC.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"InnateMC/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
 				INFOPLIST_FILE = InnateMC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 InnateMC & Contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1192,13 +1187,13 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.9;
 				ONLY_ACTIVE_ARCH = YES;
 				OTHER_LDFLAGS = (
 					"-Xlinker",
 					"-interposable",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.innatemc.InnateMC;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Pyzh-MC";
 				PRODUCT_MODULE_NAME = InnateMC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1218,18 +1213,19 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = InnateMC/InnateMC.entitlements;
 				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
 				DEAD_CODE_STRIPPING = YES;
-				DEVELOPMENT_ASSET_PATHS = "\"InnateMC/Preview Content\"";
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_ASSET_PATHS = "";
+				DEVELOPMENT_TEAM = 8FQUA2F388;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
 				INFOPLIST_FILE = InnateMC/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 InnateMC & Contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -1241,9 +1237,9 @@
 					"$(PROJECT_DIR)/lib",
 				);
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
-				MARKETING_VERSION = 0.1.0;
+				MARKETING_VERSION = 0.9;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = io.github.innatemc.InnateMC;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Pyzh-MC";
 				PRODUCT_MODULE_NAME = InnateMC;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1257,7 +1253,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "InnateMCTests" */ = {
+		649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "PyzhMCTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				649C8DD9297D5ABE000352F2 /* Debug */,
@@ -1266,7 +1262,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64C334D02922523500BB8570 /* Build configuration list for PBXProject "InnateMC" */ = {
+		64C334D02922523500BB8570 /* Build configuration list for PBXProject "PyzhMC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64C334F82922524000BB8570 /* Debug */,
@@ -1275,7 +1271,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "InnateMC" */ = {
+		64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "PyzhMC" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64C334FB2922524000BB8570 /* Debug */,
@@ -1359,6 +1355,14 @@
 				minimumVersion = 2.1.2;
 			};
 		};
+		F337D6252BBEEA8C004B52C5 /* XCRemoteSwiftPackageReference "ScrechKit" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/TopScrech/ScrechKit";
+			requirement = {
+				branch = main;
+				kind = branch;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -1376,6 +1380,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 64FC5B272A5805FA009D0050 /* XCRemoteSwiftPackageReference "Zip" */;
 			productName = Zip;
+		};
+		F337D6262BBEEA8C004B52C5 /* ScrechKit */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = F337D6252BBEEA8C004B52C5 /* XCRemoteSwiftPackageReference "ScrechKit" */;
+			productName = ScrechKit;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
