@@ -252,7 +252,7 @@
 		64C334D82922523600BB8570 /* Pyzh MC App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pyzh MC App.swift"; sourceTree = "<group>"; };
 		64C334DA2922523600BB8570 /* Content View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Content View.swift"; sourceTree = "<group>"; };
 		64C334DC2922523F00BB8570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		64C334E12922523F00BB8570 /* InnateMC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = InnateMC.entitlements; sourceTree = "<group>"; };
+		64C334E12922523F00BB8570 /* PyzhMC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PyzhMC.entitlements; sourceTree = "<group>"; };
 		64C33504292252B500BB8570 /* Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preferences View.swift"; sourceTree = "<group>"; };
 		64C33506292256C500BB8570 /* Todo View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo View.swift"; sourceTree = "<group>"; };
 		64C33508292272F500BB8570 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -537,7 +537,7 @@
 			path = Create;
 			sourceTree = "<group>";
 		};
-		649C8DD3297D5ABE000352F2 /* Innate MC Tests */ = {
+		649C8DD3297D5ABE000352F2 /* Pyzh MC Tests */ = {
 			isa = PBXGroup;
 			children = (
 				64037CA8297C724D00F7FE79 /* Argument Tests.swift */,
@@ -545,7 +545,7 @@
 				64065A942971CD85000BCE24 /* Java Tests.swift */,
 				64373BA229C0A430001DBD4C /* Instance Tests.swift */,
 			);
-			path = "Innate MC Tests";
+			path = "Pyzh MC Tests";
 			sourceTree = "<group>";
 		};
 		64BACB932A1C692400F7AA1C /* Http */ = {
@@ -573,8 +573,8 @@
 				64C3350B2922B0B400BB8570 /* LICENSE */,
 				64C3350A2922734400BB8570 /* README.md */,
 				64C33508292272F500BB8570 /* .gitignore */,
-				64C334D72922523600BB8570 /* InnateMC */,
-				649C8DD3297D5ABE000352F2 /* Innate MC Tests */,
+				64C334D72922523600BB8570 /* PyzhMC */,
+				649C8DD3297D5ABE000352F2 /* Pyzh MC Tests */,
 				64C334D62922523600BB8570 /* Products */,
 				643B39FA29274F6100AEC71C /* Frameworks */,
 			);
@@ -589,11 +589,11 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		64C334D72922523600BB8570 /* InnateMC */ = {
+		64C334D72922523600BB8570 /* PyzhMC */ = {
 			isa = PBXGroup;
 			children = (
 				64C334DC2922523F00BB8570 /* Assets.xcassets */,
-				64C334E12922523F00BB8570 /* InnateMC.entitlements */,
+				64C334E12922523F00BB8570 /* PyzhMC.entitlements */,
 				64DC9E4A29E67427005DE585 /* Localizable.strings */,
 				640DC1EC2934EC2300943213 /* App Delegate.swift */,
 				64C334DA2922523600BB8570 /* Content View.swift */,
@@ -606,7 +606,7 @@
 				6474DC1A2A150D13001FCD4D /* Error */,
 				644DE1D12937C0D300C4A03E /* Util */,
 			);
-			path = InnateMC;
+			path = PyzhMC;
 			sourceTree = "<group>";
 		};
 		64F7C5EA297D63800086ABC1 /* Data */ = {
@@ -1159,7 +1159,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = InnateMC/InnateMC.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PyzhMC/PyzhMC.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1172,7 +1172,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
-				INFOPLIST_FILE = InnateMC/Info.plist;
+				INFOPLIST_FILE = PyzhMC/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 InnateMC & Contributors";
@@ -1208,7 +1208,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = InnateMC/InnateMC.entitlements;
+				CODE_SIGN_ENTITLEMENTS = PyzhMC/PyzhMC.entitlements;
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1221,7 +1221,7 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
-				INFOPLIST_FILE = InnateMC/Info.plist;
+				INFOPLIST_FILE = PyzhMC/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
 				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 InnateMC & Contributors";

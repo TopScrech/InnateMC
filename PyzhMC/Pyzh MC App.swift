@@ -2,7 +2,7 @@ import ScrechKit
 import os
 
 @main
-struct InnateMCApp: App {
+struct PyzhMCApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     @StateObject private var launcherData: LauncherData = .init()
     
@@ -13,7 +13,9 @@ struct InnateMCApp: App {
         }
         .commands {
             InstanceCommands()
+            
             SidebarCommands()
+            
             DeveloperModeCommands()
         }
         
@@ -25,7 +27,7 @@ struct InnateMCApp: App {
     }
 }
 
-public let logger = Logger(subsystem: "global", category: "InnateMC")
+public let logger = Logger(subsystem: "global", category: "PyzhMC")
 
 func i18n(_ str: String) -> LocalizedStringKey {
     LocalizedStringKey(str)

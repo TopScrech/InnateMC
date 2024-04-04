@@ -123,7 +123,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     public enum InstallationType: Codable, Hashable, Equatable {
         case detected // detected from /usr/libexec/java_home
         case selected // user selected
-        case downloaded // downloaded by InnateMC
+        case downloaded // downloaded by PyzhMC
     }
 }
 

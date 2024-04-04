@@ -32,6 +32,6 @@ public class ErrorTracker: ObservableObject {
     }
     
     func showWindow() {
-        windowController.showWindow(InnateMCApp.self)
+        windowController.showWindow(PyzhMCApp.self)
     }
 }

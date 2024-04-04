@@ -81,7 +81,7 @@ public class InstanceProcess: ObservableObject  {
         }
         
         logger.info("Launching Instance \(instance.name)")
-        logMessages.append("InnateMC: Launching Instance \(instance.name)")
+        logMessages.append("PyzhMC: Launching Instance \(instance.name)")
     }
 }
 

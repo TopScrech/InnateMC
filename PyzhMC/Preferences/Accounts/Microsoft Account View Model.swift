@@ -13,7 +13,7 @@ class MicrosoftAccountViewModel: ObservableObject {
     @MainActor func prepareAndOpenSheet(launcherData: LauncherData) {
         self.showMicrosoftAccountSheet = true
         launcherData.accountManager.msAccountViewModel = self
-        launcherData.accountManager.createAuthWindow().showWindow(InnateMCApp.self)
+        launcherData.accountManager.createAuthWindow().showWindow(PyzhMCApp.self)
     }
     
     @MainActor func closeSheet() {
