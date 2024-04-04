@@ -12,7 +12,7 @@ struct InstanceInterativeLogoView: View {
         
         InstanceLogoView(instance: instance)
             .frame(width: size, height: size)
-            .padding(.all, 20)
+            .padding(20)
             .opacity(logoHovered ? 0.75 : 1)
             .onHover { value in
                 withAnimation {

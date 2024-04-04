@@ -9,7 +9,7 @@ struct UiPreferencesView: View {
             
             Toggle(i18n("compact_instance_logo"), isOn: $launcherData.globalPreferences.ui.compactInstanceLogo)
         }
-        .padding(.all, 16)
+        .padding(16)
     }
 }
 

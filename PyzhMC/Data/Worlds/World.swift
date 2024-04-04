@@ -12,7 +12,8 @@ extension Array where Element == URL {
     func deserializeToWorlds() -> [World] {
         self.filter {
             $0.hasDirectoryPath
-        }.compactMap {
+        }
+        .compactMap {
             World(folder: $0.lastPathComponent)
         }
     }

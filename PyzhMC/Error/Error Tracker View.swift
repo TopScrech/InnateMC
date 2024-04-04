@@ -15,6 +15,7 @@ struct ErrorTrackerView: View {
                         HStack {
                             Text(entry.description)
                                 .padding(.bottom, 2)
+                            
                             Spacer()
                         }
                         
@@ -35,8 +36,8 @@ struct ErrorTrackerView: View {
     }
 }
 
-struct ErrorTrackerView_Previews: PreviewProvider {
-    static let errorTracker: ErrorTracker = {
+#Preview {
+    let errorTracker = {
         let tracker = ErrorTracker()
         tracker.nonEssentialError(description: "Something happened!")
         tracker.error(error: LaunchError.errorDownloading(error: nil), description: "Something bad happened!")
@@ -45,7 +46,5 @@ struct ErrorTrackerView_Previews: PreviewProvider {
         return tracker
     }()
     
-    static var previews: some View {
-        ErrorTrackerView(errorTracker: errorTracker)
-    }
+    return ErrorTrackerView(errorTracker: errorTracker)
 }

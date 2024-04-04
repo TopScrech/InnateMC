@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InstanceTitleView: View {
-    @StateObject var editingViewModel: InstanceEditingViewModel
+    @StateObject var editingVM: InstanceEditingVM
     @StateObject var instance: Instance
     
     @Binding var showNoNamePopover: Bool
@@ -9,8 +9,8 @@ struct InstanceTitleView: View {
     @Binding var starHovered: Bool
     
     var body: some View {
-        if editingViewModel.inEditMode {
-            TextField(i18n("name"), text: $editingViewModel.name)
+        if editingVM.inEditMode {
+            TextField(i18n("name"), text: $editingVM.name)
                 .largeTitle()
                 .labelsHidden()
                 .fixedSize(horizontal: true, vertical: false)

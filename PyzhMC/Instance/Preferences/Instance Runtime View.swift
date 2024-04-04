@@ -36,7 +36,7 @@ struct InstanceRuntimeView: View {
                     .textFieldStyle(.roundedBorder)
                     .disabled(!valid)
             }
-            .padding(.all, 16)
+            .padding(16)
             
             Spacer()
         }

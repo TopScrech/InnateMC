@@ -18,9 +18,12 @@ public class VanillaInstanceCreator: InstanceCreator {
     public func install() throws -> Instance {
         let version = try Version.download(versionUrl, sha1: self.sha1)
         
-        var libraries: [LibraryArtifact] = version.libraries.filter { lib in
-            lib.rules?.allMatchRules(givenFeatures: [:]) ?? true
-        }.map(\.downloads).flatMap(\.artifacts)
+        var libraries: [LibraryArtifact] = version.libraries
+            .filter { lib in
+                lib.rules?.allMatchRules(givenFeatures: [:]) ?? true
+            }
+            .map(\.downloads)
+            .flatMap(\.artifacts)
         
         var arguments = version.arguments
         

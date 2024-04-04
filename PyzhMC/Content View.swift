@@ -18,9 +18,9 @@ struct ContentView: View {
         NavigationView {
             VStack {
                 TextField(i18n("search"), text: $searchTerm)
-                    .padding(.trailing, 8.0)
-                    .padding(.leading, 10.0)
-                    .padding([.top, .bottom], 9.0)
+                    .padding(.trailing, 8)
+                    .padding(.leading, 10)
+                    .padding([.top, .bottom], 9)
                     .textFieldStyle(.roundedBorder)
                 
                 List(selection: $selectedInstance) {
@@ -28,7 +28,7 @@ struct ContentView: View {
                         if (!starredOnly || instance.isStarred) && instance.matchesSearchTerm(searchTerm) {
                             InstanceNavigationLink(instance: instance, selectedInstance: $selectedInstance)
                                 .tag(instance)
-                                .padding(.all, 4)
+                                .padding(4)
                                 .frame(maxWidth: .infinity)
                         }
                     }
@@ -193,14 +193,14 @@ struct ContentView: View {
                     Text(value.username)
                 }
                 .background(.ultraThickMaterial)
-                .padding(.all)
+                .padding()
                 .tag(value.id)
             }
         }
         .frame(height: 40)
         .onAppear {
             self.selectedAccount = launcherData.accountManager.currentSelected ?? ContentView.nullUuid
-            self.cachedAccounts = Array(launcherData.accountManager.accounts.values).map({ AdaptedAccount(from: $0)})
+            self.cachedAccounts = Array(launcherData.accountManager.accounts.values).map { .init(from: $0) }
         }
         .onReceive(launcherData.accountManager.$currentSelected) {
             self.selectedAccount = $0 ?? ContentView.nullUuid
@@ -213,7 +213,7 @@ struct ContentView: View {
             }
         }
         .onReceive(launcherData.accountManager.$accounts) {
-            self.cachedAccounts = Array($0.values).map({ AdaptedAccount(from: $0)})
+            self.cachedAccounts = Array($0.values).map { .init(from: $0) }
         }
         
         Button {

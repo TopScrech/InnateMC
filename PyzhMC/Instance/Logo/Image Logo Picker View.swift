@@ -18,7 +18,7 @@ struct ImageLogoPickerView: View {
             Button(i18n("open")) {
                 shouldShowFileImporter = true
             }
-            .padding(.all, 50)
+            .padding(50)
             .fileImporter(isPresented: $shouldShowFileImporter, allowedContentTypes: [.png]) { result in
                 let url: URL
                 

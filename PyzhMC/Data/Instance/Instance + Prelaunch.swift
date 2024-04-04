@@ -17,9 +17,11 @@ extension Instance {
     }
     
     public func appendClasspath(args: inout [String]) {
-        let libString = self.libraries.map { lib in
-            return lib.getAbsolutePath().path
-        }.joined(separator: ":")
+        let libString = self.libraries
+            .map { lib in
+                return lib.getAbsolutePath().path
+            }
+            .joined(separator: ":")
         
         args.append("\(getMcJarPath().path):\(libString)")
     }
@@ -29,7 +31,10 @@ extension Instance {
             try! FileManager.default.createDirectory(at: getNativesFolder(), withIntermediateDirectories: true)
         }
         
-        let nativeLibraries = self.libraries.filter { $0.path.contains("natives") }
+        let nativeLibraries = self.libraries.filter {
+            $0.path.contains("natives")
+        }
+        
         logger.debug("Found \(nativeLibraries.count) natives to extract")
         
         for i in nativeLibraries.map({ $0.getAbsolutePath().path }) {

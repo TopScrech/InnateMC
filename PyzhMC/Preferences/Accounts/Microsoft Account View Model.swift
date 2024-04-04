@@ -1,6 +1,6 @@
 import SwiftUI
 
-class MicrosoftAccountViewModel: ObservableObject {
+class MicrosoftAccountVM: ObservableObject {
     @Published var showMicrosoftAccountSheet = false
     @Published var message: LocalizedStringKey = i18n("authenticating_with_microsoft")
     @Published var error: MicrosoftAuthError = .noError
@@ -12,7 +12,7 @@ class MicrosoftAccountViewModel: ObservableObject {
     
     @MainActor func prepareAndOpenSheet(launcherData: LauncherData) {
         self.showMicrosoftAccountSheet = true
-        launcherData.accountManager.msAccountViewModel = self
+        launcherData.accountManager.msAccountVM = self
         launcherData.accountManager.createAuthWindow().showWindow(PyzhMCApp.self)
     }
     

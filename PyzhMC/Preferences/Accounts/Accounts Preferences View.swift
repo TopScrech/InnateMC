@@ -4,7 +4,7 @@ struct AccountsPreferencesView: View {
     @EnvironmentObject var launcherData: LauncherData
     
     @State var showAddOfflineSheet = false
-    @StateObject var msAccountViewModel: MicrosoftAccountViewModel = .init()
+    @StateObject var msAccountVM: MicrosoftAccountVM = .init()
     @State var cachedAccounts: [UUID: any MinecraftAccount] = [:]
     @State var cachedAccountsOnly: [AdaptedAccount] = []
     @State var selectedAccountIds: Set<UUID> = []
@@ -27,7 +27,7 @@ struct AccountsPreferencesView: View {
                 .padding()
                 
                 Button(i18n("add_microsoft")) {
-                    self.msAccountViewModel.prepareAndOpenSheet(launcherData: self.launcherData)
+                    self.msAccountVM.prepareAndOpenSheet(launcherData: self.launcherData)
                 }
                 .padding()
                 
@@ -35,6 +35,7 @@ struct AccountsPreferencesView: View {
                     for id in selectedAccountIds {
                         self.launcherData.accountManager.accounts.removeValue(forKey: id)
                     }
+                    
                     self.selectedAccountIds = []
                     
                     DispatchQueue.global(qos: .utility).async {
@@ -55,34 +56,33 @@ struct AccountsPreferencesView: View {
             self.cachedAccounts = $0
             self.cachedAccountsOnly = Array($0.values).map({ AdaptedAccount(from: $0)})
         }
-        .onReceive(msAccountViewModel.$showMicrosoftAccountSheet) {
+        .onReceive(msAccountVM.$showMicrosoftAccountSheet) {
             if !$0 {
-                launcherData.accountManager.msAccountViewModel = nil
+                launcherData.accountManager.msAccountVM = nil
             }
         }
         .sheet($showAddOfflineSheet) {
             AddOfflineAccountView(showSheet: $showAddOfflineSheet) {
                 let acc = OfflineAccount.createFromUsername($0)
                 self.launcherData.accountManager.accounts[acc.id] = acc
+                
                 DispatchQueue.global(qos: .utility).async {
                     self.launcherData.accountManager.saveThrow() // TODO: handle error
                 }
             }
         }
-        .sheet($msAccountViewModel.showMicrosoftAccountSheet) {
+        .sheet($msAccountVM.showMicrosoftAccountSheet) {
             HStack {
-                if msAccountViewModel.error == .noError {
-                    VStack {
-                        Text(msAccountViewModel.message)
-                    }
-                    .padding()
+                if msAccountVM.error == .noError {
+                    Text(msAccountVM.message)
+                        .padding()
                 } else {
                     VStack {
-                        Text(msAccountViewModel.error.localizedDescription)
+                        Text(msAccountVM.error.localizedDescription)
                             .padding()
                         
                         Button("Close") {
-                            msAccountViewModel.closeSheet()
+                            msAccountVM.closeSheet()
                         }
                         .padding()
                     }

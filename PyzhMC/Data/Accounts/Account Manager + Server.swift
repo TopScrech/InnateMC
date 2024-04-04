@@ -64,10 +64,17 @@ extension AccountManager {
     
     func state() -> String {
         let characters = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789"
-        let randomBytes = (0..<24).map { _ in UInt8.random(in: 0..<UInt8.max) }
+        
+        let randomBytes = (0..<24).map {
+            _ in UInt8.random(in: 0..<UInt8.max)
+        }
+        
         let randomData = Data(randomBytes)
+        
         let randomString = randomData.base64EncodedString()
-            .filter { characters.contains($0) }
+            .filter {
+                characters.contains($0)
+            }
             .prefix(24)
         
         return String(randomString)

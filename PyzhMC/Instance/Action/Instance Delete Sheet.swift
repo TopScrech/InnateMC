@@ -34,6 +34,6 @@ struct InstanceDeleteSheet: View {
                 .padding()
             }
         }
-        .padding(.all, 20)
+        .padding(20)
     }
 }

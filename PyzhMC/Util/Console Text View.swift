@@ -31,22 +31,24 @@ struct ConsoleTextView: NSViewRepresentable {
     }
 }
 
-struct ConsoleTextView_Previews: PreviewProvider {
-    static var ints = Array(1...10)
-    static let layoutManager = NSLayoutManager()
+#Preview {
+    var ints = Array(1...10)
+    let layoutManager = NSLayoutManager()
     
-    static let textContainer: NSTextContainer = {
+    let textContainer: NSTextContainer = {
         var cont = NSTextContainer()
         layoutManager.addTextContainer(cont)
         layoutManager.allowsNonContiguousLayout = true
         return cont
     }()
     
-    static var previews: some View {
-        VStack(spacing: 0) {
-            ForEach(ints, id: \.self) { i in
-                ConsoleTextView(text: "This is console text \(i)", layoutManager: layoutManager, textContainer: textContainer)
-            }
+    return VStack(spacing: 0) {
+        ForEach(ints, id: \.self) { i in
+            ConsoleTextView(
+                text: "This is console text \(i)",
+                layoutManager: layoutManager,
+                textContainer: textContainer
+            )
         }
     }
 }

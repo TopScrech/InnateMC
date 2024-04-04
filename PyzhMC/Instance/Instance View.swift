@@ -7,7 +7,7 @@ struct InstanceView: View {
     @State var starHovered = false
     @State var logoHovered = false
     @State var showLogoSheet = false
-    @StateObject var editingViewModel = InstanceEditingViewModel()
+    @StateObject var editingVM = InstanceEditingVM()
     @State var showNoNamePopover = false
     @State var showDuplicatePopover = false
     @State var showErrorSheet = false
@@ -29,13 +29,13 @@ struct InstanceView: View {
                     
                     VStack {
                         HStack {
-                            InstanceTitleView(editingViewModel: self.editingViewModel, instance: self.instance, showNoNamePopover: $showNoNamePopover, showDuplicatePopover: $showDuplicatePopover, starHovered: $starHovered)
+                            InstanceTitleView(editingVM: self.editingVM, instance: self.instance, showNoNamePopover: $showNoNamePopover, showDuplicatePopover: $showDuplicatePopover, starHovered: $starHovered)
                             
                             Spacer()
                         }
                         
                         HStack {
-                            InstanceSynopsisView(editingViewModel: self.editingViewModel, instance: self.instance)
+                            InstanceSynopsisView(editingVM: self.editingVM, instance: self.instance)
                             
                             Spacer()
                         }
@@ -47,7 +47,7 @@ struct InstanceView: View {
                 }
                 
                 HStack {
-                    InstanceNotesView(editingViewModel: self.editingViewModel, instance: self.instance)
+                    InstanceNotesView(editingVM: self.editingVM, instance: self.instance)
                     
                     Spacer()
                 }
@@ -80,9 +80,9 @@ struct InstanceView: View {
                             Label(i18n("runtime"), systemImage: "bolt")
                         }
                 }
-                .padding(.all, 4)
+                .padding(4)
             }
-            .padding(.all, 6)
+            .padding(6)
             .onAppear {
                 launcherData.launchRequestedInstances.removeAll(where: { $0 == self.instance })
                 launchedInstanceProcess = launcherData.launchedInstances[instance]
@@ -112,9 +112,9 @@ struct InstanceView: View {
             }
             .onReceive(launcherData.$editModeInstances) { value in
                 if value.contains(where: { $0 == self.instance}) {
-                    self.editingViewModel.start(from: self.instance)
-                } else if self.editingViewModel.inEditMode {
-                    self.editingViewModel.commit(to: self.instance, showNoNamePopover: $showNoNamePopover, showDuplicateNamePopover: $showDuplicatePopover, data: self.launcherData)
+                    self.editingVM.start(from: self.instance)
+                } else if self.editingVM.inEditMode {
+                    self.editingVM.commit(to: self.instance, showNoNamePopover: $showNoNamePopover, showDuplicateNamePopover: $showDuplicatePopover, data: self.launcherData)
                 }
             }
             .onReceive(launcherData.$killRequestedInstances) { value in
@@ -160,7 +160,7 @@ struct InstanceView: View {
         .onAppear {
             onPrelaunchSheetAppear()
         }
-        .padding(.all, 10)
+        .padding(10)
     }
     
     func onPrelaunchSheetAppear() {

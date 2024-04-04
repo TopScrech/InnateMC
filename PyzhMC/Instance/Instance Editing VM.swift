@@ -1,6 +1,6 @@
 import SwiftUI
 
-public class InstanceEditingViewModel: ObservableObject {
+public class InstanceEditingVM: ObservableObject {
     @Published var inEditMode = false
     @Published var name = ""
     @Published var synopsis = ""

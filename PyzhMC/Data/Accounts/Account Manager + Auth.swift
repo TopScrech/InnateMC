@@ -2,7 +2,7 @@ import Foundation
 
 extension AccountManager {
     public func setupMicrosoftAccount(code: String) {
-        guard let msAccountViewModel = self.msAccountViewModel else {
+        guard let msAccountVM = self.msAccountVM else {
             return
         }
         
@@ -11,28 +11,28 @@ extension AccountManager {
                 let msAccessToken: MicrosoftAccessToken = try await self.authenticateWithMicrosoft(code: code, clientId: self.clientId)
                 
                 DispatchQueue.main.async {
-                    msAccountViewModel.setAuthWithXboxLive()
+                    msAccountVM.setAuthWithXboxLive()
                 }
                 
                 logger.debug("Authenticated with microsoft")
                 let xblResponse = try await self.authenticateWithXBL(msAccessToken: msAccessToken.token)
                 
                 DispatchQueue.main.async {
-                    msAccountViewModel.setAuthWithXboxXSTS()
+                    msAccountVM.setAuthWithXboxXSTS()
                 }
                 
                 logger.debug("Authenticated with xbox live")
                 let xstsResponse: XboxAuthResponse = try await self.authenticateWithXSTS(xblToken: xblResponse.token)
                 
                 DispatchQueue.main.async {
-                    msAccountViewModel.setAuthWithMinecraft()
+                    msAccountVM.setAuthWithMinecraft()
                 }
                 
                 logger.debug("Authenticated with xbox xsts")
                 let mcResponse: MinecraftAuthResponse = try await self.authenticateWithMinecraft(using: .init(xsts: xstsResponse))
                 
                 DispatchQueue.main.async {
-                    msAccountViewModel.setFetchingProfile()
+                    msAccountVM.setFetchingProfile()
                 }
                 
                 logger.debug("Authenticated with minecraft")
@@ -44,15 +44,15 @@ extension AccountManager {
                 logger.info("Successfully added microsoft account \(profile.name)")
                 
                 DispatchQueue.main.async {
-                    msAccountViewModel.closeSheet()
-                    self.msAccountViewModel = nil
+                    msAccountVM.closeSheet()
+                    self.msAccountVM = nil
                 }
             } catch let error as MicrosoftAuthError {
                 logger.error("Caught error during authentication", error: error)
                 
                 DispatchQueue.main.async {
-                    msAccountViewModel.error(error)
-                    self.msAccountViewModel = nil
+                    msAccountVM.error(error)
+                    self.msAccountVM = nil
                 }
                 
                 return

@@ -105,9 +105,12 @@ public struct ParallelDownloader {
             
             return digest.map {
                 String(format: "%02hhx", $0)
-            }.joined()
+            }
+            .joined()
+            
         } catch {
             print("Failed to read file: \(error.localizedDescription)")
+            
             return nil
         }
     }

@@ -90,8 +90,8 @@ public struct SymbolPicker: View {
                     .padding(8)
                     .padding(.horizontal, 8)
                     .background(Color(UIColor.systemGray5))
-                    .cornerRadius(8.0)
-                    .padding(.horizontal, 16.0)
+                    .cornerRadius(8)
+                    .padding(.horizontal, 16)
                     .autocapitalization(.none)
                     .disableAutocorrection(true)
                 
@@ -191,6 +191,7 @@ public struct SymbolPicker: View {
 #if os(iOS)
             .navigationBarTitleDisplayMode(.inline)
 #endif
+            
 #if !os(tvOS)
             /// tvOS can use back button on remote
             .toolbar {
@@ -208,18 +209,8 @@ public struct SymbolPicker: View {
             .frame(width: 540, height: 320, alignment: .center)
 #endif
     }
-    
 }
 
-struct SymbolPicker_Previews: PreviewProvider {
-    @State static var symbol = "square.and.arrow.up"
-    
-    static var previews: some View {
-        Group {
-            SymbolPicker(symbol: Self.$symbol)
-            
-            SymbolPicker(symbol: Self.$symbol)
-                .preferredColorScheme(.dark)
-        }
-    }
+#Preview {
+    SymbolPicker(symbol: .constant("square.and.arrow.up"))
 }

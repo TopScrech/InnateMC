@@ -3,17 +3,18 @@ import SwiftUI
 struct NewVanillaInstanceView: View {
     @EnvironmentObject var launcherData: LauncherData
     
+    @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("new_instance_default", comment: "New Instance")
+    @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
+    
+    @Binding var showNewInstanceSheet: Bool
+    
     @State var versionManifest: [PartialVersion] = []
     @State var showSnapshots = false
     @State var showBeta = false
     @State var showAlpha = false
     @State var selectedVersion = PartialVersion.createBlank()
     
-    @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("new_instance_default", comment: "New Instance")
-    @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
-    
     @State var versions: [PartialVersion] = []
-    @Binding var showNewInstanceSheet: Bool
     @State var showNoNamePopover = false
     @State var showDuplicateNamePopover = false
     @State var showInvalidVersionPopover = false
@@ -96,8 +97,7 @@ struct NewVanillaInstanceView: View {
                     }
                     .keyboardShortcut(.defaultAction)
                 }
-                .padding(.trailing)
-                .padding(.bottom)
+                .padding([.trailing, .bottom])
             }
         }
         .onAppear {
@@ -128,19 +128,20 @@ struct NewVanillaInstanceView: View {
         }
         
         DispatchQueue.global(qos: .userInteractive).async {
-            let newVersions = self.versionManifest.filter { version in
-                return version.type == "old_alpha" && showAlpha ||
-                version.type == "old_beta" && showBeta ||
-                version.type == "snapshot" && showSnapshots ||
-                version.type == "release"
-            }
+            let newVersions = self.versionManifest
+                .filter { version in
+                    return version.type == "old_alpha" && showAlpha ||
+                    version.type == "old_beta" && showBeta ||
+                    version.type == "snapshot" && showSnapshots ||
+                    version.type == "release"
+                }
             
             let notContained = !newVersions.contains(self.selectedVersion)
             
             DispatchQueue.main.async {
                 self.versions = newVersions
                 
-                if let cached = self.versions.filter({ $0.version == self.cachedVersionId}).first {
+                if let cached = self.versions.filter({ $0.version == self.cachedVersionId }).first {
                     self.selectedVersion = cached
                 } else if notContained {
                     self.selectedVersion = newVersions.first!

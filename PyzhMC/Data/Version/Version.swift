@@ -150,9 +150,11 @@ public struct Version: Decodable, Equatable {
     
     public func flatten() throws -> Version {
         try self.flatten { versionId in
-            let parentPartial = LauncherData.instance.versionManifest.filter {
-                $0.version == versionId
-            }.first
+            let parentPartial = LauncherData.instance.versionManifest
+                .filter {
+                    $0.version == versionId
+                }
+                .first
             
             guard let parentPartial = parentPartial else {
                 throw VersionError.invalidParent
@@ -183,9 +185,11 @@ public struct Version: Decodable, Equatable {
         let rawVersion = try downloadRaw(url, sha1: sha1)
         
         let version = try rawVersion.flatten { versionId in
-            let parentPartial = LauncherData.instance.versionManifest.filter {
-                $0.version == versionId
-            }.first
+            let parentPartial = LauncherData.instance.versionManifest
+                .filter {
+                    $0.version == versionId
+                }
+                .first
             
             guard let parentPartial = parentPartial else {
                 throw VersionError.invalidParent

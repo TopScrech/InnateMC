@@ -58,7 +58,7 @@ struct InstanceScreenshotsView: View {
                 RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1)
             }
             .background(Color(NSColor.textBackgroundColor))
-            .padding(.all, 7.0)
+            .padding(7)
             
             HStack {
                 ScreenshotShareButton(selectedItem: selectedItem)
@@ -68,8 +68,8 @@ struct InstanceScreenshotsView: View {
                     NSWorkspace.shared.selectFile(selectedItem?.path.path, inFileViewerRootedAtPath: instance.getScreenshotsFolder().path)
                 }
             }
-            .padding(.bottom, 8.0)
-            .padding([.top, .leading, .trailing], 5.0)
+            .padding(.bottom, 8)
+            .padding([.top, .leading, .trailing], 5)
         }
     }
 }

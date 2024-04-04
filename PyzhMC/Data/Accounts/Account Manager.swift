@@ -2,7 +2,7 @@ import Foundation
 import Swifter
 
 class AccountManager: ObservableObject {
-    public static let accountsPath: URL = try! FileHandler.getOrCreateFolder().appendingPathComponent("Accounts.plist")
+    public static let accountsPath = try! FileHandler.getOrCreateFolder().appendingPathComponent("Accounts.plist")
     public static let plistEncoder = PropertyListEncoder()
     public let server: HttpServer
     public var serverThread: DispatchQueue?
@@ -16,7 +16,7 @@ class AccountManager: ObservableObject {
     
     public let clientId = "a6d48d61-71a0-45eb-8957-f6d2e760f8f6"
     public var stateCallbacks: [String: (String) -> Void] = [:]
-    public var msAccountViewModel: MicrosoftAccountViewModel? = nil
+    public var msAccountVM: MicrosoftAccountVM? = nil
     
     public init() {
         self.server = .init()

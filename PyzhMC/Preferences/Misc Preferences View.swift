@@ -7,7 +7,7 @@ struct MiscPreferencesView: View {
         Form {
             Toggle(i18n("developer_mode"), isOn: $developerMode)
         }
-        .padding(.all, 16.0)
+        .padding(16)
     }
 }
 

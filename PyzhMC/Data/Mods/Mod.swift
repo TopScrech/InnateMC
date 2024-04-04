@@ -46,6 +46,8 @@ public struct Mod: Identifiable, Hashable, Comparable {
 
 extension Array where Element == URL {
     func deserializeToMods() -> [Mod] {
-        self.filter(Mod.isValidMod).compactMap { try? Mod.from(url: $0) }
+        self.filter(Mod.isValidMod).compactMap { 
+            try? Mod.from(url: $0)
+        }
     }
 }

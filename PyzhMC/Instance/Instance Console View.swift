@@ -30,7 +30,7 @@ struct InstanceConsoleView: View {
                     RoundedRectangle(cornerRadius: 8)
                         .stroke(Color.secondary, lineWidth: 1)
                 }
-                .padding(.all, 7)
+                .padding(7)
                 
                 HStack {
                     Button(i18n("open_logs_folder")) {

@@ -27,6 +27,6 @@ struct InstanceLogoSheet: View {
             .padding()
             .keyboardShortcut(.cancelAction)
         }
-        .padding(.all, 15)
+        .padding(15)
     }
 }

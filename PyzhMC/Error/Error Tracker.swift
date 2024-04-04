@@ -18,7 +18,7 @@ public class ErrorTracker: ObservableObject {
     private var windowControllerTemp: ErrorTrackerWindowController? = nil
     
     func error(error: Error? = nil, description: String) {
-        if let error = error {
+        if let error {
             logger.error(description, error: error)
         } else {
             logger.error("\(description)")

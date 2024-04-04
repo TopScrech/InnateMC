@@ -7,7 +7,6 @@ public class LauncherData: ObservableObject {
         currentInstance!
     }
     
-    @Published var instances: [Instance] = []
     @Published var globalPreferences = GlobalPreferences()
     @Published var javaInstallations: [SavedJavaInstallation] = []
     @Published var launchedInstances: [Instance: InstanceProcess] = [:]
@@ -15,9 +14,11 @@ public class LauncherData: ObservableObject {
     @Published var accountManager = AccountManager()
     @Published var selectedPreferenceTab: SelectedPreferenceTab = .accounts
     @Published var versionManifest: [PartialVersion] = []
+    
+    @Published var instances:                [Instance] = []
     @Published var launchRequestedInstances: [Instance] = []
-    @Published var editModeInstances: [Instance] = []
-    @Published var killRequestedInstances: [Instance] = []
+    @Published var editModeInstances:        [Instance] = []
+    @Published var killRequestedInstances:   [Instance] = []
     
     private var initializedPreferenceListener = false
     
