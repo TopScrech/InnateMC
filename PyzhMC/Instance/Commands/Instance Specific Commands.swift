@@ -29,7 +29,7 @@ struct InstanceSpecificCommands: View {
         .disabled(selectedInstance == nil)
         .keyboardShortcut("f")
         .onChange(of: selectedInstance) { newValue in
-            if let newValue = newValue {
+            if let newValue {
                 self.instanceStarred = newValue.isStarred
                 self.instanceIsntLaunched = !LauncherData.instance.launchedInstances.contains(where: { $0.0 == newValue })
                 self.instanceIsntInEdit = !LauncherData.instance.editModeInstances.contains(where: { $0 == newValue })
@@ -44,14 +44,14 @@ struct InstanceSpecificCommands: View {
             logger.trace("\(selectedInstance?.name ?? "No instance") has been selected")
         }
         .onReceive(LauncherData.instance.$launchedInstances) { value in
-            if let selectedInstance = selectedInstance {
+            if let selectedInstance {
                 self.instanceIsntLaunched = !value.contains(where: { $0.0 == selectedInstance })
             } else {
                 self.instanceIsntLaunched = true
             }
         }
         .onReceive(LauncherData.instance.$editModeInstances) { value in
-            if let selectedInstance = selectedInstance {
+            if let selectedInstance {
                 self.instanceIsntInEdit = !value.contains(where: { $0 == selectedInstance })
             } else {
                 self.instanceIsntInEdit = true
@@ -109,7 +109,7 @@ struct InstanceSpecificCommands: View {
         .keyboardShortcut(KeyEquivalent.upArrow)
         .disabled(selectedInstance == nil)
         
-        if let selectedInstance = selectedInstance {
+        if let selectedInstance {
             Divider()
                 .onReceive(selectedInstance.$isStarred) { value in
                     self.instanceStarred = value

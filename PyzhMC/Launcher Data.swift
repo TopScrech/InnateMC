@@ -33,6 +33,7 @@ public class LauncherData: ObservableObject {
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: preferencesWindow, queue: .main) { notification in
             DispatchQueue.global().async {
                 self.globalPreferences.save()
+                
                 logger.debug("Saved preferences")
             }
         }

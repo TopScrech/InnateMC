@@ -22,8 +22,8 @@ extension MinecraftAccount {
     }
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.id)
-        hasher.combine(self.username)
+        hasher.combine(id)
+        hasher.combine(username)
     }
     
     static func createFromDict(_ dict: [String:Any]) -> Self {

@@ -32,7 +32,7 @@ public struct Rule: Codable, Equatable {
             // TODO: implement
         }
         
-        if let features = features {
+        if let features {
             for (feature, value) in features where ok == true {
                 ok = ok && (givenFeatures[feature] == value)
             }

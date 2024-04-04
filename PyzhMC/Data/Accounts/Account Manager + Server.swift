@@ -24,9 +24,11 @@ extension AccountManager {
                 }
                 
                 logger.debug("Received succesful authentication redirect")
+                
                 return HttpResponse.ok(.text("<html><body>You may close this window now</body></html>"))
             } else {
                 logger.error("Missing code/state parameters in request: \(request.queryParams)")
+                
                 return HttpResponse.movedTemporarily("http://youtube.com/watch?v=dQw4w9WgXcQ")
             }
         }
@@ -44,20 +46,20 @@ extension AccountManager {
     
     public func createAuthWindow() -> WebViewWindow {
         let baseURL = "https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize"
-        var urlComponents: URLComponents = .init(string: baseURL)!
-        let state = self.state()
-        self.stateCallbacks[state] = setupMicrosoftAccount
+        var urlComponents = URLComponents(string: baseURL)!
+        let state = state()
+        stateCallbacks[state] = setupMicrosoftAccount
         
         urlComponents.queryItems = [
             URLQueryItem(name: "response_type", value: "code"),
-            URLQueryItem(name: "client_id", value: self.clientId),
+            URLQueryItem(name: "client_id", value: clientId),
             URLQueryItem(name: "redirect_uri", value: "http://localhost:1989"),
             URLQueryItem(name: "scope", value: "XboxLive.signin offline_access"),
             URLQueryItem(name: "state", value: state)
         ]
         
         let authUrl = urlComponents.url!
-        let window: WebViewWindow = .init(url: authUrl)
+        let window = WebViewWindow(url: authUrl)
         
         return window
     }

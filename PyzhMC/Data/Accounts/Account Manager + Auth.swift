@@ -39,7 +39,7 @@ extension AccountManager {
                 let profile: MinecraftProfile = try await self.getProfile(accessToken: mcResponse.accessToken)
                 logger.debug("Fetched minecraft profile")
                 
-                let account: MicrosoftAccount = .init(profile: profile, token: msAccessToken)
+                let account = MicrosoftAccount(profile: profile, token: msAccessToken)
                 self.accounts[account.id] = account
                 logger.info("Successfully added microsoft account \(profile.name)")
                 

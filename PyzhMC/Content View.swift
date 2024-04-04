@@ -49,16 +49,16 @@ struct ContentView: View {
                 NewInstanceView(showNewInstanceSheet: $sheetNewInstance)
             }
             .sheet($sheetDeleteInstance) {
-                InstanceDeleteSheet(sheetDelete: $sheetDeleteInstance, selectedInstance: $selectedInstance, instanceToDelete: self.selectedInstance!)
+                InstanceDeleteSheet(sheetDelete: $sheetDeleteInstance, selectedInstance: $selectedInstance, instanceToDelete: selectedInstance!)
             }
             .sheet($sheetDuplicateInstance) {
-                InstanceDuplicationSheet(sheetDuplication: $sheetDuplicateInstance, instance: self.selectedInstance!)
+                InstanceDuplicationSheet(sheetDuplication: $sheetDuplicateInstance, instance: selectedInstance!)
             }
             .sheet($sheetExportInstance) {
-                InstanceExportSheet(sheetExport: $sheetExportInstance, instance: self.selectedInstance!)
+                InstanceExportSheet(sheetExport: $sheetExportInstance, instance: selectedInstance!)
             }
             .onReceive(launcherData.$instances) { newValue in
-                if let selectedInstance = self.selectedInstance {
+                if let selectedInstance {
                     if !newValue.contains(where: { $0 == selectedInstance }) {
                         self.selectedInstance = nil
                     }
@@ -113,7 +113,7 @@ struct ContentView: View {
     @ViewBuilder
     func createPrimaryToolbar() -> some View {
         Button {
-            self.sheetDeleteInstance = true
+            sheetDeleteInstance = true
         } label: {
             Image(systemName: "trash")
         }
@@ -121,7 +121,7 @@ struct ContentView: View {
         .help("Delete")
         
         Button {
-            self.sheetDuplicateInstance = true
+            sheetDuplicateInstance = true
         } label: {
             Image(systemName: "doc.on.doc")
         }
@@ -129,7 +129,7 @@ struct ContentView: View {
         .help("Duplicate")
         
         Button {
-            self.sheetExportInstance = true
+            sheetExportInstance = true
         } label: {
             Image(systemName: "square.and.arrow.up")
         }
@@ -160,10 +160,10 @@ struct ContentView: View {
             if launcherData.editModeInstances.contains(where: { $0 == selectedInstance! }) {
                 launcherData.editModeInstances.removeAll(where: { $0 == selectedInstance! })
             } else {
-                launcherData.editModeInstances.append(self.selectedInstance!)
+                launcherData.editModeInstances.append(selectedInstance!)
             }
         } label: {
-            if let selectedInstance = self.selectedInstance {
+            if let selectedInstance {
                 if launcherData.editModeInstances.contains(where: { $0 == selectedInstance }) {
                     Image(systemName: "checkmark")
                 } else {
@@ -185,7 +185,7 @@ struct ContentView: View {
             Text("No account")
                 .tag(ContentView.nullUuid)
             
-            ForEach(self.cachedAccounts) { value in
+            ForEach(cachedAccounts) { value in
                 HStack(alignment: .center) {
                     AsyncImage(url: URL(string: "https://crafatar.com/avatars/" + value.id.uuidString + "?overlay&size=16"), scale: 1, content: { $0 }) {
                         Image("steve")
@@ -202,13 +202,13 @@ struct ContentView: View {
         }
         .frame(height: 40)
         .onAppear {
-            self.selectedAccount = launcherData.accountManager.currentSelected ?? ContentView.nullUuid
-            self.cachedAccounts = Array(launcherData.accountManager.accounts.values).map { .init(from: $0) }
+            selectedAccount = launcherData.accountManager.currentSelected ?? ContentView.nullUuid
+            cachedAccounts = Array(launcherData.accountManager.accounts.values).map { .init(from: $0) }
         }
         .onReceive(launcherData.accountManager.$currentSelected) {
-            self.selectedAccount = $0 ?? ContentView.nullUuid
+            selectedAccount = $0 ?? ContentView.nullUuid
         }
-        .onChange(of: self.selectedAccount) { newValue in
+        .onChange(of: selectedAccount) { newValue in
             launcherData.accountManager.currentSelected = newValue == ContentView.nullUuid ? nil : newValue
             
             DispatchQueue.global(qos: .utility).async {
@@ -216,11 +216,12 @@ struct ContentView: View {
             }
         }
         .onReceive(launcherData.accountManager.$accounts) {
-            self.cachedAccounts = Array($0.values).map { .init(from: $0) }
+            cachedAccounts = Array($0.values).map { .init(from: $0) }
         }
         
         Button {
             launcherData.selectedPreferenceTab = .accounts
+            
             if #available(macOS 13, *) {
                 NSApp.sendAction(Selector(("showSettingsWindow:")), to: nil, from: nil)
             } else {

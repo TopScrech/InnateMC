@@ -43,10 +43,12 @@ public struct Version: Decodable, Equatable {
         
         if arguments == nil {
             let mcArgs: String? = try container.decodeIfPresent(String.self, forKey: .minecraftArguments)
+            
             if let mcArgs {
                 arguments = .init(game: mcArgs.split(separator: " ").map { ArgumentElement.string(String($0)) }, jvm: [])
             }
         }
+        
         self.arguments = arguments ?? Arguments.none
         assetIndex = try container.decodeIfPresent(PartialAssetIndex.self, forKey: .assetIndex) ?? PartialAssetIndex.none
         assets = try container.decodeIfPresent(String.self, forKey: .assets) ?? "3"

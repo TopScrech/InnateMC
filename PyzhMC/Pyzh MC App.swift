@@ -4,7 +4,7 @@ import os
 @main
 struct PyzhMCApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
-    @StateObject private var launcherData: LauncherData = .init()
+    @StateObject private var launcherData = LauncherData()
     
     var body: some Scene {
         WindowGroup {

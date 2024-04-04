@@ -56,6 +56,7 @@ public class InstanceProcess: ObservableObject  {
         process.standardError = outputPipe
         
         let outputHandler = outputPipe.fileHandleForReading
+        
         outputHandler.readabilityHandler = { [weak self] pipe in
             guard let line = String(data: pipe.availableData, encoding: .utf8)?.trimmingCharacters(in: .newlines) else {
                 return
@@ -81,6 +82,7 @@ public class InstanceProcess: ObservableObject  {
         }
         
         logger.info("Launching Instance \(instance.name)")
+        
         logMessages.append("PyzhMC: Launching Instance \(instance.name)")
     }
 }
@@ -89,7 +91,7 @@ fileprivate extension Process {
     func getRunCommand() -> String {
         var command = self.launchPath ?? ""
         
-        if let arguments = self.arguments {
+        if let arguments {
             for arg in arguments {
                 command += " \(arg)"
             }

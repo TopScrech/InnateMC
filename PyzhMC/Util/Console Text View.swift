@@ -18,16 +18,16 @@ struct ConsoleTextView: NSViewRepresentable {
         textView.alignment = NSTextAlignment.natural
         textView.string = text
         textView.allowsUndo = false
-        textView.textContainer = self.textContainer
+        textView.textContainer = textContainer
         
         return textView
     }
     
     func updateNSView(_ nsView: NSTextView, context: Context) {
-        self.textContainer.layoutManager = self.layoutManager
+        textContainer.layoutManager = layoutManager
         nsView.string = text
         nsView.font = font
-        nsView.textContainer = self.textContainer
+        nsView.textContainer = textContainer
     }
 }
 

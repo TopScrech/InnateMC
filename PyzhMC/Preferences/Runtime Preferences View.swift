@@ -69,7 +69,7 @@ struct RuntimePreferencesView: View {
                     return
                 }
                 
-                let install: SavedJavaInstallation = .init(javaExecutable: url.path)
+                let install = SavedJavaInstallation(javaExecutable: url.path)
                 install.setupAsNewVersion(launcherData: launcherData)
                 
                 logger.info("Set up java runtime from \(install.javaExecutable)")

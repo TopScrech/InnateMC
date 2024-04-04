@@ -6,7 +6,7 @@ public class ErrorTracker: ObservableObject {
     @Published var errors: [ErrorTrackerEntry] = []
     
     private var windowController: ErrorTrackerWindowController {
-        if let windowControllerTemp = windowControllerTemp {
+        if let windowControllerTemp {
             return windowControllerTemp
         }
         

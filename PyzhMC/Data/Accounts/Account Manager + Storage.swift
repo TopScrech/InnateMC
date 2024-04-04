@@ -47,7 +47,7 @@ extension AccountManager {
     public func saveThrow() {
         var plist: [String:Any] = [:]
         
-        if let currentSelected = currentSelected {
+        if let currentSelected {
             plist["Current"] = currentSelected.uuidString
         }
         

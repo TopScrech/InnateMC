@@ -26,7 +26,7 @@ public struct ScreenshotShareButton: NSViewRepresentable {
     }
     
     public class Coordinator: NSObject {
-        let delegate: ImgurSharingServiceDelegate = .init()
+        let delegate = ImgurSharingServiceDelegate()
         var selectedItem: Screenshot?
         var button: NSButton?
         

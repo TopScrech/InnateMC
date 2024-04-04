@@ -1,7 +1,7 @@
 import Foundation
 
 public struct Arguments: Codable, Equatable {
-    public static let none: Arguments = .init(game: [], jvm: [])
+    public static let none = Arguments(game: [], jvm: [])
     let game: [ArgumentElement]
     let jvm: [ArgumentElement]
     

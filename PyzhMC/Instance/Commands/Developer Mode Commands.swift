@@ -31,7 +31,7 @@ struct DeveloperModeCommands: Commands {
                 let workspace = NSWorkspace.shared
                 let consoleURL = URL(fileURLWithPath: "/System/Applications/Utilities/Console.app")
                 let appURL = Bundle.main.bundleURL
-                let config: NSWorkspace.OpenConfiguration = .init()
+                let config = NSWorkspace.OpenConfiguration()
                 
                 config.arguments = [appURL.path]
                 

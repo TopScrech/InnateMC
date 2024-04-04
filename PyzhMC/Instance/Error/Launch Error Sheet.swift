@@ -11,7 +11,7 @@ struct LaunchErrorSheet: View {
                     Spacer()
                     
                     VStack {
-                        if let launchError = self.launchError {
+                        if let launchError {
                             Text(launchError.localizedDescription)
                             
                             if let err = launchError.cause {

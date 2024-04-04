@@ -59,11 +59,11 @@ public struct LibraryDownloads: Codable, Equatable {
     
     public var artifacts: [LibraryArtifact] {
         var arr: [LibraryArtifact] = []
-        if let classifiers = classifiers, let natives = classifiers.nativesOsx {
+        if let classifiers, let natives = classifiers.nativesOsx {
             arr.append(natives)
         }
         
-        if let artifact = self.artifact {
+        if let artifact {
             arr.append(artifact)
         }
         
