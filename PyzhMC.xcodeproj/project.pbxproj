@@ -1166,7 +1166,7 @@
 				INFOPLIST_FILE = PyzhMC/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 InnateMC & Contributors";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 PyzhMC & Contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1215,7 +1215,7 @@
 				INFOPLIST_FILE = PyzhMC/Info.plist;
 				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 InnateMC & Contributors";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 PyzhMC & Contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
