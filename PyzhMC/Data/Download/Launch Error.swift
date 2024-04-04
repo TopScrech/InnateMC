@@ -21,19 +21,19 @@ public enum LaunchError: Error {
     var localizedDescription: String {
         switch(self) {
         case .errorDownloading(_):
-            NSLocalizedString("error_downloading", comment: "no u")
+            NSLocalizedString("Failed to download specified file", comment: "no u")
             
         case .invalidShaHash(_):
-            NSLocalizedString("invalid_sha_hash_error", comment: "no u")
+            NSLocalizedString("Invalid SHA hash found", comment: "no u")
             
         case .unknownError(_):
-            NSLocalizedString("error_unknown_download", comment: "no u")
+            NSLocalizedString("An unknown error occurred while downloading. This is a bug!", comment: "no u")
             
         case .accessTokenFetchError(_):
-            NSLocalizedString("error_fetching_access_token", comment: "no u")
+            NSLocalizedString("Couldn't fetch Minecraft access token", comment: "no u")
             
         case .errorCreatingFile(_):
-            NSLocalizedString("error_creating_file", comment: "no u")
+            NSLocalizedString("Failed to create file/directory", comment: "no u")
             
         }
     }

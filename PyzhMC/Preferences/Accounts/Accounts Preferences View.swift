@@ -1,37 +1,38 @@
 import SwiftUI
 
 struct AccountsPreferencesView: View {
+    @StateObject var msAccountVM = MicrosoftAccountVM()
     @EnvironmentObject var launcherData: LauncherData
     
-    @State var showAddOfflineSheet = false
-    @StateObject var msAccountVM: MicrosoftAccountVM = .init()
     @State var cachedAccounts: [UUID: any MinecraftAccount] = [:]
     @State var cachedAccountsOnly: [AdaptedAccount] = []
     @State var selectedAccountIds: Set<UUID> = []
     
+    @State var sheetAddOffline = false
+    
     var body: some View {
         VStack {
             Table(cachedAccountsOnly, selection: $selectedAccountIds) {
-                TableColumn(i18n("name"), value: \.username)
+                TableColumn("Name", value: \.username)
                 
-                TableColumn(i18n("type"), value: \.type.rawValue)
+                TableColumn("Type", value: \.type.rawValue)
                     .width(max: 100)
             }
             
             HStack {
                 Spacer()
                 
-                Button(i18n("add_offline")) {
-                    self.showAddOfflineSheet = true
+                Button("Add Offline Account") {
+                    sheetAddOffline = true
                 }
                 .padding()
                 
-                Button(i18n("add_microsoft")) {
+                Button("Add Microsoft Account") {
                     self.msAccountVM.prepareAndOpenSheet(launcherData: self.launcherData)
                 }
                 .padding()
                 
-                Button(i18n("delete_selected")) {
+                Button("Delete Selected") {
                     for id in selectedAccountIds {
                         self.launcherData.accountManager.accounts.removeValue(forKey: id)
                     }
@@ -56,13 +57,13 @@ struct AccountsPreferencesView: View {
             self.cachedAccounts = $0
             self.cachedAccountsOnly = Array($0.values).map({ AdaptedAccount(from: $0)})
         }
-        .onReceive(msAccountVM.$showMicrosoftAccountSheet) {
+        .onReceive(msAccountVM.$sheetMicrosoftAccount) {
             if !$0 {
                 launcherData.accountManager.msAccountVM = nil
             }
         }
-        .sheet($showAddOfflineSheet) {
-            AddOfflineAccountView(showSheet: $showAddOfflineSheet) {
+        .sheet($sheetAddOffline) {
+            AddOfflineAccountView(showSheet: $sheetAddOffline) {
                 let acc = OfflineAccount.createFromUsername($0)
                 self.launcherData.accountManager.accounts[acc.id] = acc
                 
@@ -71,7 +72,7 @@ struct AccountsPreferencesView: View {
                 }
             }
         }
-        .sheet($msAccountVM.showMicrosoftAccountSheet) {
+        .sheet($msAccountVM.sheetMicrosoftAccount) {
             HStack {
                 if msAccountVM.error == .noError {
                     Text(msAccountVM.message)

@@ -2,17 +2,17 @@ import SwiftUI
 
 struct InstanceDeleteSheet: View {
     @EnvironmentObject var launcherData: LauncherData
-    @Binding var showDeleteSheet: Bool
+    @Binding var sheetDelete: Bool
     @Binding var selectedInstance: Instance?
     
     var instanceToDelete: Instance
     
     var body: some View {
         VStack(alignment: .center) {
-            Text(i18n("are_you_sure_delete_instance"))
+            Text("Authenticating with Microsoft")
             
             HStack {
-                Button(i18n("delete")) {
+                Button("Delete") {
                     if let index = launcherData.instances.firstIndex(of: self.instanceToDelete) {
                         if let selectedInstance = self.selectedInstance {
                             if selectedInstance == instanceToDelete {
@@ -24,12 +24,12 @@ struct InstanceDeleteSheet: View {
                         instance.delete()
                     }
                     
-                    showDeleteSheet = false
+                    sheetDelete = false
                 }
                 .padding()
                 
-                Button(i18n("cancel")) {
-                    showDeleteSheet = false
+                Button("Cancel") {
+                    sheetDelete = false
                 }
                 .padding()
             }

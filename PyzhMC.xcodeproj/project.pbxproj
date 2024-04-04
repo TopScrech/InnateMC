@@ -110,7 +110,6 @@
 		64C41C1429366CAF00014E0F /* Value Keys.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C41C1329366CAF00014E0F /* Value Keys.swift */; };
 		64C5621429C083AA003402F0 /* Instance Process.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C5621329C083AA003402F0 /* Instance Process.swift */; };
 		64CE1092297864A700366372 /* Image Logo Picker View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64CE1091297864A700366372 /* Image Logo Picker View.swift */; };
-		64DC9E4829E67427005DE585 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 64DC9E4A29E67427005DE585 /* Localizable.strings */; };
 		64E1F8C72A0FBB31006D68B6 /* Microsoft Access Token.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E1F8C62A0FBB31006D68B6 /* Microsoft Access Token.swift */; };
 		64E1F8C92A0FBDE7006D68B6 /* Microsoft Auth Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E1F8C82A0FBDE7006D68B6 /* Microsoft Auth Error.swift */; };
 		64E459EF2938BBEF00F82A2B /* Instance Commands.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64E459EE2938BBEF00F82A2B /* Instance Commands.swift */; };
@@ -137,6 +136,7 @@
 		64FC5B292A5805FB009D0050 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 64FC5B282A5805FB009D0050 /* Zip */; };
 		64FE2D40293BA78B007414CB /* Instance Console View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* Instance Console View.swift */; };
 		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
+		F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F337D6282BBF1961004B52C5 /* Localizable.xcstrings */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -261,7 +261,6 @@
 		64C41C1329366CAF00014E0F /* Value Keys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Value Keys.swift"; sourceTree = "<group>"; };
 		64C5621329C083AA003402F0 /* Instance Process.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Process.swift"; sourceTree = "<group>"; };
 		64CE1091297864A700366372 /* Image Logo Picker View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Image Logo Picker View.swift"; sourceTree = "<group>"; };
-		64DC9E4929E67427005DE585 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		64E1F8C62A0FBB31006D68B6 /* Microsoft Access Token.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Access Token.swift"; sourceTree = "<group>"; };
 		64E1F8C82A0FBDE7006D68B6 /* Microsoft Auth Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Auth Error.swift"; sourceTree = "<group>"; };
 		64E459EE2938BBEF00F82A2B /* Instance Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Commands.swift"; sourceTree = "<group>"; };
@@ -286,7 +285,7 @@
 		64FA2A952A0F76FA0042A4A7 /* Microsoft Account View Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Account View Model.swift"; sourceTree = "<group>"; };
 		64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xbox Live Auth.swift"; sourceTree = "<group>"; };
 		64FE2D3F293BA78B007414CB /* Instance Console View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Console View.swift"; sourceTree = "<group>"; };
-		FB618B9329EB3ACD005418E5 /* de */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = de; path = de.lproj/Localizable.strings; sourceTree = "<group>"; };
+		F337D6282BBF1961004B52C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -594,7 +593,7 @@
 			children = (
 				64C334DC2922523F00BB8570 /* Assets.xcassets */,
 				64C334E12922523F00BB8570 /* PyzhMC.entitlements */,
-				64DC9E4A29E67427005DE585 /* Localizable.strings */,
+				F337D6282BBF1961004B52C5 /* Localizable.xcstrings */,
 				640DC1EC2934EC2300943213 /* App Delegate.swift */,
 				64C334DA2922523600BB8570 /* Content View.swift */,
 				64C41C1329366CAF00014E0F /* Value Keys.swift */,
@@ -782,6 +781,8 @@
 				en,
 				Base,
 				de,
+				ru,
+				nl,
 			);
 			mainGroup = 64C334CC2922523500BB8570;
 			packageReferences = (
@@ -818,7 +819,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64DC9E4829E67427005DE585 /* Localizable.strings in Resources */,
+				F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */,
 				64C33509292272F600BB8570 /* .gitignore in Resources */,
 				64C3350C2922B0B500BB8570 /* LICENSE in Resources */,
 				64C334DD2922523F00BB8570 /* Assets.xcassets in Resources */,
@@ -974,18 +975,6 @@
 		};
 /* End PBXTargetDependency section */
 
-/* Begin PBXVariantGroup section */
-		64DC9E4A29E67427005DE585 /* Localizable.strings */ = {
-			isa = PBXVariantGroup;
-			children = (
-				64DC9E4929E67427005DE585 /* en */,
-				FB618B9329EB3ACD005418E5 /* de */,
-			);
-			name = Localizable.strings;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
-
 /* Begin XCBuildConfiguration section */
 		649C8DD9297D5ABE000352F2 /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -1086,6 +1075,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -1144,6 +1134,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
+				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;

@@ -1,18 +1,20 @@
 import SwiftUI
 
 struct AddOfflineAccountView: View {
-    @State var username = ""
-    @State var showBlankPopover = false
     @Binding var showSheet: Bool
     @State var onCommit: (String) -> Void
+    
+    @State var username = ""
+    
+    @State var popoverBlank = false
     
     var body: some View {
         VStack {
             Form {
-                TextField(i18n("username"), text: $username)
+                TextField("Username", text: $username)
                     .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .popover(isPresented: $showBlankPopover, arrowEdge: .bottom) {
-                        Text(i18n("enter_a_username"))
+                    .popover(isPresented: $popoverBlank, arrowEdge: .bottom) {
+                        Text("Enter a username")
                             .padding()
                     }
                     .padding()
@@ -22,21 +24,21 @@ struct AddOfflineAccountView: View {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundColor(.yellow)
                     
-                    Text(i18n("invalid_username"))
+                    Text("Invalid username")
                 }
                 
                 Spacer()
                 
-                Button(i18n("cancel")) {
+                Button("Cancel") {
                     showSheet = false
                 }
                 .keyboardShortcut(.cancelAction)
                 
-                Button(i18n("done")) {
+                Button("Done") {
                     if username.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty {
-                        showBlankPopover = true
+                        popoverBlank = true
                     } else {
-                        onCommit(self.username)
+                        onCommit(username)
                         showSheet = false
                     }
                 }

@@ -3,53 +3,54 @@ import SwiftUI
 struct NewVanillaInstanceView: View {
     @EnvironmentObject var launcherData: LauncherData
     
-    @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("new_instance_default", comment: "New Instance")
+    @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("New Instance", comment: "New Instance")
     @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
     
-    @Binding var showNewInstanceSheet: Bool
+    @Binding var sheetNewInstance: Bool
     
     @State var versionManifest: [PartialVersion] = []
     @State var showSnapshots = false
     @State var showBeta = false
     @State var showAlpha = false
     @State var selectedVersion = PartialVersion.createBlank()
-    
     @State var versions: [PartialVersion] = []
-    @State var showNoNamePopover = false
-    @State var showDuplicateNamePopover = false
-    @State var showInvalidVersionPopover = false
+    
+    @State var popoverNoName = false
+    @State var popoverDuplicateName = false
+    @State var popoverInvalidVersion = false
     
     var body: some View {
         VStack {
             Spacer()
             
             Form {
-                TextField(i18n("name"), text: $name).frame(width: 400, height: nil, alignment: .leading).textFieldStyle(RoundedBorderTextFieldStyle())
-                    .popover(isPresented: $showNoNamePopover, arrowEdge: .bottom) {
-                        Text(i18n("enter_a_name"))
+                TextField("Name", text: $name).frame(width: 400, height: nil, alignment: .leading)
+                    .textFieldStyle(.roundedBorder)
+                    .popover(isPresented: $popoverNoName, arrowEdge: .bottom) {
+                        Text("Enter a name")
                             .padding()
                     }
-                    .popover(isPresented: $showDuplicateNamePopover, arrowEdge: .bottom) {
+                    .popover(isPresented: $popoverDuplicateName, arrowEdge: .bottom) {
                         // TODO: implement
-                        Text(i18n("enter_unique_name"))
+                        Text("Enter a unique name")
                             .padding()
                     }
-                Picker(i18n("version"), selection: $selectedVersion) {
-                    ForEach(self.versions) { ver in
+                Picker("Version", selection: $selectedVersion) {
+                    ForEach(versions) { ver in
                         Text(ver.version)
                             .tag(ver)
                     }
                 }
-                .popover(isPresented: $showInvalidVersionPopover, arrowEdge: .bottom) {
-                    Text(i18n("choose_valid_version"))
+                .popover(isPresented: $popoverInvalidVersion, arrowEdge: .bottom) {
+                    Text("Choose a valid version")
                         .padding()
                 }
                 
-                Toggle(i18n("show_snapshots"), isOn: $showSnapshots)
+                Toggle("Show snapshots", isOn: $showSnapshots)
                 
-                Toggle(i18n("show_old_beta"), isOn: $showBeta)
+                Toggle("Show old beta", isOn: $showBeta)
                 
-                Toggle(i18n("show_old_alpha"), isOn: $showAlpha)
+                Toggle("Show old alpha", isOn: $showAlpha)
             }
             .padding()
             
@@ -57,40 +58,40 @@ struct NewVanillaInstanceView: View {
                 Spacer()
                 
                 HStack {
-                    Button(i18n("cancel")) {
-                        showNewInstanceSheet = false
+                    Button("Cancel") {
+                        sheetNewInstance = false
                     }
                     .keyboardShortcut(.cancelAction)
                     
-                    Button(i18n("done")) {
+                    Button("Done") {
                         let trimmedName = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
                         
                         if trimmedName.isEmpty { // TODO: also check for spaces
-                            self.showNoNamePopover = true
+                            self.popoverNoName = true
                             return
                         }
                         
                         if launcherData.instances.map({ $0.name }).contains(where: { $0.lowercased() == trimmedName.lowercased()}) {
-                            self.showDuplicateNamePopover = true
+                            self.popoverDuplicateName = true
                             return
                         }
                         
                         if !self.versionManifest.contains(where: { $0 == self.selectedVersion }) {
-                            self.showInvalidVersionPopover = true
+                            self.popoverInvalidVersion = true
                             
                             return
                         }
                         
-                        self.showNoNamePopover = false
-                        self.showDuplicateNamePopover = false
-                        self.showInvalidVersionPopover = false
+                        self.popoverNoName = false
+                        self.popoverDuplicateName = false
+                        self.popoverInvalidVersion = false
                         
                         let instance = VanillaInstanceCreator(name: trimmedName, versionUrl: URL(string: self.selectedVersion.url)!, sha1: self.selectedVersion.sha1, notes: nil, data: self.launcherData)
                         do {
                             self.launcherData.instances.append(try instance.install())
-                            self.name = NSLocalizedString("new_instance_default", comment: "New Instance")
+                            self.name = NSLocalizedString("New Instance", comment: "New Instance")
                             self.cachedVersionId = ""
-                            self.showNewInstanceSheet = false
+                            self.sheetNewInstance = false
                         } catch {
                             ErrorTracker.instance.error(error: error, description: "Error creating instance")
                         }
@@ -152,5 +153,5 @@ struct NewVanillaInstanceView: View {
 }
 
 #Preview {
-    NewVanillaInstanceView(showNewInstanceSheet: .constant(true))
+    NewVanillaInstanceView(sheetNewInstance: .constant(true))
 }

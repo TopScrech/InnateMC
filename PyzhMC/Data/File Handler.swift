@@ -9,7 +9,7 @@ public class FileHandler {
     public static func getOrCreateFolder() throws -> URL {
         let fileManager = FileManager.default
         let appSupport = fileManager.urls(for: .applicationSupportDirectory, in: .userDomainMask).first!
-        let folderUrl = appSupport.appendingPathComponent("InnateMC")
+        let folderUrl = appSupport.appendingPathComponent("PyzhMC")
         
         if !fileManager.fileExists(atPath: folderUrl.path) {
             logger.info("Creating directory in user's application support folder")
@@ -24,7 +24,7 @@ public class FileHandler {
         let folderUrl = try getOrCreateFolder().appendingPathComponent(name)
         
         if !fileManager.fileExists(atPath: folderUrl.path) {
-            logger.info("Creating subdirectory \(name) in InnateMC")
+            logger.info("Creating subdirectory \(name) in PyzhMC")
             try fileManager.createDirectory(at: folderUrl, withIntermediateDirectories: true, attributes: nil)
         }
         

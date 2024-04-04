@@ -15,7 +15,7 @@ struct ImageLogoPickerView: View {
                     Image(systemName: "tray.circle").resizable()
                 }
             }
-            Button(i18n("open")) {
+            Button("Open") {
                 shouldShowFileImporter = true
             }
             .padding(50)

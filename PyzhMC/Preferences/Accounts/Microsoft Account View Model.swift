@@ -1,40 +1,45 @@
 import SwiftUI
 
 class MicrosoftAccountVM: ObservableObject {
-    @Published var showMicrosoftAccountSheet = false
-    @Published var message: LocalizedStringKey = i18n("authenticating_with_microsoft")
+    @Published var message: LocalizedStringKey = "Authenticating with Microsoft"
     @Published var error: MicrosoftAuthError = .noError
     
+    @Published var sheetMicrosoftAccount = false
+    
     @MainActor func error(_ error: MicrosoftAuthError) {
-        ErrorTracker.instance.error(error: error, description: NSLocalizedString("error_during_microsoft_add", comment: "Caught error while adding microsoft account"))
+        ErrorTracker.instance.error(
+            error: error,
+            description: NSLocalizedString("Caught error while adding Microsoft account", comment: "")
+        )
+        
         self.error = error
     }
     
     @MainActor func prepareAndOpenSheet(launcherData: LauncherData) {
-        self.showMicrosoftAccountSheet = true
+        self.sheetMicrosoftAccount = true
         launcherData.accountManager.msAccountVM = self
         launcherData.accountManager.createAuthWindow().showWindow(PyzhMCApp.self)
     }
     
     @MainActor func closeSheet() {
-        self.showMicrosoftAccountSheet = false
+        self.sheetMicrosoftAccount = false
         self.error(.noError)
-        self.message = i18n("authenticating_with_microsoft")
+        self.message = "Authenticating with Microsoft"
     }
     
     @MainActor func setAuthWithXboxLive() {
-        self.message = i18n("authenticating_with_xbox_live")
+        self.message = "Authenticating with Xbox Live"
     }
     
     @MainActor func setAuthWithXboxXSTS() {
-        self.message = i18n("authenticating_with_xbox_xsts")
+        self.message = "Authenticating with Xbox XSTS"
     }
     
     @MainActor func setAuthWithMinecraft() {
-        self.message = i18n("authenticating_with_minecraft")
+        self.message = "Authenticating with Minecraft"
     }
     
     @MainActor func setFetchingProfile() {
-        self.message = i18n("fetching_profile")
+        self.message = "Fetching Profile"
     }
 }

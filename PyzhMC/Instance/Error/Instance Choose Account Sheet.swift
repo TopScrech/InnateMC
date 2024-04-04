@@ -1,26 +1,23 @@
 import SwiftUI
 
 struct InstanceChooseAccountSheet: View {
-    @Binding var showChooseAccountSheet: Bool
+    @Binding var sheetChooseAccount: Bool
     
     var body: some View {
-        ZStack {
-            VStack {
-                HStack {
-                    Spacer()
-                    
-                    Text(i18n("no_account_selected"))
-                    
-                    Spacer()
-                }
+        VStack {
+            Text("No account")
                 .padding()
-                
-                Button(i18n("close")) {
-                    self.showChooseAccountSheet = false
-                }
-                .keyboardShortcut(.cancelAction)
-                .padding()
+            
+            Button("Close") {
+                sheetChooseAccount = false
             }
+            .keyboardShortcut(.cancelAction)
+            .padding()
         }
+        .frame(minWidth: 200)
     }
+}
+
+#Preview {
+    InstanceChooseAccountSheet(sheetChooseAccount: .constant(true))
 }

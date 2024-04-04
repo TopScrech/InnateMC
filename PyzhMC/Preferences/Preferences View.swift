@@ -7,25 +7,25 @@ struct PreferencesView: View {
         TabView(selection: $launcherData.selectedPreferenceTab) {
             RuntimePreferencesView()
                 .tabItem {
-                    Label(i18n("runtime"), systemImage: "cup.and.saucer")
+                    Label("Runtime", systemImage: "cup.and.saucer")
                 }
                 .tag(SelectedPreferenceTab.runtime)
             
             AccountsPreferencesView()
                 .tabItem {
-                    Label(i18n("accounts"), systemImage: "person.circle")
+                    Label("Accounts", systemImage: "person.circle")
                 }
                 .tag(SelectedPreferenceTab.accounts)
             
             UiPreferencesView()
                 .tag(SelectedPreferenceTab.ui)
                 .tabItem {
-                    Label(i18n("user_interface"), systemImage: "paintbrush.pointed")
+                    Label("UI", systemImage: "paintbrush.pointed")
                 }
             
             MiscPreferencesView()
                 .tabItem {
-                    Label(i18n("misc"), systemImage: "slider.horizontal.3")
+                    Label("Misc", systemImage: "slider.horizontal.3")
                 }
                 .tag(SelectedPreferenceTab.misc)
         }

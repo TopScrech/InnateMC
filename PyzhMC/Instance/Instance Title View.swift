@@ -10,18 +10,18 @@ struct InstanceTitleView: View {
     
     var body: some View {
         if editingVM.inEditMode {
-            TextField(i18n("name"), text: $editingVM.name)
+            TextField("Name", text: $editingVM.name)
                 .largeTitle()
                 .labelsHidden()
                 .fixedSize(horizontal: true, vertical: false)
                 .frame(height: 20)
                 .popover(isPresented: $showNoNamePopover, arrowEdge: .trailing) {
-                    Text(i18n("enter_a_name"))
+                    Text("Enter a name")
                         .padding()
                 }
                 .popover(isPresented: $showDuplicatePopover, arrowEdge: .trailing) {
                     // TODO: implement
-                    Text(i18n("enter_unique_name"))
+                    Text("Enter a unique name")
                         .padding()
                 }
             

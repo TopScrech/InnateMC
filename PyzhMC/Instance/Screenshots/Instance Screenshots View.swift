@@ -43,7 +43,7 @@ struct InstanceScreenshotsView: View {
                             }
                         }
                     } else {
-                        Text(i18n("no_screenshots"))
+                        Text("No screenshots")
                             .largeTitle()
                             .foregroundColor(.gray)
                             .multilineTextAlignment(.center)
@@ -64,7 +64,7 @@ struct InstanceScreenshotsView: View {
                 ScreenshotShareButton(selectedItem: selectedItem)
                     .disabled(selectedItem == nil)
                 
-                Button(i18n("open_in_finder")) {
+                Button("Open in finder") {
                     NSWorkspace.shared.selectFile(selectedItem?.path.path, inFileViewerRootedAtPath: instance.getScreenshotsFolder().path)
                 }
             }

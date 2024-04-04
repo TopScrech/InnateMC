@@ -7,7 +7,7 @@ struct InstanceNavigationLink: View {
     @Binding var selectedInstance: Instance?
     
     @State var starHovered = false
-    @State var showDeleteSheet = false
+    @State var sheetDelete = false
     
     var body: some View {
         NavigationLink {
@@ -57,26 +57,26 @@ struct InstanceNavigationLink: View {
             }
             .frame(maxWidth: .infinity)
         }
-        .sheet($showDeleteSheet) {
-            InstanceDeleteSheet(showDeleteSheet: $showDeleteSheet, selectedInstance: $selectedInstance, instanceToDelete: self.instance)
+        .sheet($sheetDelete) {
+            InstanceDeleteSheet(sheetDelete: $sheetDelete, selectedInstance: $selectedInstance, instanceToDelete: self.instance)
         }
         .contextMenu {
             if instance.isStarred {
-                Button(i18n("unstar")) {
+                Button("Unstar") {
                     withAnimation {
                         instance.isStarred = false
                     }
                 }
             } else {
-                Button(i18n("star")) {
+                Button("Star") {
                     withAnimation {
                         instance.isStarred = true
                     }
                 }
             }
             
-            Button(i18n("delete")) {
-                showDeleteSheet = true
+            Button("Delete") {
+                sheetDelete = true
             }
         }
     }

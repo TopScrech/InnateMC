@@ -5,9 +5,9 @@ struct UiPreferencesView: View {
     
     var body: some View {
         Form {
-            Toggle(i18n("compact_instance_list"), isOn: $launcherData.globalPreferences.ui.compactList)
+            Toggle("Compact Instance List", isOn: $launcherData.globalPreferences.ui.compactList)
             
-            Toggle(i18n("compact_instance_logo"), isOn: $launcherData.globalPreferences.ui.compactInstanceLogo)
+            Toggle("Compact Instance Logo", isOn: $launcherData.globalPreferences.ui.compactInstanceLogo)
         }
         .padding(16)
     }

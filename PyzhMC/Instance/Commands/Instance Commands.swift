@@ -2,17 +2,17 @@ import SwiftUI
 
 struct InstanceCommands: Commands {
     var body: some Commands {
-        CommandMenu(i18n("instance")) {
+        CommandMenu("Instance") {
             if #available(macOS 13, *) {
                 InstanceSpecificCommands()
             }
             
-            Button(i18n("open_instances_folder")) {
+            Button("Open Instances Folder") {
                 NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: FileHandler.instancesFolder.path)
             }
             .keyboardShortcut(.upArrow, modifiers: [.shift, .command])
             
-            Button(i18n("new_instance")) {
+            Button("New Instance") {
                 DispatchQueue.main.async {
                     LauncherData.instance.newInstanceRequested = true
                 }

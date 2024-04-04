@@ -4,7 +4,7 @@ struct InstanceInterativeLogoView: View {
     @EnvironmentObject var launcherData: LauncherData
     @StateObject var instance: Instance
     
-    @Binding var showLogoSheet: Bool
+    @Binding var sheetLogo: Bool
     @Binding var logoHovered: Bool
     
     var body: some View {
@@ -20,7 +20,7 @@ struct InstanceInterativeLogoView: View {
                 }
             }
             .onTapGesture {
-                showLogoSheet = true
+                sheetLogo = true
             }
     }
 }

@@ -3,25 +3,25 @@ import SwiftUI
 struct InstanceLogoSheet: View {
     @StateObject var instance: Instance
     
-    @Binding var showLogoSheet: Bool
+    @Binding var sheetLogo: Bool
     
     var body: some View {
         VStack {
             TabView {
                 ImageLogoPickerView(instance: instance)
                     .tabItem {
-                        Text(i18n("image"))
+                        Text("Image")
                     }
                 
                 SymbolLogoPickerView(instance: instance, logo: $instance.logo)
                     .tabItem {
-                        Text(i18n("symbol"))
+                        Text("Symbol")
                     }
             }
             
-            Button(i18n("done")) {
+            Button("Done") {
                 withAnimation {
-                    showLogoSheet = false
+                    sheetLogo = false
                 }
             }
             .padding()

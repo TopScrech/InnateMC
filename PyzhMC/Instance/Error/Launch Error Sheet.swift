@@ -2,7 +2,7 @@ import SwiftUI
 
 struct LaunchErrorSheet: View {
     @Binding var launchError: LaunchError?
-    @Binding var showErrorSheet: Bool
+    @Binding var sheetError: Bool
     
     var body: some View {
         ZStack {
@@ -24,8 +24,8 @@ struct LaunchErrorSheet: View {
                 }
                 .padding()
                 
-                Button(i18n("close")) {
-                    self.showErrorSheet = false
+                Button("Close") {
+                    sheetError = false
                 }
                 .keyboardShortcut(.cancelAction)
                 .padding()

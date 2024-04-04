@@ -5,18 +5,18 @@ struct NewInstanceView: View {
     
     var body: some View {
         TabView {
-            NewVanillaInstanceView(showNewInstanceSheet: $showNewInstanceSheet)
+            NewVanillaInstanceView(sheetNewInstance: $showNewInstanceSheet)
                 .tabItem {
-                    Text(i18n("vanilla"))
+                    Text("Vanilla")
                 }
             //            TodoView()
             //                .tabItem {
-            //                    Text(i18n("modrinth"))
+            //                    Text("Modrinth")
             //                }
             //
             //            TodoView()
             //                .tabItem {
-            //                    Text(i18n("import"))
+            //                    Text("Import")
             //                }
         }
         .border(.red, width: 0)

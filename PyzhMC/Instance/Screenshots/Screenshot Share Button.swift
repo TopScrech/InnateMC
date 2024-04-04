@@ -4,7 +4,7 @@ public struct ScreenshotShareButton: NSViewRepresentable {
     var selectedItem: Screenshot?
     
     public func makeNSView(context: Context) -> NSButton {
-        let button = NSButton(title: NSLocalizedString("share", comment: "Share"), target: context.coordinator, action: #selector(Coordinator.buttonClicked))
+        let button = NSButton(title: NSLocalizedString("Share", comment: "Share"), target: context.coordinator, action: #selector(Coordinator.buttonClicked))
         context.coordinator.button = button
         
         button.bezelStyle = .rounded

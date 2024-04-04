@@ -17,7 +17,7 @@ struct DeveloperModeCommands: Commands {
     
     @CommandsBuilder
     func getOldCommands() -> some Commands {
-        CommandMenu(i18n("develop")) {
+        CommandMenu("Develop") {
             if developerMode {
                 createView()
             }
@@ -26,7 +26,7 @@ struct DeveloperModeCommands: Commands {
     
     @ViewBuilder
     func createView() -> some View {
-        Button(i18n("show_console")) {
+        Button("Show console") {
             Task {
                 let workspace = NSWorkspace.shared
                 let consoleURL = URL(fileURLWithPath: "/System/Applications/Utilities/Console.app")
@@ -39,7 +39,7 @@ struct DeveloperModeCommands: Commands {
             }
         }
         
-        Button(i18n("error_tracker")) {
+        Button("Error Tracker") {
             ErrorTracker.instance.showWindow()
         }
     }
@@ -48,7 +48,7 @@ struct DeveloperModeCommands: Commands {
     @CommandsBuilder
     func getNewCommands() -> some Commands {
         if developerMode {
-            CommandMenu(i18n("develop")) {
+            CommandMenu("Develop") {
                 createView()
             }
         }

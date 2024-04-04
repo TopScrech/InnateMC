@@ -29,10 +29,6 @@ struct PyzhMCApp: App {
 
 public let logger = Logger(subsystem: "global", category: "PyzhMC")
 
-func i18n(_ str: String) -> LocalizedStringKey {
-    LocalizedStringKey(str)
-}
-
 public extension Logger {
     func error(_ message: String, error: Error) {
         self.error("\(message): \(error.localizedDescription)")

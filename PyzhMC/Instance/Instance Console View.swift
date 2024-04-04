@@ -33,7 +33,7 @@ struct InstanceConsoleView: View {
                 .padding(7)
                 
                 HStack {
-                    Button(i18n("open_logs_folder")) {
+                    Button("Open logs folder") {
                         NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: instance.getLogsFolder().path)
                     }
                 }

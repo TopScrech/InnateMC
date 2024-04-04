@@ -1,23 +1,26 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var launcherData: LauncherData
+    
     private static let nullUuid = UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
+    
     @State var searchTerm = ""
     @State var starredOnly = false
-    @EnvironmentObject var launcherData: LauncherData
     @State var isSidebarHidden = false
-    @State var showNewInstanceSheet = false
     @State var selectedInstance: Instance? = nil
-    @State var selectedAccount: UUID = ContentView.nullUuid
+    @State var selectedAccount = ContentView.nullUuid
     @State var cachedAccounts: [AdaptedAccount] = []
-    @State var showDuplicateInstanceSheet = false
-    @State var showDeleteInstanceSheet = false
-    @State var showExportInstanceSheet = false
+    
+    @State var sheetNewInstance = false
+    @State var sheetDuplicateInstance = false
+    @State var sheetDeleteInstance = false
+    @State var sheetExportInstance = false
     
     var body: some View {
         NavigationView {
             VStack {
-                TextField(i18n("search"), text: $searchTerm)
+                TextField("Search", text: $searchTerm)
                     .padding(.trailing, 8)
                     .padding(.leading, 10)
                     .padding([.top, .bottom], 9)
@@ -42,17 +45,17 @@ struct ContentView: View {
                     }
                 }
             }
-            .sheet($showNewInstanceSheet) {
-                NewInstanceView(showNewInstanceSheet: $showNewInstanceSheet)
+            .sheet($sheetNewInstance) {
+                NewInstanceView(showNewInstanceSheet: $sheetNewInstance)
             }
-            .sheet($showDeleteInstanceSheet) {
-                InstanceDeleteSheet(showDeleteSheet: $showDeleteInstanceSheet, selectedInstance: $selectedInstance, instanceToDelete: self.selectedInstance!)
+            .sheet($sheetDeleteInstance) {
+                InstanceDeleteSheet(sheetDelete: $sheetDeleteInstance, selectedInstance: $selectedInstance, instanceToDelete: self.selectedInstance!)
             }
-            .sheet($showDuplicateInstanceSheet) {
-                InstanceDuplicationSheet(showDuplicationSheet: $showDuplicateInstanceSheet, instance: self.selectedInstance!)
+            .sheet($sheetDuplicateInstance) {
+                InstanceDuplicationSheet(sheetDuplication: $sheetDuplicateInstance, instance: self.selectedInstance!)
             }
-            .sheet($showExportInstanceSheet) {
-                InstanceExportSheet(showExportSheet: $showExportInstanceSheet, instance: self.selectedInstance!)
+            .sheet($sheetExportInstance) {
+                InstanceExportSheet(sheetExport: $sheetExportInstance, instance: self.selectedInstance!)
             }
             .onReceive(launcherData.$instances) { newValue in
                 if let selectedInstance = self.selectedInstance {
@@ -61,9 +64,9 @@ struct ContentView: View {
                     }
                 }
             }
-            .navigationTitle(i18n("instances_title"))
+            .navigationTitle("Instances")
             
-            Text(i18n("select_an_instance"))
+            Text("Select an Instance")
                 .largeTitle()
                 .foregroundColor(.gray)
         }
@@ -92,16 +95,16 @@ struct ContentView: View {
         Toggle(isOn: $starredOnly) {
             Image(systemName: starredOnly ? "star.fill" : "star")
         }
-        .help(i18n("show_only_starred"))
+        .help("Show starred instances")
         
         Button {
-            showNewInstanceSheet = true
+            sheetNewInstance = true
         } label: {
             Image(systemName: "plus")
         }
         .onReceive(launcherData.$newInstanceRequested) { req in
             if req {
-                showNewInstanceSheet = true
+                sheetNewInstance = true
                 launcherData.newInstanceRequested = false
             }
         }
@@ -110,28 +113,28 @@ struct ContentView: View {
     @ViewBuilder
     func createPrimaryToolbar() -> some View {
         Button {
-            self.showDeleteInstanceSheet = true
+            self.sheetDeleteInstance = true
         } label: {
             Image(systemName: "trash")
         }
         .disabled(selectedInstance == nil)
-        .help(i18n("delete"))
+        .help("Delete")
         
         Button {
-            self.showDuplicateInstanceSheet = true
+            self.sheetDuplicateInstance = true
         } label: {
             Image(systemName: "doc.on.doc")
         }
         .disabled(selectedInstance == nil)
-        .help(i18n("duplicate"))
+        .help("Duplicate")
         
         Button {
-            self.showExportInstanceSheet = true
+            self.sheetExportInstance = true
         } label: {
             Image(systemName: "square.and.arrow.up")
         }
         .disabled(true)
-        .help(i18n("share_or_export"))
+        .help("Share or Export")
         
         Button {
             if launcherData.launchedInstances.contains(where: { $0.0 == selectedInstance! }) {
@@ -151,7 +154,7 @@ struct ContentView: View {
             }
         }
         .disabled(selectedInstance == nil)
-        .help(i18n("launch"))
+        .help("launch")
         
         Button {
             if launcherData.editModeInstances.contains(where: { $0 == selectedInstance! }) {
@@ -171,15 +174,15 @@ struct ContentView: View {
             }
         }
         .disabled(selectedInstance == nil)
-        .help(i18n("edit"))
+        .help("Edit")
     }
     
     @ViewBuilder
     func createTrailingToolbar() -> some View {
         Spacer()
         
-        Picker(i18n("account"), selection: $selectedAccount) {
-            Text(i18n("no_account_selected"))
+        Picker("Account", selection: $selectedAccount) {
+            Text("No account")
                 .tag(ContentView.nullUuid)
             
             ForEach(self.cachedAccounts) { value in
@@ -226,7 +229,7 @@ struct ContentView: View {
         } label: {
             Image(systemName: "person.circle")
         }
-        .help("manage_accounts")
+        .help("Manage Accounts")
     }
 }
 
