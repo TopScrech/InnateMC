@@ -22,7 +22,7 @@ public struct Http {
     public struct RequestBuilder {
         private var urlRequest: URLRequest
         
-        init(url: URL, method: InnateHttpMethod) {
+        init(url: URL, method: HttpMethod) {
             urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = method.rawValue
             urlRequest.setValue("PyzhMC", forHTTPHeaderField: "User-Agent")

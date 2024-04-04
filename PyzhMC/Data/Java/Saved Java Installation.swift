@@ -37,6 +37,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     public func setupAsNewVersion(launcherData: LauncherData) {
         DispatchQueue.global(qos: .utility).async {
             let process = Process()
+            
             let pipe = Pipe()
             process.executableURL = URL(fileURLWithPath: self.javaExecutable)
             process.arguments = ["-XshowSettings:properties", "-version"]
@@ -45,7 +46,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
             process.launch()
             process.waitUntilExit()
             
-            let data: Data = pipe.fileHandleForReading.availableData
+            let data = pipe.fileHandleForReading.availableData
             let string = String(data: data, encoding: .utf8) ?? "NO U"
             
             if let vendor = self.extractProperty(from: string, key: "java.vendor"),

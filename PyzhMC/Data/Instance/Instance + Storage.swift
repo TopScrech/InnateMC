@@ -35,7 +35,7 @@ extension Instance {
                 continue
             }
             
-            if !url.lastPathComponent.hasSuffix(".innate") {
+            if !url.lastPathComponent.hasSuffix(".pyzh") {
                 continue
             }
             

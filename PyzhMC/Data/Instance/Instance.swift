@@ -114,7 +114,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     }
     
     public static func getInstancePath(for name: String) -> URL {
-        FileHandler.instancesFolder.appendingPathComponent(name + ".innate", isDirectory: true)
+        FileHandler.instancesFolder.appendingPathComponent(name + ".pyzh", isDirectory: true)
     }
     
     public func setPreferences(_ prefs: InstancePreferences) {

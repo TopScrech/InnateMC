@@ -1,6 +1,6 @@
 import Foundation
 
-enum InnateHttpMethod: String {
+enum HttpMethod: String {
     case get = "GET",
          post = "POST"
 }
