@@ -220,7 +220,6 @@
 		648445872A10DE9200049986 /* MinecraftProfile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinecraftProfile.swift; sourceTree = "<group>"; };
 		648445892A10F69600049986 /* AccountManager+Storage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountManager+Storage.swift"; sourceTree = "<group>"; };
 		6484458B2A10F6BC00049986 /* AccountManager+Server.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "AccountManager+Server.swift"; sourceTree = "<group>"; };
-		648C831129DB375400007603 /* InnateMC-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "InnateMC-Bridging-Header.h"; sourceTree = "<group>"; };
 		648C831529DBDD6A00007603 /* libzip.5.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzip.5.5.dylib; path = ../../../../../usr/local/lib/libzip.5.5.dylib; sourceTree = "<group>"; };
 		648C831E29DBEE9900007603 /* libzip.5.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libzip.5.5.dylib; path = ../../../Desktop/libzip.5.5.dylib; sourceTree = "<group>"; };
 		648EDF502A1881CE00E40B03 /* PartialVersion.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PartialVersion.swift; sourceTree = "<group>"; };
@@ -593,7 +592,6 @@
 		64C334D72922523600BB8570 /* InnateMC */ = {
 			isa = PBXGroup;
 			children = (
-				648C831129DB375400007603 /* InnateMC-Bridging-Header.h */,
 				64F7C5EA297D63800086ABC1 /* Data */,
 				644DE1D22937C13F00C4A03E /* Instance */,
 				6416784F2923B6450012C9CC /* Preferences */,
@@ -1198,7 +1196,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "InnateMC/InnateMC-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "Semantic Versioning";
@@ -1244,7 +1241,6 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_OBJC_BRIDGING_HEADER = "InnateMC/InnateMC-Bridging-Header.h";
 				SWIFT_VERSION = 5.0;
 				VERSIONING_SYSTEM = "Semantic Versioning";
 			};
