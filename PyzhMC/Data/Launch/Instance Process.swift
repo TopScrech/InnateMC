@@ -77,6 +77,7 @@ public class InstanceProcess: ObservableObject  {
             
             DispatchQueue.main.async {
                 logger.debug("Instance \(instance.name) terminated")
+                
                 LauncherData.instance.launchedInstances.removeValue(forKey: instance)
             }
         }
