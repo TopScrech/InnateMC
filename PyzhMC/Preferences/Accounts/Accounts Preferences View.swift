@@ -28,34 +28,34 @@ struct AccountsPreferencesView: View {
                 .padding()
                 
                 Button("Add Microsoft Account") {
-                    self.msAccountVM.prepareAndOpenSheet(launcherData: self.launcherData)
+                    msAccountVM.prepareAndOpenSheet(launcherData: self.launcherData)
                 }
                 .padding()
                 
                 Button("Delete Selected") {
                     for id in selectedAccountIds {
-                        self.launcherData.accountManager.accounts.removeValue(forKey: id)
+                        launcherData.accountManager.accounts.removeValue(forKey: id)
                     }
                     
-                    self.selectedAccountIds = []
+                    selectedAccountIds = []
                     
                     DispatchQueue.global(qos: .utility).async {
-                        self.launcherData.accountManager.saveThrow() // TODO: handle error
+                        launcherData.accountManager.saveThrow() // TODO: handle error
                     }
                 }
-                .disabled(self.selectedAccountIds.isEmpty)
+                .disabled(selectedAccountIds.isEmpty)
                 .padding()
                 
                 Spacer()
             }
         }
         .onAppear {
-            self.cachedAccounts = launcherData.accountManager.accounts
-            self.cachedAccountsOnly = Array(self.cachedAccounts.values).map({ AdaptedAccount(from: $0)})
+            cachedAccounts = launcherData.accountManager.accounts
+            cachedAccountsOnly = Array(cachedAccounts.values).map({ AdaptedAccount(from: $0)})
         }
         .onReceive(launcherData.accountManager.$accounts) {
-            self.cachedAccounts = $0
-            self.cachedAccountsOnly = Array($0.values).map({ AdaptedAccount(from: $0)})
+            cachedAccounts = $0
+            cachedAccountsOnly = Array($0.values).map({ AdaptedAccount(from: $0)})
         }
         .onReceive(msAccountVM.$sheetMicrosoftAccount) {
             if !$0 {
@@ -65,10 +65,10 @@ struct AccountsPreferencesView: View {
         .sheet($sheetAddOffline) {
             AddOfflineAccountView(showSheet: $sheetAddOffline) {
                 let acc = OfflineAccount.createFromUsername($0)
-                self.launcherData.accountManager.accounts[acc.id] = acc
+                launcherData.accountManager.accounts[acc.id] = acc
                 
                 DispatchQueue.global(qos: .utility).async {
-                    self.launcherData.accountManager.saveThrow() // TODO: handle error
+                    launcherData.accountManager.saveThrow() // TODO: handle error
                 }
             }
         }

@@ -2,14 +2,13 @@
 import SwiftUI
 
 struct InstanceExportSheet: View {
-    @Binding var sheetExport: Bool
-    
     @StateObject var instance: Instance
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack(alignment: .center) {
             Button("Cancel") {
-                sheetExport = false
+                dismiss()
             }
             .padding()
         }

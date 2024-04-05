@@ -2,7 +2,8 @@ import SwiftUI
 
 struct InstanceDeleteSheet: View {
     @EnvironmentObject var launcherData: LauncherData
-    @Binding var sheetDelete: Bool
+    @Environment(\.dismiss) private var dismiss
+    
     @Binding var selectedInstance: Instance?
     
     var instanceToDelete: Instance
@@ -24,12 +25,12 @@ struct InstanceDeleteSheet: View {
                         instance.delete()
                     }
                     
-                    sheetDelete = false
+                    dismiss()
                 }
                 .padding()
                 
                 Button("Cancel") {
-                    sheetDelete = false
+                    dismiss()
                 }
                 .padding()
             }

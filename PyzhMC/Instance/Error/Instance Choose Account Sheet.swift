@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InstanceChooseAccountSheet: View {
-    @Binding var sheetChooseAccount: Bool
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -9,7 +9,7 @@ struct InstanceChooseAccountSheet: View {
                 .padding()
             
             Button("Close") {
-                sheetChooseAccount = false
+                dismiss()
             }
             .keyboardShortcut(.cancelAction)
             .padding()
@@ -19,5 +19,5 @@ struct InstanceChooseAccountSheet: View {
 }
 
 #Preview {
-    InstanceChooseAccountSheet(sheetChooseAccount: .constant(true))
+    InstanceChooseAccountSheet()
 }

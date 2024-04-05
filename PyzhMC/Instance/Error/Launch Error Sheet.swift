@@ -1,8 +1,9 @@
 import SwiftUI
 
 struct LaunchErrorSheet: View {
+    @Environment(\.dismiss) private var dismiss
+    
     @Binding var launchError: LaunchError?
-    @Binding var sheetError: Bool
     
     var body: some View {
         ZStack {
@@ -25,7 +26,7 @@ struct LaunchErrorSheet: View {
                 .padding()
                 
                 Button("Close") {
-                    sheetError = false
+                    dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
                 .padding()

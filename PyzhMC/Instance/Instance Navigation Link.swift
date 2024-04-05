@@ -58,7 +58,7 @@ struct InstanceNavigationLink: View {
             .frame(maxWidth: .infinity)
         }
         .sheet($sheetDelete) {
-            InstanceDeleteSheet(sheetDelete: $sheetDelete, selectedInstance: $selectedInstance, instanceToDelete: self.instance)
+            InstanceDeleteSheet(selectedInstance: $selectedInstance, instanceToDelete: self.instance)
         }
         .contextMenu {
             if instance.isStarred {

@@ -27,17 +27,17 @@ struct InstanceView: View {
         ZStack {
             VStack {
                 HStack {
-                    InstanceInterativeLogoView(instance: self.instance, sheetLogo: $sheetLogo, logoHovered: $logoHovered)
+                    InstanceInterativeLogoView(instance: instance, sheetLogo: $sheetLogo, logoHovered: $logoHovered)
                     
                     VStack {
                         HStack {
-                            InstanceTitleView(editingVM: self.editingVM, instance: self.instance, showNoNamePopover: $popoverNoName, showDuplicatePopover: $popoverDuplicate, starHovered: $starHovered)
+                            InstanceTitleView(editingVM: editingVM, instance: instance, showNoNamePopover: $popoverNoName, showDuplicatePopover: $popoverDuplicate, starHovered: $starHovered)
                             
                             Spacer()
                         }
                         
                         HStack {
-                            InstanceSynopsisView(editingVM: self.editingVM, instance: self.instance)
+                            InstanceSynopsisView(editingVM: editingVM, instance: instance)
                             
                             Spacer()
                         }
@@ -45,11 +45,11 @@ struct InstanceView: View {
                     }
                 }
                 .sheet($sheetLogo) {
-                    InstanceLogoSheet(instance: self.instance, sheetLogo: $sheetLogo)
+                    InstanceLogoSheet(instance: instance, sheetLogo: $sheetLogo)
                 }
                 
                 HStack {
-                    InstanceNotesView(editingVM: self.editingVM, instance: self.instance)
+                    InstanceNotesView(editingVM: editingVM, instance: instance)
                     
                     Spacer()
                 }
@@ -91,17 +91,17 @@ struct InstanceView: View {
                 instance.loadScreenshotsAsync()
             }
             .sheet($sheetError) {
-                LaunchErrorSheet(launchError: $launchError, sheetError: $sheetError)
+                LaunchErrorSheet(launchError: $launchError)
             }
             .sheet($sheetPreLaunch, content: createPrelaunchSheet)
             .sheet($sheetChooseAccount) {
-                InstanceChooseAccountSheet(sheetChooseAccount: $sheetChooseAccount)
+                InstanceChooseAccountSheet()
             }
             .onReceive(launcherData.$launchedInstances) { value in
                 launchedInstanceProcess = launcherData.launchedInstances[instance]
             }
             .onReceive(launcherData.$launchRequestedInstances) { value in
-                if value.contains(where: { $0 == self.instance}) {
+                if value.contains(where: { $0 == self.instance }) {
                     if launcherData.accountManager.currentSelected != nil {
                         sheetPreLaunch = true
                         downloadProgress.cancelled = false
@@ -122,7 +122,10 @@ struct InstanceView: View {
             .onReceive(launcherData.$killRequestedInstances) { value in
                 if value.contains(where: { $0 == self.instance})  {
                     kill(launchedInstanceProcess!.process.processIdentifier, SIGKILL)
-                    launcherData.killRequestedInstances.removeAll(where: { $0 == self.instance })
+                    
+                    launcherData.killRequestedInstances.removeAll {
+                        $0 == self.instance
+                    }
                 }
             }
         }
@@ -222,7 +225,7 @@ struct InstanceView: View {
     
     @MainActor
     func onPrelaunchError(_ error: LaunchError) {
-        if self.sheetError {
+        if sheetError {
             logger.debug("Suppressed error during prelaunch: \(error.localizedDescription)")
             
             if let sup = error.cause {
@@ -231,17 +234,20 @@ struct InstanceView: View {
             
             return
         }
+        
         logger.error("Caught error during prelaunch", error: error)
+        
         ErrorTracker.instance.error(error: error, description: "Caught error during prelaunch")
         
         if let cause = error.cause {
             logger.error("Cause", error: cause)
+            
             ErrorTracker.instance.error(error: error, description: "Causative error during prelaunch")
         }
         
-        self.sheetPreLaunch = false
-        self.sheetError = true
-        self.downloadProgress.cancelled = true
-        self.launchError = error
+        sheetPreLaunch = false
+        sheetError = true
+        downloadProgress.cancelled = true
+        launchError = error
     }
 }

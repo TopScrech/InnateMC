@@ -2,9 +2,9 @@
 import SwiftUI
 
 struct InstanceDuplicationSheet: View {
-    @EnvironmentObject var launcherData: LauncherData
-    @Binding var sheetDuplication: Bool
     @StateObject var instance: Instance
+    @EnvironmentObject var launcherData: LauncherData
+    @Environment(\.dismiss) private var dismiss
     
     @State var newName = ""
     
@@ -31,19 +31,19 @@ struct InstanceDuplicationSheet: View {
                         }
                     }
                     
-                    self.launcherData.instances.append(newInstance)
-                    self.sheetDuplication = false
+                    launcherData.instances.append(newInstance)
+                    dismiss()
                 }
                 .padding()
                 
                 Button("Cancel") {
-                    self.sheetDuplication = false
+                    dismiss()
                 }
                 .padding()
             }
         }
         .onAppear {
-            self.newName = "Copy of \(instance.name)" // TODO: localize
+            newName = "Copy of \(instance.name)" // TODO: localize
         }
     }
 }

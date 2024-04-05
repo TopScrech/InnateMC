@@ -58,13 +58,13 @@ struct ContentView: View {
                 NewInstanceView(showNewInstanceSheet: $sheetNewInstance)
             }
             .sheet($sheetDeleteInstance) {
-                InstanceDeleteSheet(sheetDelete: $sheetDeleteInstance, selectedInstance: $selectedInstance, instanceToDelete: selectedInstance!)
+                InstanceDeleteSheet(selectedInstance: $selectedInstance, instanceToDelete: selectedInstance!)
             }
             .sheet($sheetDuplicateInstance) {
-                InstanceDuplicationSheet(sheetDuplication: $sheetDuplicateInstance, instance: selectedInstance!)
+                InstanceDuplicationSheet(instance: selectedInstance!)
             }
             .sheet($sheetExportInstance) {
-                InstanceExportSheet(sheetExport: $sheetExportInstance, instance: selectedInstance!)
+                InstanceExportSheet(instance: selectedInstance!)
             }
             .onReceive(launcherData.$instances) { newValue in
                 if let selectedInstance {
@@ -225,7 +225,9 @@ struct ContentView: View {
             }
         }
         .onReceive(launcherData.accountManager.$accounts) {
-            cachedAccounts = Array($0.values).map { .init(from: $0) }
+            cachedAccounts = Array($0.values).map {
+                .init(from: $0)
+            }
         }
         
         Button {
