@@ -75,7 +75,7 @@ struct InstanceNavigationLink: View {
                 }
             }
             
-            Button("Delete") {
+            Button("Delete", role: .destructive) {
                 sheetDelete = true
             }
         }

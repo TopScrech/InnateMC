@@ -20,11 +20,13 @@ struct ContentView: View {
     var body: some View {
         NavigationView {
             VStack {
-                TextField("Search", text: $searchTerm)
-                    .padding(.trailing, 8)
-                    .padding(.leading, 10)
-                    .padding([.top, .bottom], 9)
-                    .textFieldStyle(.roundedBorder)
+                if !launcherData.instances.isEmpty {
+                    TextField("Search", text: $searchTerm)
+                        .padding(.trailing, 8)
+                        .padding(.leading, 10)
+                        .padding([.top, .bottom], 9)
+                        .textFieldStyle(.roundedBorder)
+                }
                 
                 List(selection: $selectedInstance) {
                     ForEach(launcherData.instances) { instance in
@@ -37,6 +39,13 @@ struct ContentView: View {
                     }
                     .onMove { indices, newOffset in
                         launcherData.instances.move(fromOffsets: indices, toOffset: newOffset)
+                    }
+                }
+                .overlay {
+                    if #available(macOS 14, *) {
+                        if launcherData.instances.isEmpty {
+                            ContentUnavailableView("No instances found", systemImage: "hammer", description: Text("Try pyzh"))
+                        }
                     }
                 }
                 .toolbar {
