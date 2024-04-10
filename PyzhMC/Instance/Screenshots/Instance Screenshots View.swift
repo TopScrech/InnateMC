@@ -34,7 +34,7 @@ struct InstanceScreenshotsView: View {
                                         [NSItemProvider(contentsOf: screenshot.path)!]
                                     }
                                     .highPriorityGesture(
-                                        TapGesture().onEnded { i in
+                                        TapGesture().onEnded {
                                             withAnimation(.linear(duration: 0.1)) {
                                                 selectedItem = screenshot
                                             }

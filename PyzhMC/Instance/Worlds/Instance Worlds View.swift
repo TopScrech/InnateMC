@@ -6,23 +6,19 @@ struct InstanceWorldsView: View {
     @FocusState var selectedWorld: World?
     
     var body: some View {
-        VStack {
-            List {
-                ForEach(instance.worlds, id: \.self) { world in
-                    HStack {
-                        Text(world.folder)
-                    }
+        List {
+            ForEach(instance.worlds, id: \.self) { world in
+                Text(world.folder)
                     .focusable()
                     .focused($selectedWorld, equals: world)
                     .highPriorityGesture(
-                        TapGesture().onEnded { i in
-                            self.selectedWorld = world
+                        TapGesture().onEnded {
+                            selectedWorld = world
                         }
                     )
-                }
             }
         }
-        .onAppear {
+        .task {
             instance.loadWorldsAsync()
         }
     }
