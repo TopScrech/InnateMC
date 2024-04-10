@@ -47,14 +47,14 @@ public struct Mod: Identifiable, Hashable, Comparable {
         }
 
         // Adjusted function call
-        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-forge-11.6.0.1019.jar"),
+        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar"),
            let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods") {
-            unzipJarFile(jarFilePath: jarFilePath, destinationDirectoryPath: destinationDirectoryPath)
+            unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: destinationDirectoryPath)
         } else {
             print("Invalid file URL")
         }
 
-        return Mod(
+        return .init(
             enabled: isEnabled(url),
             path: url,
             meta: .init(
@@ -65,7 +65,7 @@ public struct Mod: Identifiable, Hashable, Comparable {
     }
 }
 
-func unzipJarFile(jarFilePath: String, destinationDirectoryPath: String) {
+func unzipModJar(jarFilePath: String, destinationDirectoryPath: String) {
     let process = Process()
     let pipe = Pipe()
     
