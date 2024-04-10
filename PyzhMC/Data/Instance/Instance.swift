@@ -260,7 +260,12 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                     urls = try fm.contentsOfDirectory(at: modsFolder, includingPropertiesForKeys: nil)
                 } catch {
                     logger.error("Error reading mods folder for instance \(name)", error: error)
-                    ErrorTracker.instance.error(error: error, description: "Error reading mods folder for instance \(name)")
+                    
+                    ErrorTracker.instance.error(
+                        error: error,
+                        description: "Error reading mods folder for instance \(name)"
+                    )
+                    
                     return
                 }
                 
@@ -287,6 +292,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
             worldsWatcher = watcher
             watcher.start()
         }
+        
         Task {
             let fm = FileManager.default
             var isDirectory: ObjCBool = true
@@ -296,15 +302,20 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 
                 do {
                     urls = try fm.contentsOfDirectory(at: worldsFolder, includingPropertiesForKeys: nil)
+                    print(urls)
                 } catch {
                     logger.error("Error reading mods folder for instance \(name)", error: error)
-                    ErrorTracker.instance.error(error: error, description: "Error reading mods folder for instance \(name)")
+                    
+                    ErrorTracker.instance.error(
+                        error: error,
+                        description: "Error reading mods folder for instance \(name)"
+                    )
                     
                     return
                 }
                 
                 DispatchQueue.main.async {
-                    self.mods = urls.deserializeToMods()
+                    self.worlds = urls.deserializeToWorlds()
                 }
             }
         }
