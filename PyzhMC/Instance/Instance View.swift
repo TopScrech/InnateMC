@@ -237,12 +237,18 @@ struct InstanceView: View {
         
         logger.error("Caught error during prelaunch", error: error)
         
-        ErrorTracker.instance.error(error: error, description: "Caught error during prelaunch")
+        ErrorTracker.instance.error(
+            error: error,
+            description: "Caught error during prelaunch"
+        )
         
         if let cause = error.cause {
             logger.error("Cause", error: cause)
             
-            ErrorTracker.instance.error(error: error, description: "Causative error during prelaunch")
+            ErrorTracker.instance.error(
+                error: error,
+                description: "Causative error during prelaunch"
+            )
         }
         
         sheetPreLaunch = false

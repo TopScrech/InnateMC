@@ -3,8 +3,8 @@ import SwiftUI
 struct NewVanillaInstanceView: View {
     @EnvironmentObject var launcherData: LauncherData
     
-    @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("New Instance", comment: "New Instance")
     @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
+    @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("New Instance", comment: "New Instance")
     
     @Binding var sheetNewInstance: Bool
     
@@ -24,7 +24,8 @@ struct NewVanillaInstanceView: View {
             Spacer()
             
             Form {
-                TextField("Name", text: $name).frame(width: 400, height: nil, alignment: .leading)
+                TextField("Name", text: $name)
+                    .frame(width: 400, height: nil, alignment: .leading)
                     .textFieldStyle(.roundedBorder)
                     .popover(isPresented: $popoverNoName, arrowEdge: .bottom) {
                         Text("Enter a name")
@@ -64,36 +65,39 @@ struct NewVanillaInstanceView: View {
                     .keyboardShortcut(.cancelAction)
                     
                     Button("Done") {
-                        let trimmedName = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
+                        let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
                         
                         if trimmedName.isEmpty { // TODO: also check for spaces
-                            self.popoverNoName = true
+                            popoverNoName = true
                             return
                         }
                         
                         if launcherData.instances.map({ $0.name }).contains(where: { $0.lowercased() == trimmedName.lowercased()}) {
-                            self.popoverDuplicateName = true
+                            popoverDuplicateName = true
                             return
                         }
                         
-                        if !self.versionManifest.contains(where: { $0 == self.selectedVersion }) {
-                            self.popoverInvalidVersion = true
+                        if !versionManifest.contains(where: { $0 == selectedVersion }) {
+                            popoverInvalidVersion = true
                             
                             return
                         }
                         
-                        self.popoverNoName = false
-                        self.popoverDuplicateName = false
-                        self.popoverInvalidVersion = false
+                        popoverNoName = false
+                        popoverDuplicateName = false
+                        popoverInvalidVersion = false
                         
-                        let instance = VanillaInstanceCreator(name: trimmedName, versionUrl: URL(string: self.selectedVersion.url)!, sha1: self.selectedVersion.sha1, notes: nil, data: self.launcherData)
+                        let instance = VanillaInstanceCreator(name: trimmedName, versionUrl: URL(string: selectedVersion.url)!, sha1: selectedVersion.sha1, notes: nil, data: launcherData)
                         do {
-                            self.launcherData.instances.append(try instance.install())
-                            self.name = NSLocalizedString("New Instance", comment: "New Instance")
-                            self.cachedVersionId = ""
-                            self.sheetNewInstance = false
+                            launcherData.instances.append(try instance.install())
+                            name = NSLocalizedString("New Instance", comment: "New Instance")
+                            cachedVersionId = ""
+                            sheetNewInstance = false
                         } catch {
-                            ErrorTracker.instance.error(error: error, description: "Error creating instance")
+                            ErrorTracker.instance.error(
+                                error: error,
+                                description: "Error creating instance"
+                            )
                         }
                     }
                     .keyboardShortcut(.defaultAction)
@@ -102,11 +106,11 @@ struct NewVanillaInstanceView: View {
             }
         }
         .onAppear {
-            self.versionManifest = self.launcherData.versionManifest
+            versionManifest = launcherData.versionManifest
             recomputeVersions()
         }
-        .onReceive(self.launcherData.$versionManifest) {
-            self.versionManifest = $0
+        .onReceive(launcherData.$versionManifest) {
+            versionManifest = $0
             recomputeVersions()
         }
         .onChange(of: showAlpha) { _ in
@@ -119,7 +123,7 @@ struct NewVanillaInstanceView: View {
             recomputeVersions()
         }
         .onChange(of: selectedVersion) { _ in
-            self.cachedVersionId = self.selectedVersion.version
+            cachedVersionId = selectedVersion.version
         }
     }
     
@@ -129,7 +133,7 @@ struct NewVanillaInstanceView: View {
         }
         
         DispatchQueue.global(qos: .userInteractive).async {
-            let newVersions = self.versionManifest
+            let newVersions = versionManifest
                 .filter { version in
                     return version.type == "old_alpha" && showAlpha ||
                     version.type == "old_beta" && showBeta ||
@@ -137,15 +141,15 @@ struct NewVanillaInstanceView: View {
                     version.type == "release"
                 }
             
-            let notContained = !newVersions.contains(self.selectedVersion)
+            let notContained = !newVersions.contains(selectedVersion)
             
             DispatchQueue.main.async {
-                self.versions = newVersions
+                versions = newVersions
                 
-                if let cached = self.versions.filter({ $0.version == self.cachedVersionId }).first {
-                    self.selectedVersion = cached
+                if let cached = versions.filter({ $0.version == cachedVersionId }).first {
+                    selectedVersion = cached
                 } else if notContained {
-                    self.selectedVersion = newVersions.first!
+                    selectedVersion = newVersions.first!
                 }
             }
         }

@@ -2,23 +2,23 @@ import SwiftUI
 
 struct AddOfflineAccountView: View {
     @Binding var showSheet: Bool
+    
     @State var onCommit: (String) -> Void
-    
     @State var username = ""
-    
     @State var popoverBlank = false
     
     var body: some View {
         VStack {
             Form {
                 TextField("Username", text: $username)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
+                    .textFieldStyle(.roundedBorder)
+                    .padding()
                     .popover(isPresented: $popoverBlank, arrowEdge: .bottom) {
                         Text("Enter a username")
                             .padding()
                     }
-                    .padding()
             }
+            
             HStack {
                 if !isValidMinecraftUsername(self.username) {
                     Image(systemName: "exclamationmark.triangle.fill")
@@ -50,14 +50,14 @@ struct AddOfflineAccountView: View {
     }
     
     private func isValidMinecraftUsername(_ username: String) -> Bool {
-        let allowedCharacters = CharacterSet.alphanumerics.union(CharacterSet(charactersIn: "_"))
+        let allowedCharacters = CharacterSet.alphanumerics.union(.init(charactersIn: "_"))
         let disallowedWords = ["minecraft", "mojang", "admin", "administrator"]
         
         if username.count < 3 || username.count > 16 {
             return false
         }
         
-        if !username.allSatisfy({ allowedCharacters.contains(UnicodeScalar(String($0))!) }) {
+        if !username.allSatisfy({ allowedCharacters.contains(.init(String($0))!) }) {
             return false
         }
         

@@ -74,13 +74,17 @@ extension Instance {
                 do {
                     try fileManager.copyItem(at: fileURL, to: outputURL)
                 } catch {
-                    ErrorTracker.instance.error(description: "Failed to copy \(fileURL.path) to \(outputURL.path)")
+                    ErrorTracker.instance.error(
+                        description: "Failed to copy \(fileURL.path) to \(outputURL.path)"
+                    )
                 }
             }
             
             try fileManager.removeItem(at: unzipDirectory)
         } catch {
-            ErrorTracker.instance.error(description: "Failed to extract zip file: \(error)")
+            ErrorTracker.instance.error(
+                description: "Failed to extract zip file: \(error)"
+            )
         }
     }
     

@@ -25,7 +25,11 @@ public class VersionManifest {
         } catch {
             logger.error("Could not download version manifest", error: error)
             
-            ErrorTracker.instance.error(error: error, description: "Could not download version manifest")
+            ErrorTracker.instance.error(
+                error: error,
+                description: "Could not download version manifest"
+            )
+            
             logger.error("Trying to load cached version manifest")
             
             let parsed = try fetchCache()
