@@ -16,30 +16,30 @@ class MicrosoftAccountVM: ObservableObject {
     }
     
     @MainActor func prepareAndOpenSheet(launcherData: LauncherData) {
-        self.sheetMicrosoftAccount = true
+        sheetMicrosoftAccount = true
         launcherData.accountManager.msAccountVM = self
         launcherData.accountManager.createAuthWindow().showWindow(PyzhMCApp.self)
     }
     
     @MainActor func closeSheet() {
-        self.sheetMicrosoftAccount = false
-        self.error(.noError)
-        self.message = "Authenticating with Microsoft"
+        sheetMicrosoftAccount = false
+        error(.noError)
+        message = "Authenticating with Microsoft"
     }
     
     @MainActor func setAuthWithXboxLive() {
-        self.message = "Authenticating with Xbox Live"
+        message = "Authenticating with Xbox Live"
     }
     
     @MainActor func setAuthWithXboxXSTS() {
-        self.message = "Authenticating with Xbox XSTS"
+        message = "Authenticating with Xbox XSTS"
     }
     
     @MainActor func setAuthWithMinecraft() {
-        self.message = "Authenticating with Minecraft"
+        message = "Authenticating with Minecraft"
     }
     
     @MainActor func setFetchingProfile() {
-        self.message = "Fetching Profile"
+        message = "Fetching Profile"
     }
 }

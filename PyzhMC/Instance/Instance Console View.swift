@@ -6,7 +6,7 @@ struct InstanceConsoleView: View {
     @Binding var launchedInstanceProcess: InstanceProcess?
     @EnvironmentObject var launcherData: LauncherData
     
-    @State var launchedInstances: [Instance:InstanceProcess]? = nil
+    @State var launchedInstances: [Instance: InstanceProcess]? = nil
     @State var logMessages: [String] = []
     
     var body: some View {
@@ -14,7 +14,7 @@ struct InstanceConsoleView: View {
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 8) {
-                        ForEach(self.logMessages, id: \.self) { message in
+                        ForEach(logMessages, id: \.self) { message in
                             Text(message)
                                 .font(.system(.body, design: .monospaced))
                                 .id(message)
@@ -22,7 +22,7 @@ struct InstanceConsoleView: View {
                     }
                     .padding(.horizontal)
                     .padding(.vertical, 8)
-                    .id(self.logMessages)
+                    .id(logMessages)
                 }
                 .background(Color(NSColor.textBackgroundColor))
                 .cornerRadius(8)
@@ -39,19 +39,19 @@ struct InstanceConsoleView: View {
                 }
                 .padding([.top, .leading, .trailing], 5)
                 
-                if self.launchedInstanceProcess != nil {
+                if launchedInstanceProcess != nil {
                     ZStack {
                         
                     }
                     .onAppear {
                         withAnimation {
-                            proxy.scrollTo(self.logMessages.last, anchor: .bottom)
+                            proxy.scrollTo(logMessages.last, anchor: .bottom)
                         }
                         
-                        self.logMessages = self.launchedInstanceProcess!.logMessages
+                        logMessages = launchedInstanceProcess!.logMessages
                     }
-                    .onReceive(self.launchedInstanceProcess!.$logMessages) {
-                        self.logMessages = $0
+                    .onReceive(launchedInstanceProcess!.$logMessages) {
+                        logMessages = $0
                     }
                 }
             }

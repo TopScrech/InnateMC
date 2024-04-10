@@ -25,7 +25,7 @@ struct InstanceNavigationLink: View {
                     }
                     
                     ZStack {
-                        if launcherData.launchedInstances.contains(where: { $0.0 == self.instance }) {
+                        if launcherData.launchedInstances.contains(where: { $0.0 == instance }) {
                             Image(systemName: "arrowtriangle.right.circle.fill")
                                 .foregroundColor(.green)
                                 .frame(width: 8, height: 8)
@@ -58,7 +58,7 @@ struct InstanceNavigationLink: View {
             .frame(maxWidth: .infinity)
         }
         .sheet($sheetDelete) {
-            InstanceDeleteSheet(selectedInstance: $selectedInstance, instanceToDelete: self.instance)
+            InstanceDeleteSheet(selectedInstance: $selectedInstance, instanceToDelete: instance)
         }
         .contextMenu {
             if instance.isStarred {

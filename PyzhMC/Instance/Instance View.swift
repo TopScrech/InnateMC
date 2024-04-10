@@ -86,7 +86,7 @@ struct InstanceView: View {
             }
             .padding(6)
             .onAppear {
-                launcherData.launchRequestedInstances.removeAll(where: { $0 == self.instance })
+                launcherData.launchRequestedInstances.removeAll { $0 == instance }
                 launchedInstanceProcess = launcherData.launchedInstances[instance]
                 instance.loadScreenshotsAsync()
             }
@@ -101,7 +101,7 @@ struct InstanceView: View {
                 launchedInstanceProcess = launcherData.launchedInstances[instance]
             }
             .onReceive(launcherData.$launchRequestedInstances) { value in
-                if value.contains(where: { $0 == self.instance }) {
+                if value.contains(where: { $0 == instance }) {
                     if launcherData.accountManager.currentSelected != nil {
                         sheetPreLaunch = true
                         downloadProgress.cancelled = false
@@ -109,22 +109,22 @@ struct InstanceView: View {
                         sheetChooseAccount = true
                     }
                     
-                    launcherData.launchRequestedInstances.removeAll(where: { $0 == self.instance })
+                    launcherData.launchRequestedInstances.removeAll(where: { $0 == instance })
                 }
             }
             .onReceive(launcherData.$editModeInstances) { value in
-                if value.contains(where: { $0 == self.instance}) {
-                    self.editingVM.start(from: self.instance)
-                } else if self.editingVM.inEditMode {
-                    self.editingVM.commit(to: self.instance, showNoNamePopover: $popoverNoName, showDuplicateNamePopover: $popoverDuplicate, data: self.launcherData)
+                if value.contains(where: { $0 == instance}) {
+                    editingVM.start(from: instance)
+                } else if editingVM.inEditMode {
+                    editingVM.commit(to: instance, showNoNamePopover: $popoverNoName, showDuplicateNamePopover: $popoverDuplicate, data: launcherData)
                 }
             }
             .onReceive(launcherData.$killRequestedInstances) { value in
-                if value.contains(where: { $0 == self.instance})  {
+                if value.contains(where: { $0 == instance})  {
                     kill(launchedInstanceProcess!.process.processIdentifier, SIGKILL)
                     
                     launcherData.killRequestedInstances.removeAll {
-                        $0 == self.instance
+                        $0 == instance
                     }
                 }
             }
@@ -152,10 +152,10 @@ struct InstanceView: View {
             
             Button("Abort") {
                 logger.info("Aborting instance launch")
-                self.downloadSession?.invalidateAndCancel()
+                downloadSession?.invalidateAndCancel()
                 sheetPreLaunch = false
-                self.downloadProgress.cancelled = true
-                self.downloadProgress = TaskProgress(current: 0, total: 1)
+                downloadProgress.cancelled = true
+                downloadProgress = TaskProgress(current: 0, total: 1)
             }
             .onReceive(downloadProgress.$current) {
                 progress = Float($0) / Float(downloadProgress.total)
@@ -169,9 +169,9 @@ struct InstanceView: View {
     }
     
     func onPrelaunchSheetAppear() {
-        logger.info("Preparing to launch \(self.instance.name)")
-        self.indeterminateProgress = false
-        self.downloadProgress.cancelled = false
+        logger.info("Preparing to launch \(instance.name)")
+        indeterminateProgress = false
+        downloadProgress.cancelled = false
         
         downloadMessage = "Downloading Libraries"
         logger.info("Downloading libraries")
@@ -186,7 +186,7 @@ struct InstanceView: View {
                 
                 downloadProgress.callback = {
                     if !downloadProgress.cancelled {
-                        self.indeterminateProgress = true
+                        indeterminateProgress = true
                         downloadMessage = "Authenticating with Minecraft"
                         logger.info("Fetching access token")
                         
