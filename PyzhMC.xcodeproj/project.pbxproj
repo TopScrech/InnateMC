@@ -135,6 +135,7 @@
 		64FA2A982A0F81D50042A4A7 /* Xbox Live Auth.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */; };
 		64FC5B292A5805FB009D0050 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 64FC5B282A5805FB009D0050 /* Zip */; };
 		64FE2D40293BA78B007414CB /* Instance Console View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* Instance Console View.swift */; };
+		F33678152BC74CC40083E21C /* Unzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678142BC74CC40083E21C /* Unzip.swift */; };
 		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
 		F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F337D6282BBF1961004B52C5 /* Localizable.xcstrings */; };
 		F3CF21F82BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */; };
@@ -286,6 +287,7 @@
 		64FA2A952A0F76FA0042A4A7 /* Microsoft Account View Model.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Account View Model.swift"; sourceTree = "<group>"; };
 		64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xbox Live Auth.swift"; sourceTree = "<group>"; };
 		64FE2D3F293BA78B007414CB /* Instance Console View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Console View.swift"; sourceTree = "<group>"; };
+		F33678142BC74CC40083E21C /* Unzip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
 		F337D6282BBF1961004B52C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -316,6 +318,7 @@
 			isa = PBXGroup;
 			children = (
 				640A758C2A208BE3005CDE49 /* Mod.swift */,
+				F33678142BC74CC40083E21C /* Unzip.swift */,
 			);
 			path = Mods;
 			sourceTree = "<group>";
@@ -851,6 +854,7 @@
 				64F7C60B297D65390086ABC1 /* Linked Java Installation.swift in Sources */,
 				6474DC262A15FB83001FCD4D /* Error Tracker Window Controller.swift in Sources */,
 				64F7C5F5297D64490086ABC1 /* File Handler.swift in Sources */,
+				F33678152BC74CC40083E21C /* Unzip.swift in Sources */,
 				64A5151629E2DF2300AFE3AE /* Instance Logo.swift in Sources */,
 				64F7C602297D64CA0086ABC1 /* Instance Preferences.swift in Sources */,
 				64A113A02A110D2500E48761 /* Minecraft Account Type.swift in Sources */,

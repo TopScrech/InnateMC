@@ -48,11 +48,15 @@ public struct Mod: Identifiable, Hashable, Comparable {
 
         // Adjusted function call
         if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar"),
-           let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods") {
-            unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: destinationDirectoryPath)
+           let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/products") {
+            DispatchQueue.main.async {
+                unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: destinationDirectoryPath)
+            }
         } else {
             print("Invalid file URL")
         }
+        
+//        decodeFabricModJson(from: "file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/products/fabric.mod.json")
 
         return .init(
             enabled: isEnabled(url),
@@ -62,37 +66,6 @@ public struct Mod: Identifiable, Hashable, Comparable {
                 description: "Description of the mod."
             )
         )
-    }
-}
-
-func unzipModJar(jarFilePath: String, destinationDirectoryPath: String) {
-    let process = Process()
-    let pipe = Pipe()
-    
-    // Using `/usr/bin/env unzip` to ensure the environment's `unzip` is used.
-    process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
-    process.arguments = ["unzip", jarFilePath, "-d", destinationDirectoryPath]
-    process.standardOutput = pipe
-    process.standardError = pipe
-    
-    do {
-        try process.run()
-        process.waitUntilExit()
-        
-        // Optionally, read and print the output from the unzip command
-        let data = pipe.fileHandleForReading.readDataToEndOfFile()
-        
-        if let output = String(data: data, encoding: .utf8) {
-            print(output)
-        }
-        
-        if process.terminationStatus == 0 {
-            print("Unzip successful")
-        } else {
-            print("Unzip failed")
-        }
-    } catch {
-        print("Failed to start the unzip process: \(error)")
     }
 }
 
