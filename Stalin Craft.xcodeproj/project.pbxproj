@@ -32,7 +32,6 @@
 		64337EF72A17CADB0017BCB0 /* Preferred Java Version.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EF62A17CADB0017BCB0 /* Preferred Java Version.swift */; };
 		64337EFB2A17D66A0017BCB0 /* Library.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EFA2A17D6690017BCB0 /* Library.swift */; };
 		64337EFD2A17DB630017BCB0 /* Logging Config.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64337EFC2A17DB620017BCB0 /* Logging Config.swift */; };
-		64373BA329C0A430001DBD4C /* Instance Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64373BA229C0A430001DBD4C /* Instance Tests.swift */; };
 		643E454C2A1291CC00687839 /* Launch Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454B2A1291CC00687839 /* Launch Error.swift */; };
 		643E454E2A13300900687839 /* Instance Logo Picker Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454D2A13300900687839 /* Instance Logo Picker Sheet.swift */; };
 		643E45502A13308700687839 /* Instance Interative Logo View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 643E454F2A13308700687839 /* Instance Interative Logo View.swift */; };
@@ -100,7 +99,7 @@
 		64BACB9C2A1C9F5D00F7AA1C /* Fabric Meta.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BACB9B2A1C9F5D00F7AA1C /* Fabric Meta.swift */; };
 		64C09B6C2A1212CF00867038 /* Instance Duplication Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C09B6B2A1212CF00867038 /* Instance Duplication Sheet.swift */; };
 		64C09B702A12145900867038 /* Instance Delete Sheet.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C09B6F2A12145900867038 /* Instance Delete Sheet.swift */; };
-		64C334D92922523600BB8570 /* Pyzh MC App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334D82922523600BB8570 /* Pyzh MC App.swift */; };
+		64C334D92922523600BB8570 /* Stalin Craft App.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334D82922523600BB8570 /* Stalin Craft App.swift */; };
 		64C334DB2922523600BB8570 /* Content View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C334DA2922523600BB8570 /* Content View.swift */; };
 		64C334DD2922523F00BB8570 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 64C334DC2922523F00BB8570 /* Assets.xcassets */; };
 		64C33505292252B500BB8570 /* Preferences View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64C33504292252B500BB8570 /* Preferences View.swift */; };
@@ -137,6 +136,10 @@
 		64FE2D40293BA78B007414CB /* Instance Console View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* Instance Console View.swift */; };
 		F33678152BC74CC40083E21C /* Unzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678142BC74CC40083E21C /* Unzip.swift */; };
 		F33678172BC753F20083E21C /* Fabric Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678162BC753F20083E21C /* Fabric Mod.swift */; };
+		F336781D2BC759AA0083E21C /* Argument Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678182BC759AA0083E21C /* Argument Tests.swift */; };
+		F336781E2BC759AA0083E21C /* Download Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678192BC759AA0083E21C /* Download Tests.swift */; };
+		F336781F2BC759AA0083E21C /* Instance Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336781A2BC759AA0083E21C /* Instance Tests.swift */; };
+		F33678212BC75AB60083E21C /* Java Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = F336781B2BC759AA0083E21C /* Java Tests.swift */; };
 		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
 		F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F337D6282BBF1961004B52C5 /* Localizable.xcstrings */; };
 		F3CF21F82BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */; };
@@ -153,8 +156,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		64037CA8297C724D00F7FE79 /* Argument Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Argument Tests.swift"; sourceTree = "<group>"; };
-		64065A942971CD85000BCE24 /* Java Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Java Tests.swift"; sourceTree = "<group>"; };
 		6407E6372A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Imgur Sharing Service Delegate.swift"; sourceTree = "<group>"; };
 		6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screenshot Share Button.swift"; sourceTree = "<group>"; };
 		640A758C2A208BE3005CDE49 /* Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
@@ -180,7 +181,6 @@
 		64337EF62A17CADB0017BCB0 /* Preferred Java Version.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preferred Java Version.swift"; sourceTree = "<group>"; };
 		64337EFA2A17D6690017BCB0 /* Library.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Library.swift; sourceTree = "<group>"; };
 		64337EFC2A17DB620017BCB0 /* Logging Config.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Logging Config.swift"; sourceTree = "<group>"; };
-		64373BA229C0A430001DBD4C /* Instance Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Tests.swift"; sourceTree = "<group>"; };
 		643E454B2A1291CC00687839 /* Launch Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launch Error.swift"; sourceTree = "<group>"; };
 		643E454D2A13300900687839 /* Instance Logo Picker Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Logo Picker Sheet.swift"; sourceTree = "<group>"; };
 		643E454F2A13308700687839 /* Instance Interative Logo View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Interative Logo View.swift"; sourceTree = "<group>"; };
@@ -230,7 +230,7 @@
 		6497595B29F056FF00D0194E /* Add Offline Account View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Add Offline Account View.swift"; sourceTree = "<group>"; };
 		6497595D29F25AD000D0194E /* Instance Editing VM.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Editing VM.swift"; sourceTree = "<group>"; };
 		649762BF2935A46E00977467 /* New Vanilla Instance View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "New Vanilla Instance View.swift"; sourceTree = "<group>"; };
-		649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = PyzhMCTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		649C8DD2297D5ABE000352F2 /* Stalin Craft Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "Stalin Craft Tests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
 		649EA76629EC27F300BD77EA /* UI Preferences.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UI Preferences.swift"; sourceTree = "<group>"; };
 		64A1139D2A110ACC00E48761 /* Microsoft Account.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Account.swift"; sourceTree = "<group>"; };
 		64A1139F2A110D2500E48761 /* Minecraft Account Type.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Minecraft Account Type.swift"; sourceTree = "<group>"; };
@@ -251,11 +251,11 @@
 		64BACB9B2A1C9F5D00F7AA1C /* Fabric Meta.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fabric Meta.swift"; sourceTree = "<group>"; };
 		64C09B6B2A1212CF00867038 /* Instance Duplication Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Duplication Sheet.swift"; sourceTree = "<group>"; };
 		64C09B6F2A12145900867038 /* Instance Delete Sheet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Delete Sheet.swift"; sourceTree = "<group>"; };
-		64C334D52922523600BB8570 /* PyzhMC.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = PyzhMC.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		64C334D82922523600BB8570 /* Pyzh MC App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Pyzh MC App.swift"; sourceTree = "<group>"; };
+		64C334D52922523600BB8570 /* Stalin Craft.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Stalin Craft.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		64C334D82922523600BB8570 /* Stalin Craft App.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Stalin Craft App.swift"; sourceTree = "<group>"; };
 		64C334DA2922523600BB8570 /* Content View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Content View.swift"; sourceTree = "<group>"; };
 		64C334DC2922523F00BB8570 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		64C334E12922523F00BB8570 /* PyzhMC.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PyzhMC.entitlements; sourceTree = "<group>"; };
+		64C334E12922523F00BB8570 /* Stalin Craft.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Stalin Craft.entitlements"; sourceTree = "<group>"; };
 		64C33504292252B500BB8570 /* Preferences View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Preferences View.swift"; sourceTree = "<group>"; };
 		64C33506292256C500BB8570 /* Todo View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Todo View.swift"; sourceTree = "<group>"; };
 		64C33508292272F500BB8570 /* .gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = .gitignore; sourceTree = "<group>"; };
@@ -268,7 +268,6 @@
 		64E1F8C82A0FBDE7006D68B6 /* Microsoft Auth Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Microsoft Auth Error.swift"; sourceTree = "<group>"; };
 		64E459EE2938BBEF00F82A2B /* Instance Commands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Commands.swift"; sourceTree = "<group>"; };
 		64E459F22938C7AC00F82A2B /* Launcher Data.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Launcher Data.swift"; sourceTree = "<group>"; };
-		64EB537E2929CD7800D6CDDD /* Download Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Download Tests.swift"; sourceTree = "<group>"; };
 		64F7C5EC297D63D00086ABC1 /* Argument Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Argument Provider.swift"; sourceTree = "<group>"; };
 		64F7C5F0297D641C0086ABC1 /* Asset Index.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Asset Index.swift"; sourceTree = "<group>"; };
 		64F7C5F2297D64370086ABC1 /* Task Progress.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Task Progress.swift"; sourceTree = "<group>"; };
@@ -290,6 +289,10 @@
 		64FE2D3F293BA78B007414CB /* Instance Console View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Console View.swift"; sourceTree = "<group>"; };
 		F33678142BC74CC40083E21C /* Unzip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
 		F33678162BC753F20083E21C /* Fabric Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fabric Mod.swift"; sourceTree = "<group>"; };
+		F33678182BC759AA0083E21C /* Argument Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Argument Tests.swift"; sourceTree = "<group>"; };
+		F33678192BC759AA0083E21C /* Download Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Download Tests.swift"; sourceTree = "<group>"; };
+		F336781A2BC759AA0083E21C /* Instance Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Instance Tests.swift"; sourceTree = "<group>"; };
+		F336781B2BC759AA0083E21C /* Java Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Java Tests.swift"; sourceTree = "<group>"; };
 		F337D6282BBF1961004B52C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -544,17 +547,6 @@
 			path = Create;
 			sourceTree = "<group>";
 		};
-		649C8DD3297D5ABE000352F2 /* Pyzh MC Tests */ = {
-			isa = PBXGroup;
-			children = (
-				64037CA8297C724D00F7FE79 /* Argument Tests.swift */,
-				64EB537E2929CD7800D6CDDD /* Download Tests.swift */,
-				64065A942971CD85000BCE24 /* Java Tests.swift */,
-				64373BA229C0A430001DBD4C /* Instance Tests.swift */,
-			);
-			path = "Pyzh MC Tests";
-			sourceTree = "<group>";
-		};
 		64BACB932A1C692400F7AA1C /* Http */ = {
 			isa = PBXGroup;
 			children = (
@@ -580,8 +572,8 @@
 				64C3350B2922B0B400BB8570 /* LICENSE */,
 				64C3350A2922734400BB8570 /* README.md */,
 				64C33508292272F500BB8570 /* .gitignore */,
-				64C334D72922523600BB8570 /* PyzhMC */,
-				649C8DD3297D5ABE000352F2 /* Pyzh MC Tests */,
+				64C334D72922523600BB8570 /* Stalin Craft */,
+				F336781C2BC759AA0083E21C /* Stalin Craft Tests */,
 				64C334D62922523600BB8570 /* Products */,
 				643B39FA29274F6100AEC71C /* Frameworks */,
 			);
@@ -590,20 +582,20 @@
 		64C334D62922523600BB8570 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				64C334D52922523600BB8570 /* PyzhMC.app */,
-				649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */,
+				64C334D52922523600BB8570 /* Stalin Craft.app */,
+				649C8DD2297D5ABE000352F2 /* Stalin Craft Tests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		64C334D72922523600BB8570 /* PyzhMC */ = {
+		64C334D72922523600BB8570 /* Stalin Craft */ = {
 			isa = PBXGroup;
 			children = (
 				64C334DC2922523F00BB8570 /* Assets.xcassets */,
-				64C334E12922523F00BB8570 /* PyzhMC.entitlements */,
+				64C334E12922523F00BB8570 /* Stalin Craft.entitlements */,
 				F337D6282BBF1961004B52C5 /* Localizable.xcstrings */,
 				F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */,
-				64C334D82922523600BB8570 /* Pyzh MC App.swift */,
+				64C334D82922523600BB8570 /* Stalin Craft App.swift */,
 				640DC1EC2934EC2300943213 /* App Delegate.swift */,
 				64C334DA2922523600BB8570 /* Content View.swift */,
 				64C41C1329366CAF00014E0F /* Value Keys.swift */,
@@ -614,7 +606,7 @@
 				6474DC1A2A150D13001FCD4D /* Error */,
 				644DE1D12937C0D300C4A03E /* Util */,
 			);
-			path = PyzhMC;
+			path = "Stalin Craft";
 			sourceTree = "<group>";
 		};
 		64F7C5EA297D63800086ABC1 /* Data */ = {
@@ -717,12 +709,23 @@
 			path = Symbols;
 			sourceTree = "<group>";
 		};
+		F336781C2BC759AA0083E21C /* Stalin Craft Tests */ = {
+			isa = PBXGroup;
+			children = (
+				F33678182BC759AA0083E21C /* Argument Tests.swift */,
+				F33678192BC759AA0083E21C /* Download Tests.swift */,
+				F336781A2BC759AA0083E21C /* Instance Tests.swift */,
+				F336781B2BC759AA0083E21C /* Java Tests.swift */,
+			);
+			path = "Stalin Craft Tests";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		649C8DD1297D5ABE000352F2 /* PyzhMCTests */ = {
+		649C8DD1297D5ABE000352F2 /* Stalin Craft Tests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "PyzhMCTests" */;
+			buildConfigurationList = 649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "Stalin Craft Tests" */;
 			buildPhases = (
 				649C8DCE297D5ABE000352F2 /* Sources */,
 				649C8DCF297D5ABE000352F2 /* Frameworks */,
@@ -733,14 +736,14 @@
 			dependencies = (
 				649C8DD7297D5ABE000352F2 /* PBXTargetDependency */,
 			);
-			name = PyzhMCTests;
+			name = "Stalin Craft Tests";
 			productName = InnateMCTests;
-			productReference = 649C8DD2297D5ABE000352F2 /* PyzhMCTests.xctest */;
+			productReference = 649C8DD2297D5ABE000352F2 /* Stalin Craft Tests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
-		64C334D42922523600BB8570 /* PyzhMC */ = {
+		64C334D42922523600BB8570 /* Stalin Craft */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "PyzhMC" */;
+			buildConfigurationList = 64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "Stalin Craft" */;
 			buildPhases = (
 				64C334D12922523600BB8570 /* Sources */,
 				64C334D22922523600BB8570 /* Frameworks */,
@@ -750,7 +753,7 @@
 			);
 			dependencies = (
 			);
-			name = PyzhMC;
+			name = "Stalin Craft";
 			packageProductDependencies = (
 				64FA2A912A0F73BD0042A4A7 /* Swifter */,
 				64FC5B282A5805FB009D0050 /* Zip */,
@@ -758,7 +761,7 @@
 				F337D6262BBEEA8C004B52C5 /* ScrechKit */,
 			);
 			productName = InnateMC;
-			productReference = 64C334D52922523600BB8570 /* PyzhMC.app */;
+			productReference = 64C334D52922523600BB8570 /* Stalin Craft.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -782,7 +785,7 @@
 					};
 				};
 			};
-			buildConfigurationList = 64C334D02922523500BB8570 /* Build configuration list for PBXProject "PyzhMC" */;
+			buildConfigurationList = 64C334D02922523500BB8570 /* Build configuration list for PBXProject "Stalin Craft" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -810,8 +813,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				64C334D42922523600BB8570 /* PyzhMC */,
-				649C8DD1297D5ABE000352F2 /* PyzhMCTests */,
+				64C334D42922523600BB8570 /* Stalin Craft */,
+				649C8DD1297D5ABE000352F2 /* Stalin Craft Tests */,
 			);
 		};
 /* End PBXProject section */
@@ -843,7 +846,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				64373BA329C0A430001DBD4C /* Instance Tests.swift in Sources */,
+				F33678212BC75AB60083E21C /* Java Tests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -864,6 +867,7 @@
 				6407E6382A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift in Sources */,
 				64A62C8D2977B454007A9597 /* Symbol Logo Picker View.swift in Sources */,
 				64A5151229E2DEFD00AFE3AE /* Partial Asset Index.swift in Sources */,
+				F336781D2BC759AA0083E21C /* Argument Tests.swift in Sources */,
 				64F7C5FE297D64A40086ABC1 /* Instance.swift in Sources */,
 				6484457C2A10D03200049986 /* Xbox Auth Response.swift in Sources */,
 				64FA2A942A0F767F0042A4A7 /* Web View Window.swift in Sources */,
@@ -875,6 +879,7 @@
 				643E454C2A1291CC00687839 /* Launch Error.swift in Sources */,
 				643E455C2A13331100687839 /* Instance Title View.swift in Sources */,
 				648445802A10D44A00049986 /* Minecraft Token Response.swift in Sources */,
+				F336781E2BC759AA0083E21C /* Download Tests.swift in Sources */,
 				64337EF32A17CA040017BCB0 /* Artifact.swift in Sources */,
 				64BACB972A1C6EF700F7AA1C /* Http Method.swift in Sources */,
 				64A5152029E2E6A300AFE3AE /* Instance Data.swift in Sources */,
@@ -948,6 +953,7 @@
 				64821E0E29E459FC006012F7 /* Account Manager.swift in Sources */,
 				640DC1F12934F14200943213 /* New Instance View.swift in Sources */,
 				64F7C5F1297D641C0086ABC1 /* Asset Index.swift in Sources */,
+				F336781F2BC759AA0083E21C /* Instance Tests.swift in Sources */,
 				64337EF72A17CADB0017BCB0 /* Preferred Java Version.swift in Sources */,
 				643E45502A13308700687839 /* Instance Interative Logo View.swift in Sources */,
 				644FC66E29375853003797D9 /* Instance Navigation Link.swift in Sources */,
@@ -956,7 +962,7 @@
 				64F7C600297D64B50086ABC1 /* Instance Creator.swift in Sources */,
 				64FA2A962A0F76FA0042A4A7 /* Microsoft Account View Model.swift in Sources */,
 				640A75962A21D021005CDE49 /* Instance Screenshots View.swift in Sources */,
-				64C334D92922523600BB8570 /* Pyzh MC App.swift in Sources */,
+				64C334D92922523600BB8570 /* Stalin Craft App.swift in Sources */,
 				64337EFD2A17DB630017BCB0 /* Logging Config.swift in Sources */,
 				64C41C1429366CAF00014E0F /* Value Keys.swift in Sources */,
 				648445772A10C25D00049986 /* Account Manager + Auth.swift in Sources */,
@@ -982,7 +988,7 @@
 /* Begin PBXTargetDependency section */
 		649C8DD7297D5ABE000352F2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = 64C334D42922523600BB8570 /* PyzhMC */;
+			target = 64C334D42922523600BB8570 /* Stalin Craft */;
 			targetProxy = 649C8DD6297D5ABE000352F2 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -1003,12 +1009,12 @@
 					"@loader_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Pyzh-MC-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Stalin-Craft-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PyzhMC.app/Contents/MacOS/PyzhMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stalin Craft.app/Contents/MacOS/Stalin Craft";
 			};
 			name = Debug;
 		};
@@ -1027,11 +1033,11 @@
 					"@loader_path/../Frameworks",
 				);
 				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Pyzh-MC-Tests";
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Stalin-Craft-Tests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_EMIT_LOC_STRINGS = NO;
 				SWIFT_VERSION = 5.0;
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/PyzhMC.app/Contents/MacOS/PyzhMC";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/Stalin Craft.app/Contents/MacOS/Stalin Craft";
 			};
 			name = Release;
 		};
@@ -1164,7 +1170,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = PyzhMC/PyzhMC.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Stalin Craft/Stalin Craft.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1177,10 +1183,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
-				INFOPLIST_FILE = PyzhMC/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
+				INFOPLIST_FILE = "Stalin Craft/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Stalin Craft";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 PyzhMC & Contributors";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Stalin Craft & Contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1196,8 +1202,8 @@
 					"-Xlinker",
 					"-interposable",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Pyzh-MC";
-				PRODUCT_MODULE_NAME = PyzhMC;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Stalin-Craft";
+				PRODUCT_MODULE_NAME = StalinCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1213,7 +1219,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CLANG_ENABLE_MODULES = YES;
-				CODE_SIGN_ENTITLEMENTS = PyzhMC/PyzhMC.entitlements;
+				CODE_SIGN_ENTITLEMENTS = "Stalin Craft/Stalin Craft.entitlements";
 				CODE_SIGN_IDENTITY = "-";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
@@ -1226,10 +1232,10 @@
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
 				HEADER_SEARCH_PATHS = "$(PROJECT_DIR)/include";
-				INFOPLIST_FILE = PyzhMC/Info.plist;
-				INFOPLIST_KEY_CFBundleDisplayName = PyzhMC;
+				INFOPLIST_FILE = "Stalin Craft/Info.plist";
+				INFOPLIST_KEY_CFBundleDisplayName = "Stalin Craft";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.games";
-				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 PyzhMC & Contributors";
+				INFOPLIST_KEY_NSHumanReadableCopyright = "Copyright © 2022 Stalin Craft & Contributors";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/../Frameworks",
@@ -1241,8 +1247,8 @@
 				MACOSX_DEPLOYMENT_TARGET = 12.0;
 				MARKETING_VERSION = 0.9;
 				ONLY_ACTIVE_ARCH = NO;
-				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Pyzh-MC";
-				PRODUCT_MODULE_NAME = PyzhMC;
+				PRODUCT_BUNDLE_IDENTIFIER = "dev.topscrech.Stalin-Craft";
+				PRODUCT_MODULE_NAME = StalinCraft;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
@@ -1254,7 +1260,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "PyzhMCTests" */ = {
+		649C8DD8297D5ABE000352F2 /* Build configuration list for PBXNativeTarget "Stalin Craft Tests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				649C8DD9297D5ABE000352F2 /* Debug */,
@@ -1263,7 +1269,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64C334D02922523500BB8570 /* Build configuration list for PBXProject "PyzhMC" */ = {
+		64C334D02922523500BB8570 /* Build configuration list for PBXProject "Stalin Craft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64C334F82922524000BB8570 /* Debug */,
@@ -1272,7 +1278,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "PyzhMC" */ = {
+		64C334FA2922524000BB8570 /* Build configuration list for PBXNativeTarget "Stalin Craft" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				64C334FB2922524000BB8570 /* Debug */,

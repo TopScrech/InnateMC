@@ -15,8 +15,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/swift-server/async-http-client",
       "state" : {
-        "revision" : "291438696abdd48d2a83b52465c176efbd94512b",
-        "version" : "1.20.1"
+        "revision" : "fb308ee72f3d4c082a507033f94afa7395963ef3",
+        "version" : "1.21.0"
       }
     },
     {
@@ -33,8 +33,8 @@
       "kind" : "remoteSourceControl",
       "location" : "https://github.com/AzureAD/microsoft-authentication-library-for-objc",
       "state" : {
-        "revision" : "9d15d7980a52945dd17ea529bcf4c92f2c0d9a12",
-        "version" : "1.3.1"
+        "revision" : "71a4d3c476e5cda907f33f155550faa5ad9a0fb2",
+        "version" : "1.3.2"
       }
     },
     {
@@ -52,7 +52,7 @@
       "location" : "https://github.com/TopScrech/ScrechKit",
       "state" : {
         "branch" : "main",
-        "revision" : "46f5f066e8c9d06d111831a4d339e2d3419a075e"
+        "revision" : "090b03ceea43c2bb08de13ad33824bb3954097cd"
       }
     },
     {

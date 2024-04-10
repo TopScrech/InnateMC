@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "64C334D42922523600BB8570"
-               BuildableName = "PyzhMC.app"
-               BlueprintName = "PyzhMC"
-               ReferencedContainer = "container:PyzhMC.xcodeproj">
+               BuildableName = "Stalin Craft.app"
+               BlueprintName = "Stalin Craft"
+               ReferencedContainer = "container:Stalin Craft.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -35,7 +35,7 @@
                BlueprintIdentifier = "64CF0CB4292810ED00535DC8"
                BuildableName = "InnateJsonTests.xctest"
                BlueprintName = "InnateJsonTests"
-               ReferencedContainer = "container:PyzhMC.xcodeproj">
+               ReferencedContainer = "container:Stalin Craft.xcodeproj">
             </BuildableReference>
          </TestableReference>
          <TestableReference
@@ -43,9 +43,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "649C8DD1297D5ABE000352F2"
-               BuildableName = "PyzhMCTests.xctest"
-               BlueprintName = "PyzhMCTests"
-               ReferencedContainer = "container:PyzhMC.xcodeproj">
+               BuildableName = "Stalin Craft Tests.xctest"
+               BlueprintName = "Stalin Craft Tests"
+               ReferencedContainer = "container:Stalin Craft.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -65,9 +65,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "64C334D42922523600BB8570"
-            BuildableName = "PyzhMC.app"
-            BlueprintName = "PyzhMC"
-            ReferencedContainer = "container:PyzhMC.xcodeproj">
+            BuildableName = "Stalin Craft.app"
+            BlueprintName = "Stalin Craft"
+            ReferencedContainer = "container:Stalin Craft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -82,9 +82,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "64C334D42922523600BB8570"
-            BuildableName = "PyzhMC.app"
-            BlueprintName = "PyzhMC"
-            ReferencedContainer = "container:PyzhMC.xcodeproj">
+            BuildableName = "Stalin Craft.app"
+            BlueprintName = "Stalin Craft"
+            ReferencedContainer = "container:Stalin Craft.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>
