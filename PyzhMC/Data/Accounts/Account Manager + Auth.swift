@@ -2,45 +2,45 @@ import Foundation
 
 extension AccountManager {
     public func setupMicrosoftAccount(code: String) {
-        guard let msAccountVM = self.msAccountVM else {
+        guard let msAccountVM else {
             return
         }
         
         Task(priority: .high) {
             do {
-                let msAccessToken: MicrosoftAccessToken = try await self.authenticateWithMicrosoft(code: code, clientId: self.clientId)
+                let msAccessToken: MicrosoftAccessToken = try await authenticateWithMicrosoft(code: code, clientId: clientId)
                 
                 DispatchQueue.main.async {
                     msAccountVM.setAuthWithXboxLive()
                 }
                 
                 logger.debug("Authenticated with microsoft")
-                let xblResponse = try await self.authenticateWithXBL(msAccessToken: msAccessToken.token)
+                let xblResponse = try await authenticateWithXBL(msAccessToken: msAccessToken.token)
                 
                 DispatchQueue.main.async {
                     msAccountVM.setAuthWithXboxXSTS()
                 }
                 
                 logger.debug("Authenticated with xbox live")
-                let xstsResponse: XboxAuthResponse = try await self.authenticateWithXSTS(xblToken: xblResponse.token)
+                let xstsResponse: XboxAuthResponse = try await authenticateWithXSTS(xblToken: xblResponse.token)
                 
                 DispatchQueue.main.async {
                     msAccountVM.setAuthWithMinecraft()
                 }
                 
                 logger.debug("Authenticated with xbox xsts")
-                let mcResponse: MinecraftAuthResponse = try await self.authenticateWithMinecraft(using: .init(xsts: xstsResponse))
+                let mcResponse: MinecraftAuthResponse = try await authenticateWithMinecraft(using: .init(xsts: xstsResponse))
                 
                 DispatchQueue.main.async {
                     msAccountVM.setFetchingProfile()
                 }
                 
                 logger.debug("Authenticated with minecraft")
-                let profile: MinecraftProfile = try await self.getProfile(accessToken: mcResponse.accessToken)
+                let profile: MinecraftProfile = try await getProfile(accessToken: mcResponse.accessToken)
                 logger.debug("Fetched minecraft profile")
                 
                 let account = MicrosoftAccount(profile: profile, token: msAccessToken)
-                self.accounts[account.id] = account
+                accounts[account.id] = account
                 logger.info("Successfully added microsoft account \(profile.name)")
                 
                 DispatchQueue.main.async {
@@ -144,7 +144,7 @@ extension AccountManager {
     }
     
     func authenticateWithMicrosoft(code: String, clientId: String) async throws -> MicrosoftAccessToken {
-        let msParameters: [String: String] = [
+        let msParameters = [
             "client_id": clientId,
             "scope": "XboxLive.signin offline_access",
             "code": code,
@@ -164,8 +164,7 @@ extension AccountManager {
             }
             
             do {
-                let token = try MicrosoftAccessToken.fromJson(json: data)
-                return token
+                return try MicrosoftAccessToken.fromJson(json: data)
             } catch {
                 logger.error("Received malformed response from microsoft authentication server", error: error)
                 throw MicrosoftAuthError.microsoftInvalidResponse
@@ -178,11 +177,11 @@ extension AccountManager {
     }
     
     func refreshMicrosoftToken(_ token: MicrosoftAccessToken) async throws -> MicrosoftAccessToken {
-        let msParameters: [String: String] = [
-            "client_id": clientId,
-            "scope": "XboxLive.signin offline_access",
+        let msParameters = [
+            "client_id":     clientId,
+            "scope":         "XboxLive.signin offline_access",
             "refresh_token": token.refreshToken,
-            "grant_type": "refresh_token"
+            "grant_type":    "refresh_token"
         ]
         
         do {
@@ -197,8 +196,7 @@ extension AccountManager {
             }
             
             do {
-                let token = try MicrosoftAccessToken.fromJson(json: data)
-                return token
+                return try MicrosoftAccessToken.fromJson(json: data)
             } catch {
                 logger.error("Received malformed response from microsoft refresh server", error: error)
                 throw MicrosoftAuthError.microsoftInvalidResponse
@@ -222,8 +220,7 @@ extension AccountManager {
             }
             
             do {
-                let token = try JSONDecoder().decode(MinecraftProfile.self, from: data)
-                return token
+                return try JSONDecoder().decode(MinecraftProfile.self, from: data)
             } catch {
                 logger.error("Received malformed response from minecraft profile server", error: error)
                 throw MicrosoftAuthError.profileInvalidResponse

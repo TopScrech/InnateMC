@@ -52,6 +52,7 @@ extension AccountManager {
         }
         
         var accounts: [String:Any] = [:]
+        
         for (thing, account) in self.accounts {
             accounts[thing.uuidString] = try! PropertyListSerialization.propertyList(from: try! AccountManager.plistEncoder.encode(account), format: nil)
         }
