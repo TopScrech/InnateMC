@@ -1,5 +1,26 @@
 import Foundation
 
+func findFilePath(in directoryPath: String, fileName: String) -> String? {
+    let fileManager = FileManager.default
+    
+    do {
+        let items = try fileManager.contentsOfDirectory(atPath: directoryPath)
+        
+        if let foundFileName = items.first(where: { $0 == fileName }) {
+            let filePath = (directoryPath as NSString).appendingPathComponent(foundFileName)
+            print("File found: \(filePath)")
+            
+            return filePath
+        } else {
+            print("File not found.")
+        }
+    } catch {
+        print("Error reading contents of directory: \(error)")
+    }
+    
+    return nil
+}
+
 public struct Mod: Identifiable, Hashable, Comparable {
     public var id: Mod { self }
     var enabled: Bool
@@ -47,17 +68,17 @@ public struct Mod: Identifiable, Hashable, Comparable {
         }
 
         // Adjusted function call
-        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar"),
-           let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/products") {
-            DispatchQueue.main.async {
-                unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: destinationDirectoryPath)
-            }
+        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar") {
+//           let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/products") {
+            
+            let tempDirURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
+            try? FileManager.default.createDirectory(at: tempDirURL, withIntermediateDirectories: true, attributes: nil)
+            
+            unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: tempDirURL.path)
         } else {
             print("Invalid file URL")
         }
         
-//        decodeFabricModJson(from: "file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/products/fabric.mod.json")
-
         return .init(
             enabled: isEnabled(url),
             path: url,

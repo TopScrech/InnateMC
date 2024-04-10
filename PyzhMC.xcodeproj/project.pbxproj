@@ -136,6 +136,7 @@
 		64FC5B292A5805FB009D0050 /* Zip in Frameworks */ = {isa = PBXBuildFile; productRef = 64FC5B282A5805FB009D0050 /* Zip */; };
 		64FE2D40293BA78B007414CB /* Instance Console View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64FE2D3F293BA78B007414CB /* Instance Console View.swift */; };
 		F33678152BC74CC40083E21C /* Unzip.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678142BC74CC40083E21C /* Unzip.swift */; };
+		F33678172BC753F20083E21C /* Fabric Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33678162BC753F20083E21C /* Fabric Mod.swift */; };
 		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
 		F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F337D6282BBF1961004B52C5 /* Localizable.xcstrings */; };
 		F3CF21F82BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */; };
@@ -288,6 +289,7 @@
 		64FA2A972A0F81D50042A4A7 /* Xbox Live Auth.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Xbox Live Auth.swift"; sourceTree = "<group>"; };
 		64FE2D3F293BA78B007414CB /* Instance Console View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Console View.swift"; sourceTree = "<group>"; };
 		F33678142BC74CC40083E21C /* Unzip.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Unzip.swift; sourceTree = "<group>"; };
+		F33678162BC753F20083E21C /* Fabric Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Fabric Mod.swift"; sourceTree = "<group>"; };
 		F337D6282BBF1961004B52C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -319,6 +321,7 @@
 			children = (
 				640A758C2A208BE3005CDE49 /* Mod.swift */,
 				F33678142BC74CC40083E21C /* Unzip.swift */,
+				F33678162BC753F20083E21C /* Fabric Mod.swift */,
 			);
 			path = Mods;
 			sourceTree = "<group>";
@@ -939,6 +942,7 @@
 				64C33507292256C500BB8570 /* Todo View.swift in Sources */,
 				64148DDA296E80E400E5EAD3 /* Global Preferences.swift in Sources */,
 				64821E0C29E44C14006012F7 /* Offline Account.swift in Sources */,
+				F33678172BC753F20083E21C /* Fabric Mod.swift in Sources */,
 				64F7C612297D658D0086ABC1 /* Runtime Preferences.swift in Sources */,
 				64C5621429C083AA003402F0 /* Instance Process.swift in Sources */,
 				64821E0E29E459FC006012F7 /* Account Manager.swift in Sources */,
