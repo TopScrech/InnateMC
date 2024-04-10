@@ -28,25 +28,32 @@ public struct Mod: Identifiable, Hashable, Comparable {
     public static func isValidMod(url: URL) -> Bool {
         switch url.pathExtension.lowercased() {
         case "bak", "jar", "zip", "litemod":
-            return true
+            true
             
         default:
-            return false
+            false
         }
     }
     
-    public static func isEnabled(url: URL) -> Bool {
+    public static func isEnabled(_ url: URL) -> Bool {
         url.pathExtension.lowercased() != "bak"
     }
     
     public static func from(url: URL) throws -> Mod {
-        Mod(enabled: isEnabled(url: url), path: url, meta: Metadata(name: "no u", description: "testing"))
+        .init(
+            enabled: isEnabled(url),
+            path: url,
+            meta: .init(
+                name: "no u",
+                description: "testing"
+            )
+        )
     }
 }
 
 extension Array where Element == URL {
     func deserializeToMods() -> [Mod] {
-        self.filter(Mod.isValidMod).compactMap { 
+        self.filter(Mod.isValidMod).compactMap {
             try? Mod.from(url: $0)
         }
     }

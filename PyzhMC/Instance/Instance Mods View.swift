@@ -5,7 +5,7 @@ struct InstanceModsView: View {
     
     @State var selected: Set<Mod> = []
     @State var sortOrder: [KeyPathComparator<Mod>] = [
-        .init(\.meta.name, order: SortOrder.forward)
+        .init(\.meta.name, order: .forward)
     ]
     
     var body: some View {
