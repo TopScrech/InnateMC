@@ -1,9 +1,9 @@
 import SwiftUI
 
 struct InstanceView: View {
-    @StateObject var editingVM = InstanceEditingVM()
+    @StateObject private var editingVM = InstanceEditingVM()
     @StateObject var instance: Instance
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     @State var disabled = false
     @State var starHovered = false

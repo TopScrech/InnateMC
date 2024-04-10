@@ -25,14 +25,14 @@ struct InstanceTitleView: View {
                         .padding()
                 }
             
-            InteractiveStarView(instance: self.instance, starHovered: $starHovered)
+            InteractiveStarView(instance: instance, starHovered: $starHovered)
         } else {
             Text(instance.name)
                 .largeTitle()
                 .frame(height: 20)
                 .padding(.trailing, 8)
             
-            InteractiveStarView(instance: self.instance, starHovered: $starHovered)
+            InteractiveStarView(instance: instance, starHovered: $starHovered)
         }
     }
 }

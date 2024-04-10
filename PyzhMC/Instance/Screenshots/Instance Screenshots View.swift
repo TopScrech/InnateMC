@@ -5,7 +5,7 @@ struct InstanceScreenshotsView: View {
     
     @FocusState var selectedItem: Screenshot?
     
-    let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
+    private let columns = [GridItem(.flexible()), GridItem(.flexible()), GridItem(.flexible())]
     
     var body: some View {
         VStack {

@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct AccountsPreferencesView: View {
-    @StateObject var msAccountVM = MicrosoftAccountVM()
-    @EnvironmentObject var launcherData: LauncherData
+    @StateObject private var msAccountVM = MicrosoftAccountVM()
+    @EnvironmentObject private var launcherData: LauncherData
     
     @State var cachedAccounts: [UUID: any MinecraftAccount] = [:]
     @State var cachedAccountsOnly: [AdaptedAccount] = []

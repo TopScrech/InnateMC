@@ -2,7 +2,7 @@ import SwiftUI
 
 struct InstanceDuplicationSheet: View {
     @StateObject var instance: Instance
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     @Environment(\.dismiss) private var dismiss
     
     @State var newName = ""

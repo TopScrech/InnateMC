@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct UiPreferencesView: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     var body: some View {
         Form {

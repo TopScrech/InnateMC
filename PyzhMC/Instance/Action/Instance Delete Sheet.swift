@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InstanceDeleteSheet: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     @Environment(\.dismiss) private var dismiss
     
     @Binding var selectedInstance: Instance?

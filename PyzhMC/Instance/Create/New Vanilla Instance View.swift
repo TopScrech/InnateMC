@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct NewVanillaInstanceView: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
     @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("New Instance", comment: "New Instance")

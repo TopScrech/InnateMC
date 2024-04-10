@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct PreferencesView: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     var body: some View {
         TabView(selection: $launcherData.selectedPreferenceTab) {

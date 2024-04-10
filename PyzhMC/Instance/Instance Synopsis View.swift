@@ -6,14 +6,14 @@ struct InstanceSynopsisView: View {
     
     var body: some View {
         if editingVM.inEditMode {
-            TextField("", text: $editingVM.synopsis, prompt: Text(self.instance.debugString))
+            TextField("", text: $editingVM.synopsis, prompt: Text(instance.debugString))
                 .fixedSize(horizontal: true, vertical: false)
                 .caption()
                 .padding(.vertical, 6)
                 .foregroundColor(.gray)
                 .frame(height: 10)
         } else {
-            Text(self.instance.synopsisOrVersion)
+            Text(instance.synopsisOrVersion)
                 .caption()
                 .padding(.vertical, 6)
                 .foregroundColor(.gray)

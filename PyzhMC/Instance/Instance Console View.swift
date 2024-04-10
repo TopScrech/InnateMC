@@ -4,7 +4,7 @@ struct InstanceConsoleView: View {
     var instance: Instance
     
     @Binding var launchedInstanceProcess: InstanceProcess?
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     @State var launchedInstances: [Instance: InstanceProcess]? = nil
     @State var logMessages: [String] = []

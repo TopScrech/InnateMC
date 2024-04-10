@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InstanceNavigationLink: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     @StateObject var instance: Instance
     
     @Binding var selectedInstance: Instance?

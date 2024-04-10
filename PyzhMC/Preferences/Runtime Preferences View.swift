@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct RuntimePreferencesView: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     @State var cachedDefaultJava = SavedJavaInstallation.systemDefault
     @State var showFileImporter = false

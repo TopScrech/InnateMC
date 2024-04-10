@@ -7,21 +7,21 @@ public class InstanceEditingVM: ObservableObject {
     @Published var notes = ""
     
     public func start(from instance: Instance) {
-        self.name = instance.name
-        self.synopsis = instance.synopsis ?? ""
-        self.notes = instance.notes ?? ""
-        self.inEditMode = true
+        name = instance.name
+        synopsis = instance.synopsis ?? ""
+        notes = instance.notes ?? ""
+        inEditMode = true
     }
     
     public func commit(to instance: Instance, showNoNamePopover: Binding<Bool>, showDuplicateNamePopover: Binding<Bool>, data launcherData: LauncherData) {
         showNoNamePopover.wrappedValue = false
         showDuplicateNamePopover.wrappedValue = false
-        self.inEditMode = false
-        instance.notes = self.notes == "" ? nil : self.notes
-        instance.synopsis = self.synopsis == "" ? nil : self.synopsis
+        inEditMode = false
+        instance.notes = notes == "" ? nil : notes
+        instance.synopsis = synopsis == "" ? nil : synopsis
         
-        if self.name != instance.name && !self.name.isEmpty {
-            let trimmedName = self.name.trimmingCharacters(in: .whitespacesAndNewlines)
+        if name != instance.name && !name.isEmpty {
+            let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
             
             if trimmedName.isEmpty {
                 showNoNamePopover.wrappedValue = true
@@ -33,7 +33,7 @@ public class InstanceEditingVM: ObservableObject {
                 return
             }
             
-            instance.renameAsync(to: self.name)
+            instance.renameAsync(to: name)
             logger.info("Successfully edited instance \(instance.name)")
         }
     }

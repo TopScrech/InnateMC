@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct InstanceRuntimeView: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     @StateObject var instance: Instance
     
     @State var valid = false

@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct ContentView: View {
-    @EnvironmentObject var launcherData: LauncherData
+    @EnvironmentObject private var launcherData: LauncherData
     
     private static let nullUuid = UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
     
