@@ -14,7 +14,7 @@ public class AssetIndex: Codable {
     }
     
     public static func get(version: String, urlStr: String) throws -> AssetIndex {
-        let indexesFile: URL = AssetIndex.indexesDir.appendingPathComponent(version + ".json", isDirectory: false)
+        let indexesFile = AssetIndex.indexesDir.appendingPathComponent(version + ".json", isDirectory: false)
         
         if FileManager.default.fileExists(atPath: indexesFile.path) {
             return try fromJson(try Data(contentsOf: indexesFile), version: version)
@@ -89,7 +89,7 @@ public class AssetIndex: Codable {
         do {
             try createDirectories()
         } catch {
-            onError(LaunchError.errorCreatingFile(error: error))
+            onError(.errorCreatingFile(error: error))
             return nil
         }
         

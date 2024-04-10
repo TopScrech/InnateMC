@@ -28,7 +28,7 @@ struct InstanceConsoleView: View {
                 .cornerRadius(8)
                 .overlay {
                     RoundedRectangle(cornerRadius: 8)
-                        .stroke(Color.secondary, lineWidth: 1)
+                        .stroke(.secondary, lineWidth: 1)
                 }
                 .padding(7)
                 

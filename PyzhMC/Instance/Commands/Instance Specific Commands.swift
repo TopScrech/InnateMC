@@ -30,31 +30,31 @@ struct InstanceSpecificCommands: View {
         .keyboardShortcut("f")
         .onChange(of: selectedInstance) { newValue in
             if let newValue {
-                self.instanceStarred = newValue.isStarred
-                self.instanceIsntLaunched = !LauncherData.instance.launchedInstances.contains(where: { $0.0 == newValue })
-                self.instanceIsntInEdit = !LauncherData.instance.editModeInstances.contains(where: { $0 == newValue })
+                instanceStarred = newValue.isStarred
+                instanceIsntLaunched = !LauncherData.instance.launchedInstances.contains(where: { $0.0 == newValue })
+                instanceIsntInEdit = !LauncherData.instance.editModeInstances.contains(where: { $0 == newValue })
             } else {
-                self.instanceStarred = false
-                self.instanceIsntLaunched = true
-                self.instanceIsntInEdit = true
+                instanceStarred = false
+                instanceIsntLaunched = true
+                instanceIsntInEdit = true
             }
             
-            self.instanceIsntSelected = newValue == nil
+            instanceIsntSelected = newValue == nil
             
             logger.trace("\(selectedInstance?.name ?? "No instance") has been selected")
         }
         .onReceive(LauncherData.instance.$launchedInstances) { value in
             if let selectedInstance {
-                self.instanceIsntLaunched = !value.contains(where: { $0.0 == selectedInstance })
+                instanceIsntLaunched = !value.contains(where: { $0.0 == selectedInstance })
             } else {
-                self.instanceIsntLaunched = true
+                instanceIsntLaunched = true
             }
         }
         .onReceive(LauncherData.instance.$editModeInstances) { value in
             if let selectedInstance {
-                self.instanceIsntInEdit = !value.contains(where: { $0 == selectedInstance })
+                instanceIsntInEdit = !value.contains(where: { $0 == selectedInstance })
             } else {
-                self.instanceIsntInEdit = true
+                instanceIsntInEdit = true
             }
         }
         
@@ -86,7 +86,7 @@ struct InstanceSpecificCommands: View {
                 
                 Image(systemName: "pencil")
             }
-            .keyboardShortcut(KeyEquivalent("e"))
+            .keyboardShortcut(.init("e"))
             .disabled(selectedInstance == nil)
         } else {
             Button {
@@ -96,23 +96,23 @@ struct InstanceSpecificCommands: View {
                 
                 Image(systemName: "checkmark")
             }
-            .keyboardShortcut(KeyEquivalent("s"))
+            .keyboardShortcut(.init("s"))
         }
         
         Button {
             NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: selectedInstance!.getPath().path)
         } label: {
-            Text("Open in finder")
+            Text("Open in Finder")
             
             Image(systemName: "folder")
         }
-        .keyboardShortcut(KeyEquivalent.upArrow)
+        .keyboardShortcut(.upArrow)
         .disabled(selectedInstance == nil)
         
         if let selectedInstance {
             Divider()
                 .onReceive(selectedInstance.$isStarred) { value in
-                    self.instanceStarred = value
+                    instanceStarred = value
                 }
         } else {
             Divider()

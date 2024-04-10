@@ -6,7 +6,7 @@ public class DownloadedJavaInstallation: Codable, Identifiable {
 }
 
 extension DownloadedJavaInstallation {
-    public static let filePath: URL = FileHandler.javaFolder.appendingPathComponent("Index.plist")
+    public static let filePath = FileHandler.javaFolder.appendingPathComponent("Index.plist")
     public static let encoder = PropertyListEncoder()
     public static let decoder = PropertyListDecoder()
     

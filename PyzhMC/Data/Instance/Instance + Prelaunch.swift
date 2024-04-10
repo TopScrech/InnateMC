@@ -98,9 +98,9 @@ extension Instance {
         var index: AssetIndex
         
         do {
-            index = try AssetIndex.get(version: self.assetIndex.id, urlStr: self.assetIndex.url)
+            index = try AssetIndex.get(version: assetIndex.id, urlStr: assetIndex.url)
         } catch {
-            onError(LaunchError.errorDownloading(error: error))
+            onError(.errorDownloading(error: error))
             return nil
         }
         

@@ -79,7 +79,7 @@ struct InstanceView: View {
                     
                     InstanceRuntimeView(instance: instance)
                         .tabItem {
-                            Label("Runtime", systemImage: "bolt")
+                            Label("Settings", systemImage: "bolt")
                         }
                 }
                 .padding(4)

@@ -41,7 +41,7 @@ public struct ParallelDownloader {
                         session.invalidateAndCancel()
                         
                         DispatchQueue.main.async {
-                            onError(LaunchError.errorDownloading(error: error))
+                            onError(.errorDownloading(error: error))
                         }
                         
                         downloadGroup.leave()
@@ -75,7 +75,7 @@ public struct ParallelDownloader {
                                 }
                             } else {
                                 DispatchQueue.main.async {
-                                    onError(LaunchError.unknownError(error: error))
+                                    onError(.unknownError(error: error))
                                 }
                             }
                         }

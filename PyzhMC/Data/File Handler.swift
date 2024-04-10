@@ -4,7 +4,7 @@ public class FileHandler {
     public static let instancesFolder = try! getOrCreateFolder("Instances")
     public static let assetsFolder = try! getOrCreateFolder("Assets")
     public static let librariesFolder = try! getOrCreateFolder("Libraries")
-    public static let javaFolder: URL = try! getOrCreateFolder("Java")
+    public static let javaFolder = try! getOrCreateFolder("Java")
     
     public static func getOrCreateFolder() throws -> URL {
         let fileManager = FileManager.default

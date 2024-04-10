@@ -23,6 +23,7 @@ struct InstanceScreenshotsView: View {
                                                 .resizable()
                                                 .scaledToFit()
                                         }
+                                        
                                         Text(screenshot.path.lastPathComponent)
                                             .footnote()
                                     }
@@ -30,7 +31,7 @@ struct InstanceScreenshotsView: View {
                                     .focusable()
                                     .focused($selectedItem, equals: screenshot)
                                     .onCopyCommand {
-                                        return [NSItemProvider(contentsOf: screenshot.path)!]
+                                        [NSItemProvider(contentsOf: screenshot.path)!]
                                     }
                                     .highPriorityGesture(
                                         TapGesture().onEnded { i in
@@ -55,7 +56,8 @@ struct InstanceScreenshotsView: View {
             }
             .cornerRadius(8)
             .overlay {
-                RoundedRectangle(cornerRadius: 8).stroke(Color.secondary, lineWidth: 1)
+                RoundedRectangle(cornerRadius: 8)
+                    .stroke(.secondary, lineWidth: 1)
             }
             .background(Color(NSColor.textBackgroundColor))
             .padding(7)
@@ -64,8 +66,29 @@ struct InstanceScreenshotsView: View {
                 ScreenshotShareButton(selectedItem: selectedItem)
                     .disabled(selectedItem == nil)
                 
-                Button("Open in finder") {
-                    NSWorkspace.shared.selectFile(selectedItem?.path.path, inFileViewerRootedAtPath: instance.getScreenshotsFolder().path)
+//                Button("Open in Finder") {
+//                    NSWorkspace.shared.selectFile(selectedItem?.path.path, inFileViewerRootedAtPath: instance.getScreenshotsFolder().path)
+//                }
+                
+                Button("Open in Finder") {
+                    let fileManager = FileManager.default
+                    let folderPath = instance.getScreenshotsFolder().path
+                    
+                    // Check if the folder exists
+                    if !fileManager.fileExists(atPath: folderPath) {
+                        do {
+                            // Attempt to create the folder
+                            try fileManager.createDirectory(atPath: folderPath, withIntermediateDirectories: true, attributes: nil)
+                            print("Folder created successfully.")
+                        } catch {
+                            // Handle potential error
+                            print("Error creating folder: \(error.localizedDescription)")
+                            return
+                        }
+                    }
+                    
+                    // Open the folder in Finder
+                    NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: folderPath)
                 }
             }
             .padding(.bottom, 8)

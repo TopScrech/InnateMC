@@ -2,9 +2,9 @@ import SwiftUI
 
 struct ErrorTrackerView: View {
     @StateObject var errorTracker: ErrorTracker
+    
     @State var selection: ErrorTrackerEntry? = nil
     
-    @ViewBuilder
     var body: some View {
         List(selection: $selection) {
             ForEach(errorTracker.errors, id: \.counter) { entry in

@@ -2,15 +2,17 @@ import Foundation
 
 public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     public static let systemDefault = SavedJavaInstallation(javaHomePath: "/usr", javaVendor: "System Default", javaVersion: "")
+    
     private static let regex = try! NSRegularExpression(pattern: "\"([^\"]+)\"", options: [])
     
     public var id: SavedJavaInstallation {
-        return self
+        self
     }
     
     @Published public var javaExecutable: String
     @Published public var javaVendor: String?
     @Published public var javaVersion: String?
+    
     public let installationType: InstallationType
     
     public init(javaHomePath: String, javaVendor: String? = nil, javaVersion: String? = nil) {
@@ -122,14 +124,14 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     }
     
     public enum InstallationType: Codable, Hashable, Equatable {
-        case detected // detected from /usr/libexec/java_home
-        case selected // user selected
-        case downloaded // downloaded by PyzhMC
+        case detected, // detected from /usr/libexec/java_home
+             selected, // user selected
+             downloaded // downloaded by PyzhMC
     }
 }
 
 extension SavedJavaInstallation {
-    public static let filePath: URL = FileHandler.javaFolder.appendingPathComponent("Saved.plist")
+    public static let filePath = FileHandler.javaFolder.appendingPathComponent("Saved.plist")
     public static let encoder = PropertyListEncoder()
     public static let decoder = PropertyListDecoder()
     
@@ -139,6 +141,7 @@ extension SavedJavaInstallation {
         guard let data else {
             let saved = try LinkedJavaInstallation.getAll().toSaved()
             try saved.save()
+            
             return saved
         }
         
