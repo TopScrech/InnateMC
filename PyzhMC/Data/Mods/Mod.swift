@@ -40,20 +40,65 @@ public struct Mod: Identifiable, Hashable, Comparable {
     }
     
     public static func from(url: URL) throws -> Mod {
-        .init(
+        func pathFromFileURLString(_ fileURLString: String) -> String? {
+            guard let url = URL(string: fileURLString),
+                  url.scheme == "file" else { return nil }
+            return url.path
+        }
+
+        // Adjusted function call
+        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-forge-11.6.0.1019.jar"),
+           let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods") {
+            unzipJarFile(jarFilePath: jarFilePath, destinationDirectoryPath: destinationDirectoryPath)
+        } else {
+            print("Invalid file URL")
+        }
+
+        return Mod(
             enabled: isEnabled(url),
             path: url,
             meta: .init(
-                name: "no u",
-                description: "testing"
+                name: "Example Mod Name",
+                description: "Description of the mod."
             )
         )
     }
 }
 
+func unzipJarFile(jarFilePath: String, destinationDirectoryPath: String) {
+    let process = Process()
+    let pipe = Pipe()
+    
+    // Using `/usr/bin/env unzip` to ensure the environment's `unzip` is used.
+    process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
+    process.arguments = ["unzip", jarFilePath, "-d", destinationDirectoryPath]
+    process.standardOutput = pipe
+    process.standardError = pipe
+    
+    do {
+        try process.run()
+        process.waitUntilExit()
+        
+        // Optionally, read and print the output from the unzip command
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
+        
+        if let output = String(data: data, encoding: .utf8) {
+            print(output)
+        }
+        
+        if process.terminationStatus == 0 {
+            print("Unzip successful")
+        } else {
+            print("Unzip failed")
+        }
+    } catch {
+        print("Failed to start the unzip process: \(error)")
+    }
+}
+
 extension Array where Element == URL {
     func deserializeToMods() -> [Mod] {
-        self.filter(Mod.isValidMod).compactMap {
+        return self.filter(Mod.isValidMod).compactMap {
             try? Mod.from(url: $0)
         }
     }
