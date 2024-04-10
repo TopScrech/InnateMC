@@ -66,25 +66,35 @@ public struct Mod: Identifiable, Hashable, Comparable {
                   url.scheme == "file" else { return nil }
             return url.path
         }
-
-        // Adjusted function call
-        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar") {
-//           let destinationDirectoryPath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/products") {
-            
+        
+        if let jarFilePath = pathFromFileURLString(url.absoluteString) {
+//        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar") {
             let tempDirURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
             try? FileManager.default.createDirectory(at: tempDirURL, withIntermediateDirectories: true, attributes: nil)
             
-            unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: tempDirURL.path)
+            if let fabric = unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: tempDirURL.path) {
+                return .init(
+                    enabled: isEnabled(url),
+                    path: url,
+                    meta: .init(
+                        name: fabric.name,
+                        description: fabric.description
+                    )
+                )
+            } else {
+                print("Not let")
+            }
         } else {
             print("Invalid file URL")
         }
         
+        print("NIL")
         return .init(
             enabled: isEnabled(url),
             path: url,
             meta: .init(
-                name: "Example Mod Name",
-                description: "Description of the mod."
+                name: "Error",
+                description: "Error"
             )
         )
     }

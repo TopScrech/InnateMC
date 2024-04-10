@@ -12,6 +12,8 @@ struct InstanceModsView: View {
         Table(instance.mods, selection: $selected, sortOrder: $sortOrder) {
             TableColumn("Name", value: \.meta.name)
             
+            TableColumn("Description", value: \.meta.description)
+            
             TableColumn("File", value: \.path.lastPathComponent)
         }
         .onAppear {

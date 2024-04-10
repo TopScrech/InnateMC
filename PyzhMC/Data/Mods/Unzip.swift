@@ -1,6 +1,6 @@
 import ScrechKit
 
-func unzipModJar(jarFilePath: String, destinationDirectoryPath: String) {
+func unzipModJar(jarFilePath: String, destinationDirectoryPath: String) -> FabricMod? {
     let process = Process()
     let outputPipe = Pipe()
     let errorPipe = Pipe()
@@ -37,17 +37,19 @@ func unzipModJar(jarFilePath: String, destinationDirectoryPath: String) {
         let fileName = "fabric.mod.json"
         
         if let path = findFilePath(in: destinationDirectoryPath, fileName: fileName) {
-            decodeFabricModJson(path)
+            return decodeFabricModJson(path)
         }
     } catch {
         print("Failed to start the unzip process: \(error)")
     }
+    
+    return nil
 }
 
-func decodeFabricModJson(_ filePath: String) {
+func decodeFabricModJson(_ filePath: String) -> FabricMod? {
     guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
         print("Failed to read file")
-        return
+        return nil
     }
     
     let decoder = JSONDecoder()
@@ -55,7 +57,10 @@ func decodeFabricModJson(_ filePath: String) {
     do {
         let fabricMod = try decoder.decode(FabricMod.self, from: data)
         print("Decoded fabric.mod.json: \(fabricMod)")
+        
+        return fabricMod
     } catch {
         print("Failed to decode JSON: \(error)")
+        return nil
     }
 }
