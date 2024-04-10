@@ -3,14 +3,17 @@ import FileWatcher
 
 public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     @Published public var name: String
+    
     public var assetIndex: PartialAssetIndex
     public var libraries: [LibraryArtifact]
     public var mainClass: String
     public var minecraftJar: MinecraftJar
+    
     @Published public var isStarred: Bool
     @Published public var logo: InstanceLogo
     @Published public var notes: String?
     @Published public var synopsis: String?
+    
     public var debugString: String
     
     public var synopsisOrVersion: String {
@@ -19,7 +22,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
         
         set(newValue) {
-            self.synopsis = newValue
+            synopsis = newValue
         }
     }
     
@@ -32,8 +35,8 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     @Published public var worlds: [World] = []
     
     public var screenshotsWatcher: FileWatcher? = nil
-    public var modsWatcher: FileWatcher? = nil
-    public var worldsWatcher: FileWatcher? = nil
+    public var modsWatcher:        FileWatcher? = nil
+    public var worldsWatcher:      FileWatcher? = nil
     
     public init(
         name: String,
@@ -61,36 +64,36 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     
     public func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
-        try container.encode(name, forKey: .name)
-        try container.encode(assetIndex, forKey: .assetIndex)
-        try container.encode(libraries, forKey: .libraries)
-        try container.encode(mainClass, forKey: .mainClass)
+        try container.encode(name,         forKey: .name)
+        try container.encode(assetIndex,   forKey: .assetIndex)
+        try container.encode(libraries,    forKey: .libraries)
+        try container.encode(mainClass,    forKey: .mainClass)
         try container.encode(minecraftJar, forKey: .minecraftJar)
-        try container.encode(isStarred, forKey: .isStarred)
-        try container.encode(logo, forKey: .logo)
-        try container.encode(notes, forKey: .notes)
-        try container.encode(synopsis, forKey: .synopsis)
-        try container.encode(debugString, forKey: .debugString)
-        try container.encode(lastPlayed, forKey: .lastPlayed)
-        try container.encode(preferences, forKey: .preferences)
-        try container.encode(arguments, forKey: .arguments)
+        try container.encode(isStarred,    forKey: .isStarred)
+        try container.encode(logo,         forKey: .logo)
+        try container.encode(notes,        forKey: .notes)
+        try container.encode(synopsis,     forKey: .synopsis)
+        try container.encode(debugString,  forKey: .debugString)
+        try container.encode(lastPlayed,   forKey: .lastPlayed)
+        try container.encode(preferences,  forKey: .preferences)
+        try container.encode(arguments,    forKey: .arguments)
     }
     
     public required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
-        name = try container.decode(String.self, forKey: .name)
-        assetIndex = try container.decode(PartialAssetIndex.self, forKey: .assetIndex)
-        libraries = try container.decode([LibraryArtifact].self, forKey: .libraries)
-        mainClass = try container.decode(String.self, forKey: .mainClass)
-        minecraftJar = try container.decode(MinecraftJar.self, forKey: .minecraftJar)
-        isStarred = try container.decode(Bool.self, forKey: .isStarred)
-        logo = try container.decode(InstanceLogo.self, forKey: .logo)
-        notes = try container.decode(String?.self, forKey: .notes)
-        synopsis = try container.decode(String?.self, forKey: .synopsis)
-        debugString = try container.decode(String.self, forKey: .debugString)
-        lastPlayed = try container.decodeIfPresent(Date.self, forKey: .lastPlayed)
-        preferences = try container.decode(InstancePreferences.self, forKey: .preferences)
-        arguments = try container.decode(Arguments.self, forKey: .arguments)
+        name =          try container.decode(String.self, forKey: .name)
+        assetIndex =    try container.decode(PartialAssetIndex.self, forKey: .assetIndex)
+        libraries =     try container.decode([LibraryArtifact].self, forKey: .libraries)
+        mainClass =     try container.decode(String.self, forKey: .mainClass)
+        minecraftJar =  try container.decode(MinecraftJar.self, forKey: .minecraftJar)
+        isStarred =     try container.decode(Bool.self, forKey: .isStarred)
+        logo =          try container.decode(InstanceLogo.self, forKey: .logo)
+        notes =         try container.decode(String?.self, forKey: .notes)
+        synopsis =      try container.decode(String?.self, forKey: .synopsis)
+        debugString =   try container.decode(String.self, forKey: .debugString)
+        lastPlayed =    try container.decodeIfPresent(Date.self, forKey: .lastPlayed)
+        preferences =   try container.decode(InstancePreferences.self, forKey: .preferences)
+        arguments =     try container.decode(Arguments.self, forKey: .arguments)
     }
     
     private enum CodingKeys: String, CodingKey {
@@ -108,6 +111,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
              lastPlayed,
              preferences,
              arguments,
+             
              // Legacy
              startOnFirstThread,
              gameArguments
@@ -118,11 +122,11 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     }
     
     public func setPreferences(_ prefs: InstancePreferences) {
-        self.preferences = prefs
+        preferences = prefs
     }
     
     public func getPath() -> URL {
-        Instance.getInstancePath(for: self.name)
+        Instance.getInstancePath(for: name)
     }
     
     public func getGamePath() -> URL {
@@ -162,16 +166,17 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
             return true
         }
         
-        return self.name.localizedCaseInsensitiveContains(term) || self.synopsisOrVersion.localizedCaseInsensitiveContains(term)
+        return name.localizedCaseInsensitiveContains(term) || synopsisOrVersion.localizedCaseInsensitiveContains(term)
     }
     
     public func processArgsByRules(_ thing: KeyPath<Arguments, [ArgumentElement]>, features: [String:Bool]) -> [String] {
-        self.arguments[keyPath: thing].filter { element in
+        arguments[keyPath: thing].filter { element in
             switch(element) {
             case .string:
-                return true
+                true
+                
             case .object(let obj):
-                return obj.rules.allMatchRules(givenFeatures: features)
+                obj.rules.allMatchRules(givenFeatures: features)
             }
         }
         .flatMap {
@@ -184,15 +189,15 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     }
     
     public func hash(into hasher: inout Hasher) {
-        hasher.combine(self.name)
-        hasher.combine(self.notes)
-        hasher.combine(self.synopsisOrVersion)
+        hasher.combine(name)
+        hasher.combine(notes)
+        hasher.combine(synopsisOrVersion)
     }
     
     public func loadScreenshotsAsync() {
-        let folder = self.getScreenshotsFolder()
+        let folder = getScreenshotsFolder()
         
-        if self.screenshotsWatcher == nil {
+        if screenshotsWatcher == nil {
             let watcher = FileWatcher([folder.path])
             watcher.queue = DispatchQueue.global(qos: .background)
             
@@ -202,7 +207,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 }
             }
             
-            self.screenshotsWatcher = watcher
+            screenshotsWatcher = watcher
             watcher.start()
         }
         
@@ -216,7 +221,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 do {
                     urls = try fm.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)
                 } catch {
-                    ErrorTracker.instance.error(error: error, description: "Error reading screenshots folder for instance \(self.name)")
+                    ErrorTracker.instance.error(error: error, description: "Error reading screenshots folder for instance \(name)")
                     return
                 }
                 
@@ -228,9 +233,9 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     }
     
     public func loadModsAsync() {
-        let modsFolder = self.getModsFolder()
+        let modsFolder = getModsFolder()
         
-        if self.modsWatcher == nil {
+        if modsWatcher == nil {
             let watcher = FileWatcher([modsFolder.path])
             watcher.queue = DispatchQueue.global(qos: .background)
             
@@ -240,7 +245,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 }
             }
             
-            self.modsWatcher = watcher
+            modsWatcher = watcher
             watcher.start()
         }
         
@@ -254,8 +259,8 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 do {
                     urls = try fm.contentsOfDirectory(at: modsFolder, includingPropertiesForKeys: nil)
                 } catch {
-                    logger.error("Error reading mods folder for instance \(self.name)", error: error)
-                    ErrorTracker.instance.error(error: error, description: "Error reading mods folder for instance \(self.name)")
+                    logger.error("Error reading mods folder for instance \(name)", error: error)
+                    ErrorTracker.instance.error(error: error, description: "Error reading mods folder for instance \(name)")
                     return
                 }
                 
@@ -267,9 +272,9 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     }
     
     public func loadWorldsAsync() {
-        let worldsFolder = self.getSavesFolder()
+        let worldsFolder = getSavesFolder()
         
-        if self.worldsWatcher == nil {
+        if worldsWatcher == nil {
             let watcher = FileWatcher([worldsFolder.path])
             watcher.queue = DispatchQueue.global(qos: .background)
             
@@ -279,7 +284,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 }
             }
             
-            self.worldsWatcher = watcher
+            worldsWatcher = watcher
             watcher.start()
         }
         Task {
@@ -292,8 +297,8 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 do {
                     urls = try fm.contentsOfDirectory(at: worldsFolder, includingPropertiesForKeys: nil)
                 } catch {
-                    logger.error("Error reading mods folder for instance \(self.name)", error: error)
-                    ErrorTracker.instance.error(error: error, description: "Error reading mods folder for instance \(self.name)")
+                    logger.error("Error reading mods folder for instance \(name)", error: error)
+                    ErrorTracker.instance.error(error: error, description: "Error reading mods folder for instance \(name)")
                     
                     return
                 }
