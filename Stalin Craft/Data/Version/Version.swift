@@ -84,36 +84,42 @@ struct Version: Decodable, Equatable {
     }
     
     func validate() -> Bool {
-        if self.isInheritor {
+        if isInheritor {
             print("1")
             return false
         }
-        guard self.arguments != Arguments.none else {
+        
+        guard arguments != Arguments.none else {
             print("2")
             return false
         }
-        guard self.assetIndex != PartialAssetIndex.none else {
+        
+        guard assetIndex != PartialAssetIndex.none else {
             print("3")
             return false
         }
-        guard self.downloads != MainDownloads.none else {
+        
+        guard downloads != MainDownloads.none else {
             print("4")
             return false
         }
-        if self.type.isEmpty {
+        
+        if type.isEmpty {
             print("5")
             return false
         }
-        if self.mainClass == "none" {
+        
+        if mainClass == "none" {
             print("6")
             return false
         }
+        
         return true
     }
     
     func flatten(provider: @escaping ((String) throws -> Version)) throws -> Version {
-        guard let parentId = self.inheritsFrom else {
-            if !self.validate() {
+        guard let parentId = inheritsFrom else {
+            if !validate() {
                 throw VersionError.invalidVersionData
             }
             
@@ -158,7 +164,7 @@ struct Version: Decodable, Equatable {
                 }
                 .first
             
-            guard let parentPartial = parentPartial else {
+            guard let parentPartial else {
                 throw VersionError.invalidParent
             }
             
@@ -193,7 +199,7 @@ struct Version: Decodable, Equatable {
                 }
                 .first
             
-            guard let parentPartial = parentPartial else {
+            guard let parentPartial else {
                 throw VersionError.invalidParent
             }
             

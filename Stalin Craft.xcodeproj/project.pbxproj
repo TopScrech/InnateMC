@@ -10,11 +10,11 @@
 		6407E6382A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407E6372A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift */; };
 		6407E63A2A285B6C00BB9AEA /* Screenshot Share Button.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */; };
 		640A758D2A208BE3005CDE49 /* Mod.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A758C2A208BE3005CDE49 /* Mod.swift */; };
-		640A758F2A20E969005CDE49 /* Instance Mods View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A758E2A20E969005CDE49 /* Instance Mods View.swift */; };
+		640A758F2A20E969005CDE49 /* Mod List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A758E2A20E969005CDE49 /* Mod List.swift */; };
 		640A75912A2115BA005CDE49 /* Run Once.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75902A2115BA005CDE49 /* Run Once.swift */; };
 		640A75942A21CEFD005CDE49 /* Screenshot.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75932A21CEFD005CDE49 /* Screenshot.swift */; };
-		640A75962A21D021005CDE49 /* Instance Screenshots View.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75952A21D021005CDE49 /* Instance Screenshots View.swift */; };
-		640A75B92A226F2C005CDE49 /* Worlds List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75B82A226F2C005CDE49 /* Worlds List.swift */; };
+		640A75962A21D021005CDE49 /* Screenshot List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75952A21D021005CDE49 /* Screenshot List.swift */; };
+		640A75B92A226F2C005CDE49 /* World List.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75B82A226F2C005CDE49 /* World List.swift */; };
 		640A75BC2A226F80005CDE49 /* World.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640A75BB2A226F80005CDE49 /* World.swift */; };
 		640CCF552A09F0FA0080F574 /* Settings Fetch.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640CCF542A09F0FA0080F574 /* Settings Fetch.swift */; };
 		640DC1ED2934EC2300943213 /* App Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 640DC1EC2934EC2300943213 /* App Delegate.swift */; };
@@ -160,11 +160,11 @@
 		6407E6372A2791F100BB9AEA /* Imgur Sharing Service Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Imgur Sharing Service Delegate.swift"; sourceTree = "<group>"; };
 		6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screenshot Share Button.swift"; sourceTree = "<group>"; };
 		640A758C2A208BE3005CDE49 /* Mod.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Mod.swift; sourceTree = "<group>"; };
-		640A758E2A20E969005CDE49 /* Instance Mods View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Mods View.swift"; sourceTree = "<group>"; };
+		640A758E2A20E969005CDE49 /* Mod List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mod List.swift"; sourceTree = "<group>"; };
 		640A75902A2115BA005CDE49 /* Run Once.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Run Once.swift"; sourceTree = "<group>"; };
 		640A75932A21CEFD005CDE49 /* Screenshot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Screenshot.swift; sourceTree = "<group>"; };
-		640A75952A21D021005CDE49 /* Instance Screenshots View.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Instance Screenshots View.swift"; sourceTree = "<group>"; };
-		640A75B82A226F2C005CDE49 /* Worlds List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Worlds List.swift"; sourceTree = "<group>"; };
+		640A75952A21D021005CDE49 /* Screenshot List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Screenshot List.swift"; sourceTree = "<group>"; };
+		640A75B82A226F2C005CDE49 /* World List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "World List.swift"; sourceTree = "<group>"; };
 		640A75BB2A226F80005CDE49 /* World.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = World.swift; sourceTree = "<group>"; };
 		640CCF542A09F0FA0080F574 /* Settings Fetch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Settings Fetch.swift"; sourceTree = "<group>"; };
 		640DC1EC2934EC2300943213 /* App Delegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "App Delegate.swift"; sourceTree = "<group>"; };
@@ -342,7 +342,7 @@
 		640A75B02A2263D5005CDE49 /* Screenshots */ = {
 			isa = PBXGroup;
 			children = (
-				640A75952A21D021005CDE49 /* Instance Screenshots View.swift */,
+				640A75952A21D021005CDE49 /* Screenshot List.swift */,
 				6407E6392A285B6B00BB9AEA /* Screenshot Share Button.swift */,
 			);
 			path = Screenshots;
@@ -351,7 +351,7 @@
 		640A75B72A226E76005CDE49 /* Worlds */ = {
 			isa = PBXGroup;
 			children = (
-				640A75B82A226F2C005CDE49 /* Worlds List.swift */,
+				640A75B82A226F2C005CDE49 /* World List.swift */,
 				F388DED62BC8125C002E7616 /* Size of directory.swift */,
 			);
 			path = Worlds;
@@ -726,7 +726,7 @@
 		F388DED82BC817F3002E7616 /* Mods */ = {
 			isa = PBXGroup;
 			children = (
-				640A758E2A20E969005CDE49 /* Instance Mods View.swift */,
+				640A758E2A20E969005CDE49 /* Mod List.swift */,
 			);
 			path = Mods;
 			sourceTree = "<group>";
@@ -895,7 +895,7 @@
 				64BACB972A1C6EF700F7AA1C /* Http Method.swift in Sources */,
 				64A5152029E2E6A300AFE3AE /* Instance Data.swift in Sources */,
 				64BACB9C2A1C9F5D00F7AA1C /* Fabric Meta.swift in Sources */,
-				640A75B92A226F2C005CDE49 /* Worlds List.swift in Sources */,
+				640A75B92A226F2C005CDE49 /* World List.swift in Sources */,
 				640A758D2A208BE3005CDE49 /* Mod.swift in Sources */,
 				646139E02977E3A700BA9477 /* Symbol Picker.swift in Sources */,
 				648445882A10DE9300049986 /* Minecraft Profile.swift in Sources */,
@@ -944,7 +944,7 @@
 				64E459EF2938BBEF00F82A2B /* Instance Commands.swift in Sources */,
 				643E45582A13327900687839 /* Instance Notes View.swift in Sources */,
 				64A5150E29E2DED100AFE3AE /* Minecraft Jar.swift in Sources */,
-				640A758F2A20E969005CDE49 /* Instance Mods View.swift in Sources */,
+				640A758F2A20E969005CDE49 /* Mod List.swift in Sources */,
 				64F7C5FB297D64810086ABC1 /* Version Manifest.swift in Sources */,
 				64337EED2A17A6AA0017BCB0 /* Argument Element.swift in Sources */,
 				646139E42977E95300BA9477 /* SF Symbols 13 List.swift in Sources */,
@@ -973,7 +973,7 @@
 				64337EE92A17A4EF0017BCB0 /* Rule.swift in Sources */,
 				64F7C600297D64B50086ABC1 /* Instance Creator.swift in Sources */,
 				64FA2A962A0F76FA0042A4A7 /* Microsoft Account View Model.swift in Sources */,
-				640A75962A21D021005CDE49 /* Instance Screenshots View.swift in Sources */,
+				640A75962A21D021005CDE49 /* Screenshot List.swift in Sources */,
 				64C334D92922523600BB8570 /* Stalin Craft App.swift in Sources */,
 				64337EFD2A17DB630017BCB0 /* Logging Config.swift in Sources */,
 				64C41C1429366CAF00014E0F /* Value Keys.swift in Sources */,

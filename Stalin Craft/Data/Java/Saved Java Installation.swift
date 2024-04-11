@@ -1,7 +1,11 @@
 import Foundation
 
 class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
-    static let systemDefault = SavedJavaInstallation(javaHomePath: "/usr", javaVendor: "System Default", javaVersion: "")
+    static let systemDefault = SavedJavaInstallation(
+        javaHomePath: "/usr", 
+        javaVendor: "System Default", 
+        javaVersion: ""
+    )
     
     private static let regex = try! NSRegularExpression(pattern: "\"([^\"]+)\"", options: [])
     

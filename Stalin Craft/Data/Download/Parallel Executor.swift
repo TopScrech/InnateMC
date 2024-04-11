@@ -5,11 +5,13 @@ class ParallelExecutor {
     static func run(_ tasks: [() -> Void], progress: TaskProgress) {
         progress.current = 0
         progress.total = tasks.count
+        
         logger.debug("Executing \(tasks.count) tasks")
         
         for task in tasks {
             Task(priority: .medium) {
                 task()
+                
                 DispatchQueue.main.async {
                     progress.inc()
                 }
@@ -18,7 +20,7 @@ class ParallelExecutor {
     }
     
     internal static func isSha1Valid(data: Data, expected: String?) -> Bool {
-        guard let expected = expected else {
+        guard let expected else {
             return true
         }
         

@@ -77,17 +77,17 @@ struct InstanceView: View {
                         Label("Console", systemImage: "bolt")
                     }
                     
-                    InstanceModsView(instance: instance)
+                    ModList(instance: instance)
                         .tabItem {
                             Label("Mods", systemImage: "plus.square.on.square")
                         }
                     
-                    InstanceScreenshotsView(instance: instance)
+                    ScreenshotList(instance: instance)
                         .tabItem {
                             Label("Screenshots", systemImage: "plus.square.on.square")
                         }
                     
-                    WorldsList(instance: instance)
+                    WorldList(instance: instance)
                         .tabItem {
                             Label("Worlds", systemImage: "plus.square.on.square")
                         }

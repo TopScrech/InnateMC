@@ -4,7 +4,12 @@ struct ScreenshotShareButton: NSViewRepresentable {
     var selectedItem: Screenshot?
     
     func makeNSView(context: Context) -> NSButton {
-        let button = NSButton(title: NSLocalizedString("Share", comment: "Share"), target: context.coordinator, action: #selector(Coordinator.buttonClicked))
+        let button = NSButton(
+            title: NSLocalizedString("Share", comment: "Share"),
+            target: context.coordinator, 
+            action: #selector(Coordinator.buttonClicked)
+        )
+        
         context.coordinator.button = button
         
         button.bezelStyle = .rounded
@@ -18,7 +23,7 @@ struct ScreenshotShareButton: NSViewRepresentable {
     }
     
     func updateNSView(_ nsView: NSButton, context: Context) {
-        context.coordinator.selectedItem = self.selectedItem
+        context.coordinator.selectedItem = selectedItem
     }
     
     func makeCoordinator() -> Coordinator {
@@ -36,13 +41,14 @@ struct ScreenshotShareButton: NSViewRepresentable {
         }
         
         @objc func buttonClicked() {
-            guard let selectedItem = selectedItem else {
+            guard let selectedItem else {
                 return
             }
             
             let sharingItems = [selectedItem.path as Any]
+            
             let sharingServicePicker = NSSharingServicePicker(items: sharingItems)
-            sharingServicePicker.delegate = self.delegate
+            sharingServicePicker.delegate = delegate
             sharingServicePicker.show(relativeTo: .zero, of: button!, preferredEdge: .minY)
         }
     }

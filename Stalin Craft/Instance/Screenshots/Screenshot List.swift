@@ -1,6 +1,6 @@
 import ScrechKit
 
-struct InstanceScreenshotsView: View {
+struct ScreenshotList: View {
     @StateObject var instance: Instance
     
     @FocusState var selectedItem: Screenshot?

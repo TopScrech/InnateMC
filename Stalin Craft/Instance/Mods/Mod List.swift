@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct InstanceModsView: View {
+struct ModList: View {
     @StateObject var instance: Instance
     
     @State var selected: Set<Mod> = []

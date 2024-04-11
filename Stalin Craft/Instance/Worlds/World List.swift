@@ -1,6 +1,6 @@
 import ScrechKit
 
-struct WorldsList: View {
+struct WorldList: View {
     @StateObject var instance: Instance
     
     @FocusState var selectedWorld: World?
