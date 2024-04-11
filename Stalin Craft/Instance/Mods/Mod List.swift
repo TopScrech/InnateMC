@@ -19,6 +19,13 @@ struct ModList: View {
                 
                 TableColumn("File", value: \.path.lastPathComponent)
             }
+            .animation(.default, value: instance.mods)
+            .onDrop(of: [.fileURL], isTargeted: nil) { providers in
+                handleDrop(providers)
+            }
+            //        .onDeleteCommand {
+            //            alertDelete = true
+            //        }
             
             Button {
                 openInFinderOrCreate(instance.getModsFolder().path)
@@ -26,14 +33,11 @@ struct ModList: View {
                 Text("Open in Finder")
             }
         }
-        .onDeleteCommand {
-            alertDelete = true
-        }
         .task {
             instance.loadMods()
         }
-        .alert("Delete", isPresented: $alertDelete) {
-            
-        }
+        //        .alert("Delete", isPresented: $alertDelete) {
+        //
+        //        }
     }
 }

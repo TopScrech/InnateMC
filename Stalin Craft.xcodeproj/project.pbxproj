@@ -143,6 +143,7 @@
 		F337D6272BBEEA8C004B52C5 /* ScrechKit in Frameworks */ = {isa = PBXBuildFile; productRef = F337D6262BBEEA8C004B52C5 /* ScrechKit */; };
 		F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F337D6282BBF1961004B52C5 /* Localizable.xcstrings */; };
 		F388DED72BC8125C002E7616 /* Size of directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DED62BC8125C002E7616 /* Size of directory.swift */; };
+		F388DEDA2BC82DA4002E7616 /* Handle Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DED92BC82DA4002E7616 /* Handle Drop.swift */; };
 		F3CF21F82BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -296,6 +297,7 @@
 		F336781B2BC759AA0083E21C /* Java Tests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "Java Tests.swift"; sourceTree = "<group>"; };
 		F337D6282BBF1961004B52C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F388DED62BC8125C002E7616 /* Size of directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Size of directory.swift"; sourceTree = "<group>"; };
+		F388DED92BC82DA4002E7616 /* Handle Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Handle Drop.swift"; sourceTree = "<group>"; };
 		F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -727,6 +729,7 @@
 			isa = PBXGroup;
 			children = (
 				640A758E2A20E969005CDE49 /* Mod List.swift */,
+				F388DED92BC82DA4002E7616 /* Handle Drop.swift */,
 			);
 			path = Mods;
 			sourceTree = "<group>";
@@ -974,6 +977,7 @@
 				64F7C600297D64B50086ABC1 /* Instance Creator.swift in Sources */,
 				64FA2A962A0F76FA0042A4A7 /* Microsoft Account View Model.swift in Sources */,
 				640A75962A21D021005CDE49 /* Screenshot List.swift in Sources */,
+				F388DEDA2BC82DA4002E7616 /* Handle Drop.swift in Sources */,
 				64C334D92922523600BB8570 /* Stalin Craft App.swift in Sources */,
 				64337EFD2A17DB630017BCB0 /* Logging Config.swift in Sources */,
 				64C41C1429366CAF00014E0F /* Value Keys.swift in Sources */,
