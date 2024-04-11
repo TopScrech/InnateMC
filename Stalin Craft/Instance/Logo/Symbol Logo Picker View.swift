@@ -6,18 +6,18 @@ struct SymbolLogoPickerView: View {
     @Binding var logo: InstanceLogo
     
     var body: some View {
-        SymbolPicker(symbol: Binding(get: {
+        SymbolPicker(symbol: .init {
             if logo.logoType == .file {
                 return ""
             }
             
             return logo.string
-        }, set: {
+        } set: {
             logo = InstanceLogo(logoType: .symbol, string: $0)
             
             DispatchQueue.global().async {
                 try! instance.save()
             }
-        }))
+        })
     }
 }

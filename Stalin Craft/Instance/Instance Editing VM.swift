@@ -28,7 +28,7 @@ class InstanceEditingVM: ObservableObject {
                 return
             }
             
-            if launcherData.instances.map({ $0.name }).contains(where: { $0.lowercased() == trimmedName.lowercased()}) {
+            if launcherData.instances.map({ $0.name }).contains(where: { $0.lowercased() == trimmedName.lowercased() }) {
                 showDuplicateNamePopover.wrappedValue = true
                 return
             }

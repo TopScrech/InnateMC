@@ -51,11 +51,16 @@ struct AccountsPreferencesView: View {
         }
         .onAppear {
             cachedAccounts = launcherData.accountManager.accounts
-            cachedAccountsOnly = Array(cachedAccounts.values).map({ AdaptedAccount(from: $0)})
+            
+            cachedAccountsOnly = Array(cachedAccounts.values).map { AdaptedAccount(from: $0)
+            }
         }
         .onReceive(launcherData.accountManager.$accounts) {
             cachedAccounts = $0
-            cachedAccountsOnly = Array($0.values).map({ AdaptedAccount(from: $0)})
+            
+            cachedAccountsOnly = Array($0.values).map {
+                AdaptedAccount(from: $0)
+            }
         }
         .onReceive(msAccountVM.$sheetMicrosoftAccount) {
             if !$0 {
@@ -63,7 +68,7 @@ struct AccountsPreferencesView: View {
             }
         }
         .sheet($sheetAddOffline) {
-            AddOfflineAccountView(showSheet: $sheetAddOffline) {
+            AddOfflineAccountView {
                 let acc = OfflineAccount.createFromUsername($0)
                 launcherData.accountManager.accounts[acc.id] = acc
                 

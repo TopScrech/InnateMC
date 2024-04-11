@@ -173,7 +173,9 @@ struct ContentView: View {
         
         Button {
             if launcherData.editModeInstances.contains(where: { $0 == selectedInstance! }) {
-                launcherData.editModeInstances.removeAll(where: { $0 == selectedInstance! })
+                launcherData.editModeInstances.removeAll {
+                    $0 == selectedInstance!
+                }
             } else {
                 launcherData.editModeInstances.append(selectedInstance!)
             }
@@ -218,7 +220,10 @@ struct ContentView: View {
         .frame(height: 40)
         .onAppear {
             selectedAccount = launcherData.accountManager.currentSelected ?? ContentView.nullUuid
-            cachedAccounts = Array(launcherData.accountManager.accounts.values).map { .init(from: $0) }
+            
+            cachedAccounts = Array(launcherData.accountManager.accounts.values).map {
+                .init(from: $0)
+            }
         }
         .onReceive(launcherData.accountManager.$currentSelected) {
             selectedAccount = $0 ?? ContentView.nullUuid

@@ -9,9 +9,11 @@ struct InstanceView: View {
     @State var starHovered = false
     @State var logoHovered = false
     @State var launchError: LaunchError? = nil
+    
     @State var downloadSession: URLSession? = nil
     @State var downloadMessage: LocalizedStringKey = "Downloading Libraries"
     @State var downloadProgress = TaskProgress(current: 0, total: 1)
+    
     @State var progress: Float = 0
     @State var launchedInstanceProcess: InstanceProcess? = nil
     @State var indeterminateProgress = false
@@ -27,11 +29,21 @@ struct InstanceView: View {
         ZStack {
             VStack {
                 HStack {
-                    InstanceInterativeLogoView(instance: instance, sheetLogo: $sheetLogo, logoHovered: $logoHovered)
+                    InstanceInterativeLogoView(
+                        instance: instance,
+                        sheetLogo: $sheetLogo,
+                        logoHovered: $logoHovered
+                    )
                     
                     VStack {
                         HStack {
-                            InstanceTitleView(editingVM: editingVM, instance: instance, showNoNamePopover: $popoverNoName, showDuplicatePopover: $popoverDuplicate, starHovered: $starHovered)
+                            InstanceTitleView(
+                                editingVM: editingVM, 
+                                instance: instance,
+                                showNoNamePopover: $popoverNoName,
+                                showDuplicatePopover: $popoverDuplicate,
+                                starHovered: $starHovered
+                            )
                             
                             Spacer()
                         }
@@ -57,10 +69,13 @@ struct InstanceView: View {
                 Spacer()
                 
                 TabView {
-                    InstanceConsoleView(instance: instance, launchedInstanceProcess: $launchedInstanceProcess)
-                        .tabItem {
-                            Label("Console", systemImage: "bolt")
-                        }
+                    InstanceConsoleView(
+                        instance: instance,
+                        launchedInstanceProcess: $launchedInstanceProcess
+                    )
+                    .tabItem {
+                        Label("Console", systemImage: "bolt")
+                    }
                     
                     InstanceModsView(instance: instance)
                         .tabItem {
@@ -86,7 +101,10 @@ struct InstanceView: View {
             }
             .padding(6)
             .onAppear {
-                launcherData.launchRequestedInstances.removeAll { $0 == instance }
+                launcherData.launchRequestedInstances.removeAll {
+                    $0 == instance
+                }
+                
                 launchedInstanceProcess = launcherData.launchedInstances[instance]
                 instance.loadScreenshots()
             }
@@ -109,18 +127,27 @@ struct InstanceView: View {
                         sheetChooseAccount = true
                     }
                     
-                    launcherData.launchRequestedInstances.removeAll(where: { $0 == instance })
+                    launcherData.launchRequestedInstances.removeAll {
+                        $0 == instance
+                    }
                 }
             }
             .onReceive(launcherData.$editModeInstances) { value in
-                if value.contains(where: { $0 == instance}) {
+                if value.contains(where: { $0 == instance }) {
                     editingVM.start(from: instance)
+                    
                 } else if editingVM.inEditMode {
-                    editingVM.commit(to: instance, showNoNamePopover: $popoverNoName, showDuplicateNamePopover: $popoverDuplicate, data: launcherData)
+                    
+                    editingVM.commit(
+                        to: instance,
+                        showNoNamePopover: $popoverNoName,
+                        showDuplicateNamePopover: $popoverDuplicate,
+                        data: launcherData
+                    )
                 }
             }
             .onReceive(launcherData.$killRequestedInstances) { value in
-                if value.contains(where: { $0 == instance})  {
+                if value.contains(where: { $0 == instance }) {
                     kill(launchedInstanceProcess!.process.processIdentifier, SIGKILL)
                     
                     launcherData.killRequestedInstances.removeAll {
@@ -196,7 +223,11 @@ struct InstanceView: View {
                                 
                                 DispatchQueue.main.async {
                                     withAnimation {
-                                        let process = InstanceProcess(instance: instance, account: launcherData.accountManager.selectedAccount, accessToken: accessToken)
+                                        let process = InstanceProcess(
+                                            instance: instance, 
+                                            account: launcherData.accountManager.selectedAccount,
+                                            accessToken: accessToken
+                                        )
                                         
                                         launcherData.launchedInstances[instance] = process
                                         launchedInstanceProcess = process

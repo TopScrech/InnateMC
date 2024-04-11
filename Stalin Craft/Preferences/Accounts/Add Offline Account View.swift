@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct AddOfflineAccountView: View {
-    @Binding var showSheet: Bool
+    @Environment(\.dismiss) private var dismiss
     
     @State var onCommit: (String) -> Void
     @State var username = ""
@@ -30,7 +30,7 @@ struct AddOfflineAccountView: View {
                 Spacer()
                 
                 Button("Cancel") {
-                    showSheet = false
+                    dismiss()
                 }
                 .keyboardShortcut(.cancelAction)
                 
@@ -39,7 +39,7 @@ struct AddOfflineAccountView: View {
                         popoverBlank = true
                     } else {
                         onCommit(username)
-                        showSheet = false
+                        dismiss()
                     }
                 }
                 .keyboardShortcut(.defaultAction)

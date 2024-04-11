@@ -150,7 +150,7 @@ class LauncherData: ObservableObject {
 }
 
 // TODO: move
-enum SelectedPreferenceTab: Int, Hashable, Codable {
+enum SelectedPreferenceTab: Int {
     case runtime = 0,
          accounts = 1,
          game = 2,

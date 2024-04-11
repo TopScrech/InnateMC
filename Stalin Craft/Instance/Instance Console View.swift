@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct InstanceConsoleView: View {
     var instance: Instance
@@ -34,7 +34,7 @@ struct InstanceConsoleView: View {
                 
                 HStack {
                     Button("Open logs folder") {
-                        NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: instance.getLogsFolder().path)
+                        openInFinderOrCreate(instance.getLogsFolder().path)
                     }
                 }
                 .padding([.top, .leading, .trailing], 5)

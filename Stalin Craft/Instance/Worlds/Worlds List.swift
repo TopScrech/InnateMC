@@ -5,30 +5,41 @@ struct WorldsList: View {
     
     @FocusState var selectedWorld: World?
     
+    private var savesFolder: String {
+        instance.getSavesFolder().path
+    }
+    
     var body: some View {
-        List {
-            ForEach(instance.worlds, id: \.self) { world in
-                let savesPath = instance.getSavesFolder().path
-                let worldPath = savesPath + "/" + world.folder
-                
-                HStack {
-                    Text(world.folder)
-                        .focusable()
-                        .focused($selectedWorld, equals: world)
-                        .highPriorityGesture(
-                            TapGesture().onEnded {
-                                selectedWorld = world
-                            }
-                        )
+        VStack {
+            List {
+                ForEach(instance.worlds, id: \.self) { world in
+                    let worldPath = savesFolder + "/" + world.folder
                     
-                    Button("Open") {
-                        openInFinder(rootedAt: worldPath)
-                    }
-                    
-                    if let size = formattedSize(worldPath) {
-                        Text(size)
+                    HStack {
+                        Text(world.folder)
+                            .focusable()
+                            .focused($selectedWorld, equals: world)
+                            .highPriorityGesture(
+                                TapGesture().onEnded {
+                                    selectedWorld = world
+                                }
+                            )
+                        
+                        Button("Open") {
+                            openInFinder(rootedAt: worldPath)
+                        }
+                        
+                        if let size = formattedSize(worldPath) {
+                            Text(size)
+                        }
                     }
                 }
+            }
+            
+            Button {
+                openInFinder(rootedAt: savesFolder)
+            } label: {
+                Text("Open in Finder")
             }
         }
         .task {

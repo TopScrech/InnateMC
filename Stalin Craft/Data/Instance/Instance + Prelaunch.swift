@@ -19,7 +19,7 @@ extension Instance {
     func appendClasspath(args: inout [String]) {
         let libString = libraries
             .map { lib in
-                return lib.getAbsolutePath().path
+                lib.getAbsolutePath().path
             }
             .joined(separator: ":")
         
@@ -48,7 +48,10 @@ extension Instance {
                 let nativeLibraryPath = nativeLibrary.getAbsolutePath()
                 logger.info("Extracting natives in \(nativeLibraryPath.path)")
                 
-                Instance.extractNativesFrom(library: nativeLibraryPath, output: self.getNativesFolder())
+                Instance.extractNativesFrom(
+                    library: nativeLibraryPath,
+                    output: self.getNativesFolder()
+                )
             })
         }
         
@@ -95,7 +98,12 @@ extension Instance {
     func downloadLibs(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession {
         let tasks = getLibrariesAsTasks()
         
-        return ParallelDownloader.download(tasks, progress: progress, onFinish: onFinish, onError: onError)
+        return ParallelDownloader.download(
+            tasks,
+            progress: progress,
+            onFinish: onFinish,
+            onError: onError
+        )
     }
     
     func downloadAssets(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession? {

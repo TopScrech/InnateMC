@@ -479,7 +479,7 @@
 				644DE1D32937C93600C4A03E /* Instance View.swift */,
 				64FE2D3F293BA78B007414CB /* Instance Console View.swift */,
 				6459E11A2976E215006DB3A4 /* Preferences */,
-				640A758E2A20E969005CDE49 /* Instance Mods View.swift */,
+				F388DED82BC817F3002E7616 /* Mods */,
 				640A75B72A226E76005CDE49 /* Worlds */,
 				640A75B02A2263D5005CDE49 /* Screenshots */,
 			);
@@ -721,6 +721,14 @@
 				F336781B2BC759AA0083E21C /* Java Tests.swift */,
 			);
 			path = "Stalin Craft Tests";
+			sourceTree = "<group>";
+		};
+		F388DED82BC817F3002E7616 /* Mods */ = {
+			isa = PBXGroup;
+			children = (
+				640A758E2A20E969005CDE49 /* Instance Mods View.swift */,
+			);
+			path = Mods;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

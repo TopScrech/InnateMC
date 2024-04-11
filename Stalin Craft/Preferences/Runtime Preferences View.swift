@@ -26,20 +26,20 @@ struct RuntimePreferencesView: View {
                     .textFieldStyle(.roundedBorder)
             }
             .onAppear {
-                self.cachedDefaultJava = launcherData.globalPreferences.runtime.defaultJava
+                cachedDefaultJava = launcherData.globalPreferences.runtime.defaultJava
             }
             .onReceive(launcherData.globalPreferences.runtime.$defaultJava) {
-                self.cachedDefaultJava = $0
+                cachedDefaultJava = $0
                 logger.debug("Default java runtime changed to \($0.javaExecutable)")
             }
             .padding([.leading, .trailing, .top], 16.0)
             .padding(.bottom, 5)
             
-            Table(of: SavedJavaInstallation.self, selection: Binding(get: {
-                return launcherData.globalPreferences.runtime.defaultJava
-            }, set: {
+            Table(of: SavedJavaInstallation.self, selection: .init {
+                launcherData.globalPreferences.runtime.defaultJava
+            } set: {
                 launcherData.globalPreferences.runtime.defaultJava = $0 ?? SavedJavaInstallation.systemDefault
-            })) {
+            }) {
                 TableColumn("Version") {
                     Text($0.getDebugString())
                 }

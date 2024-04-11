@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct InstanceCommands: Commands {
     var body: some Commands {
@@ -8,7 +8,7 @@ struct InstanceCommands: Commands {
             }
             
             Button("Open Instances Folder") {
-                NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: FileHandler.instancesFolder.path)
+                openInFinderOrCreate(FileHandler.instancesFolder.path)
             }
             .keyboardShortcut(.upArrow, modifiers: [.shift, .command])
             

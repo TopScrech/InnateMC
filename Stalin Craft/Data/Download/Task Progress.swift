@@ -1,4 +1,3 @@
-
 import SwiftUI
 
 open class TaskProgress: ObservableObject {
@@ -50,7 +49,7 @@ open class TaskProgress: ObservableObject {
     }
     
     func setFrom(_ other: TaskProgress) {
-        self.current = other.current
-        self.total = other.total
+        current = other.current
+        total = other.total
     }
 }

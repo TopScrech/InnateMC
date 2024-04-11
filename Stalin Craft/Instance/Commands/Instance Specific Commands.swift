@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct InstanceSpecificCommands: View {
     @FocusedValue(\.selectedInstance) private var selectedInstance: Instance?
@@ -90,7 +90,9 @@ struct InstanceSpecificCommands: View {
             .disabled(selectedInstance == nil)
         } else {
             Button {
-                LauncherData.instance.editModeInstances.removeAll(where: { $0 == selectedInstance! })
+                LauncherData.instance.editModeInstances.removeAll {
+                    $0 == selectedInstance!
+                }
             } label: {
                 Text("Save")
                 
@@ -100,7 +102,7 @@ struct InstanceSpecificCommands: View {
         }
         
         Button {
-            NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: selectedInstance!.getPath().path)
+            openInFinderOrCreate(selectedInstance!.getPath().path)
         } label: {
             Text("Open in Finder")
             
