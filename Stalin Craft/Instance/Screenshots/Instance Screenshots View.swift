@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct InstanceScreenshotsView: View {
     @StateObject var instance: Instance
@@ -66,29 +66,8 @@ struct InstanceScreenshotsView: View {
                 ScreenshotShareButton(selectedItem: selectedItem)
                     .disabled(selectedItem == nil)
                 
-//                Button("Open in Finder") {
-//                    NSWorkspace.shared.selectFile(selectedItem?.path.path, inFileViewerRootedAtPath: instance.getScreenshotsFolder().path)
-//                }
-                
                 Button("Open in Finder") {
-                    let fileManager = FileManager.default
-                    let folderPath = instance.getScreenshotsFolder().path
-                    
-                    // Check if the folder exists
-                    if !fileManager.fileExists(atPath: folderPath) {
-                        do {
-                            // Attempt to create the folder
-                            try fileManager.createDirectory(atPath: folderPath, withIntermediateDirectories: true, attributes: nil)
-                            print("Folder created successfully.")
-                        } catch {
-                            // Handle potential error
-                            print("Error creating folder: \(error.localizedDescription)")
-                            return
-                        }
-                    }
-                    
-                    // Open the folder in Finder
-                    NSWorkspace.shared.selectFile(nil, inFileViewerRootedAtPath: folderPath)
+                    openInFinderOrCreate(instance.getScreenshotsFolder().path)
                 }
             }
             .padding(.bottom, 8)
