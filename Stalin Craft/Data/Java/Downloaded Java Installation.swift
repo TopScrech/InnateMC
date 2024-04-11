@@ -1,6 +1,6 @@
 import Foundation
 
-public class DownloadedJavaInstallation: Codable, Identifiable {
+public class DownloadedJavaInstallation: Codable {
     public let version: String
     public let path: String
 }

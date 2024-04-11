@@ -31,10 +31,13 @@ struct ContentView: View {
                 List(selection: $selectedInstance) {
                     ForEach(launcherData.instances) { instance in
                         if (!starredOnly || instance.isStarred) && instance.matchesSearchTerm(searchTerm) {
-                            InstanceNavigationLink(instance: instance, selectedInstance: $selectedInstance)
-                                .tag(instance)
-                                .padding(4)
-                                .frame(maxWidth: .infinity)
+                            InstanceNavigationLink(
+                                instance: instance,
+                                selectedInstance: $selectedInstance
+                            )
+                            .tag(instance)
+                            .padding(4)
+                            .frame(maxWidth: .infinity)
                         }
                     }
                     .onMove { indices, newOffset in
@@ -58,7 +61,10 @@ struct ContentView: View {
                 NewInstanceView(showNewInstanceSheet: $sheetNewInstance)
             }
             .sheet($sheetDeleteInstance) {
-                InstanceDeleteSheet(selectedInstance: $selectedInstance, instanceToDelete: selectedInstance!)
+                InstanceDeleteSheet(
+                    selectedInstance: $selectedInstance,
+                    instanceToDelete: selectedInstance!
+                )
             }
             .sheet($sheetDuplicateInstance) {
                 InstanceDuplicationSheet(instance: selectedInstance!)
