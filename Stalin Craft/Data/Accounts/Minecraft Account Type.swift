@@ -1,6 +1,4 @@
-import Foundation
-
 enum MinecraftAccountType: String, Codable {
-    case microsoft = "Microsoft"
-    case offline = "Offline"
+    case microsoft = "Microsoft",
+         offline = "Offline"
 }

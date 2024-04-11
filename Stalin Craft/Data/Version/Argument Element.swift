@@ -1,8 +1,6 @@
-import Foundation
-
 enum ArgumentElement: Codable, Equatable {
-    case string(String)
-    case object(ConditionalArgument)
+    case string(String),
+         object(ConditionalArgument)
     
     init(from decoder: Decoder) throws {
         if let str = try? decoder.singleValueContainer().decode(String.self) {

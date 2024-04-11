@@ -1,11 +1,11 @@
 import Foundation
 
 enum LaunchError: Error {
-    case errorDownloading(error: Error?)
-    case invalidShaHash(error: Error?)
-    case unknownError(error: Error?)
-    case accessTokenFetchError(error: Error?)
-    case errorCreatingFile(error: Error?)
+    case errorDownloading(error: Error?),
+         invalidShaHash(error: Error?),
+         unknownError(error: Error?),
+         accessTokenFetchError(error: Error?),
+         errorCreatingFile(error: Error?)
     
     var cause: Error? {
         switch(self) {
@@ -14,6 +14,7 @@ enum LaunchError: Error {
                 .unknownError(let error),
                 .accessTokenFetchError(let error),
                 .errorCreatingFile(let error):
+            
             return error
         }
     }
@@ -34,7 +35,6 @@ enum LaunchError: Error {
             
         case .errorCreatingFile(_):
             NSLocalizedString("Failed to create file/directory", comment: "no u")
-            
         }
     }
 }

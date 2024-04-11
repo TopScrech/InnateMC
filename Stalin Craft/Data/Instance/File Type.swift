@@ -1,6 +1,4 @@
-import Foundation
-
-enum FileType: String, Codable, CaseIterable, InstanceData {
+enum FileType: InstanceData {
     case remote,
          local
 }
