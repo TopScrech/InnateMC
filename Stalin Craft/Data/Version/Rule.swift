@@ -5,7 +5,7 @@ public struct Rule: Codable, Equatable {
     let features: [String: Bool]?
     let os: OS?
     
-    public enum ActionType: String, Codable, Equatable {
+    public enum ActionType: String, Codable {
         case allow,
              disallow
     }
@@ -15,7 +15,7 @@ public struct Rule: Codable, Equatable {
         let version: String?
         let arch: String?
         
-        public enum OSName: String, Codable, Equatable {
+        public enum OSName: String, Codable {
             case osx,
                  linux,
                  windows
@@ -43,7 +43,7 @@ public struct Rule: Codable, Equatable {
 }
 
 extension Array where Element == Rule {
-    func allMatchRules(givenFeatures: [String:Bool]) -> Bool {
+    func allMatchRules(givenFeatures: [String: Bool]) -> Bool {
         var ok = true
         
         for rule in self where ok == true {

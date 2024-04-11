@@ -1,5 +1,3 @@
-import Foundation
-
 struct XboxLiveAuth: Codable {
     var RelyingParty: String
     var TokenType: String

@@ -14,6 +14,7 @@ struct MicrosoftAccount: MinecraftAccount {
     var id: UUID {
         UUID(uuidString: hyphenateUuid(profile.id))!
     }
+    
     var xuid: String {
         username // TODO: decode JWT?
     }
@@ -67,6 +68,7 @@ struct MicrosoftAccount: MinecraftAccount {
 
 private func hyphenateUuid(_ thing: String) -> String {
     var uuid = thing
+    
     uuid.insert("-", at: uuid.index(uuid.startIndex, offsetBy: 8))
     uuid.insert("-", at: uuid.index(uuid.startIndex, offsetBy: 13))
     uuid.insert("-", at: uuid.index(uuid.startIndex, offsetBy: 18))

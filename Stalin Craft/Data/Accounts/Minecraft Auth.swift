@@ -1,5 +1,3 @@
-import Foundation
-
 struct MinecraftAuth: Codable {
     let identityToken: String
     
@@ -10,7 +8,7 @@ struct MinecraftAuth: Codable {
     init(xsts xboxAuthResponse: XboxAuthResponse) {
         guard let userHash = xboxAuthResponse.userHash else {
             logger.fault("XSTS auth response did not have a user hash")
-            fatalError("Invalid XSTS auth response.")
+            fatalError("Invalid XSTS auth response")
         }
         
         self.identityToken = "XBL3.0 x=\(userHash);\(xboxAuthResponse.token)"

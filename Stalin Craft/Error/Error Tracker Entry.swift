@@ -1,6 +1,4 @@
-import Foundation
-
-struct ErrorTrackerEntry: Hashable, Equatable {
+struct ErrorTrackerEntry: Hashable {
     var type: TrackedErrorType
     var description: String
     var error: Error?

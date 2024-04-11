@@ -8,6 +8,8 @@ struct InstanceModsView: View {
         .init(\.meta.name, order: .forward)
     ]
     
+    @State private var alertDelete = false
+    
     var body: some View {
         Table(instance.mods, selection: $selected, sortOrder: $sortOrder) {
             TableColumn("Name", value: \.meta.name)
@@ -16,8 +18,14 @@ struct InstanceModsView: View {
             
             TableColumn("File", value: \.path.lastPathComponent)
         }
-        .onAppear {
+        .onDeleteCommand {
+            alertDelete = true
+        }
+        .task {
             instance.loadModsAsync()
+        }
+        .alert("Delete", isPresented: $alertDelete) {
+            
         }
     }
 }

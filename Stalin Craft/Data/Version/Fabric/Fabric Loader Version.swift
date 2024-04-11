@@ -1,5 +1,3 @@
-import Foundation
-
 struct FabricLoaderVersion: Codable {
     let separator: String
     let build: Int

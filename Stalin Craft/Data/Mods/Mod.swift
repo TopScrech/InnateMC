@@ -8,11 +8,10 @@ func findFilePath(in directoryPath: String, fileName: String) -> String? {
         
         if let foundFileName = items.first(where: { $0 == fileName }) {
             let filePath = (directoryPath as NSString).appendingPathComponent(foundFileName)
-            print("File found: \(filePath)")
             
             return filePath
         } else {
-            print("File not found.")
+            print("File not found")
         }
     } catch {
         print("Error reading contents of directory: \(error)")
@@ -21,7 +20,7 @@ func findFilePath(in directoryPath: String, fileName: String) -> String? {
     return nil
 }
 
-public struct Mod: Identifiable, Hashable, Comparable {
+public struct Mod: Identifiable, Hashable {
     public var id: Mod { self }
     var enabled: Bool
     var path: URL
@@ -61,18 +60,38 @@ public struct Mod: Identifiable, Hashable, Comparable {
     }
     
     public static func from(url: URL) throws -> Mod {
+        let fileManager = FileManager.default
+        
         func pathFromFileURLString(_ fileURLString: String) -> String? {
             guard let url = URL(string: fileURLString),
-                  url.scheme == "file" else { return nil }
+                  url.scheme == "file" else {
+                return nil
+            }
+            
             return url.path
         }
         
         if let jarFilePath = pathFromFileURLString(url.absoluteString) {
-//        if let jarFilePath = pathFromFileURLString("file:///Users/topscrech/Library/Application%20Support/PyzhMC/Instances/New%20Instance.pyzh/minecraft/mods/jei-1.19.2-fabric-11.6.0.1019.jar") {
             let tempDirURL = FileManager.default.temporaryDirectory.appendingPathComponent(UUID().uuidString)
-            try? FileManager.default.createDirectory(at: tempDirURL, withIntermediateDirectories: true, attributes: nil)
             
-            if let fabric = unzipModJar(jarFilePath: jarFilePath, destinationDirectoryPath: tempDirURL.path) {
+            try? fileManager.createDirectory(
+                at: tempDirURL,
+                withIntermediateDirectories: true,
+                attributes: nil
+            )
+            
+            defer {
+                do {
+                    try fileManager.removeItem(at: tempDirURL)
+                } catch {
+                    print("Failed to remove temporary directory: \(error)")
+                }
+            }
+            
+            if let fabric = unzipModJar(
+                jarFilePath: jarFilePath,
+                destinationPath: tempDirURL.path
+            ) {
                 return .init(
                     enabled: isEnabled(url),
                     path: url,
@@ -81,19 +100,16 @@ public struct Mod: Identifiable, Hashable, Comparable {
                         description: fabric.description
                     )
                 )
-            } else {
-                print("Not let")
             }
         } else {
             print("Invalid file URL")
         }
         
-        print("NIL")
         return .init(
             enabled: isEnabled(url),
             path: url,
             meta: .init(
-                name: "Error",
+                name: url.lastPathComponent,
                 description: "Error"
             )
         )

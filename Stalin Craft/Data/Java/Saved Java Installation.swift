@@ -127,7 +127,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
         }
     }
     
-    public enum InstallationType: Codable, Hashable, Equatable {
+    public enum InstallationType: Codable, Hashable {
         case detected, // detected from /usr/libexec/java_home
              selected, // user selected
              downloaded // downloaded by PyzhMC

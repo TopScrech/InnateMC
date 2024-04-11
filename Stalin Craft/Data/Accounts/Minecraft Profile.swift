@@ -1,5 +1,3 @@
-import Foundation
-
 struct MinecraftProfile: Codable {
     let id: String
     let name: String
@@ -13,6 +11,8 @@ struct MinecraftProfile: Codable {
     }
     
     func activeSkin() -> Skin? {
-        skins.first(where: { $0.state == "ACTIVE" })
+        skins.first(where: {
+            $0.state == "ACTIVE"
+        })
     }
 }

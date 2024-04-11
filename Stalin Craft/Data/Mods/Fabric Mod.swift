@@ -1,5 +1,3 @@
-import Foundation
-
 struct FabricMod: Decodable {
     let schemaVersion: Int
     let id: String
