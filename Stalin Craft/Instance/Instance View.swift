@@ -72,7 +72,7 @@ struct InstanceView: View {
                             Label("Screenshots", systemImage: "plus.square.on.square")
                         }
                     
-                    InstanceWorldsView(instance: instance)
+                    WorldsList(instance: instance)
                         .tabItem {
                             Label("Worlds", systemImage: "plus.square.on.square")
                         }
