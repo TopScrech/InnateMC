@@ -32,6 +32,6 @@ class ErrorTracker: ObservableObject {
     }
     
     func showWindow() {
-        windowController.showWindow(PyzhMCApp.self)
+        windowController.showWindow(StalinCraftApp.self)
     }
 }

@@ -2,7 +2,7 @@ import ScrechKit
 import os
 
 @main
-struct PyzhMCApp: App {
+struct StalinCraftApp: App {
     @NSApplicationDelegateAdaptor(AppDelegate.self) var appDelegate
     
     @StateObject private var launcherData = LauncherData()
@@ -28,7 +28,7 @@ struct PyzhMCApp: App {
     }
 }
 
-let logger = Logger(subsystem: "global", category: "PyzhMC")
+let logger = Logger(subsystem: "global", category: "Stalin Craft")
 
 extension Logger {
     func error(_ message: String, error: Error) {

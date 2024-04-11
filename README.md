@@ -1,4 +1,4 @@
-# PyzhMC
+# Stalin Craft
 
 A native minecraft launcher for macOS. Built using Swift and SwiftUI
 
@@ -11,7 +11,7 @@ Target version - 0.2.0
 Check out the [current milestone](https://github.com/TopScrech/InnateMC/milestone/2)
 
 ## Installation
-PyzhMC is currently in alpha. You can download it from [github releases](https://github.com/TopScrech/InnateMC/releases)
+Stalin Craft is currently in alpha. You can download it from [github releases](https://github.com/TopScrech/InnateMC/releases)
 
 ## Supported macOS versions
 macOS 12 (Monterey) and above are supported. For an optimal user experience, use macOS 13

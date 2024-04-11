@@ -18,7 +18,7 @@ class MicrosoftAccountVM: ObservableObject {
     @MainActor func prepareAndOpenSheet(launcherData: LauncherData) {
         sheetMicrosoftAccount = true
         launcherData.accountManager.msAccountVM = self
-        launcherData.accountManager.createAuthWindow().showWindow(PyzhMCApp.self)
+        launcherData.accountManager.createAuthWindow().showWindow(StalinCraftApp.self)
     }
     
     @MainActor func closeSheet() {

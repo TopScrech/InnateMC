@@ -84,7 +84,7 @@ class InstanceProcess: ObservableObject  {
         
         logger.info("Launching Instance \(instance.name)")
         
-        logMessages.append("PyzhMC: Launching Instance \(instance.name)")
+        logMessages.append("Stalin Craft: Launching Instance \(instance.name)")
     }
 }
 

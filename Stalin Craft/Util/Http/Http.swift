@@ -25,7 +25,7 @@ struct Http {
         init(url: URL, method: HttpMethod) {
             urlRequest = URLRequest(url: url)
             urlRequest.httpMethod = method.rawValue
-            urlRequest.setValue("PyzhMC", forHTTPHeaderField: "User-Agent")
+            urlRequest.setValue("Stalin Craft", forHTTPHeaderField: "User-Agent")
         }
         
         func header(_ value: String?, field: String) -> RequestBuilder {
