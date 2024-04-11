@@ -394,6 +394,9 @@
         }
       }
     },
+    "Enabled" : {
+
+    },
     "Enter a name" : {
       "localizations" : {
         "de" : {

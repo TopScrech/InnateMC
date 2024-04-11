@@ -47,7 +47,7 @@ struct Mod: Identifiable, Hashable {
     
     static func isValidMod(url: URL) -> Bool {
         switch url.pathExtension.lowercased() {
-        case "bak", "jar", "zip", "litemod":
+        case "jar", "zip", "litemod", "disabled":
             true
             
         default:
@@ -56,7 +56,7 @@ struct Mod: Identifiable, Hashable {
     }
     
     static func isEnabled(_ url: URL) -> Bool {
-        url.pathExtension.lowercased() != "bak"
+        !url.path.contains(".disabled")
     }
     
     static func from(url: URL) throws -> Mod {
@@ -118,7 +118,7 @@ struct Mod: Identifiable, Hashable {
 
 extension Array where Element == URL {
     func deserializeToMods() -> [Mod] {
-        return self.filter(Mod.isValidMod).compactMap {
+        self.filter(Mod.isValidMod).compactMap {
             try? Mod.from(url: $0)
         }
     }

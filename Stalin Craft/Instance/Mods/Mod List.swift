@@ -13,7 +13,44 @@ struct ModList: View {
     var body: some View {
         VStack {
             Table(instance.mods, selection: $selected, sortOrder: $sortOrder) {
-                TableColumn("Name", value: \.meta.name)
+                TableColumn("Enabled") { mod in
+                    Toggle("", isOn: .init {
+                        mod.enabled
+                    } set: { newValue in
+                        guard let index = instance.mods.firstIndex(where: { $0.id == mod.id }) else {
+                            return
+                        }
+                        
+                        let fileManager = FileManager.default
+                        let currentPath = instance.mods[index].path
+                        var newPath = currentPath
+                        
+                        if newValue {
+                            if currentPath.pathExtension == "disabled" {
+                                let newName = currentPath.deletingPathExtension().lastPathComponent
+                                
+                                newPath = currentPath.deletingLastPathComponent().appendingPathComponent(newName)
+                            }
+                        } else {
+                            newPath = currentPath.appendingPathExtension("disabled")
+                        }
+                        
+                        do {
+                            try fileManager.moveItem(at: currentPath, to: newPath)
+                            
+                            instance.mods[index].path = newPath
+                            instance.mods[index].enabled = newValue
+                        } catch {
+                            print("Failed to update mod file: \(error)")
+                        }
+                    })
+                }
+                .width(50)
+                
+                TableColumn("Name") { mod in
+                    Text(mod.meta.name)
+                        .foregroundStyle(mod.enabled ? .primary : Color.red)
+                }
                 
                 TableColumn("Description", value: \.meta.description)
                 
