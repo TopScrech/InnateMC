@@ -1,8 +1,8 @@
 import SwiftUI
 
 struct InstanceRuntimeView: View {
-    @EnvironmentObject private var launcherData: LauncherData
     @StateObject var instance: Instance
+    @EnvironmentObject private var launcherData: LauncherData
     
     @State var valid = false
     @State var selectedJava = SavedJavaInstallation.systemDefault
@@ -24,23 +24,29 @@ struct InstanceRuntimeView: View {
                 }
                 .disabled(!valid)
                 
-                TextField("Minimum Memory (MiB)", value: $instance.preferences.runtime.minMemory, formatter: NumberFormatter())
-                    .textFieldStyle(.roundedBorder)
-                    .disabled(!valid)
-                
-                TextField("Maximum Memory (MiB)", value: $instance.preferences.runtime.maxMemory, formatter: NumberFormatter())
-                    .textFieldStyle(.roundedBorder)
-                    .disabled(!valid)
-                
-                TextField("Default Java arguments", text: $instance.preferences.runtime.javaArgs)
-                    .textFieldStyle(.roundedBorder)
-                    .disabled(!valid)
+                Group {
+                    TextField("Minimum Memory (MiB)", value: $instance.preferences.runtime.minMemory, formatter: NumberFormatter())
+                    
+                    TextField("Maximum Memory (MiB)", value: $instance.preferences.runtime.maxMemory, formatter: NumberFormatter())
+                    
+                    TextField("Default Java arguments", text: $instance.preferences.runtime.javaArgs)
+                }
+                .textFieldStyle(.roundedBorder)
+                .disabled(!valid)
             }
             .padding(16)
             
             Spacer()
         }
-        .onAppear {
+        .task {
+            getFabricVersions { versions in
+                if let versions {
+                    print("Received \(versions.count) versions")
+                } else {
+                    print("Failed to fetch or decode versions")
+                }
+            }
+            
             valid = instance.preferences.runtime.valid
             selectedJava = instance.preferences.runtime.defaultJava
         }
