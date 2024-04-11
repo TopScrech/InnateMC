@@ -144,6 +144,7 @@
 		F337D6292BBF1961004B52C5 /* Localizable.xcstrings in Resources */ = {isa = PBXBuildFile; fileRef = F337D6282BBF1961004B52C5 /* Localizable.xcstrings */; };
 		F388DED72BC8125C002E7616 /* Size of directory.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DED62BC8125C002E7616 /* Size of directory.swift */; };
 		F388DEDA2BC82DA4002E7616 /* Handle Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DED92BC82DA4002E7616 /* Handle Drop.swift */; };
+		F388DEDE2BC844FB002E7616 /* World Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DEDD2BC844FB002E7616 /* World Card.swift */; };
 		F3CF21F82BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */; };
 /* End PBXBuildFile section */
 
@@ -298,6 +299,7 @@
 		F337D6282BBF1961004B52C5 /* Localizable.xcstrings */ = {isa = PBXFileReference; lastKnownFileType = text.json.xcstrings; path = Localizable.xcstrings; sourceTree = "<group>"; };
 		F388DED62BC8125C002E7616 /* Size of directory.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Size of directory.swift"; sourceTree = "<group>"; };
 		F388DED92BC82DA4002E7616 /* Handle Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Handle Drop.swift"; sourceTree = "<group>"; };
+		F388DEDD2BC844FB002E7616 /* World Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "World Card.swift"; sourceTree = "<group>"; };
 		F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -354,6 +356,7 @@
 			isa = PBXGroup;
 			children = (
 				640A75B82A226F2C005CDE49 /* World List.swift */,
+				F388DEDD2BC844FB002E7616 /* World Card.swift */,
 				F388DED62BC8125C002E7616 /* Size of directory.swift */,
 			);
 			path = Worlds;
@@ -996,6 +999,7 @@
 				649EA76729EC27F300BD77EA /* UI Preferences.swift in Sources */,
 				6497595E29F25AD000D0194E /* Instance Editing VM.swift in Sources */,
 				6484457E2A10D12400049986 /* Xsts Auth.swift in Sources */,
+				F388DEDE2BC844FB002E7616 /* World Card.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
