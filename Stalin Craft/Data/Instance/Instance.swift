@@ -194,7 +194,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         hasher.combine(synopsisOrVersion)
     }
     
-    public func loadScreenshotsAsync() {
+    public func loadScreenshots() {
         let folder = getScreenshotsFolder()
         
         if screenshotsWatcher == nil {
@@ -203,7 +203,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
             
             watcher.callback = { _ in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.loadScreenshotsAsync()
+                    self.loadScreenshots()
                 }
             }
             
@@ -236,7 +236,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
     
-    public func loadModsAsync() {
+    public func loadMods() {
         let modsFolder = getModsFolder()
         
         if modsWatcher == nil {
@@ -245,7 +245,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
             
             watcher.callback = { _ in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.loadModsAsync()
+                    self.loadMods()
                 }
             }
             
@@ -280,7 +280,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
     
-    public func loadWorldsAsync() {
+    public func loadWorlds() {
         let worldsFolder = getSavesFolder()
         
         if worldsWatcher == nil {
@@ -289,7 +289,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
             
             watcher.callback = { _ in
                 DispatchQueue.main.asyncAfter(deadline: .now() + 1.5) {
-                    self.loadWorldsAsync()
+                    self.loadWorlds()
                 }
             }
             

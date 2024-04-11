@@ -19,7 +19,7 @@ struct InstanceWorldsView: View {
             }
         }
         .task {
-            instance.loadWorldsAsync()
+            instance.loadWorlds()
         }
     }
 }

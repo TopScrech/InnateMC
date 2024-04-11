@@ -22,7 +22,7 @@ struct InstanceModsView: View {
             alertDelete = true
         }
         .task {
-            instance.loadModsAsync()
+            instance.loadMods()
         }
         .alert("Delete", isPresented: $alertDelete) {
             

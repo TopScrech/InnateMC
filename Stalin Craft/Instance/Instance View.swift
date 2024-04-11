@@ -88,7 +88,7 @@ struct InstanceView: View {
             .onAppear {
                 launcherData.launchRequestedInstances.removeAll { $0 == instance }
                 launchedInstanceProcess = launcherData.launchedInstances[instance]
-                instance.loadScreenshotsAsync()
+                instance.loadScreenshots()
             }
             .sheet($sheetError) {
                 LaunchErrorSheet(launchError: $launchError)
