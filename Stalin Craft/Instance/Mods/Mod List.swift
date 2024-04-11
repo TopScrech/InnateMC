@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct ModList: View {
     @StateObject var instance: Instance
@@ -11,12 +11,20 @@ struct ModList: View {
     @State private var alertDelete = false
     
     var body: some View {
-        Table(instance.mods, selection: $selected, sortOrder: $sortOrder) {
-            TableColumn("Name", value: \.meta.name)
+        VStack {
+            Table(instance.mods, selection: $selected, sortOrder: $sortOrder) {
+                TableColumn("Name", value: \.meta.name)
+                
+                TableColumn("Description", value: \.meta.description)
+                
+                TableColumn("File", value: \.path.lastPathComponent)
+            }
             
-            TableColumn("Description", value: \.meta.description)
-            
-            TableColumn("File", value: \.path.lastPathComponent)
+            Button {
+                openInFinderOrCreate(instance.getModsFolder().path)
+            } label: {
+                Text("Open in Finder")
+            }
         }
         .onDeleteCommand {
             alertDelete = true
