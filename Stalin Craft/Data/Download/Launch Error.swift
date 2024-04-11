@@ -1,6 +1,6 @@
 import Foundation
 
-public enum LaunchError: Error {
+enum LaunchError: Error {
     case errorDownloading(error: Error?)
     case invalidShaHash(error: Error?)
     case unknownError(error: Error?)

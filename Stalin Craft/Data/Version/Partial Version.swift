@@ -1,15 +1,15 @@
 import Foundation
 
-public struct PartialVersion: Codable, Hashable, Identifiable {
-    public var id: Self { self }
+struct PartialVersion: Codable, Hashable, Identifiable {
+    var id: Self { self }
     
-    public var version: String
-    public var type: String
-    public var url: String
-    public var time: String
-    public var releaseTime: String
-    public var sha1: String
-    public var complianceLevel: Int
+    var version: String
+    var type: String
+    var url: String
+    var time: String
+    var releaseTime: String
+    var sha1: String
+    var complianceLevel: Int
     
     enum CodingKeys: String, CodingKey {
         case version = "id",
@@ -21,11 +21,11 @@ public struct PartialVersion: Codable, Hashable, Identifiable {
              complianceLevel
     }
     
-    public static func createBlank() -> PartialVersion {
+    static func createBlank() -> PartialVersion {
         PartialVersion(id: "no", version: "no", type: "no", url: "no", time: "no", releaseTime: "no", sha1: "no", complianceLevel: 0)
     }
     
-    public init(id: String, version: String, type: String, url: String, time: String, releaseTime: String, sha1: String, complianceLevel: Int) {
+    init(id: String, version: String, type: String, url: String, time: String, releaseTime: String, sha1: String, complianceLevel: Int) {
         self.version = version
         self.type = type
         self.url = url
@@ -35,7 +35,7 @@ public struct PartialVersion: Codable, Hashable, Identifiable {
         self.complianceLevel = complianceLevel
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
         version = try container.decode(String.self, forKey: .version)
@@ -47,7 +47,7 @@ public struct PartialVersion: Codable, Hashable, Identifiable {
         complianceLevel = try container.decode(Int.self, forKey: .complianceLevel)
     }
     
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(version, forKey: .version)
         try container.encode(type, forKey: .type)

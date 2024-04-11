@@ -1,11 +1,11 @@
 import Foundation
 
 extension Instance {
-    public func save() throws {
+    func save() throws {
         try FileHandler.saveData(getPath().appendingPathComponent("Instance.plist"), serialize())
     }
     
-    public func serialize() throws -> Data {
+    func serialize() throws -> Data {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         
@@ -18,11 +18,11 @@ extension Instance {
         return try decoder.decode(Instance.self, from: data)
     }
     
-    public static func loadFromDirectory(_ url: URL) throws -> Instance {
+    static func loadFromDirectory(_ url: URL) throws -> Instance {
         try deserialize(FileHandler.getData(url.appendingPathComponent("Instance.plist"))!, path: url)
     }
     
-    public static func loadInstances() throws -> [Instance] {
+    static func loadInstances() throws -> [Instance] {
         var instances: [Instance] = []
         
         let directoryContents: [URL] = try FileManager.default.contentsOfDirectory(
@@ -64,7 +64,7 @@ extension Instance {
         return instances
     }
     
-    public static func loadInstancesThrow() -> [Instance] {
+    static func loadInstancesThrow() -> [Instance] {
         try! loadInstances()
     }
     
@@ -83,7 +83,7 @@ extension Instance {
         logger.info("Successfully created new instance \(self.name)")
     }
     
-    public func delete() {
+    func delete() {
         do {
             try FileManager.default.removeItem(at: getPath())
             logger.info("Successfully deleted instance \(self.name)")
@@ -97,7 +97,7 @@ extension Instance {
         }
     }
     
-    public func renameAsync(to newName: String) {
+    func renameAsync(to newName: String) {
         let oldName = name
         
         DispatchQueue.global(qos: .userInteractive).async {

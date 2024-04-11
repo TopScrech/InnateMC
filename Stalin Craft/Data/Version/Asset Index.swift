@@ -1,11 +1,11 @@
 import Foundation
 
-public class AssetIndex: Codable {
+class AssetIndex: Codable {
     private static let indexesDir = FileHandler.assetsFolder.appendingPathComponent("indexes", isDirectory: true)
     private static let objectsDir = FileHandler.assetsFolder.appendingPathComponent("objects", isDirectory: true)
-    public let version: String
-    public let jsonData: Data
-    public let objects: [String: [String: String]]
+    let version: String
+    let jsonData: Data
+    let objects: [String: [String: String]]
     
     init(version: String, jsonData: Data, objects: [String: [String: String]]) {
         self.version = version
@@ -13,7 +13,7 @@ public class AssetIndex: Codable {
         self.objects = objects
     }
     
-    public static func get(version: String, urlStr: String) throws -> AssetIndex {
+    static func get(version: String, urlStr: String) throws -> AssetIndex {
         let indexesFile = AssetIndex.indexesDir.appendingPathComponent(version + ".json", isDirectory: false)
         
         if FileManager.default.fileExists(atPath: indexesFile.path) {
@@ -29,7 +29,7 @@ public class AssetIndex: Codable {
         }
     }
     
-    public static func fromJson(_ jsonData: Data, version: String) throws -> AssetIndex {
+    static func fromJson(_ jsonData: Data, version: String) throws -> AssetIndex {
         let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [String:Any]
         let objects = jsonObject["objects"] as! [String:Any]
         
@@ -49,7 +49,7 @@ public class AssetIndex: Codable {
         return AssetIndex(version: version, jsonData: jsonData, objects: strs)
     }
     
-    public func createDirectories() throws {
+    func createDirectories() throws {
         let fm = FileManager.default
         let objects = FileHandler.assetsFolder.appendingPathComponent("objects", isDirectory: true)
         
@@ -68,7 +68,7 @@ public class AssetIndex: Codable {
         }
     }
     
-    public func getAssetsAsTasks() -> [DownloadTask] {
+    func getAssetsAsTasks() -> [DownloadTask] {
         var tasks: [DownloadTask] = []
         
         for (_, v) in self.objects {
@@ -85,7 +85,7 @@ public class AssetIndex: Codable {
         return tasks
     }
     
-    public func downloadParallel(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession? {
+    func downloadParallel(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession? {
         do {
             try createDirectories()
         } catch {

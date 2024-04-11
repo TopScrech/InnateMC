@@ -1,24 +1,24 @@
 import CoreFoundation
 import Foundation
 
-public struct MicrosoftAccessToken: Codable {
-    public var token: String
-    public var expiry: Int
-    public var refreshToken: String
+struct MicrosoftAccessToken: Codable {
+    var token: String
+    var expiry: Int
+    var refreshToken: String
     
-    public init(token: String, expiry: Int, refreshToken: String) {
+    init(token: String, expiry: Int, refreshToken: String) {
         self.token = token
         self.expiry = expiry
         self.refreshToken = refreshToken
     }
     
-    public init(token: String, expiresIn: Int, refreshToken: String) {
+    init(token: String, expiresIn: Int, refreshToken: String) {
         self.token = token
         self.expiry = Int(CFAbsoluteTimeGetCurrent()) + expiresIn
         self.refreshToken = refreshToken
     }
     
-    public static func fromJson(json data: Data) throws -> MicrosoftAccessToken {
+    static func fromJson(json data: Data) throws -> MicrosoftAccessToken {
         do {
             return try JSONDecoder().decode(RawMicrosoftAccessToken.self, from: data).convert()
         } catch {
@@ -26,17 +26,17 @@ public struct MicrosoftAccessToken: Codable {
         }
     }
     
-    public func hasExpired() -> Bool {
+    func hasExpired() -> Bool {
         Int(CFAbsoluteTimeGetCurrent()) > expiry - 5
     }
 }
 
 struct RawMicrosoftAccessToken: Codable {
-    public var access_token: String
-    public var refresh_token: String
-    public var expires_in: Int
+    var access_token: String
+    var refresh_token: String
+    var expires_in: Int
     
-    public func convert() -> MicrosoftAccessToken {
+    func convert() -> MicrosoftAccessToken {
         MicrosoftAccessToken(token: access_token, expiresIn: expires_in, refreshToken: refresh_token)
     }
 }

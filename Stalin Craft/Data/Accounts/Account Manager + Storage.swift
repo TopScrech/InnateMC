@@ -1,7 +1,7 @@
 import Foundation
 
 extension AccountManager {
-    public static func load() throws -> AccountManager {
+    static func load() throws -> AccountManager {
         let manager = AccountManager()
         
         // TODO: error handling
@@ -44,7 +44,7 @@ extension AccountManager {
         return manager
     }
     
-    public func saveThrow() {
+    func saveThrow() {
         var plist: [String:Any] = [:]
         
         if let currentSelected {

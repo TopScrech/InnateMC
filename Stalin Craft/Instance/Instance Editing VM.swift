@@ -1,19 +1,19 @@
 import SwiftUI
 
-public class InstanceEditingVM: ObservableObject {
+class InstanceEditingVM: ObservableObject {
     @Published var inEditMode = false
     @Published var name = ""
     @Published var synopsis = ""
     @Published var notes = ""
     
-    public func start(from instance: Instance) {
+    func start(from instance: Instance) {
         name = instance.name
         synopsis = instance.synopsis ?? ""
         notes = instance.notes ?? ""
         inEditMode = true
     }
     
-    public func commit(to instance: Instance, showNoNamePopover: Binding<Bool>, showDuplicateNamePopover: Binding<Bool>, data launcherData: LauncherData) {
+    func commit(to instance: Instance, showNoNamePopover: Binding<Bool>, showDuplicateNamePopover: Binding<Bool>, data launcherData: LauncherData) {
         showNoNamePopover.wrappedValue = false
         showDuplicateNamePopover.wrappedValue = false
         inEditMode = false

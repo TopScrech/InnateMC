@@ -1,6 +1,6 @@
 import Foundation
 
-public struct PreferredJavaVersion: Codable {
+struct PreferredJavaVersion: Codable {
     let component: String
     let majorVersion: Int
 }

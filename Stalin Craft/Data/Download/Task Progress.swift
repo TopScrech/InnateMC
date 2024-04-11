@@ -2,21 +2,21 @@
 import SwiftUI
 
 open class TaskProgress: ObservableObject {
-    @Published public var current = 0
-    @Published public var total = 1
+    @Published var current = 0
+    @Published var total = 1
     
-    public var callback: (() -> Void)? = nil
-    public var cancelled = false
+    var callback: (() -> Void)? = nil
+    var cancelled = false
     
-    public init() {
+    init() {
         
     }
     
-    public func fraction() -> Double {
+    func fraction() -> Double {
         Double(current) / Double(total)
     }
     
-    public func percentString() -> String {
+    func percentString() -> String {
         String(format: "%.2f", fraction() * 100) + "%"
     }
     
@@ -32,24 +32,24 @@ open class TaskProgress: ObservableObject {
         logger.trace("Incremented task progress to \(self.current)")
     }
     
-    public func intPercent() -> Int {
+    func intPercent() -> Int {
         Int((fraction() * 100).rounded())
     }
     
-    public func isDone() -> Bool {
+    func isDone() -> Bool {
         Int(current) >= Int(total)
     }
     
-    public init(current: Int, total: Int) {
+    init(current: Int, total: Int) {
         self.current = current
         self.total = total
     }
     
-    public static func completed() -> TaskProgress {
+    static func completed() -> TaskProgress {
         TaskProgress(current: 1, total: 1)
     }
     
-    public func setFrom(_ other: TaskProgress) {
+    func setFrom(_ other: TaskProgress) {
         self.current = other.current
         self.total = other.total
     }

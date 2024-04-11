@@ -2,7 +2,7 @@ import Foundation
 import Zip
 
 extension Instance {
-    public func getLibrariesAsTasks() -> [DownloadTask] {
+    func getLibrariesAsTasks() -> [DownloadTask] {
         var tasks: [DownloadTask] = []
         
         for library in libraries {
@@ -16,7 +16,7 @@ extension Instance {
         return tasks
     }
     
-    public func appendClasspath(args: inout [String]) {
+    func appendClasspath(args: inout [String]) {
         let libString = self.libraries
             .map { lib in
                 return lib.getAbsolutePath().path
@@ -26,7 +26,7 @@ extension Instance {
         args.append("\(getMcJarPath().path):\(libString)")
     }
     
-    public func extractNatives(progress: TaskProgress) {
+    func extractNatives(progress: TaskProgress) {
         if !FileManager.default.fileExists(atPath: getNativesFolder().path) {
             try! FileManager.default.createDirectory(at: getNativesFolder(), withIntermediateDirectories: true)
         }
@@ -92,13 +92,13 @@ extension Instance {
         path.hasSuffix("dylib") || path.hasSuffix("jnilib")
     }
     
-    public func downloadLibs(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession {
+    func downloadLibs(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession {
         let tasks = getLibrariesAsTasks()
         
         return ParallelDownloader.download(tasks, progress: progress, onFinish: onFinish, onError: onError)
     }
     
-    public func downloadAssets(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession? {
+    func downloadAssets(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession? {
         var index: AssetIndex
         
         do {

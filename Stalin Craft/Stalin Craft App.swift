@@ -28,9 +28,9 @@ struct PyzhMCApp: App {
     }
 }
 
-public let logger = Logger(subsystem: "global", category: "PyzhMC")
+let logger = Logger(subsystem: "global", category: "PyzhMC")
 
-public extension Logger {
+extension Logger {
     func error(_ message: String, error: Error) {
         self.error("\(message): \(error.localizedDescription)")
     }

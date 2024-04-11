@@ -1,7 +1,7 @@
 import WebKit
 
 class WebViewWindow: NSWindowController {
-    public static var current: WebViewWindow? = nil
+    static var current: WebViewWindow? = nil
     
     convenience init(url: URL) {
         let config = WKWebViewConfiguration()

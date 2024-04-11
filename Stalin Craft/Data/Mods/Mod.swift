@@ -20,21 +20,21 @@ func findFilePath(in directoryPath: String, fileName: String) -> String? {
     return nil
 }
 
-public struct Mod: Identifiable, Hashable {
-    public var id: Mod { self }
+struct Mod: Identifiable, Hashable {
+    var id: Mod { self }
     var enabled: Bool
     var path: URL
     var meta: Mod.Metadata
     
-    public static func == (lhs: Mod, rhs: Mod) -> Bool {
+    static func == (lhs: Mod, rhs: Mod) -> Bool {
         lhs.path == rhs.path && lhs.enabled == rhs.enabled
     }
     
-    public static func < (lhs: Mod, rhs: Mod) -> Bool {
+    static func < (lhs: Mod, rhs: Mod) -> Bool {
         lhs.path.lastPathComponent < rhs.path.lastPathComponent
     }
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(enabled)
         hasher.combine(path)
         hasher.combine(meta.name)
@@ -45,7 +45,7 @@ public struct Mod: Identifiable, Hashable {
         let description: String
     }
     
-    public static func isValidMod(url: URL) -> Bool {
+    static func isValidMod(url: URL) -> Bool {
         switch url.pathExtension.lowercased() {
         case "bak", "jar", "zip", "litemod":
             true
@@ -55,11 +55,11 @@ public struct Mod: Identifiable, Hashable {
         }
     }
     
-    public static func isEnabled(_ url: URL) -> Bool {
+    static func isEnabled(_ url: URL) -> Bool {
         url.pathExtension.lowercased() != "bak"
     }
     
-    public static func from(url: URL) throws -> Mod {
+    static func from(url: URL) throws -> Mod {
         let fileManager = FileManager.default
         
         func pathFromFileURLString(_ fileURLString: String) -> String? {

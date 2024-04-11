@@ -1,11 +1,11 @@
 import Foundation
 
-public class VersionManifest {
+class VersionManifest {
     private static let cache = try! FileHandler.getOrCreateFolder().appendingPathComponent("ManifestCache.plist")
     private static var cached: [PartialVersion]? = nil
     private static let decoder = JSONDecoder()
     
-    public static func getOrCreate() async throws -> [PartialVersion] {
+    static func getOrCreate() async throws -> [PartialVersion] {
         if cached == nil {
             cached = try await download()
         }
@@ -13,7 +13,7 @@ public class VersionManifest {
         return cached!
     }
     
-    public static func download() async throws -> [PartialVersion] {
+    static func download() async throws -> [PartialVersion] {
         guard let url = URL(string: "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json") else {
             fatalError("Not possible")
         }
@@ -46,7 +46,7 @@ public class VersionManifest {
         return parsed
     }
     
-    public static func fetchCache() throws -> [PartialVersion] {
+    static func fetchCache() throws -> [PartialVersion] {
         guard let data = try FileHandler.getData(cache) else {
             logger.error("Did not find cached version manifest")
             throw VersionManifestError.noCacheFound
@@ -55,13 +55,13 @@ public class VersionManifest {
         return try PropertyListDecoder().decode([PartialVersion].self, from: data)
     }
     
-    public static func readFromData(_ data: Data) throws -> [PartialVersion] {
+    static func readFromData(_ data: Data) throws -> [PartialVersion] {
         let root = try decoder.decode(RootJSON.self, from: data)
         
         return root.versions
     }
     
-    public enum VersionManifestError: Error {
+    enum VersionManifestError: Error {
         case noCacheFound
         
         var localizedDescription: String {

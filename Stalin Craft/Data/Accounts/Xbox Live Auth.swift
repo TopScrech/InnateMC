@@ -9,7 +9,7 @@ struct XboxLiveAuth: Codable {
         var RpsTicket: String
     }
     
-    public static func fromToken(_ token: String) -> XboxLiveAuth {
+    static func fromToken(_ token: String) -> XboxLiveAuth {
         .init(
             RelyingParty: "http://auth.xboxlive.com",
             TokenType: "JWT",

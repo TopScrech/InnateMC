@@ -1,14 +1,14 @@
 import Foundation
 
-public class GlobalPreferences: Codable, ObservableObject {
-    @Published public var runtime = RuntimePreferences()
-    @Published public var ui = UiPreferences()
+class GlobalPreferences: Codable, ObservableObject {
+    @Published var runtime = RuntimePreferences()
+    @Published var ui = UiPreferences()
 }
 
 extension GlobalPreferences {
-    public static let filePath = try! FileHandler.getOrCreateFolder().appendingPathComponent("Preferences.plist")
+    static let filePath = try! FileHandler.getOrCreateFolder().appendingPathComponent("Preferences.plist")
     
-    public static func load() throws -> GlobalPreferences {
+    static func load() throws -> GlobalPreferences {
         if let data = try FileHandler.getData(filePath) {
             return try PropertyListDecoder().decode(GlobalPreferences.self, from: data)
         } else {
@@ -19,7 +19,7 @@ extension GlobalPreferences {
         }
     }
     
-    public func save() {
+    func save() {
         let encoder = PropertyListEncoder()
         encoder.outputFormat = .xml
         

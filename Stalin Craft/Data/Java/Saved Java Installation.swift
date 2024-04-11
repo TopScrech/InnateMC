@@ -1,42 +1,42 @@
 import Foundation
 
-public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
-    public static let systemDefault = SavedJavaInstallation(javaHomePath: "/usr", javaVendor: "System Default", javaVersion: "")
+class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
+    static let systemDefault = SavedJavaInstallation(javaHomePath: "/usr", javaVendor: "System Default", javaVersion: "")
     
     private static let regex = try! NSRegularExpression(pattern: "\"([^\"]+)\"", options: [])
     
-    public var id: SavedJavaInstallation {
+    var id: SavedJavaInstallation {
         self
     }
     
-    @Published public var javaExecutable: String
-    @Published public var javaVendor: String?
-    @Published public var javaVersion: String?
+    @Published var javaExecutable: String
+    @Published var javaVendor: String?
+    @Published var javaVersion: String?
     
-    public let installationType: InstallationType
+    let installationType: InstallationType
     
-    public init(javaHomePath: String, javaVendor: String? = nil, javaVersion: String? = nil) {
+    init(javaHomePath: String, javaVendor: String? = nil, javaVersion: String? = nil) {
         self.javaExecutable = "\(javaHomePath)/bin/java"
         self.javaVendor = javaVendor
         self.javaVersion = javaVersion
         self.installationType = .detected
     }
     
-    public init(javaExecutable: String) {
+    init(javaExecutable: String) {
         self.javaExecutable = javaExecutable
         self.javaVendor = nil
         self.javaVersion = nil
         self.installationType = .selected
     }
     
-    public init(linkedJavaInstallation: LinkedJavaInstallation) {
+    init(linkedJavaInstallation: LinkedJavaInstallation) {
         self.javaExecutable = "\(linkedJavaInstallation.JVMHomePath)/bin/java"
         self.javaVendor = linkedJavaInstallation.JVMVendor
         self.javaVersion = linkedJavaInstallation.JVMVersion
         self.installationType = .detected
     }
     
-    public func setupAsNewVersion(launcherData: LauncherData) {
+    func setupAsNewVersion(launcherData: LauncherData) {
         DispatchQueue.global(qos: .utility).async {
             let process = Process()
             
@@ -95,7 +95,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
         return nil
     }
     
-    public func getString() -> String {
+    func getString() -> String {
         guard let javaVersion else {
             guard let javaVendor else {
                 return javaExecutable
@@ -111,7 +111,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
         return "\(javaVersion) | \(javaVendor) at \(javaExecutable)"
     }
     
-    public func getDebugString() -> String { // TODO: computed property? allows using a keypath in Table
+    func getDebugString() -> String { // TODO: computed property? allows using a keypath in Table
         if let javaVersion {
             if let javaVendor {
                 "\(javaVendor) \(javaVersion)"
@@ -127,7 +127,7 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
         }
     }
     
-    public enum InstallationType: Codable, Hashable {
+    enum InstallationType: Codable, Hashable {
         case detected, // detected from /usr/libexec/java_home
              selected, // user selected
              downloaded // downloaded by PyzhMC
@@ -135,11 +135,11 @@ public class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
 }
 
 extension SavedJavaInstallation {
-    public static let filePath = FileHandler.javaFolder.appendingPathComponent("Saved.plist")
-    public static let encoder = PropertyListEncoder()
-    public static let decoder = PropertyListDecoder()
+    static let filePath = FileHandler.javaFolder.appendingPathComponent("Saved.plist")
+    static let encoder = PropertyListEncoder()
+    static let decoder = PropertyListDecoder()
     
-    public static func load() throws -> [SavedJavaInstallation] {
+    static func load() throws -> [SavedJavaInstallation] {
         let data = try? FileHandler.getData(filePath)
         
         guard let data else {
@@ -160,11 +160,11 @@ extension SavedJavaInstallation {
 }
 
 extension SavedJavaInstallation: Hashable {
-    public static func == (lhs: SavedJavaInstallation, rhs: SavedJavaInstallation) -> Bool {
+    static func == (lhs: SavedJavaInstallation, rhs: SavedJavaInstallation) -> Bool {
         lhs.javaExecutable == rhs.javaExecutable
     }
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(javaExecutable)
     }
 }

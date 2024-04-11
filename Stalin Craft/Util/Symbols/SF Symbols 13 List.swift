@@ -1,7 +1,7 @@
 import Foundation
 
-public struct SFSymbols13List {
-    public static func getAll() -> [String] {
+struct SFSymbols13List {
+    static func getAll() -> [String] {
         [
             "square.and.arrow.up",
             "square.and.arrow.up.fill",

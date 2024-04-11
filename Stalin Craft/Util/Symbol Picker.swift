@@ -1,7 +1,7 @@
 import SwiftUI
 
 /// A simple and cross-platform SFSymbol picker for SwiftUI.
-public struct SymbolPicker: View {
+struct SymbolPicker: View {
     private let symbols = SFSymbolsList.getAll()
     
     private static var gridDimension: CGFloat {
@@ -29,7 +29,7 @@ public struct SymbolPicker: View {
     }
     
     // MARK: - Properties
-    @Binding public var symbol: String
+    @Binding var symbol: String
     @State private var searchText = ""
     
     @Environment(\.presentationMode) private var presentationMode
@@ -38,7 +38,7 @@ public struct SymbolPicker: View {
     /// Initializes `SymbolPicker` with a string binding that captures the raw value of
     /// user-selected SFSymbol.
     /// - Parameter symbol: String binding to store user selection.
-    public init(symbol: Binding<String>) {
+    init(symbol: Binding<String>) {
         _symbol = symbol
     }
     
@@ -99,7 +99,7 @@ public struct SymbolPicker: View {
         }
     }
     
-    public var body: some View {
+    var body: some View {
         searchableSymbolGrid
             .frame(width: 540, height: 320, alignment: .center)
     }

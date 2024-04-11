@@ -1,25 +1,25 @@
 import Foundation
 
-public struct Http {
+struct Http {
     private static let session = URLSession(configuration: .default)
     
-    public static func `get`(_ url: String) -> RequestBuilder {
+    static func `get`(_ url: String) -> RequestBuilder {
         .init(url: URL(string: url)!, method: .get)
     }
     
-    public static func post(_ url: String) -> RequestBuilder {
+    static func post(_ url: String) -> RequestBuilder {
         .init(url: URL(string: url)!, method: .post)
     }
     
-    public static func `get`(url: URL) -> RequestBuilder {
+    static func `get`(url: URL) -> RequestBuilder {
         .init(url: url, method: .get)
     }
     
-    public static func post(url: URL) -> RequestBuilder {
+    static func post(url: URL) -> RequestBuilder {
         .init(url: url, method: .post)
     }
     
-    public struct RequestBuilder {
+    struct RequestBuilder {
         private var urlRequest: URLRequest
         
         init(url: URL, method: HttpMethod) {

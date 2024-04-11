@@ -14,7 +14,7 @@ struct OfflineAccount: MinecraftAccount {
         self.id = uuid
     }
     
-    public static func createFromUsername(_ username: String) -> OfflineAccount {
+    static func createFromUsername(_ username: String) -> OfflineAccount {
         .init(username: username, uuid: UUID())
     }
     

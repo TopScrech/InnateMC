@@ -2,7 +2,7 @@ import Foundation
 import Swifter
 
 extension AccountManager {
-    public func setupForAuth() {
+    func setupForAuth() {
         self.serverThread = .init(label: "server")
         
         self.server["/"] = { request in
@@ -44,7 +44,7 @@ extension AccountManager {
         }
     }
     
-    public func createAuthWindow() -> WebViewWindow {
+    func createAuthWindow() -> WebViewWindow {
         let baseURL = "https://login.microsoftonline.com/consumers/oauth2/v2.0/authorize"
         var urlComponents = URLComponents(string: baseURL)!
         let state = state()

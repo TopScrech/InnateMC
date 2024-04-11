@@ -1,28 +1,28 @@
 import Foundation
 
-public struct Rule: Codable, Equatable {
+struct Rule: Codable, Equatable {
     let action: ActionType
     let features: [String: Bool]?
     let os: OS?
     
-    public enum ActionType: String, Codable {
+    enum ActionType: String, Codable {
         case allow,
              disallow
     }
     
-    public struct OS: Codable, Equatable {
+    struct OS: Codable, Equatable {
         let name: OSName?
         let version: String?
         let arch: String?
         
-        public enum OSName: String, Codable {
+        enum OSName: String, Codable {
             case osx,
                  linux,
                  windows
         }
     }
     
-    public func matches(givenFeatures: [String:Bool]) -> Bool {
+    func matches(givenFeatures: [String:Bool]) -> Bool {
         var ok = true
         
         if let os {

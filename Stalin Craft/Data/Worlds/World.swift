@@ -1,9 +1,9 @@
 import Foundation
 
-public struct World: Hashable {
+struct World: Hashable {
     let folder: String
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(self.folder)
     }
 }

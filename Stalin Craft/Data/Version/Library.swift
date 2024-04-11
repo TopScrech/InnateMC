@@ -1,17 +1,17 @@
 import Foundation
 
-public struct Library: Codable, Equatable {
-    public let downloads: LibraryDownloads
-    public let name: String
-    public let rules: [Rule]?
+struct Library: Codable, Equatable {
+    let downloads: LibraryDownloads
+    let name: String
+    let rules: [Rule]?
     
-    public init(downloads: LibraryDownloads, name: String, rules: [Rule]?) {
+    init(downloads: LibraryDownloads, name: String, rules: [Rule]?) {
         self.downloads = downloads
         self.name = name
         self.rules = rules
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         if let container = try? decoder.singleValueContainer(),
            let artifact = try? container.decode(ConcLibrary.self) {
             self.downloads = LibraryDownloads(artifact: LibraryArtifact(path: artifact.mavenStringToPath(), url: URL(string: artifact.mavenUrl())!, sha1: nil, size: nil))
@@ -25,9 +25,9 @@ public struct Library: Codable, Equatable {
         }
     }
     
-    public struct ConcLibrary: Codable {
-        public let name: String
-        public let url: String
+    struct ConcLibrary: Codable {
+        let name: String
+        let url: String
         
         func mavenStringToPath() -> String {
             let components = self.name.components(separatedBy: ":")
@@ -45,19 +45,19 @@ public struct Library: Codable, Equatable {
     }
 }
 
-public struct LibraryDownloads: Codable, Equatable {
-    public var artifact: LibraryArtifact?
-    public var classifiers: LibraryClassifiers? = nil
+struct LibraryDownloads: Codable, Equatable {
+    var artifact: LibraryArtifact?
+    var classifiers: LibraryClassifiers? = nil
     
-    public struct LibraryClassifiers: Codable, Equatable {
+    struct LibraryClassifiers: Codable, Equatable {
         var nativesOsx: LibraryArtifact?
         
-        public enum CodingKeys: String, CodingKey {
+        enum CodingKeys: String, CodingKey {
             case nativesOsx = "natives-osx"
         }
     }
     
-    public var artifacts: [LibraryArtifact] {
+    var artifacts: [LibraryArtifact] {
         var arr: [LibraryArtifact] = []
         if let classifiers, let natives = classifiers.nativesOsx {
             arr.append(natives)

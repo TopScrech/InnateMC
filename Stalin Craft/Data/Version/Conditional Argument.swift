@@ -1,6 +1,6 @@
 import Foundation
 
-public struct ConditionalArgument: Codable, Equatable {
+struct ConditionalArgument: Codable, Equatable {
     let rules: [Rule]
     let value: [String]
     
@@ -9,12 +9,12 @@ public struct ConditionalArgument: Codable, Equatable {
         case value
     }
     
-    public init(rules: [Rule], value: [String]) {
+    init(rules: [Rule], value: [String]) {
         self.rules = rules
         self.value = value
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         rules = try container.decode([Rule].self, forKey: .rules)
         
@@ -25,7 +25,7 @@ public struct ConditionalArgument: Codable, Equatable {
         }
     }
     
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(rules, forKey: .rules)
         try container.encode(value, forKey: .value)

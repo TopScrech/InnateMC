@@ -1,12 +1,12 @@
 import Foundation
 
-public struct PartialAssetIndex: Codable, Equatable {
-    public static let none = PartialAssetIndex(id: "none", sha1: "", url: "")
-    public let id: String
-    public let sha1: String
-    public let url: String
+struct PartialAssetIndex: Codable, Equatable {
+    static let none = PartialAssetIndex(id: "none", sha1: "", url: "")
+    let id: String
+    let sha1: String
+    let url: String
     
-    public func `default`(fallback: PartialAssetIndex) -> PartialAssetIndex {
+    func `default`(fallback: PartialAssetIndex) -> PartialAssetIndex {
         self == .none ? fallback : self
     }
 }

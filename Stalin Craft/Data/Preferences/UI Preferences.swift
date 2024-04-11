@@ -1,6 +1,6 @@
 import Foundation
 
-public class UiPreferences: Codable, ObservableObject {
-    @Published public var compactList = false
-    @Published public var compactInstanceLogo = false
+class UiPreferences: Codable, ObservableObject {
+    @Published var compactList = false
+    @Published var compactInstanceLogo = false
 }

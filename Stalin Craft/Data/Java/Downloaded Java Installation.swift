@@ -1,16 +1,16 @@
 import Foundation
 
-public class DownloadedJavaInstallation: Codable {
-    public let version: String
-    public let path: String
+class DownloadedJavaInstallation: Codable {
+    let version: String
+    let path: String
 }
 
 extension DownloadedJavaInstallation {
-    public static let filePath = FileHandler.javaFolder.appendingPathComponent("Index.plist")
-    public static let encoder = PropertyListEncoder()
-    public static let decoder = PropertyListDecoder()
+    static let filePath = FileHandler.javaFolder.appendingPathComponent("Index.plist")
+    static let encoder = PropertyListEncoder()
+    static let decoder = PropertyListDecoder()
     
-    public static func load() throws -> [DownloadedJavaInstallation] {
+    static func load() throws -> [DownloadedJavaInstallation] {
         let data = try FileHandler.getData(filePath)
         
         guard let data else {

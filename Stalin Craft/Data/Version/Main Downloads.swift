@@ -1,7 +1,7 @@
 import Foundation
 
-public struct MainDownloads: Codable, Equatable {
-    public static let none = MainDownloads(
+struct MainDownloads: Codable, Equatable {
+    static let none = MainDownloads(
         client: .none,
         clientMappings: nil,
         server: nil,
@@ -23,7 +23,7 @@ public struct MainDownloads: Codable, Equatable {
              windowsServer = "windows_server"
     }
     
-    public static func |(lhs: MainDownloads, rhs: MainDownloads) -> MainDownloads {
+    static func |(lhs: MainDownloads, rhs: MainDownloads) -> MainDownloads {
         let mergedClient =         lhs.client != .none ? lhs.client : rhs.client
         let mergedClientMappings = lhs.clientMappings != nil ? lhs.clientMappings : rhs.clientMappings
         let mergedServer =         lhs.server != nil ? lhs.server : rhs.server

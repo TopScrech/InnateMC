@@ -1,6 +1,6 @@
 import Cocoa
 
-public class ErrorTracker: ObservableObject {
+class ErrorTracker: ObservableObject {
     static var instance = ErrorTracker()
     
     @Published var errors: [ErrorTrackerEntry] = []

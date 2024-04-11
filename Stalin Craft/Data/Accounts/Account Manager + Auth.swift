@@ -1,7 +1,7 @@
 import Foundation
 
 extension AccountManager {
-    public func setupMicrosoftAccount(code: String) {
+    func setupMicrosoftAccount(code: String) {
         guard let msAccountVM else {
             return
         }

@@ -1,6 +1,6 @@
 import Foundation
 
-public struct FabricMeta {
+struct FabricMeta {
     static func `get`(path: String) -> Http.RequestBuilder {
         Http.get("https://meta.fabricmc.net/\(path)")
     }

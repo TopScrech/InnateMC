@@ -1,9 +1,9 @@
 import Foundation
 
-public class InstanceProcess: ObservableObject  {
-    @Published public var process = Process()
-    @Published public var terminated = false
-    @Published public var logMessages: [String] = []
+class InstanceProcess: ObservableObject  {
+    @Published var process = Process()
+    @Published var terminated = false
+    @Published var logMessages: [String] = []
     
     init(instance: Instance, account: any MinecraftAccount, accessToken: String = "nou") {
         var maxMemory = setting(\.runtime.maxMemory)

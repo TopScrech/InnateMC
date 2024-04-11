@@ -1,9 +1,9 @@
 import SwiftUI
 
-public struct ScreenshotShareButton: NSViewRepresentable {
+struct ScreenshotShareButton: NSViewRepresentable {
     var selectedItem: Screenshot?
     
-    public func makeNSView(context: Context) -> NSButton {
+    func makeNSView(context: Context) -> NSButton {
         let button = NSButton(title: NSLocalizedString("Share", comment: "Share"), target: context.coordinator, action: #selector(Coordinator.buttonClicked))
         context.coordinator.button = button
         
@@ -17,15 +17,15 @@ public struct ScreenshotShareButton: NSViewRepresentable {
         return button
     }
     
-    public func updateNSView(_ nsView: NSButton, context: Context) {
+    func updateNSView(_ nsView: NSButton, context: Context) {
         context.coordinator.selectedItem = self.selectedItem
     }
     
-    public func makeCoordinator() -> Coordinator {
+    func makeCoordinator() -> Coordinator {
         Coordinator(selectedItem: selectedItem)
     }
     
-    public class Coordinator: NSObject {
+    class Coordinator: NSObject {
         let delegate = ImgurSharingServiceDelegate()
         var selectedItem: Screenshot?
         var button: NSButton?

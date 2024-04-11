@@ -17,11 +17,11 @@ protocol MinecraftAccount: Codable, Hashable {
 fileprivate let minecraftAccountDecoder = PropertyListDecoder()
 
 extension MinecraftAccount {
-    public static func == (lhs: Self, rhs: Self) -> Bool {
+    static func == (lhs: Self, rhs: Self) -> Bool {
         lhs.id == rhs.id && lhs.username == rhs.username
     }
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(id)
         hasher.combine(username)
     }

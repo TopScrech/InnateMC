@@ -1,5 +1,5 @@
 import Foundation
 
-public class InstancePreferences: ObservableObject, Codable {
-    @Published public var runtime = RuntimePreferences().invalidate()
+class InstancePreferences: ObservableObject, Codable {
+    @Published var runtime = RuntimePreferences().invalidate()
 }

@@ -1,26 +1,26 @@
 import Foundation
 
-public struct Version: Decodable, Equatable {
-    public let arguments: Arguments
-    public let assetIndex: PartialAssetIndex
-    public let assets: String
-    public let complianceLevel: Int
-    public let downloads: MainDownloads
-    public let id: String
-    public let libraries: [Library]
-    public let logging: LoggingConfig?
-    public let mainClass: String
-    public let minimumLauncherVersion: Int
-    public let releaseTime: String
-    public let time: String
-    public let type: String
-    public let inheritsFrom: String?
+struct Version: Decodable, Equatable {
+    let arguments: Arguments
+    let assetIndex: PartialAssetIndex
+    let assets: String
+    let complianceLevel: Int
+    let downloads: MainDownloads
+    let id: String
+    let libraries: [Library]
+    let logging: LoggingConfig?
+    let mainClass: String
+    let minimumLauncherVersion: Int
+    let releaseTime: String
+    let time: String
+    let type: String
+    let inheritsFrom: String?
     
-    public var isInheritor: Bool {
+    var isInheritor: Bool {
         inheritsFrom != nil
     }
     
-    public init(arguments: Arguments, assetIndex: PartialAssetIndex, assets: String, complianceLevel: Int, downloads: MainDownloads, id: String, libraries: [Library], logging: LoggingConfig?, mainClass: String, minimumLauncherVersion: Int, releaseTime: String, time: String, type: String, inheritsFrom: String?) {
+    init(arguments: Arguments, assetIndex: PartialAssetIndex, assets: String, complianceLevel: Int, downloads: MainDownloads, id: String, libraries: [Library], logging: LoggingConfig?, mainClass: String, minimumLauncherVersion: Int, releaseTime: String, time: String, type: String, inheritsFrom: String?) {
         self.arguments = arguments
         self.assetIndex = assetIndex
         self.assets = assets
@@ -37,7 +37,7 @@ public struct Version: Decodable, Equatable {
         self.inheritsFrom = inheritsFrom
     }
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         var arguments = try container.decodeIfPresent(Arguments.self, forKey: .arguments)
         
@@ -83,7 +83,7 @@ public struct Version: Decodable, Equatable {
              minecraftArguments
     }
     
-    public func validate() -> Bool {
+    func validate() -> Bool {
         if self.isInheritor {
             print("1")
             return false
@@ -111,7 +111,7 @@ public struct Version: Decodable, Equatable {
         return true
     }
     
-    public func flatten(provider: @escaping ((String) throws -> Version)) throws -> Version {
+    func flatten(provider: @escaping ((String) throws -> Version)) throws -> Version {
         guard let parentId = self.inheritsFrom else {
             if !self.validate() {
                 throw VersionError.invalidVersionData
@@ -150,7 +150,7 @@ public struct Version: Decodable, Equatable {
         )
     }
     
-    public func flatten() throws -> Version {
+    func flatten() throws -> Version {
         try self.flatten { versionId in
             let parentPartial = LauncherData.instance.versionManifest
                 .filter {
@@ -166,7 +166,7 @@ public struct Version: Decodable, Equatable {
         }
     }
     
-    public enum VersionError: Error {
+    enum VersionError: Error {
         case invalidVersionData,
              invalidParent
         
@@ -183,7 +183,7 @@ public struct Version: Decodable, Equatable {
     
     private static let jsonDecoder = JSONDecoder()
     
-    public static func download(_ url: URL, sha1: String?) throws -> Version {
+    static func download(_ url: URL, sha1: String?) throws -> Version {
         let rawVersion = try downloadRaw(url, sha1: sha1)
         
         let version = try rawVersion.flatten { versionId in

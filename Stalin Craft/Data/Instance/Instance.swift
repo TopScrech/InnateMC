@@ -1,22 +1,22 @@
 import SwiftUI
 import FileWatcher
 
-public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
-    @Published public var name: String
+class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
+    @Published var name: String
     
-    public var assetIndex: PartialAssetIndex
-    public var libraries: [LibraryArtifact]
-    public var mainClass: String
-    public var minecraftJar: MinecraftJar
+    var assetIndex: PartialAssetIndex
+    var libraries: [LibraryArtifact]
+    var mainClass: String
+    var minecraftJar: MinecraftJar
     
-    @Published public var isStarred: Bool
-    @Published public var logo: InstanceLogo
-    @Published public var notes: String?
-    @Published public var synopsis: String?
+    @Published var isStarred: Bool
+    @Published var logo: InstanceLogo
+    @Published var notes: String?
+    @Published var synopsis: String?
     
-    public var debugString: String
+    var debugString: String
     
-    public var synopsisOrVersion: String {
+    var synopsisOrVersion: String {
         get {
             synopsis ?? debugString
         }
@@ -26,19 +26,19 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
     
-    public var lastPlayed: Date?
-    public var preferences = InstancePreferences()
-    public var arguments: Arguments
+    var lastPlayed: Date?
+    var preferences = InstancePreferences()
+    var arguments: Arguments
     
-    @Published public var mods: [Mod] = []
-    @Published public var screenshots: [Screenshot] = []
-    @Published public var worlds: [World] = []
+    @Published var mods: [Mod] = []
+    @Published var screenshots: [Screenshot] = []
+    @Published var worlds: [World] = []
     
-    public var screenshotsWatcher: FileWatcher? = nil
-    public var modsWatcher:        FileWatcher? = nil
-    public var worldsWatcher:      FileWatcher? = nil
+    var screenshotsWatcher: FileWatcher? = nil
+    var modsWatcher:        FileWatcher? = nil
+    var worldsWatcher:      FileWatcher? = nil
     
-    public init(
+    init(
         name: String,
         assetIndex: PartialAssetIndex,
         libraries: [LibraryArtifact],
@@ -62,7 +62,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         self.arguments = arguments
     }
     
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.container(keyedBy: CodingKeys.self)
         try container.encode(name,         forKey: .name)
         try container.encode(assetIndex,   forKey: .assetIndex)
@@ -79,7 +79,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         try container.encode(arguments,    forKey: .arguments)
     }
     
-    public required init(from decoder: Decoder) throws {
+    required init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         name =          try container.decode(String.self, forKey: .name)
         assetIndex =    try container.decode(PartialAssetIndex.self, forKey: .assetIndex)
@@ -117,51 +117,51 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
              gameArguments
     }
     
-    public static func getInstancePath(for name: String) -> URL {
+    static func getInstancePath(for name: String) -> URL {
         FileHandler.instancesFolder.appendingPathComponent(name + ".pyzh", isDirectory: true)
     }
     
-    public func setPreferences(_ prefs: InstancePreferences) {
+    func setPreferences(_ prefs: InstancePreferences) {
         preferences = prefs
     }
     
-    public func getPath() -> URL {
+    func getPath() -> URL {
         Instance.getInstancePath(for: name)
     }
     
-    public func getGamePath() -> URL {
+    func getGamePath() -> URL {
         getPath().appendingPathComponent("minecraft", isDirectory: true)
     }
     
-    public func getNativesFolder() -> URL {
+    func getNativesFolder() -> URL {
         getPath().appendingPathComponent("natives", isDirectory: true)
     }
     
-    public func getMcJarPath() -> URL {
+    func getMcJarPath() -> URL {
         getPath().appendingPathComponent("minecraft.jar")
     }
     
-    public func getLogoPath() -> URL {
+    func getLogoPath() -> URL {
         getPath().appendingPathComponent("logo.png")
     }
     
-    public func getModsFolder() -> URL {
+    func getModsFolder() -> URL {
         getGamePath().appendingPathComponent("mods")
     }
     
-    public func getScreenshotsFolder() -> URL {
+    func getScreenshotsFolder() -> URL {
         getGamePath().appendingPathComponent("screenshots")
     }
     
-    public func getLogsFolder() -> URL {
+    func getLogsFolder() -> URL {
         getGamePath().appendingPathComponent("logs")
     }
     
-    public func getSavesFolder() -> URL {
+    func getSavesFolder() -> URL {
         getGamePath().appendingPathComponent("saves")
     }
     
-    public func matchesSearchTerm(_ term: String) -> Bool {
+    func matchesSearchTerm(_ term: String) -> Bool {
         if term.isEmpty {
             return true
         }
@@ -169,7 +169,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         return name.localizedCaseInsensitiveContains(term) || synopsisOrVersion.localizedCaseInsensitiveContains(term)
     }
     
-    public func processArgsByRules(_ thing: KeyPath<Arguments, [ArgumentElement]>, features: [String:Bool]) -> [String] {
+    func processArgsByRules(_ thing: KeyPath<Arguments, [ArgumentElement]>, features: [String:Bool]) -> [String] {
         arguments[keyPath: thing].filter { element in
             switch(element) {
             case .string:
@@ -184,17 +184,17 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
     
-    public static func == (lhs: Instance, rhs: Instance) -> Bool {
+    static func == (lhs: Instance, rhs: Instance) -> Bool {
         lhs.name == rhs.name
     }
     
-    public func hash(into hasher: inout Hasher) {
+    func hash(into hasher: inout Hasher) {
         hasher.combine(name)
         hasher.combine(notes)
         hasher.combine(synopsisOrVersion)
     }
     
-    public func loadScreenshots() {
+    func loadScreenshots() {
         let folder = getScreenshotsFolder()
         
         if screenshotsWatcher == nil {
@@ -236,7 +236,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
     
-    public func loadMods() {
+    func loadMods() {
         let modsFolder = getModsFolder()
         
         if modsWatcher == nil {
@@ -280,7 +280,7 @@ public class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
     
-    public func loadWorlds() {
+    func loadWorlds() {
         let worldsFolder = getSavesFolder()
         
         if worldsWatcher == nil {

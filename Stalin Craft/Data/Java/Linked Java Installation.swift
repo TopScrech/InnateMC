@@ -1,20 +1,20 @@
 import Foundation
 
-public class LinkedJavaInstallation: Codable {
-    public let JVMArch:            String
-    public let JVMBundleID:        String
-    public let JVMEnabled:         Bool
-    public let JVMHomePath:        String
-    public let JVMName:            String
-    public let JVMPlatformVersion: String
-    public let JVMVendor:          String
-    public let JVMVersion:         String
+class LinkedJavaInstallation: Codable {
+    let JVMArch:            String
+    let JVMBundleID:        String
+    let JVMEnabled:         Bool
+    let JVMHomePath:        String
+    let JVMName:            String
+    let JVMPlatformVersion: String
+    let JVMVendor:          String
+    let JVMVersion:         String
 }
 
 extension LinkedJavaInstallation {
     private static let decoder: PropertyListDecoder = PropertyListDecoder()
     
-    public static func getAll() throws -> [LinkedJavaInstallation] {
+    static func getAll() throws -> [LinkedJavaInstallation] {
         let p = Process()
         p.executableURL = URL(fileURLWithPath: "/usr/libexec/java_home")
         p.arguments = ["-X"]

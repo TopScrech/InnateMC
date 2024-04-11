@@ -1,8 +1,8 @@
 import Foundation
 import CryptoKit
 
-public struct ParallelDownloader {
-    public static func download(_ tasks: [DownloadTask], progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession {
+struct ParallelDownloader {
+    static func download(_ tasks: [DownloadTask], progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession {
         logger.debug("Downloading \(tasks.count) items")
         progress.current = 0
         progress.total = tasks.count

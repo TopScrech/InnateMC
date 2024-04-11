@@ -1,9 +1,9 @@
 import SwiftUI
 
-public class LauncherData: ObservableObject {
+class LauncherData: ObservableObject {
     private static var currentInstance: LauncherData? = nil
     
-    public static var instance: LauncherData {
+    static var instance: LauncherData {
         currentInstance!
     }
     
@@ -22,7 +22,7 @@ public class LauncherData: ObservableObject {
     
     private var initializedPreferenceListener = false
     
-    public func initializePreferenceListenerIfNot() {
+    func initializePreferenceListenerIfNot() {
         if initializedPreferenceListener {
             return
         }
@@ -150,7 +150,7 @@ public class LauncherData: ObservableObject {
 }
 
 // TODO: move
-public enum SelectedPreferenceTab: Int, Hashable, Codable {
+enum SelectedPreferenceTab: Int, Hashable, Codable {
     case runtime = 0,
          accounts = 1,
          game = 2,

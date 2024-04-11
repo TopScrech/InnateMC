@@ -1,13 +1,13 @@
 import Foundation
 
-public class VanillaInstanceCreator: InstanceCreator {
-    public let name: String
-    public let versionUrl: URL
-    public let sha1: String
-    public let notes: String?
-    public let data: LauncherData
+class VanillaInstanceCreator: InstanceCreator {
+    let name: String
+    let versionUrl: URL
+    let sha1: String
+    let notes: String?
+    let data: LauncherData
     
-    public init(name: String, versionUrl: URL, sha1: String, notes: String?, data: LauncherData) {
+    init(name: String, versionUrl: URL, sha1: String, notes: String?, data: LauncherData) {
         self.name = name
         self.versionUrl = versionUrl
         self.sha1 = sha1
@@ -15,7 +15,7 @@ public class VanillaInstanceCreator: InstanceCreator {
         self.data = data
     }
     
-    public func install() throws -> Instance {
+    func install() throws -> Instance {
         let version = try Version.download(versionUrl, sha1: self.sha1)
         
         var libraries: [LibraryArtifact] = version.libraries

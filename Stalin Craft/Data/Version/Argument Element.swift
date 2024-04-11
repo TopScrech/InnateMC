@@ -1,10 +1,10 @@
 import Foundation
 
-public enum ArgumentElement: Codable, Equatable {
+enum ArgumentElement: Codable, Equatable {
     case string(String)
     case object(ConditionalArgument)
     
-    public init(from decoder: Decoder) throws {
+    init(from decoder: Decoder) throws {
         if let str = try? decoder.singleValueContainer().decode(String.self) {
             self = .string(str)
         } else {
@@ -13,7 +13,7 @@ public enum ArgumentElement: Codable, Equatable {
         }
     }
     
-    public var actualValue: [String] {
+    var actualValue: [String] {
         switch self {
         case .string(let value):
             [value]
@@ -23,7 +23,7 @@ public enum ArgumentElement: Codable, Equatable {
         }
     }
     
-    public func encode(to encoder: Encoder) throws {
+    func encode(to encoder: Encoder) throws {
         var container = encoder.singleValueContainer()
         
         switch self {

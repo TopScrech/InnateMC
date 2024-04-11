@@ -19,7 +19,7 @@ struct MicrosoftAccount: MinecraftAccount {
         username // TODO: decode JWT?
     }
     
-    public init(profile: MinecraftProfile, token: MicrosoftAccessToken) {
+    init(profile: MinecraftProfile, token: MicrosoftAccessToken) {
         self.profile = profile
         self.token = token
     }
