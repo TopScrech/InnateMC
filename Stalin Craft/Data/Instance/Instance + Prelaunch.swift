@@ -9,15 +9,15 @@ extension Instance {
             tasks.append(library.asDownloadTask())
         }
         
-        if self.minecraftJar.type == .remote {
-            tasks.append(.init(sourceUrl: self.minecraftJar.url!, filePath: self.getMcJarPath(), sha1: self.minecraftJar.sha1))
+        if minecraftJar.type == .remote {
+            tasks.append(.init(sourceUrl: minecraftJar.url!, filePath: getMcJarPath(), sha1: minecraftJar.sha1))
         }
         
         return tasks
     }
     
     func appendClasspath(args: inout [String]) {
-        let libString = self.libraries
+        let libString = libraries
             .map { lib in
                 return lib.getAbsolutePath().path
             }
@@ -31,7 +31,7 @@ extension Instance {
             try! FileManager.default.createDirectory(at: getNativesFolder(), withIntermediateDirectories: true)
         }
         
-        let nativeLibraries = self.libraries.filter {
+        let nativeLibraries = libraries.filter {
             $0.path.contains("natives")
         }
         

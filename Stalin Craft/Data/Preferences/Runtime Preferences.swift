@@ -20,7 +20,7 @@ class RuntimePreferences: Codable, ObservableObject {
     }
     
     func invalidate() -> RuntimePreferences {
-        self.valid = false
+        valid = false
         
         return self
     }

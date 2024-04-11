@@ -32,9 +32,9 @@ struct MicrosoftAccount: MinecraftAccount {
             let newAccount: MicrosoftAccount
             
             do {
-                let newToken = try await manager.refreshMicrosoftToken(self.token)
-                newAccount = MicrosoftAccount(profile: self.profile, token: newToken)
-                manager.accounts[self.id] = newAccount
+                let newToken = try await manager.refreshMicrosoftToken(token)
+                newAccount = MicrosoftAccount(profile: profile, token: newToken)
+                manager.accounts[id] = newAccount
                 
                 DispatchQueue.global(qos: .utility).async {
                     manager.saveThrow()
@@ -53,7 +53,7 @@ struct MicrosoftAccount: MinecraftAccount {
             return try await newAccount.createAccessToken()
         }
         
-        let xblResponse = try await manager.authenticateWithXBL(msAccessToken: self.token.token)
+        let xblResponse = try await manager.authenticateWithXBL(msAccessToken: token.token)
         logger.debug("Authenticated with xbox live")
         
         let xstsResponse: XboxAuthResponse = try await manager.authenticateWithXSTS(xblToken: xblResponse.token)
