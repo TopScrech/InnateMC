@@ -12,7 +12,7 @@ class LauncherData: ObservableObject {
     @Published var launchedInstances: [Instance: InstanceProcess] = [:]
     @Published var newInstanceRequested = false
     @Published var accountManager = AccountManager()
-    @Published var selectedPreferenceTab: PreferenceTab = .accounts
+    @Published var selectedPreferenceTab: SettingsTab = .accounts
     @Published var versionManifest: [PartialVersion] = []
     
     @Published var instances:                [Instance] = []
@@ -148,15 +148,4 @@ class LauncherData: ObservableObject {
         
         logger.debug("Initialized launcher data")
     }
-}
-
-#warning("Move")
-enum PreferenceTab: Int {
-    case runtime = 0,
-         accounts = 1,
-         game = 2,
-         ui = 3,
-         console = 4,
-         misc = 5,
-         modtools = 6
 }
