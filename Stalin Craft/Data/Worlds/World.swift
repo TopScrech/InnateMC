@@ -14,7 +14,7 @@ extension Array where Element == URL {
             $0.hasDirectoryPath
         }
         .compactMap {
-            World(folder: $0.lastPathComponent)
+            .init(folder: $0.lastPathComponent)
         }
     }
 }

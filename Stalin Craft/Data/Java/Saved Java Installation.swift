@@ -155,7 +155,8 @@ extension SavedJavaInstallation {
         }
         
         do {
-            let versions: [SavedJavaInstallation] = try decoder.decode([SavedJavaInstallation].self, from: data)
+            let versions = try decoder.decode([SavedJavaInstallation].self, from: data)
+            
             return versions
         } catch {
             try FileManager.default.removeItem(at: filePath)
@@ -177,6 +178,7 @@ extension SavedJavaInstallation: Hashable {
 extension Array where Element == SavedJavaInstallation {
     func save() throws {
         SavedJavaInstallation.encoder.outputFormat = .xml
+        
         let data = try SavedJavaInstallation.encoder.encode(self)
         
         try FileHandler.saveData(SavedJavaInstallation.filePath, data)
@@ -186,7 +188,7 @@ extension Array where Element == SavedJavaInstallation {
 extension Array where Element == LinkedJavaInstallation {
     func toSaved() -> [SavedJavaInstallation] {
         self.map {
-            SavedJavaInstallation(linkedJavaInstallation: $0)
+            .init(linkedJavaInstallation: $0)
         }
     }
 }

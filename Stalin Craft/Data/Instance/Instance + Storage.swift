@@ -25,7 +25,7 @@ extension Instance {
     static func loadInstances() throws -> [Instance] {
         var instances: [Instance] = []
         
-        let directoryContents: [URL] = try FileManager.default.contentsOfDirectory(
+        let directoryContents = try FileManager.default.contentsOfDirectory(
             at: FileHandler.instancesFolder,
             includingPropertiesForKeys: nil
         )

@@ -27,6 +27,10 @@ extension XstsAuth {
             userTokens: [token]
         )
         
-        return Self(properties: properties, relyingParty: "rp://api.minecraftservices.com/", tokenType: "JWT")
+        return Self(
+            properties: properties,
+            relyingParty: "rp://api.minecraftservices.com/",
+            tokenType: "JWT"
+        )
     }
 }

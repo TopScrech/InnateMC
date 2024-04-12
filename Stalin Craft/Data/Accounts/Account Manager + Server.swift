@@ -15,6 +15,7 @@ extension AccountManager {
                     logger.warning("Received authentication redirect without callback being present, skipping")
                     logger.warning("Provided state: \(state)")
                     print(self.stateCallbacks)
+                    
                     return HttpResponse.movedTemporarily("http://youtube.com/watch?v=dQw4w9WgXcQ")
                 }
                 
@@ -26,6 +27,7 @@ extension AccountManager {
                 logger.debug("Received succesful authentication redirect")
                 
                 return HttpResponse.ok(.text("<html><body>You may close this window now</body></html>"))
+                
             } else {
                 logger.error("Missing code/state parameters in request: \(request.queryParams)")
                 

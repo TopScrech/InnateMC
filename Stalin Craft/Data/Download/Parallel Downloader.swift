@@ -24,12 +24,17 @@ struct ParallelDownloader {
                 let fileExists = FileManager.default.fileExists(atPath: destinationUrl.path)
                 
                 if fileExists {
-                    let isHashValid = checkHash(path: destinationUrl, expected: task.sha1)
+                    let isHashValid = checkHash(
+                        path: destinationUrl,
+                        expected: task.sha1
+                    )
+                    
                     if isHashValid {
                         DispatchQueue.main.async {
                             progress.inc()
                             downloadGroup.leave()
                         }
+                        
                         return
                     }
                 }
@@ -45,7 +50,9 @@ struct ParallelDownloader {
                         }
                         
                         downloadGroup.leave()
+                        
                         return
+                        
                     } else if let tempUrl {
                         do {
                             // Verify sha hash

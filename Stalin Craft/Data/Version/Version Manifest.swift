@@ -6,15 +6,17 @@ class VersionManifest {
     private static let decoder = JSONDecoder()
     
     static func getOrCreate() async throws -> [PartialVersion] {
-        if cached == nil {
-            cached = try await download()
+        guard let cached else {
+            return try await download()
         }
         
-        return cached!
+        return cached
     }
     
     static func download() async throws -> [PartialVersion] {
-        guard let url = URL(string: "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json") else {
+        let urlString = "https://piston-meta.mojang.com/mc/game/version_manifest_v2.json"
+        
+        guard let url = URL(string: urlString) else {
             fatalError("Not possible")
         }
         
@@ -32,9 +34,7 @@ class VersionManifest {
             
             logger.error("Trying to load cached version manifest")
             
-            let parsed = try fetchCache()
-            
-            return parsed
+            return try fetchCache()
         }
         
         let parsed = try readFromData(data)
@@ -57,9 +57,7 @@ class VersionManifest {
     }
     
     static func readFromData(_ data: Data) throws -> [PartialVersion] {
-        let root = try decoder.decode(RootJSON.self, from: data)
-        
-        return root.versions
+        try decoder.decode(RootJSON.self, from: data).versions
     }
     
     enum VersionManifestError: Error {

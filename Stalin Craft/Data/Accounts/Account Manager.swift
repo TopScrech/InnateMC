@@ -12,7 +12,7 @@ class AccountManager: ObservableObject {
     @Published var accounts: [UUID: any MinecraftAccount] = [:]
     
     var selectedAccount: any MinecraftAccount {
-        return accounts[currentSelected!]!
+        accounts[currentSelected!]!
     }
     
     let clientId = "a6d48d61-71a0-45eb-8957-f6d2e760f8f6"

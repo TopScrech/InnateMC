@@ -50,19 +50,20 @@ struct Version: Decodable, Equatable {
         }
         
         self.arguments = arguments ?? Arguments.none
-        assetIndex = try container.decodeIfPresent(PartialAssetIndex.self, forKey: .assetIndex) ?? PartialAssetIndex.none
-        assets = try container.decodeIfPresent(String.self, forKey: .assets) ?? "3"
-        complianceLevel = try container.decodeIfPresent(Int.self, forKey: .complianceLevel) ?? 3
-        downloads = try container.decodeIfPresent(MainDownloads.self, forKey: .downloads) ?? MainDownloads.none
-        id = try container.decode(String.self, forKey: .id)
-        libraries = try container.decodeIfPresent([Library].self, forKey: .libraries) ?? []
-        logging = try container.decodeIfPresent(LoggingConfig.self, forKey: .logging)
-        mainClass = try container.decodeIfPresent(String.self, forKey: .mainClass) ?? "none"
+        
+        assetIndex =             try container.decodeIfPresent(PartialAssetIndex.self, forKey: .assetIndex) ?? PartialAssetIndex.none
+        assets =                 try container.decodeIfPresent(String.self, forKey: .assets) ?? "3"
+        complianceLevel =        try container.decodeIfPresent(Int.self, forKey: .complianceLevel) ?? 3
+        downloads =              try container.decodeIfPresent(MainDownloads.self, forKey: .downloads) ?? MainDownloads.none
+        id =                     try container.decode(String.self, forKey: .id)
+        libraries =              try container.decodeIfPresent([Library].self, forKey: .libraries) ?? []
+        logging =                try container.decodeIfPresent(LoggingConfig.self, forKey: .logging)
+        mainClass =              try container.decodeIfPresent(String.self, forKey: .mainClass) ?? "none"
         minimumLauncherVersion = try container.decodeIfPresent(Int.self, forKey: .minimumLauncherVersion) ?? 0
-        releaseTime = try container.decode(String.self, forKey: .releaseTime)
-        time = try container.decode(String.self, forKey: .time)
-        type = try container.decodeIfPresent(String.self, forKey: .type) ?? ""
-        inheritsFrom = try container.decodeIfPresent(String.self, forKey: .inheritsFrom)
+        releaseTime =            try container.decode(String.self, forKey: .releaseTime)
+        time =                   try container.decode(String.self, forKey: .time)
+        type =                   try container.decodeIfPresent(String.self, forKey: .type) ?? ""
+        inheritsFrom =           try container.decodeIfPresent(String.self, forKey: .inheritsFrom)
     }
     
     enum CodingKeys: String, CodingKey {
@@ -126,17 +127,17 @@ struct Version: Decodable, Equatable {
             return self
         }
         
-        let unflattened = try provider(parentId)
-        let parent = try unflattened.flatten(provider: provider)
-        let newArguments = parent.arguments + self.arguments
-        let newAssetIndex = self.assetIndex.default(fallback: parent.assetIndex)
-        let newAssets = parent.assets
-        let newDownloads = self.downloads | parent.downloads
-        let newLibraries = parent.libraries + self.libraries
-        let newLogging = self.logging == nil ? parent.logging : self.logging
-        let newMainClass = self.mainClass == "none" ? parent.mainClass : self.mainClass
+        let unflattened =              try provider(parentId)
+        let parent =                   try unflattened.flatten(provider: provider)
+        let newArguments =             parent.arguments + self.arguments
+        let newAssetIndex =            self.assetIndex.default(fallback: parent.assetIndex)
+        let newAssets =                parent.assets
+        let newDownloads =             self.downloads | parent.downloads
+        let newLibraries =             parent.libraries + self.libraries
+        let newLogging =               self.logging == nil ? parent.logging : self.logging
+        let newMainClass =             self.mainClass == "none" ? parent.mainClass : self.mainClass
         let newNewMinLauncherVersion = self.minimumLauncherVersion
-        let newType = self.type.isEmpty ? parent.type : self.type
+        let newType =                  self.type.isEmpty ? parent.type : self.type
         
         return .init(
             arguments: newArguments,
@@ -215,7 +216,6 @@ struct Version: Decodable, Equatable {
         print(String(data: data, encoding: .utf8)!)
         
         let rawVersion = try jsonDecoder.decode(Version.self, from: data)
-        
         return rawVersion
     }
 }

@@ -22,6 +22,7 @@ struct LibraryArtifact: Codable, Equatable {
     
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
+        
         path = try container.decode(String.self, forKey: .path)
         sha1 = try container.decodeIfPresent(String.self, forKey: .sha1)
         size = try container.decodeIfPresent(Int.self, forKey: .size)
@@ -48,6 +49,6 @@ struct LibraryArtifact: Codable, Equatable {
     
 #warning("Fix sha1 checking for libraries")
     func asDownloadTask() -> DownloadTask {
-        DownloadTask(sourceUrl: url, filePath: getAbsolutePath(), sha1: sha1)
+        .init(sourceUrl: url, filePath: getAbsolutePath(), sha1: sha1)
     }
 }

@@ -47,6 +47,7 @@ extension AccountManager {
                     msAccountVM.closeSheet()
                     self.msAccountVM = nil
                 }
+                
             } catch let error as MicrosoftAuthError {
                 logger.error("Caught error during authentication", error: error)
                 
@@ -56,6 +57,7 @@ extension AccountManager {
                 }
                 
                 return
+                
             } catch {
                 fatalError("Unknown error - this is bug - \(error)")
             }
@@ -80,8 +82,10 @@ extension AccountManager {
                 logger.error("Received malformed response from minecraft authentication server", error: error)
                 throw MicrosoftAuthError.minecraftInvalidResponse
             }
+            
         } catch let err as MicrosoftAuthError {
             throw err
+            
         } catch {
             throw MicrosoftAuthError.minecraftCouldNotConnect
         }
@@ -102,14 +106,16 @@ extension AccountManager {
             }
             
             do {
-                let result = try JSONDecoder().decode(XboxAuthResponse.self, from: data)
-                return result
+                return try JSONDecoder().decode(XboxAuthResponse.self, from: data)
+                
             } catch {
                 logger.error("Received malformed response from xbox live authentication server", error: error)
                 throw MicrosoftAuthError.xboxInvalidResponse
             }
+            
         } catch let err as MicrosoftAuthError {
             throw err
+            
         } catch {
             throw MicrosoftAuthError.xboxCouldNotConnect
         }
@@ -130,14 +136,17 @@ extension AccountManager {
             }
             
             do {
-                let result = try JSONDecoder().decode(XboxAuthResponse.self, from: data)
-                return result
+                return try JSONDecoder().decode(XboxAuthResponse.self, from: data)
+                
             } catch {
                 logger.error("Received malformed response from xbox xsts authentication server", error: error)
+                
                 throw MicrosoftAuthError.xstsInvalidResponse
             }
+            
         } catch let err as MicrosoftAuthError {
             throw err
+            
         } catch {
             throw MicrosoftAuthError.xstsCouldNotConnect
         }
@@ -160,6 +169,7 @@ extension AccountManager {
             
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 logger.error("Received invalid status code from microsoft authentication server")
+                
                 throw MicrosoftAuthError.microsoftInvalidResponse
             }
             
@@ -167,10 +177,13 @@ extension AccountManager {
                 return try MicrosoftAccessToken.fromJson(json: data)
             } catch {
                 logger.error("Received malformed response from microsoft authentication server", error: error)
+                
                 throw MicrosoftAuthError.microsoftInvalidResponse
             }
+            
         } catch let err as MicrosoftAuthError {
             throw err
+            
         } catch {
             throw MicrosoftAuthError.microsoftCouldNotConnect
         }
@@ -192,17 +205,22 @@ extension AccountManager {
             
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 logger.error("Received invalid status code from microsoft refresh server")
+                
                 throw MicrosoftAuthError.microsoftInvalidResponse
             }
             
             do {
                 return try MicrosoftAccessToken.fromJson(json: data)
+                
             } catch {
                 logger.error("Received malformed response from microsoft refresh server", error: error)
+                
                 throw MicrosoftAuthError.microsoftInvalidResponse
             }
+            
         } catch let err as MicrosoftAuthError {
             throw err
+            
         } catch {
             throw MicrosoftAuthError.microsoftCouldNotConnect
         }
@@ -216,6 +234,7 @@ extension AccountManager {
             
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 logger.error("Received invalid status code from minecraft profile server")
+                
                 throw MicrosoftAuthError.profileInvalidResponse
             }
             
@@ -223,10 +242,13 @@ extension AccountManager {
                 return try JSONDecoder().decode(MinecraftProfile.self, from: data)
             } catch {
                 logger.error("Received malformed response from minecraft profile server", error: error)
+                
                 throw MicrosoftAuthError.profileInvalidResponse
             }
+            
         } catch let err as MicrosoftAuthError {
             throw err
+            
         } catch {
             throw MicrosoftAuthError.profileCouldNotConnect
         }

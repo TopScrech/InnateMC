@@ -44,8 +44,8 @@ struct DeveloperModeCommands: Commands {
         }
     }
     
-    @available(macOS 13, *)
     @CommandsBuilder
+    @available(macOS 13, *)
     func getNewCommands() -> some Commands {
         if developerMode {
             CommandMenu("Develop") {

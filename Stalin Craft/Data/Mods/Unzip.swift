@@ -49,6 +49,7 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
 func decodeFabricModJson(_ filePath: String) -> FabricMod? {
     guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
         print("Failed to read file")
+        
         return nil
     }
     
@@ -58,6 +59,7 @@ func decodeFabricModJson(_ filePath: String) -> FabricMod? {
         return try decoder.decode(FabricMod.self, from: data)
     } catch {
         print("Failed to decode JSON: \(error)")
+        
         return nil
     }
 }

@@ -45,7 +45,7 @@ open class TaskProgress: ObservableObject {
     }
     
     static func completed() -> TaskProgress {
-        TaskProgress(current: 1, total: 1)
+        .init(current: 1, total: 1)
     }
     
     func setFrom(_ other: TaskProgress) {

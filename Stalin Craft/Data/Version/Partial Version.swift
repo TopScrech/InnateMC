@@ -1,5 +1,3 @@
-import Foundation
-
 struct PartialVersion: Codable, Hashable, Identifiable {
     var id: Self { self }
     
@@ -22,8 +20,8 @@ struct PartialVersion: Codable, Hashable, Identifiable {
     }
     
     static func createBlank() -> PartialVersion {
-        PartialVersion(
-            id: "no", 
+        .init(
+            id: "no",
             version: "no",
             type: "no",
             url: "no",
@@ -47,12 +45,12 @@ struct PartialVersion: Codable, Hashable, Identifiable {
     init(from decoder: Decoder) throws {
         let container = try decoder.container(keyedBy: CodingKeys.self)
         
-        version = try container.decode(String.self, forKey: .version)
-        type = try container.decode(String.self, forKey: .type)
-        url = try container.decode(String.self, forKey: .url)
-        time = try container.decode(String.self, forKey: .time)
-        releaseTime = try container.decode(String.self, forKey: .releaseTime)
-        sha1 = try container.decode(String.self, forKey: .sha1)
+        version =         try container.decode(String.self, forKey: .version)
+        type =            try container.decode(String.self, forKey: .type)
+        url =             try container.decode(String.self, forKey: .url)
+        time =            try container.decode(String.self, forKey: .time)
+        releaseTime =     try container.decode(String.self, forKey: .releaseTime)
+        sha1 =            try container.decode(String.self, forKey: .sha1)
         complianceLevel = try container.decode(Int.self, forKey: .complianceLevel)
     }
     

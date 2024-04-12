@@ -11,6 +11,7 @@ extension GlobalPreferences {
     static func load() throws -> GlobalPreferences {
         if let data = try FileHandler.getData(filePath) {
             return try PropertyListDecoder().decode(GlobalPreferences.self, from: data)
+            
         } else {
             let prefs = GlobalPreferences()
             prefs.save()

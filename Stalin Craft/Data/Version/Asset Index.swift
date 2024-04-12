@@ -90,6 +90,7 @@ class AssetIndex: Codable {
             try createDirectories()
         } catch {
             onError(.errorCreatingFile(error: error))
+            
             return nil
         }
         
