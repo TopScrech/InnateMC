@@ -43,10 +43,11 @@ struct LibraryArtifact: Codable, Equatable {
     }
     
     func getAbsolutePath() -> URL {
-        FileHandler.librariesFolder.appendingPathComponent(self.path, isDirectory: false)
+        FileHandler.librariesFolder.appendingPathComponent(path, isDirectory: false)
     }
     
+#warning("Fix sha1 checking for libraries")
     func asDownloadTask() -> DownloadTask {
-        DownloadTask(sourceUrl: url, filePath: self.getAbsolutePath(), sha1: self.sha1) // TODO: fix sha1 checking for libraries
+        DownloadTask(sourceUrl: url, filePath: getAbsolutePath(), sha1: sha1)
     }
 }

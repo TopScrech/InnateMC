@@ -49,6 +49,7 @@ class VersionManifest {
     static func fetchCache() throws -> [PartialVersion] {
         guard let data = try FileHandler.getData(cache) else {
             logger.error("Did not find cached version manifest")
+            
             throw VersionManifestError.noCacheFound
         }
         

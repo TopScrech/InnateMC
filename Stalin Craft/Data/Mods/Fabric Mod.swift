@@ -25,8 +25,9 @@ struct FabricMod: Decodable {
         let jeiModPlugin: [String]
         
         enum CodingKeys: String, CodingKey {
-            case main, client
-            case jeiModPlugin = "jei_mod_plugin"
+            case main,
+                 client,
+                 jeiModPlugin = "jei_mod_plugin"
         }
     }
     
@@ -37,9 +38,10 @@ struct FabricMod: Decodable {
         let java: String
         
         enum CodingKeys: String, CodingKey {
-            case fabricloader
-            case fabricApi = "fabric-api"
-            case minecraft, java
+            case fabricloader,
+                 fabricApi = "fabric-api",
+                 minecraft,
+                 java
         }
     }
 }

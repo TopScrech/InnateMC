@@ -1,6 +1,5 @@
-import Foundation
+// JSON response for both Xbox Live and XSTS Authentication
 
-/// JSON response for both Xbox Live and XSTS Authentication
 struct XboxAuthResponse: Codable {
     var issueInstant: String
     var notAfter: String

@@ -146,7 +146,9 @@
 		F388DEDA2BC82DA4002E7616 /* Handle Drop.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DED92BC82DA4002E7616 /* Handle Drop.swift */; };
 		F388DEDE2BC844FB002E7616 /* World Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DEDD2BC844FB002E7616 /* World Card.swift */; };
 		F388DEE02BC8465E002E7616 /* Get Fabric Versions.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DEDF2BC8465E002E7616 /* Get Fabric Versions.swift */; };
+		F388DEE22BC84DCB002E7616 /* Mod Tools List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F388DEE12BC84DCB002E7616 /* Mod Tools List.swift */; };
 		F3CF21F82BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy in Resources */ = {isa = PBXBuildFile; fileRef = F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */; };
+		F3EEB60E2BC923D1006E6CF0 /* Server List.swift in Sources */ = {isa = PBXBuildFile; fileRef = F3EEB60D2BC923D1006E6CF0 /* Server List.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,7 +304,9 @@
 		F388DED92BC82DA4002E7616 /* Handle Drop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Handle Drop.swift"; sourceTree = "<group>"; };
 		F388DEDD2BC844FB002E7616 /* World Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "World Card.swift"; sourceTree = "<group>"; };
 		F388DEDF2BC8465E002E7616 /* Get Fabric Versions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Get Fabric Versions.swift"; sourceTree = "<group>"; };
+		F388DEE12BC84DCB002E7616 /* Mod Tools List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Mod Tools List.swift"; sourceTree = "<group>"; };
 		F3CF21F72BBF4D3D00AB74DC /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		F3EEB60D2BC923D1006E6CF0 /* Server List.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Server List.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -376,6 +380,7 @@
 			isa = PBXGroup;
 			children = (
 				64C33504292252B500BB8570 /* Preferences View.swift */,
+				F388DEE32BC84DE9002E7616 /* Mod Tools */,
 				641678502923B6D40012C9CC /* Runtime Preferences View.swift */,
 				6497595A29F056CF00D0194E /* Accounts */,
 				644FC6712937B243003797D9 /* Ui Preferences View.swift */,
@@ -485,6 +490,7 @@
 				644FC66D29375852003797D9 /* Instance Navigation Link.swift */,
 				644DE1D32937C93600C4A03E /* Instance View.swift */,
 				64FE2D3F293BA78B007414CB /* Instance Console View.swift */,
+				F3EEB60D2BC923D1006E6CF0 /* Server List.swift */,
 				6459E11A2976E215006DB3A4 /* Preferences */,
 				F388DED82BC817F3002E7616 /* Mods */,
 				640A75B72A226E76005CDE49 /* Worlds */,
@@ -497,7 +503,6 @@
 			isa = PBXGroup;
 			children = (
 				64B01AE42940961F00B3E670 /* Instance Runtime View.swift */,
-				F388DEDF2BC8465E002E7616 /* Get Fabric Versions.swift */,
 			);
 			path = Preferences;
 			sourceTree = "<group>";
@@ -740,6 +745,15 @@
 			path = Mods;
 			sourceTree = "<group>";
 		};
+		F388DEE32BC84DE9002E7616 /* Mod Tools */ = {
+			isa = PBXGroup;
+			children = (
+				F388DEE12BC84DCB002E7616 /* Mod Tools List.swift */,
+				F388DEDF2BC8465E002E7616 /* Get Fabric Versions.swift */,
+			);
+			path = "Mod Tools";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -942,6 +956,7 @@
 				64337EFB2A17D66A0017BCB0 /* Library.swift in Sources */,
 				64B01AE52940961F00B3E670 /* Instance Runtime View.swift in Sources */,
 				640A75912A2115BA005CDE49 /* Run Once.swift in Sources */,
+				F388DEE22BC84DCB002E7616 /* Mod Tools List.swift in Sources */,
 				640CCF552A09F0FA0080F574 /* Settings Fetch.swift in Sources */,
 				64C33505292252B500BB8570 /* Preferences View.swift in Sources */,
 				64337EEB2A17A62A0017BCB0 /* Conditional Argument.swift in Sources */,
@@ -983,6 +998,7 @@
 				64337EE92A17A4EF0017BCB0 /* Rule.swift in Sources */,
 				64F7C600297D64B50086ABC1 /* Instance Creator.swift in Sources */,
 				64FA2A962A0F76FA0042A4A7 /* Microsoft Account View Model.swift in Sources */,
+				F3EEB60E2BC923D1006E6CF0 /* Server List.swift in Sources */,
 				640A75962A21D021005CDE49 /* Screenshot List.swift in Sources */,
 				F388DEDA2BC82DA4002E7616 /* Handle Drop.swift in Sources */,
 				64C334D92922523600BB8570 /* Stalin Craft App.swift in Sources */,

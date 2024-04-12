@@ -4,8 +4,8 @@ struct InstanceTitleView: View {
     @StateObject var editingVM: InstanceEditingVM
     @StateObject var instance: Instance
     
-    @Binding var showNoNamePopover: Bool
-    @Binding var showDuplicatePopover: Bool
+    @Binding var popoverNoName: Bool
+    @Binding var popoverDuplicate: Bool
     @Binding var starHovered: Bool
     
     var body: some View {
@@ -15,12 +15,12 @@ struct InstanceTitleView: View {
                 .labelsHidden()
                 .fixedSize(horizontal: true, vertical: false)
                 .frame(height: 20)
-                .popover(isPresented: $showNoNamePopover, arrowEdge: .trailing) {
+                .popover(isPresented: $popoverNoName, arrowEdge: .trailing) {
                     Text("Enter a name")
                         .padding()
                 }
-                .popover(isPresented: $showDuplicatePopover, arrowEdge: .trailing) {
-                    // TODO: implement
+                .popover(isPresented: $popoverDuplicate, arrowEdge: .trailing) {
+#warning("Implement")
                     Text("Enter a unique name")
                         .padding()
                 }

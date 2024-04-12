@@ -19,6 +19,7 @@ struct FabricMeta {
             
             guard let httpResponse = response as? HTTPURLResponse, 200..<300 ~= httpResponse.statusCode else {
                 logger.error("Received invalid status code from fabric meta while fetching profile")
+                
                 throw FabricMetaError.loaderVersionsInvalidResponse
             }
             
@@ -26,10 +27,13 @@ struct FabricMeta {
                 return try JSONDecoder().decode([FabricLoaderVersion].self, from: data)
             } catch {
                 logger.error("Received malformed response from fabric meta while fetching profile", error: error)
+                
                 throw FabricMetaError.loaderVersionsInvalidResponse
             }
+            
         } catch let err as FabricMetaError {
             throw err
+            
         } catch {
             throw FabricMetaError.loaderVersionsCouldNotConnect
         }
@@ -50,10 +54,13 @@ struct FabricMeta {
                 return try JSONDecoder().decode(Version.self, from: data)
             } catch {
                 logger.error("Received malformed response from fabric meta while fetching profile", error: error)
+                
                 throw FabricMetaError.profileInvalidResponse
             }
+            
         } catch let err as FabricMetaError {
             throw err
+            
         } catch {
             throw FabricMetaError.profileCouldNotConnect
         }

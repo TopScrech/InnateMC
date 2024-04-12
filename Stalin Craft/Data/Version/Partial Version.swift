@@ -22,7 +22,16 @@ struct PartialVersion: Codable, Hashable, Identifiable {
     }
     
     static func createBlank() -> PartialVersion {
-        PartialVersion(id: "no", version: "no", type: "no", url: "no", time: "no", releaseTime: "no", sha1: "no", complianceLevel: 0)
+        PartialVersion(
+            id: "no", 
+            version: "no",
+            type: "no",
+            url: "no",
+            time: "no",
+            releaseTime: "no",
+            sha1: "no",
+            complianceLevel: 0
+        )
     }
     
     init(id: String, version: String, type: String, url: String, time: String, releaseTime: String, sha1: String, complianceLevel: Int) {

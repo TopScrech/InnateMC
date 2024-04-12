@@ -1,5 +1,3 @@
-import Foundation
-
 @propertyWrapper
 struct RunOnce {
     private var hasRun = false

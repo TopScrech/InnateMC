@@ -1,5 +1,3 @@
-import Foundation
-
 struct Rule: Codable, Equatable {
     let action: ActionType
     let features: [String: Bool]?
@@ -22,14 +20,14 @@ struct Rule: Codable, Equatable {
         }
     }
     
-    func matches(givenFeatures: [String:Bool]) -> Bool {
+    func matches(_ givenFeatures: [String: Bool]) -> Bool {
         var ok = true
         
         if let os {
             if let name = os.name {
                 ok = ok && name == .osx
             }
-            // TODO: implement
+#warning("Implement")
         }
         
         if let features {
@@ -47,7 +45,7 @@ extension Array where Element == Rule {
         var ok = true
         
         for rule in self where ok == true {
-            ok = ok && rule.matches(givenFeatures: givenFeatures)
+            ok = ok && rule.matches(givenFeatures)
         }
         
         return ok

@@ -1,4 +1,3 @@
-import CoreFoundation
 import Foundation
 
 struct MicrosoftAccessToken: Codable {
@@ -37,6 +36,10 @@ struct RawMicrosoftAccessToken: Codable {
     var expires_in: Int
     
     func convert() -> MicrosoftAccessToken {
-        MicrosoftAccessToken(token: access_token, expiresIn: expires_in, refreshToken: refresh_token)
+        MicrosoftAccessToken(
+            token: access_token, 
+            expiresIn: expires_in,
+            refreshToken: refresh_token
+        )
     }
 }

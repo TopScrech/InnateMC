@@ -6,28 +6,34 @@ struct PreferencesView: View {
     var body: some View {
         TabView(selection: $launcherData.selectedPreferenceTab) {
             RuntimePreferencesView()
+                .tag(PreferenceTab.runtime)
                 .tabItem {
                     Label("Runtime", systemImage: "cup.and.saucer")
                 }
-                .tag(SelectedPreferenceTab.runtime)
             
             AccountsPreferencesView()
+                .tag(PreferenceTab.accounts)
                 .tabItem {
                     Label("Accounts", systemImage: "person.circle")
                 }
-                .tag(SelectedPreferenceTab.accounts)
+            
+            ModToolsList()
+                .tag(PreferenceTab.modtools)
+                .tabItem {
+                    Label("Mod Tools", systemImage: "hammer")
+                }
             
             UiPreferencesView()
-                .tag(SelectedPreferenceTab.ui)
+                .tag(PreferenceTab.ui)
                 .tabItem {
                     Label("UI", systemImage: "paintbrush.pointed")
                 }
             
             MiscPreferencesView()
+                .tag(PreferenceTab.misc)
                 .tabItem {
                     Label("Misc", systemImage: "slider.horizontal.3")
                 }
-                .tag(SelectedPreferenceTab.misc)
         }
         .onAppear {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {

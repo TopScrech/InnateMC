@@ -4,7 +4,7 @@ extension AccountManager {
     static func load() throws -> AccountManager {
         let manager = AccountManager()
         
-        // TODO: error handling
+#warning("Error handling")
         if let data = try FileHandler.getData(AccountManager.accountsPath) {
             let plist: [String:Any] = try PropertyListSerialization.propertyList(from: data, format: nil) as! [String:Any]
             

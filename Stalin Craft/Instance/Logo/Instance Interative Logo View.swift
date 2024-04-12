@@ -1,15 +1,17 @@
 import SwiftUI
 
 struct InstanceInterativeLogoView: View {
-    @EnvironmentObject private var launcherData: LauncherData
     @StateObject var instance: Instance
+    @EnvironmentObject private var launcherData: LauncherData
     
     @Binding var sheetLogo: Bool
     @Binding var logoHovered: Bool
     
+    private var size: CGFloat {
+        launcherData.globalPreferences.ui.compactInstanceLogo ? 64 : 128
+    }
+    
     var body: some View {
-        let size = launcherData.globalPreferences.ui.compactInstanceLogo ? 64.0 : 128.0
-        
         InstanceLogoView(instance: instance)
             .frame(width: size, height: size)
             .padding(20)

@@ -759,6 +759,9 @@
         }
       }
     },
+    "Mod Tools" : {
+
+    },
     "Modrinth" : {
       "extractionState" : "manual",
       "localizations" : {
@@ -1188,6 +1191,9 @@
           }
         }
       }
+    },
+    "Unstable versions" : {
+
     },
     "Unstar" : {
       "extractionState" : "manual",

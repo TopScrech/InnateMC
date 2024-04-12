@@ -3,7 +3,7 @@ import SwiftUI
 struct InstanceLogoSheet: View {
     @StateObject var instance: Instance
     
-    @Binding var sheetLogo: Bool
+    @Environment(\.dismiss) private var dismiss
     
     var body: some View {
         VStack {
@@ -21,7 +21,7 @@ struct InstanceLogoSheet: View {
             
             Button("Done") {
                 withAnimation {
-                    sheetLogo = false
+                    dismiss()
                 }
             }
             .padding()

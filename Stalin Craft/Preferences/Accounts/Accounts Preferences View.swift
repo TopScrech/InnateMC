@@ -40,7 +40,8 @@ struct AccountsPreferencesView: View {
                     selectedAccountIds = []
                     
                     DispatchQueue.global(qos: .utility).async {
-                        launcherData.accountManager.saveThrow() // TODO: handle error
+#warning("Handle error")
+                        launcherData.accountManager.saveThrow()
                     }
                 }
                 .disabled(selectedAccountIds.isEmpty)
@@ -73,7 +74,8 @@ struct AccountsPreferencesView: View {
                 launcherData.accountManager.accounts[acc.id] = acc
                 
                 DispatchQueue.global(qos: .utility).async {
-                    launcherData.accountManager.saveThrow() // TODO: handle error
+#warning("Handle error")
+                    launcherData.accountManager.saveThrow()
                 }
             }
         }

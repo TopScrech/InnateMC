@@ -15,8 +15,9 @@ struct MicrosoftAccount: MinecraftAccount {
         UUID(uuidString: hyphenateUuid(profile.id))!
     }
     
+#warning("decode JWT?")
     var xuid: String {
-        username // TODO: decode JWT?
+        username
     }
     
     init(profile: MinecraftProfile, token: MicrosoftAccessToken) {

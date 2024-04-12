@@ -9,7 +9,7 @@ struct InstanceDuplicationSheet: View {
     
     var body: some View {
         VStack {
-            // TODO: allow selecting what and what not to duplicate
+#warning("Allow selecting what and what not to duplicate")
             Form {
                 TextField("Name", text: $newName)
                     .textFieldStyle(.roundedBorder)
@@ -46,7 +46,8 @@ struct InstanceDuplicationSheet: View {
             }
         }
         .onAppear {
-            newName = "Copy of \(instance.name)" // TODO: localize
+#warning("localize")
+            newName = "Copy of \(instance.name)"
         }
     }
 }

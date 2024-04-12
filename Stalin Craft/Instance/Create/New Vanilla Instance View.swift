@@ -3,10 +3,10 @@ import SwiftUI
 struct NewVanillaInstanceView: View {
     @EnvironmentObject private var launcherData: LauncherData
     
+    @Environment(\.dismiss) private var dismiss
+    
     @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
     @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("New Instance", comment: "New Instance")
-    
-    @Binding var sheetNewInstance: Bool
     
     @State var versionManifest: [PartialVersion] = []
     @State var showSnapshots = false
@@ -32,7 +32,7 @@ struct NewVanillaInstanceView: View {
                             .padding()
                     }
                     .popover(isPresented: $popoverDuplicateName, arrowEdge: .bottom) {
-                        // TODO: implement
+#warning("implement")
                         Text("Enter a unique name")
                             .padding()
                     }
@@ -60,14 +60,15 @@ struct NewVanillaInstanceView: View {
                 
                 HStack {
                     Button("Cancel") {
-                        sheetNewInstance = false
+                        dismiss()
                     }
                     .keyboardShortcut(.cancelAction)
                     
                     Button("Done") {
                         let trimmedName = name.trimmingCharacters(in: .whitespacesAndNewlines)
                         
-                        if trimmedName.isEmpty { // TODO: also check for spaces
+                        if trimmedName.isEmpty {
+#warning("Also check for spaces")
                             popoverNoName = true
                             return
                         }
@@ -92,7 +93,7 @@ struct NewVanillaInstanceView: View {
                             launcherData.instances.append(try instance.install())
                             name = NSLocalizedString("New Instance", comment: "New Instance")
                             cachedVersionId = ""
-                            sheetNewInstance = false
+                            dismiss()
                         } catch {
                             ErrorTracker.instance.error(
                                 error: error,
@@ -157,5 +158,5 @@ struct NewVanillaInstanceView: View {
 }
 
 #Preview {
-    NewVanillaInstanceView(sheetNewInstance: .constant(true))
+    NewVanillaInstanceView()
 }

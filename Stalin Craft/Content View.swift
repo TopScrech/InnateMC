@@ -58,7 +58,7 @@ struct ContentView: View {
                 }
             }
             .sheet($sheetNewInstance) {
-                NewInstanceView(showNewInstanceSheet: $sheetNewInstance)
+                NewInstanceView()
             }
             .sheet($sheetDeleteInstance) {
                 InstanceDeleteSheet(

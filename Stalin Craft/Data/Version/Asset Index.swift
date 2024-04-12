@@ -61,17 +61,17 @@ class AssetIndex: Codable {
             try fm.createDirectory(at: AssetIndex.indexesDir, withIntermediateDirectories: true)
         }
         
-        let indexFile = AssetIndex.indexesDir.appendingPathComponent(self.version + ".json", isDirectory: false)
+        let indexFile = AssetIndex.indexesDir.appendingPathComponent(version + ".json", isDirectory: false)
         
         if !fm.fileExists(atPath: indexFile.path) {
-            fm.createFile(atPath: indexFile.path, contents: self.jsonData)
+            fm.createFile(atPath: indexFile.path, contents: jsonData)
         }
     }
     
     func getAssetsAsTasks() -> [DownloadTask] {
         var tasks: [DownloadTask] = []
         
-        for (_, v) in self.objects {
+        for (_, v) in objects {
             let hash = v["hash"]!
             let fromIndex = hash.index(hash.startIndex, offsetBy: 2)
             let hashPre = String(hash[..<fromIndex])

@@ -12,7 +12,8 @@ struct ImageLogoPickerView: View {
                 AsyncImage(url: instance.getLogoPath()) {
                     $0.resizable().scaledToFit()
                 } placeholder: {
-                    Image(systemName: "tray.circle").resizable()
+                    Image(systemName: "tray.circle")
+                        .resizable()
                 }
             }
             Button("Open") {
@@ -28,7 +29,7 @@ struct ImageLogoPickerView: View {
                     return
                 }
                 
-                // TODO: error handling
+#warning("Error handling")
                 let fm = FileManager.default
                 let logoPath = instance.getLogoPath()
                 

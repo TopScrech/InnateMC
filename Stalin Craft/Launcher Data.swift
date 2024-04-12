@@ -12,7 +12,7 @@ class LauncherData: ObservableObject {
     @Published var launchedInstances: [Instance: InstanceProcess] = [:]
     @Published var newInstanceRequested = false
     @Published var accountManager = AccountManager()
-    @Published var selectedPreferenceTab: SelectedPreferenceTab = .accounts
+    @Published var selectedPreferenceTab: PreferenceTab = .accounts
     @Published var versionManifest: [PartialVersion] = []
     
     @Published var instances:                [Instance] = []
@@ -60,6 +60,7 @@ class LauncherData: ObservableObject {
                 )
             }
         }
+        
         Task(priority: .high) {
             do {
                 let manifest = try await VersionManifest.getOrCreate()
@@ -149,12 +150,13 @@ class LauncherData: ObservableObject {
     }
 }
 
-// TODO: move
-enum SelectedPreferenceTab: Int {
+#warning("Move")
+enum PreferenceTab: Int {
     case runtime = 0,
          accounts = 1,
          game = 2,
          ui = 3,
          console = 4,
-         misc = 5
+         misc = 5,
+         modtools = 6
 }

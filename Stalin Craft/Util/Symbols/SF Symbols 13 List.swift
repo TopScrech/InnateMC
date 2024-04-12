@@ -1,5 +1,3 @@
-import Foundation
-
 struct SFSymbols13List {
     static func getAll() -> [String] {
         [

@@ -38,10 +38,10 @@ struct InstanceView: View {
                     VStack {
                         HStack {
                             InstanceTitleView(
-                                editingVM: editingVM, 
+                                editingVM: editingVM,
                                 instance: instance,
-                                showNoNamePopover: $popoverNoName,
-                                showDuplicatePopover: $popoverDuplicate,
+                                popoverNoName: $popoverNoName,
+                                popoverDuplicate: $popoverDuplicate,
                                 starHovered: $starHovered
                             )
                             
@@ -57,7 +57,7 @@ struct InstanceView: View {
                     }
                 }
                 .sheet($sheetLogo) {
-                    InstanceLogoSheet(instance: instance, sheetLogo: $sheetLogo)
+                    InstanceLogoSheet(instance: instance)
                 }
                 
                 HStack {
@@ -224,7 +224,7 @@ struct InstanceView: View {
                                 DispatchQueue.main.async {
                                     withAnimation {
                                         let process = InstanceProcess(
-                                            instance: instance, 
+                                            instance: instance,
                                             account: launcherData.accountManager.selectedAccount,
                                             accessToken: accessToken
                                         )

@@ -1,11 +1,9 @@
 import SwiftUI
 
 struct NewInstanceView: View {
-    @Binding var showNewInstanceSheet: Bool
-    
     var body: some View {
         TabView {
-            NewVanillaInstanceView(sheetNewInstance: $showNewInstanceSheet)
+            NewVanillaInstanceView()
                 .tabItem {
                     Text("Vanilla")
                 }
@@ -25,5 +23,5 @@ struct NewInstanceView: View {
 }
 
 #Preview {
-    NewInstanceView(showNewInstanceSheet: .constant(true))
+    NewInstanceView()
 }

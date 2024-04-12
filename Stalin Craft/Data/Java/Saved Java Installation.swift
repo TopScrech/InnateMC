@@ -2,8 +2,8 @@ import Foundation
 
 class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     static let systemDefault = SavedJavaInstallation(
-        javaHomePath: "/usr", 
-        javaVendor: "System Default", 
+        javaHomePath: "/usr",
+        javaVendor: "System Default",
         javaVersion: ""
     )
     
@@ -115,7 +115,8 @@ class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
         return "\(javaVersion) | \(javaVendor) at \(javaExecutable)"
     }
     
-    func getDebugString() -> String { // TODO: computed property? allows using a keypath in Table
+#warning("Computed property? Allows using a keypath in Table")
+    func getDebugString() -> String {
         if let javaVersion {
             if let javaVendor {
                 "\(javaVendor) \(javaVersion)"

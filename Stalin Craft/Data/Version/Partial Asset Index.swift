@@ -1,5 +1,3 @@
-import Foundation
-
 struct PartialAssetIndex: Codable, Equatable {
     static let none = PartialAssetIndex(id: "none", sha1: "", url: "")
     let id: String

@@ -38,15 +38,7 @@ struct InstanceRuntimeView: View {
             
             Spacer()
         }
-        .task {
-            getFabricVersions { versions in
-                if let versions {
-                    print("Received \(versions.count) versions")
-                } else {
-                    print("Failed to fetch or decode versions")
-                }
-            }
-            
+        .task {            
             valid = instance.preferences.runtime.valid
             selectedJava = instance.preferences.runtime.defaultJava
         }

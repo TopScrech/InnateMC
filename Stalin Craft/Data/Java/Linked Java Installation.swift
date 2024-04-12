@@ -23,7 +23,7 @@ extension LinkedJavaInstallation {
         p.standardOutput = pipe
         p.launch()
         
-        let data: Data = pipe.fileHandleForReading.readDataToEndOfFile()
+        let data = pipe.fileHandleForReading.readDataToEndOfFile()
         let installations = try decoder.decode([LinkedJavaInstallation].self, from: data)
         
         return installations

@@ -25,7 +25,8 @@ class InstanceProcess: ObservableObject  {
             "-Djava.library.path=\(instance.getPath().appendingPathComponent("natives").path)"
         ]
         
-        allArgs.append(contentsOf: instance.processArgsByRules(\.jvm, features: [:])) // TODO: fix
+#warning("Fix")
+        allArgs.append(contentsOf: instance.processArgsByRules(\.jvm, features: [:]))
         
         let mcArgs = ArgumentProvider()
         mcArgs.clientId(LauncherData.instance.accountManager.clientId)
@@ -47,8 +48,10 @@ class InstanceProcess: ObservableObject  {
         instance.appendClasspath(args: &allArgs)
         allArgs.append(instance.mainClass)
         
-        let mcArgsProcessed = mcArgs.accept(instance.processArgsByRules(\.game, features: [:])); // TODO: fix
+#warning("Fix")
+        let mcArgsProcessed = mcArgs.accept(instance.processArgsByRules(\.game, features: [:]))
         allArgs.append(contentsOf: mcArgsProcessed)
+        
         process.arguments = allArgs
         
         let outputPipe = Pipe()
@@ -90,7 +93,7 @@ class InstanceProcess: ObservableObject  {
 
 fileprivate extension Process {
     func getRunCommand() -> String {
-        var command = self.launchPath ?? ""
+        var command = launchPath ?? ""
         
         if let arguments {
             for arg in arguments {

@@ -101,7 +101,7 @@ extension Instance {
         let oldName = name
         
         DispatchQueue.global(qos: .userInteractive).async {
-            // TODO: handle the errors
+#warning("Handle the errors")
             let original = self.getPath()
             
             do {
