@@ -1,6 +1,6 @@
 import Foundation
 
-class VanillaInstanceCreator: InstanceCreator {
+final class VanillaInstanceCreator: InstanceCreator {
     let name: String
     let versionUrl: URL
     let sha1: String
@@ -16,7 +16,7 @@ class VanillaInstanceCreator: InstanceCreator {
     }
     
     func install() throws -> Instance {
-        let version = try Version.download(versionUrl, sha1: self.sha1)
+        let version = try Version.download(versionUrl, sha1: sha1)
         
         var libraries: [LibraryArtifact] = version.libraries
             .filter { lib in
@@ -29,14 +29,38 @@ class VanillaInstanceCreator: InstanceCreator {
         
         if let loggingConfig = version.logging {
             let path = loggingConfig.client.file.id
-            libraries.append(LibraryArtifact(path: path, url: loggingConfig.client.file.url, sha1: loggingConfig.client.file.sha1, size: loggingConfig.client.file.size))
-            arguments = arguments + Arguments(game: [], jvm: [.string("-Dlog4j.configurationFile=\(FileHandler.librariesFolder.appendingPathComponent(path).path)")])
+            
+            libraries.append(.init(path: path, url: loggingConfig.client.file.url, sha1: loggingConfig.client.file.sha1, size: loggingConfig.client.file.size))
+            
+            arguments = arguments + .init(
+                game: [],
+                jvm: [.string("-Dlog4j.configurationFile=\(FileHandler.librariesFolder.appendingPathComponent(path).path)")]
+            )
         }
         
-        let mcJar = MinecraftJar(type: .remote, url: version.downloads.client.url, sha1: version.downloads.client.sha1)
-        let logo = InstanceLogo(logoType: .builtin, string: "icon")
+        let mcJar = MinecraftJar(
+            type: .remote,
+            url: version.downloads.client.url,
+            sha1: version.downloads.client.sha1
+        )
         
-        let instance = Instance(name: self.name, assetIndex: version.assetIndex, libraries: libraries, mainClass: version.mainClass, minecraftJar: mcJar, isStarred: false, logo: logo, description: self.notes, debugString: version.id, arguments: version.arguments)
+        let logo = InstanceLogo(
+            logoType: .builtin,
+            string: "icon"
+        )
+        
+        let instance = Instance(
+            name: name,
+            assetIndex: version.assetIndex,
+            libraries: libraries,
+            mainClass: version.mainClass,
+            minecraftJar: mcJar,
+            isStarred: false,
+            logo: logo,
+            description: notes,
+            debugString: version.id,
+            arguments: version.arguments
+        )
         
         try instance.createAsNewInstance()
         

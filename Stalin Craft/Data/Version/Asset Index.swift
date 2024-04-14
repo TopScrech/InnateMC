@@ -1,6 +1,6 @@
 import Foundation
 
-class AssetIndex: Codable {
+final class AssetIndex: Codable {
     private static let indexesDir = FileHandler.assetsFolder.appendingPathComponent("indexes", isDirectory: true)
     private static let objectsDir = FileHandler.assetsFolder.appendingPathComponent("objects", isDirectory: true)
     let version: String

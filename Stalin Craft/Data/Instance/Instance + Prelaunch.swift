@@ -46,6 +46,7 @@ extension Instance {
         for nativeLibrary in nativeLibraries {
             extractTasks.append({
                 let nativeLibraryPath = nativeLibrary.getAbsolutePath()
+                
                 logger.info("Extracting natives in \(nativeLibraryPath.path)")
                 
                 Instance.extractNativesFrom(

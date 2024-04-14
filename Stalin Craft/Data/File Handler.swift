@@ -1,6 +1,6 @@
 import Foundation
 
-class FileHandler {
+final class FileHandler {
     static let instancesFolder = try! getOrCreateFolder("Instances")
     static let assetsFolder = try! getOrCreateFolder("Assets")
     static let librariesFolder = try! getOrCreateFolder("Libraries")

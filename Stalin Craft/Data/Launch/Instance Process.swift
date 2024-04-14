@@ -1,6 +1,6 @@
 import Foundation
 
-class InstanceProcess: ObservableObject  {
+final class InstanceProcess: ObservableObject  {
     @Published var process = Process()
     @Published var terminated = false
     @Published var logMessages: [String] = []

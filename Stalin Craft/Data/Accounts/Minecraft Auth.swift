@@ -11,6 +11,6 @@ struct MinecraftAuth: Codable {
             fatalError("Invalid XSTS auth response")
         }
         
-        self.identityToken = "XBL3.0 x=\(userHash);\(xboxAuthResponse.token)"
+        identityToken = "XBL3.0 x=\(userHash);\(xboxAuthResponse.token)"
     }
 }

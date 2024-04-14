@@ -1,6 +1,6 @@
 import Foundation
 
-class DownloadTask {
+final class DownloadTask {
     let sourceUrl: URL
     let filePath: URL
     let sha1: String?

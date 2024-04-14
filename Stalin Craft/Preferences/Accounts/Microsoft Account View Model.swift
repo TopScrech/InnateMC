@@ -1,6 +1,6 @@
 import SwiftUI
 
-class MicrosoftAccountVM: ObservableObject {
+final class MicrosoftAccountVM: ObservableObject {
     @Published var message: LocalizedStringKey = "Authenticating with Microsoft"
     @Published var error: MicrosoftAuthError = .noError
     

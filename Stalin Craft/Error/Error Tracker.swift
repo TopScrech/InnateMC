@@ -1,21 +1,21 @@
 import Cocoa
 
-class ErrorTracker: ObservableObject {
+final class ErrorTracker: ObservableObject {
     static var instance = ErrorTracker()
     
     @Published var errors: [ErrorTrackerEntry] = []
+    
+    private var windowControllerTemp: ErrorTrackerWindowController? = nil
     
     private var windowController: ErrorTrackerWindowController {
         if let windowControllerTemp {
             return windowControllerTemp
         }
         
-        self.windowControllerTemp = .init()
+        windowControllerTemp = .init()
         
-        return self.windowControllerTemp!
+        return windowControllerTemp!
     }
-    
-    private var windowControllerTemp: ErrorTrackerWindowController? = nil
     
     func error(error: Error? = nil, description: String) {
         if let error {
@@ -24,11 +24,11 @@ class ErrorTracker: ObservableObject {
             logger.error("\(description)")
         }
         
-        self.errors.append(ErrorTrackerEntry(type: .error, description: description, error: error, timestamp: CFAbsoluteTime()))
+        errors.append(.init(type: .error, description: description, error: error, timestamp: CFAbsoluteTime()))
     }
     
     func nonEssentialError(description: String) {
-        self.errors.append(ErrorTrackerEntry(type: .nonEssentialError, description: description, timestamp: CFAbsoluteTime()))
+        errors.append(.init(type: .nonEssentialError, description: description, timestamp: CFAbsoluteTime()))
     }
     
     func showWindow() {

@@ -1,6 +1,6 @@
 import Foundation
 
-private class PublishedWrapper<T> {
+private final class PublishedWrapper<T> {
     @Published private(set) var value: T
     
     init(_ value: Published<T>) {

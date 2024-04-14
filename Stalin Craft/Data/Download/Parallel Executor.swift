@@ -1,7 +1,7 @@
 import Foundation
 import CryptoKit
 
-class ParallelExecutor {
+final class ParallelExecutor {
     static func run(_ tasks: [() -> Void], progress: TaskProgress) {
         progress.current = 0
         progress.total = tasks.count

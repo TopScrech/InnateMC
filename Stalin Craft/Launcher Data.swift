@@ -1,6 +1,6 @@
 import SwiftUI
 
-class LauncherData: ObservableObject {
+final class LauncherData: ObservableObject {
     private static var currentInstance: LauncherData? = nil
     
     static var instance: LauncherData {
@@ -28,6 +28,7 @@ class LauncherData: ObservableObject {
         }
         
         initializedPreferenceListener = true
+        
         let preferencesWindow = NSApp.keyWindow
         
         NotificationCenter.default.addObserver(forName: NSWindow.willCloseNotification, object: preferencesWindow, queue: .main) { notification in

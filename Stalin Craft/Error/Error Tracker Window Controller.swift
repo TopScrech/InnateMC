@@ -1,6 +1,6 @@
 import SwiftUI
 
-class ErrorTrackerWindowController: NSWindowController {
+final class ErrorTrackerWindowController: NSWindowController {
     override func windowDidLoad() {
         window?.center()
         window?.makeKeyAndOrderFront(nil)

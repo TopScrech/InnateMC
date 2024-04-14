@@ -1,6 +1,6 @@
 import Foundation
 
-class LinkedJavaInstallation: Codable {
+final class LinkedJavaInstallation: Codable {
     let JVMArch:            String
     let JVMBundleID:        String
     let JVMEnabled:         Bool

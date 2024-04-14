@@ -1,6 +1,6 @@
 import Foundation
 
-class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
+final class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     static let systemDefault = SavedJavaInstallation(
         javaHomePath: "/usr",
         javaVendor: "System Default",
@@ -20,24 +20,24 @@ class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
     let installationType: InstallationType
     
     init(javaHomePath: String, javaVendor: String? = nil, javaVersion: String? = nil) {
-        self.javaExecutable = "\(javaHomePath)/bin/java"
+        javaExecutable = "\(javaHomePath)/bin/java"
         self.javaVendor = javaVendor
         self.javaVersion = javaVersion
-        self.installationType = .detected
+        installationType = .detected
     }
     
     init(javaExecutable: String) {
         self.javaExecutable = javaExecutable
-        self.javaVendor = nil
-        self.javaVersion = nil
-        self.installationType = .selected
+        javaVendor = nil
+        javaVersion = nil
+        installationType = .selected
     }
     
     init(linkedJavaInstallation: LinkedJavaInstallation) {
-        self.javaExecutable = "\(linkedJavaInstallation.JVMHomePath)/bin/java"
-        self.javaVendor = linkedJavaInstallation.JVMVendor
-        self.javaVersion = linkedJavaInstallation.JVMVersion
-        self.installationType = .detected
+        javaExecutable = "\(linkedJavaInstallation.JVMHomePath)/bin/java"
+        javaVendor = linkedJavaInstallation.JVMVendor
+        javaVersion = linkedJavaInstallation.JVMVersion
+        installationType = .detected
     }
     
     func setupAsNewVersion(launcherData: LauncherData) {

@@ -13,7 +13,7 @@ struct MicrosoftAccessToken: Codable {
     
     init(token: String, expiresIn: Int, refreshToken: String) {
         self.token = token
-        self.expiry = Int(CFAbsoluteTimeGetCurrent()) + expiresIn
+        expiry = Int(CFAbsoluteTimeGetCurrent()) + expiresIn
         self.refreshToken = refreshToken
     }
     

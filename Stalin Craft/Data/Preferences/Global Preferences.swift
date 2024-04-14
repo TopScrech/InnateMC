@@ -1,6 +1,6 @@
 import Foundation
 
-class GlobalPreferences: Codable, ObservableObject {
+final class GlobalPreferences: Codable, ObservableObject {
     @Published var runtime = RuntimePreferences()
     @Published var ui = UiPreferences()
 }

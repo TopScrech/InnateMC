@@ -84,6 +84,7 @@ extension Instance {
     func delete() {
         do {
             try FileManager.default.removeItem(at: getPath())
+            
             logger.info("Successfully deleted instance \(self.name)")
         } catch {
             logger.error("Error deleting instance \(name)", error: error)

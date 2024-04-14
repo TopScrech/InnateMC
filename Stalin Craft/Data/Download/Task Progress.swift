@@ -1,6 +1,6 @@
 import SwiftUI
 
-open class TaskProgress: ObservableObject {
+final class TaskProgress: ObservableObject {
     @Published var current = 0
     @Published var total = 1
     
@@ -20,7 +20,7 @@ open class TaskProgress: ObservableObject {
     }
     
     @MainActor
-    open func inc() {
+    func inc() {
         self.current += 1
         
         if self.current == self.total {

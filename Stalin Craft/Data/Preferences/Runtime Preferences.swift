@@ -1,6 +1,6 @@
 import Foundation
 
-class RuntimePreferences: Codable, ObservableObject {
+final class RuntimePreferences: Codable, ObservableObject {
     @Published var defaultJava: SavedJavaInstallation = .systemDefault
     @Published var minMemory = 1024
     @Published var maxMemory = 1024
@@ -12,11 +12,11 @@ class RuntimePreferences: Codable, ObservableObject {
     }
     
     init(_ prefs: RuntimePreferences) {
-        self.defaultJava = prefs.defaultJava
-        self.minMemory = prefs.minMemory
-        self.maxMemory = prefs.maxMemory
-        self.javaArgs = prefs.javaArgs
-        self.valid = prefs.valid
+        defaultJava = prefs.defaultJava
+        minMemory = prefs.minMemory
+        maxMemory = prefs.maxMemory
+        javaArgs = prefs.javaArgs
+        valid = prefs.valid
     }
     
     func invalidate() -> RuntimePreferences {

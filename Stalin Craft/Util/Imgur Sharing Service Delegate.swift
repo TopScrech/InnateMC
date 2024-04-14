@@ -1,6 +1,6 @@
 import Cocoa
 
-class ImgurSharingServiceDelegate: NSObject, NSSharingServicePickerDelegate {
+final class ImgurSharingServiceDelegate: NSObject, NSSharingServicePickerDelegate {
     lazy var image = NSImage(named: "imgurIcon")!
     
     func sharingServicePicker(

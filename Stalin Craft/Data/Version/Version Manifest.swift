@@ -1,6 +1,6 @@
 import Foundation
 
-class VersionManifest {
+final class VersionManifest {
     private static let cache = try! FileHandler.getOrCreateFolder().appendingPathComponent("ManifestCache.plist")
     private static var cached: [PartialVersion]? = nil
     private static let decoder = JSONDecoder()

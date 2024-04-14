@@ -20,7 +20,7 @@ struct AddOfflineAccountView: View {
             }
             
             HStack {
-                if !isValidMinecraftUsername(self.username) {
+                if !isValidMinecraftUsername(username) {
                     Image(systemName: "exclamationmark.triangle.fill")
                         .foregroundColor(.yellow)
                     

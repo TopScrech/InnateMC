@@ -1,6 +1,6 @@
 import Foundation
 
-class DownloadedJavaInstallation: Codable {
+final class DownloadedJavaInstallation: Codable {
     let version: String
     let path: String
 }

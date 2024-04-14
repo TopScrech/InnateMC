@@ -1,7 +1,7 @@
 import Foundation
 import Swifter
 
-class AccountManager: ObservableObject {
+final class AccountManager: ObservableObject {
     static let accountsPath = try! FileHandler.getOrCreateFolder().appendingPathComponent("Accounts.plist")
     static let plistEncoder = PropertyListEncoder()
     
@@ -20,6 +20,6 @@ class AccountManager: ObservableObject {
     var msAccountVM: MicrosoftAccountVM? = nil
     
     init() {
-        self.server = .init()
+        server = .init()
     }
 }

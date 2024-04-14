@@ -1,6 +1,6 @@
 import Foundation
 
-class ArgumentProvider {
+final class ArgumentProvider {
     var values: [String:String] = [:]
     
     init() {

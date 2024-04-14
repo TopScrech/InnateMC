@@ -1,7 +1,7 @@
 import SwiftUI
 import FileWatcher
 
-class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
+final class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     @Published var name: String
     
     var assetIndex: PartialAssetIndex
@@ -57,7 +57,7 @@ class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         self.minecraftJar = minecraftJar
         self.isStarred = isStarred
         self.logo = logo
-        self.notes = description
+        notes = description
         self.debugString = debugString
         self.arguments = arguments
     }

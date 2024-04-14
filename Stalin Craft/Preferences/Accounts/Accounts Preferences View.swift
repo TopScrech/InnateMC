@@ -28,7 +28,7 @@ struct AccountsPreferencesView: View {
                 .padding()
                 
                 Button("Add Microsoft Account") {
-                    msAccountVM.prepareAndOpenSheet(launcherData: self.launcherData)
+                    msAccountVM.prepareAndOpenSheet(launcherData: launcherData)
                 }
                 .padding()
                 
@@ -106,14 +106,14 @@ struct AccountsPreferencesView: View {
     AccountsPreferencesView()
 }
 
-class AdaptedAccount: Identifiable {
+final class AdaptedAccount: Identifiable {
     var id: UUID
     var username: String
     var type: MinecraftAccountType
     
     init(from acc: any MinecraftAccount) {
-        self.id = acc.id
-        self.username = acc.username
-        self.type = acc.type
+        id = acc.id
+        username = acc.username
+        type = acc.type
     }
 }

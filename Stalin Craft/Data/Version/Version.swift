@@ -129,29 +129,29 @@ struct Version: Decodable, Equatable {
         
         let unflattened =              try provider(parentId)
         let parent =                   try unflattened.flatten(provider: provider)
-        let newArguments =             parent.arguments + self.arguments
-        let newAssetIndex =            self.assetIndex.default(fallback: parent.assetIndex)
+        let newArguments =             parent.arguments + arguments
+        let newAssetIndex =            assetIndex.default(fallback: parent.assetIndex)
         let newAssets =                parent.assets
-        let newDownloads =             self.downloads | parent.downloads
-        let newLibraries =             parent.libraries + self.libraries
-        let newLogging =               self.logging == nil ? parent.logging : self.logging
-        let newMainClass =             self.mainClass == "none" ? parent.mainClass : self.mainClass
-        let newNewMinLauncherVersion = self.minimumLauncherVersion
-        let newType =                  self.type.isEmpty ? parent.type : self.type
+        let newDownloads =             downloads | parent.downloads
+        let newLibraries =             parent.libraries + libraries
+        let newLogging =               logging == nil ? parent.logging : logging
+        let newMainClass =             mainClass == "none" ? parent.mainClass : mainClass
+        let newNewMinLauncherVersion = minimumLauncherVersion
+        let newType =                  type.isEmpty ? parent.type : type
         
         return .init(
             arguments: newArguments,
             assetIndex: newAssetIndex,
             assets: newAssets,
-            complianceLevel: self.complianceLevel,
+            complianceLevel: complianceLevel,
             downloads: newDownloads,
-            id: self.id,
+            id: id,
             libraries: newLibraries,
             logging: newLogging,
             mainClass: newMainClass,
             minimumLauncherVersion: newNewMinLauncherVersion,
-            releaseTime: self.releaseTime,
-            time: self.time,
+            releaseTime: releaseTime,
+            time: time,
             type: newType,
             inheritsFrom: nil
         )
@@ -216,6 +216,7 @@ struct Version: Decodable, Equatable {
         print(String(data: data, encoding: .utf8)!)
         
         let rawVersion = try jsonDecoder.decode(Version.self, from: data)
+        
         return rawVersion
     }
 }

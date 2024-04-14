@@ -1,6 +1,6 @@
 import SwiftUI
 
-class InstanceEditingVM: ObservableObject {
+final class InstanceEditingVM: ObservableObject {
     @Published var inEditMode = false
     @Published var name = ""
     @Published var synopsis = ""
@@ -17,6 +17,7 @@ class InstanceEditingVM: ObservableObject {
         showNoNamePopover.wrappedValue = false
         showDuplicateNamePopover.wrappedValue = false
         inEditMode = false
+        
         instance.notes = notes == "" ? nil : notes
         instance.synopsis = synopsis == "" ? nil : synopsis
         
@@ -34,6 +35,7 @@ class InstanceEditingVM: ObservableObject {
             }
             
             instance.renameAsync(to: name)
+            
             logger.info("Successfully edited instance \(instance.name)")
         }
     }

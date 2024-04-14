@@ -14,7 +14,7 @@ struct InstanceDeleteSheet: View {
             
             HStack {
                 Button("Delete") {
-                    if let index = launcherData.instances.firstIndex(of: self.instanceToDelete) {
+                    if let index = launcherData.instances.firstIndex(of: instanceToDelete) {
                         if let selectedInstance {
                             if selectedInstance == instanceToDelete {
                                 self.selectedInstance = nil

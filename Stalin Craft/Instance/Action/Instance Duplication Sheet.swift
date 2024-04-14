@@ -18,7 +18,18 @@ struct InstanceDuplicationSheet: View {
             
             HStack {
                 Button("Duplicate") {
-                    let newInstance = Instance(name: newName, assetIndex: instance.assetIndex, libraries: instance.libraries, mainClass: instance.mainClass, minecraftJar: instance.minecraftJar, isStarred: false, logo: instance.logo, description: instance.notes, debugString: instance.debugString, arguments: instance.arguments)
+                    let newInstance = Instance(
+                        name: newName, 
+                        assetIndex: instance.assetIndex, 
+                        libraries: instance.libraries,
+                        mainClass: instance.mainClass,
+                        minecraftJar: instance.minecraftJar,
+                        isStarred: false,
+                        logo: instance.logo,
+                        description: instance.notes,
+                        debugString: instance.debugString,
+                        arguments: instance.arguments
+                    )
                     
                     DispatchQueue.global(qos: .userInteractive).async {
                         do {
