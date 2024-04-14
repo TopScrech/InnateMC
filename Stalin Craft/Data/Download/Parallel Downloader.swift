@@ -73,6 +73,7 @@ struct ParallelDownloader {
                             DispatchQueue.main.async {
                                 progress.inc()
                             }
+                            
                         } catch {
                             session.invalidateAndCancel()
                             
@@ -116,7 +117,7 @@ struct ParallelDownloader {
             .joined()
             
         } catch {
-            print("Failed to read file: \(error.localizedDescription)")
+            logger.error("Failed to read file", error: error)
             
             return nil
         }

@@ -11,10 +11,11 @@ func findFilePath(in directoryPath: String, fileName: String) -> String? {
             
             return filePath
         } else {
-            print("File not found")
+            logger.error("File not found")
         }
+        
     } catch {
-        print("Error reading contents of directory: \(error)")
+        logger.error("Error reading contents of directory", error: error)
     }
     
     return nil
@@ -84,7 +85,7 @@ struct Mod: Identifiable, Hashable {
                 do {
                     try fileManager.removeItem(at: tempDirURL)
                 } catch {
-                    print("Failed to remove temporary directory: \(error)")
+                    logger.error("Failed to remove temporary directory", error: error)
                 }
             }
             
@@ -102,7 +103,7 @@ struct Mod: Identifiable, Hashable {
                 )
             }
         } else {
-            print("Invalid file URL")
+            logger.error("Invalid file URL")
         }
         
         return .init(

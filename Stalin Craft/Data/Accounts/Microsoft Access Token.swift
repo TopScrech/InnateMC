@@ -20,6 +20,7 @@ struct MicrosoftAccessToken: Codable {
     static func fromJson(json data: Data) throws -> MicrosoftAccessToken {
         do {
             return try JSONDecoder().decode(RawMicrosoftAccessToken.self, from: data).convert()
+            
         } catch {
             throw MicrosoftAuthError.microsoftInvalidResponse
         }

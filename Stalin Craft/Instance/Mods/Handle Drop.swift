@@ -19,16 +19,17 @@ extension ModList {
                         try fileManager.moveItem(at: fileURL, to: targetURL)
                         instance.loadMods()
                         
-                        print("File copied successfully to \(targetURL.path)")
+                        logger.info("File copied successfully to \(targetURL.path)")
                     } catch {
-                        print("Failed to copy file: \(error)")
+                        logger.error("Failed to copy file", error: error)
                         
                         do {
                             _ = try fileManager.replaceItemAt(targetURL, withItemAt: fileURL)
                             instance.loadMods()
-                            print("File replaced successfully")
+                            
+                            logger.info("File replaced successfully")
                         } catch {
-                            print("Failed to replace file: \(error)")
+                            logger.error("Failed to replace file", error: error)
                         }
                     }
                 }

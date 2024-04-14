@@ -32,13 +32,14 @@ struct ConsoleTextView: NSViewRepresentable {
 }
 
 #Preview {
-    var ints = Array(1...10)
+    let ints = Array(1...10)
     let layoutManager = NSLayoutManager()
     
     let textContainer: NSTextContainer = {
-        var cont = NSTextContainer()
+        let cont = NSTextContainer()
         layoutManager.addTextContainer(cont)
         layoutManager.allowsNonContiguousLayout = true
+        
         return cont
     }()
     

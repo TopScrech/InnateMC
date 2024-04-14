@@ -71,6 +71,7 @@ class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
             DispatchQueue.global(qos: .utility).async {
                 do {
                     try launcherData.javaInstallations.save()
+                    
                 } catch {
                     logger.error("Could not save java runtime index", error: error)
                     
@@ -158,8 +159,10 @@ extension SavedJavaInstallation {
             let versions = try decoder.decode([SavedJavaInstallation].self, from: data)
             
             return versions
+            
         } catch {
             try FileManager.default.removeItem(at: filePath)
+            
             return []
         }
     }

@@ -22,6 +22,7 @@ extension DownloadedJavaInstallation {
             logger.info("Loaded \(versions.count) downloaded java installations")
             
             return versions
+            
         } catch {
             return []
         }

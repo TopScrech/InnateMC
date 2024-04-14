@@ -40,6 +40,7 @@ struct MicrosoftAccount: MinecraftAccount {
                 DispatchQueue.global(qos: .utility).async {
                     manager.saveThrow()
                 }
+                
             } catch let err as MicrosoftAuthError {
                 logger.error("Could not refresh token", error: err)
                 

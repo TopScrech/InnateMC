@@ -52,6 +52,7 @@ extension Instance {
                 )
                 
                 logger.notice("Disabling invalid instance at \(url.path)")
+                
                 try FileManager.default.moveItem(at: url, to: url.appendingPathExtension("_old"))
                 
                 continue
@@ -63,11 +64,7 @@ extension Instance {
         
         return instances
     }
-    
-    static func loadInstancesThrow() -> [Instance] {
-        try! loadInstances()
-    }
-    
+        
     func createAsNewInstance() throws {
         let instancePath = getPath()
         let fm = FileManager.default
@@ -78,6 +75,7 @@ extension Instance {
         }
         
         try fm.createDirectory(at: instancePath, withIntermediateDirectories: true)
+        
         try FileHandler.saveData(instancePath.appendingPathComponent("Instance.plist"), serialize())
         
         logger.info("Successfully created new instance \(self.name)")

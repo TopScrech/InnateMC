@@ -14,7 +14,7 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
         let data = fileHandle.availableData
         
         if let output = String(data: data, encoding: .utf8) {
-            //            print(output)
+            logger.debug("Output pipe: \(output)")
         }
     }
     
@@ -22,7 +22,7 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
         let data = fileHandle.availableData
         
         if let output = String(data: data, encoding: .utf8) {
-            //            print(output)
+            logger.debug("Error pipe: \(output)")
         }
     }
     
@@ -40,7 +40,7 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
             return decodeFabricModJson(path)
         }
     } catch {
-        print("Failed to start the unzip process: \(error)")
+        logger.error("Failed to start the unzip process", error: error)
     }
     
     return nil
@@ -48,7 +48,7 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
 
 func decodeFabricModJson(_ filePath: String) -> FabricMod? {
     guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
-        print("Failed to read file")
+        logger.error("Failed to read file")
         
         return nil
     }
@@ -56,9 +56,12 @@ func decodeFabricModJson(_ filePath: String) -> FabricMod? {
     let decoder = JSONDecoder()
     
     do {
-        return try decoder.decode(FabricMod.self, from: data)
+        let mod = try decoder.decode(FabricMod.self, from: data)
+        
+        return mod
+        
     } catch {
-        print("Failed to decode JSON: \(error)")
+        logger.error("Failed to decode JSON", error: error)
         
         return nil
     }

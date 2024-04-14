@@ -77,9 +77,12 @@ extension AccountManager {
             
             do {
                 let result = try JSONDecoder().decode(MinecraftAuthResponse.self, from: data)
+                
                 return result
+                
             } catch {
                 logger.error("Received malformed response from minecraft authentication server", error: error)
+                
                 throw MicrosoftAuthError.minecraftInvalidResponse
             }
             
@@ -110,6 +113,7 @@ extension AccountManager {
                 
             } catch {
                 logger.error("Received malformed response from xbox live authentication server", error: error)
+                
                 throw MicrosoftAuthError.xboxInvalidResponse
             }
             
@@ -175,6 +179,7 @@ extension AccountManager {
             
             do {
                 return try MicrosoftAccessToken.fromJson(json: data)
+                
             } catch {
                 logger.error("Received malformed response from microsoft authentication server", error: error)
                 
@@ -240,6 +245,7 @@ extension AccountManager {
             
             do {
                 return try JSONDecoder().decode(MinecraftProfile.self, from: data)
+                
             } catch {
                 logger.error("Received malformed response from minecraft profile server", error: error)
                 

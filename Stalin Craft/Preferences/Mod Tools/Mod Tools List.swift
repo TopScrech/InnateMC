@@ -27,7 +27,7 @@ struct ModToolsList: View {
                 if let versions {
                     fabricVersions = versions
                 } else {
-                    print("Failed to fetch or decode versions")
+                    logger.error("Failed to fetch or decode versions")
                 }
             }
         }

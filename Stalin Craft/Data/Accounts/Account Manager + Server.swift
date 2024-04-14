@@ -3,9 +3,9 @@ import Swifter
 
 extension AccountManager {
     func setupForAuth() {
-        self.serverThread = .init(label: "server")
+        serverThread = .init(label: "server")
         
-        self.server["/"] = { request in
+        server["/"] = { request in
             if let code = request.queryParams.first(where: { $0.0 == "code" })?.1, let state = request.queryParams.first(where: { $0.0 == "state" })?.1 {
                 if let cb = self.stateCallbacks[state] {
                     DispatchQueue.global().async {
@@ -14,6 +14,7 @@ extension AccountManager {
                 } else {
                     logger.warning("Received authentication redirect without callback being present, skipping")
                     logger.warning("Provided state: \(state)")
+                    
                     print(self.stateCallbacks)
                     
                     return HttpResponse.movedTemporarily("http://youtube.com/watch?v=dQw4w9WgXcQ")
@@ -35,10 +36,12 @@ extension AccountManager {
             }
         }
         
-        self.serverThread?.async {
+        serverThread?.async {
             do {
                 try self.server.start(1989)
+                
                 logger.info("Started authentication redirect handler server on port 1989")
+                
             } catch {
                 logger.error("Could not start authentication redirect handler server", error: error)
                 logger.error("Adding microsoft accounts support will be limited")

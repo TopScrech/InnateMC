@@ -27,6 +27,7 @@ extension GlobalPreferences {
         do {
             let data = try encoder.encode(self)
             try FileHandler.saveData(GlobalPreferences.filePath, data)
+            
         } catch {
             logger.error("Could not serialize preferences")
             

@@ -41,7 +41,7 @@ struct ModList: View {
                             instance.mods[index].path = newPath
                             instance.mods[index].enabled = newValue
                         } catch {
-                            print("Failed to update mod file: \(error)")
+                            logger.error("Failed to update mod file", error: error)
                         }
                     })
                 }

@@ -26,6 +26,7 @@ func getFabricVersions(completion: @escaping ([FabricVersion]?) -> Void) {
             let versions = try decoder.decode([FabricVersion].self, from: data)
             
             completion(versions)
+            
         } catch {
             completion(nil)
         }

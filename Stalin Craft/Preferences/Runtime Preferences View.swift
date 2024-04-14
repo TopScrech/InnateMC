@@ -64,6 +64,7 @@ struct RuntimePreferencesView: View {
                 
                 do {
                     url = try result.get()
+                    
                 } catch {
                     logger.error("Error importing java runtime: \(error.localizedDescription)")
                     return
