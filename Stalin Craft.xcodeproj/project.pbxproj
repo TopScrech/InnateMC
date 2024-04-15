@@ -840,7 +840,6 @@
 				6459E1212976FEDF006DB3A4 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
 				644D708929F3C80C0007C7F4 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
 				64FA2A902A0F73BD0042A4A7 /* XCRemoteSwiftPackageReference "swifter" */,
-				64E1F8CA2A0FC1AC006D68B6 /* XCRemoteSwiftPackageReference "Alamofire" */,
 				648445782A10C95100049986 /* XCRemoteSwiftPackageReference "async-http-client" */,
 				64FC5B272A5805FA009D0050 /* XCRemoteSwiftPackageReference "Zip" */,
 				64515B712A78DF34000D17A8 /* XCRemoteSwiftPackageReference "FileWatcher" */,
@@ -1372,14 +1371,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
-			};
-		};
-		64E1F8CA2A0FC1AC006D68B6 /* XCRemoteSwiftPackageReference "Alamofire" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/Alamofire/Alamofire";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 5.0.0;
 			};
 		};
 		64E900372935EC500035181B /* XCRemoteSwiftPackageReference "Preferences" */ = {
