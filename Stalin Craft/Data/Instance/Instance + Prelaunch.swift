@@ -11,7 +11,7 @@ extension Instance {
         
         if minecraftJar.type == .remote {
             let task = DownloadTask(
-                sourceUrl: minecraftJar.url!, 
+                sourceUrl: minecraftJar.url!,
                 filePath: getMcJarPath(),
                 sha1: minecraftJar.sha1
             )

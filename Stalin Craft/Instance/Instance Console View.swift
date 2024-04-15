@@ -1,20 +1,35 @@
 import ScrechKit
 
 struct InstanceConsoleView: View {
+    @EnvironmentObject private var launcherData: LauncherData
+    
     var instance: Instance
     
     @Binding var launchedInstanceProcess: InstanceProcess?
-    @EnvironmentObject private var launcherData: LauncherData
     
-    @State var launchedInstances: [Instance: InstanceProcess]? = nil
-    @State var logMessages: [String] = []
+    @State private var launchedInstances: [Instance: InstanceProcess]? = nil
+    @State private var logMessages: [String] = []
+    @State private var search = ""
+    
+    private var filteredLogs: [String] {
+        if search.isEmpty {
+            logMessages
+        } else {
+            logMessages.filter {
+                $0.contains(search)
+            }
+        }
+    }
     
     var body: some View {
         VStack {
+            TextField("Search", text: $search)
+                .textFieldStyle(.roundedBorder)
+            
             ScrollViewReader { proxy in
                 ScrollView {
                     LazyVStack(alignment: .leading, spacing: 8) {
-                        ForEach(logMessages, id: \.self) { message in
+                        ForEach(filteredLogs, id: \.self) { message in
                             Text(message)
                                 .font(.system(.body, design: .monospaced))
                                 .id(message)
