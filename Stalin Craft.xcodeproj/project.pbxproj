@@ -836,7 +836,6 @@
 			mainGroup = 64C334CC2922523500BB8570;
 			packageReferences = (
 				64E900372935EC500035181B /* XCRemoteSwiftPackageReference "Preferences" */,
-				649212BF293AF4120092E2DD /* XCRemoteSwiftPackageReference "swift-atomics" */,
 				6459E1212976FEDF006DB3A4 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
 				644D708929F3C80C0007C7F4 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
 				64FA2A902A0F73BD0042A4A7 /* XCRemoteSwiftPackageReference "swifter" */,
@@ -1360,14 +1359,6 @@
 		648445782A10C95100049986 /* XCRemoteSwiftPackageReference "async-http-client" */ = {
 			isa = XCRemoteSwiftPackageReference;
 			repositoryURL = "https://github.com/swift-server/async-http-client";
-			requirement = {
-				kind = upToNextMajorVersion;
-				minimumVersion = 1.0.0;
-			};
-		};
-		649212BF293AF4120092E2DD /* XCRemoteSwiftPackageReference "swift-atomics" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/apple/swift-atomics.git";
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
