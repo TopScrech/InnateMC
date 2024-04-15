@@ -5,7 +5,7 @@ struct InstanceRuntimeView: View {
     @EnvironmentObject private var launcherData: LauncherData
     
     @State var valid = false
-    @State var selectedJava = SavedJavaInstallation.systemDefault
+    @State var selectedJava: SavedJavaInstallation = .systemDefault
     
     var body: some View {
         VStack {
@@ -16,7 +16,7 @@ struct InstanceRuntimeView: View {
                 .padding(.bottom, 5)
                 
                 Picker("Java", selection: $selectedJava) {
-                    PickableJavaVersion(installation: SavedJavaInstallation.systemDefault)
+                    PickableJavaVersion(installation: .systemDefault)
                     
                     ForEach(launcherData.javaInstallations) {
                         PickableJavaVersion(installation: $0)

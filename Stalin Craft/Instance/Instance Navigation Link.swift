@@ -29,6 +29,7 @@ struct InstanceNavigationLink: View {
                             Image(systemName: "arrowtriangle.right.circle.fill")
                                 .foregroundColor(.green)
                                 .frame(width: 8, height: 8)
+                            
                         } else if instance.isStarred {
                             Image(systemName: "star.fill")
                                 .foregroundColor(.yellow)

@@ -13,10 +13,10 @@ final class RuntimePreferences: Codable, ObservableObject {
     
     init(_ prefs: RuntimePreferences) {
         defaultJava = prefs.defaultJava
-        minMemory = prefs.minMemory
-        maxMemory = prefs.maxMemory
-        javaArgs = prefs.javaArgs
-        valid = prefs.valid
+        minMemory =   prefs.minMemory
+        maxMemory =   prefs.maxMemory
+        javaArgs =    prefs.javaArgs
+        valid =       prefs.valid
     }
     
     func invalidate() -> RuntimePreferences {

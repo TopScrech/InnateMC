@@ -1,5 +1,3 @@
-import Foundation
-
 struct InstanceLogo: Codable {
     var logoType: LogoType
     var string: String
