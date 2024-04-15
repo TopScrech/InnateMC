@@ -835,7 +835,6 @@
 			);
 			mainGroup = 64C334CC2922523500BB8570;
 			packageReferences = (
-				64E900372935EC500035181B /* XCRemoteSwiftPackageReference "Preferences" */,
 				6459E1212976FEDF006DB3A4 /* XCRemoteSwiftPackageReference "SymbolPicker" */,
 				644D708929F3C80C0007C7F4 /* XCRemoteSwiftPackageReference "microsoft-authentication-library-for-objc" */,
 				64FA2A902A0F73BD0042A4A7 /* XCRemoteSwiftPackageReference "swifter" */,
@@ -1362,14 +1361,6 @@
 			requirement = {
 				kind = upToNextMajorVersion;
 				minimumVersion = 1.0.0;
-			};
-		};
-		64E900372935EC500035181B /* XCRemoteSwiftPackageReference "Preferences" */ = {
-			isa = XCRemoteSwiftPackageReference;
-			repositoryURL = "https://github.com/sindresorhus/Preferences";
-			requirement = {
-				kind = exactVersion;
-				version = 2.5.0;
 			};
 		};
 		64FA2A902A0F73BD0042A4A7 /* XCRemoteSwiftPackageReference "swifter" */ = {
