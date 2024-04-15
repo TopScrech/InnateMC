@@ -31,8 +31,8 @@ final class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
     var arguments: Arguments
     
     @Published var mods: [Mod] = []
-    @Published var screenshots: [Screenshot] = []
     @Published var worlds: [World] = []
+    @Published var screenshots: [Screenshot] = []
     
     var screenshotsWatcher: FileWatcher? = nil
     var modsWatcher:        FileWatcher? = nil
