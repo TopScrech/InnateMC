@@ -96,7 +96,7 @@ extension Instance {
         }
     }
     
-    func renameAsync(to newName: String) {
+    func rename(_ newName: String) {
         let oldName = name
         
         DispatchQueue.global(qos: .userInteractive).async {

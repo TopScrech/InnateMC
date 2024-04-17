@@ -4,6 +4,7 @@ final class ArgumentProvider {
     var values: [String:String] = [:]
     
     init() {
+        
     }
     
     func accept(_ str: [String]) -> [String] {

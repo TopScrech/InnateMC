@@ -1,9 +1,9 @@
 import Foundation
 
-final class InstanceProcess: ObservableObject  {
+final class InstanceProcess: ObservableObject {
     @Published var process = Process()
-    @Published var terminated = false
     @Published var logMessages: [String] = []
+    @Published private var terminated = false
     
     init(instance: Instance, account: any MinecraftAccount, accessToken: String = "nou") {
         var maxMemory = setting(\.runtime.maxMemory)
@@ -91,16 +91,17 @@ final class InstanceProcess: ObservableObject  {
     }
 }
 
+#warning("Unused")
 fileprivate extension Process {
     func getRunCommand() -> String {
         var command = launchPath ?? ""
-        
+
         if let arguments {
             for arg in arguments {
                 command += " \(arg)"
             }
         }
-        
+
         return command
     }
 }

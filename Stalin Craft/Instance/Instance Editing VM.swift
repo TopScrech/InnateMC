@@ -34,7 +34,7 @@ final class InstanceEditingVM: ObservableObject {
                 return
             }
             
-            instance.renameAsync(to: name)
+            instance.rename(name)
             
             logger.info("Successfully edited instance \(instance.name)")
         }
