@@ -1,4 +1,4 @@
-import SwiftUI
+import ScrechKit
 
 struct ContentView: View {
     @EnvironmentObject private var launcherData: LauncherData
@@ -86,6 +86,62 @@ struct ContentView: View {
                 .foregroundColor(.gray)
         }
         .bindInstanceFocusValue(selectedInstance)
+        .onDrop(of: [.fileURL], isTargeted: nil) { providers in
+            for provider in providers {
+                _ = provider.loadObject(ofClass: URL.self) { folderURL, error in
+                    
+                    if let error {
+                        logger.error("Error importing an instance", error: error)
+                    }
+                    
+                    guard let folderURL else {
+                        return
+                    }
+                    
+                    print("Dropped folder URL: \(folderURL)")
+                    let destinationURL = FileHandler.instancesFolder
+                    
+                    do {
+                        let fileManager = FileManager.default
+                        let destinationFolderURL = destinationURL.appendingPathComponent(folderURL.lastPathComponent)
+                        
+                        // Check if destination folder exists
+                        if fileManager.fileExists(atPath: destinationFolderURL.path) {
+                            try fileManager.removeItem(at: destinationFolderURL)
+                        }
+                        
+                        // Copy folder to destination
+                        try fileManager.copyItem(at: folderURL, to: destinationFolderURL)
+                        print("Folder successfully copied to \(FileHandler.instancesFolder)")
+                        
+                        do {
+                            let newInstance = try Instance.loadFromDirectory(folderURL)
+                            
+                            newInstance.name = folderURL.deletingPathExtension().lastPathComponent
+                            
+                            main {
+                                launcherData.instances.append(newInstance)
+                            }
+                        } catch {
+                            logger.error("Invalid instance imported")
+                            
+                            ErrorTracker.instance.error(
+                                error: error,
+                                description: "Invalid instance imported \(folderURL)"
+                            )
+                            
+                            logger.notice("Disabling invalid instance at \(folderURL.path)")
+                            
+                            try FileManager.default.moveItem(at: folderURL, to: folderURL.appendingPathExtension("_old"))
+                        }
+                    } catch {
+                        print("Error copying folder: \(error)")
+                    }
+                }
+            }
+            
+            return true
+        }
         .toolbar {
             ToolbarItemGroup(placement: .navigation) {
                 createTrailingToolbar()

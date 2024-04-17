@@ -19,9 +19,13 @@ extension Instance {
     }
     
     static func loadFromDirectory(_ url: URL) throws -> Instance {
-        try deserialize(FileHandler.getData(url.appendingPathComponent("Instance.plist"))!, path: url)
+        guard let data = try FileHandler.getData(url.appendingPathComponent("Instance.plist")) else {
+            throw NSError(domain: "", code: 228, userInfo: nil)
+        }
+        
+        return try deserialize(data, path: url)
     }
-    
+        
     static func loadInstances() throws -> [Instance] {
         var instances: [Instance] = []
         
