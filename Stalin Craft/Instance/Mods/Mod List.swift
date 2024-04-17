@@ -3,8 +3,8 @@ import ScrechKit
 struct ModList: View {
     @StateObject var instance: Instance
     
-    @State var selected: Set<Mod> = []
-    @State var sortOrder: [KeyPathComparator<Mod>] = [
+    @State private var selected: Set<Mod> = []
+    @State private var sortOrder: [KeyPathComparator<Mod>] = [
         .init(\.meta.name, order: .forward)
     ]
     

@@ -24,11 +24,20 @@ final class ErrorTracker: ObservableObject {
             logger.error("\(description)")
         }
         
-        errors.append(.init(type: .error, description: description, error: error, timestamp: CFAbsoluteTime()))
+        errors.append(.init(
+            type: .error,
+            description: description,
+            error: error,
+            timestamp: CFAbsoluteTime()
+        ))
     }
     
     func nonEssentialError(description: String) {
-        errors.append(.init(type: .nonEssentialError, description: description, timestamp: CFAbsoluteTime()))
+        errors.append(.init(
+            type: .nonEssentialError, 
+            description: description,
+            timestamp: CFAbsoluteTime()
+        ))
     }
     
     func showWindow() {

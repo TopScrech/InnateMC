@@ -8,16 +8,16 @@ struct NewVanillaInstanceView: View {
     @AppStorage("newVanillaInstance.cachedVersion") var cachedVersionId = ""
     @AppStorage("newVanillaInstance.cachedName") var name = NSLocalizedString("New Instance", comment: "New Instance")
     
-    @State var versionManifest: [PartialVersion] = []
-    @State var showSnapshots = false
-    @State var showBeta = false
-    @State var showAlpha = false
-    @State var selectedVersion = PartialVersion.createBlank()
-    @State var versions: [PartialVersion] = []
+    @State private var versionManifest: [PartialVersion] = []
+    @State private var showSnapshots = false
+    @State private var showBeta = false
+    @State private var showAlpha = false
+    @State private var selectedVersion = PartialVersion.createBlank()
+    @State private var versions: [PartialVersion] = []
     
-    @State var popoverNoName = false
-    @State var popoverDuplicateName = false
-    @State var popoverInvalidVersion = false
+    @State private var popoverNoName = false
+    @State private var popoverDuplicateName = false
+    @State private var popoverInvalidVersion = false
     
     var body: some View {
         VStack {

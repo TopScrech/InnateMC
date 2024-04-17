@@ -6,8 +6,8 @@ struct InstanceNavigationLink: View {
     
     @Binding var selectedInstance: Instance?
     
-    @State var starHovered = false
-    @State var sheetDelete = false
+    @State private var starHovered = false
+    @State private var sheetDelete = false
     
     var body: some View {
         NavigationLink {

@@ -4,8 +4,8 @@ struct InstanceRuntimeView: View {
     @StateObject var instance: Instance
     @EnvironmentObject private var launcherData: LauncherData
     
-    @State var valid = false
-    @State var selectedJava: SavedJavaInstallation = .systemDefault
+    @State private var valid = false
+    @State private var selectedJava: SavedJavaInstallation = .systemDefault
     
     var body: some View {
         VStack {

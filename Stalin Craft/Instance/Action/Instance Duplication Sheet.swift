@@ -5,7 +5,7 @@ struct InstanceDuplicationSheet: View {
     @EnvironmentObject private var launcherData: LauncherData
     @Environment(\.dismiss) private var dismiss
     
-    @State var newName = ""
+    @State private var newName = ""
     
     var body: some View {
         VStack {

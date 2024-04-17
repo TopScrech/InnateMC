@@ -3,7 +3,7 @@ import SwiftUI
 struct ErrorTrackerView: View {
     @StateObject var errorTracker: ErrorTracker
     
-    @State var selection: ErrorTrackerEntry? = nil
+    @State private var selection: ErrorTrackerEntry? = nil
     
     var body: some View {
         List(selection: $selection) {

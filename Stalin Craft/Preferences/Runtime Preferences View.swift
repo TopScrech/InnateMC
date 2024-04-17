@@ -3,11 +3,11 @@ import SwiftUI
 struct RuntimePreferencesView: View {
     @EnvironmentObject private var launcherData: LauncherData
     
-    @State var cachedDefaultJava = SavedJavaInstallation.systemDefault
-    @State var showFileImporter = false
+    @State private var cachedDefaultJava = SavedJavaInstallation.systemDefault
+    @State private var showFileImporter = false
     
     var body: some View {
-        VStack {
+        VStack {            
             Form {
                 Text(cachedDefaultJava.javaExecutable)
                     .frame(alignment: .center)

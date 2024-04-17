@@ -9,25 +9,25 @@ struct InstanceView: View {
         _instance = StateObject(wrappedValue: instance)
     }
     
-    @State var disabled = false
-    @State var starHovered = false
-    @State var logoHovered = false
-    @State var launchError: LaunchError? = nil
+    @State private var disabled = false
+    @State private var starHovered = false
+    @State private var logoHovered = false
+    @State private var launchError: LaunchError? = nil
     
-    @State var downloadSession: URLSession? = nil
-    @State var downloadMessage: LocalizedStringKey = "Downloading Libraries"
-    @State var downloadProgress = TaskProgress(current: 0, total: 1)
+    @State private var downloadSession: URLSession? = nil
+    @State private var downloadMessage: LocalizedStringKey = "Downloading Libraries"
+    @State private var downloadProgress = TaskProgress(current: 0, total: 1)
     
-    @State var progress: Float = 0
-    @State var launchedInstanceProcess: InstanceProcess? = nil
-    @State var indeterminateProgress = false
+    @State private var progress: Float = 0
+    @State private var launchedInstanceProcess: InstanceProcess? = nil
+    @State private var indeterminateProgress = false
     
-    @State var popoverNoName = false
-    @State var popoverDuplicate = false
-    @State var sheetError = false
-    @State var sheetPreLaunch = false
-    @State var sheetChooseAccount = false
-    @State var sheetLogo = false
+    @State private var popoverNoName = false
+    @State private var popoverDuplicate = false
+    @State private var sheetError = false
+    @State private var sheetPreLaunch = false
+    @State private var sheetChooseAccount = false
+    @State private var sheetLogo = false
     
     var body: some View {
         ZStack {

@@ -4,8 +4,9 @@ struct AddOfflineAccountView: View {
     @Environment(\.dismiss) private var dismiss
     
     @State var onCommit: (String) -> Void
-    @State var username = ""
-    @State var popoverBlank = false
+    
+    @State private var username = ""
+    @State private var popoverBlank = false
     
     var body: some View {
         VStack {

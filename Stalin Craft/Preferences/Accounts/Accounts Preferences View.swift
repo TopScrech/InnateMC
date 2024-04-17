@@ -4,11 +4,11 @@ struct AccountsPreferencesView: View {
     @StateObject private var msAccountVM = MicrosoftAccountVM()
     @EnvironmentObject private var launcherData: LauncherData
     
-    @State var cachedAccounts: [UUID: any MinecraftAccount] = [:]
-    @State var cachedAccountsOnly: [AdaptedAccount] = []
-    @State var selectedAccountIds: Set<UUID> = []
+    @State private var cachedAccounts: [UUID: any MinecraftAccount] = [:]
+    @State private var cachedAccountsOnly: [AdaptedAccount] = []
+    @State private var selectedAccountIds: Set<UUID> = []
     
-    @State var sheetAddOffline = false
+    @State private var sheetAddOffline = false
     
     var body: some View {
         VStack {

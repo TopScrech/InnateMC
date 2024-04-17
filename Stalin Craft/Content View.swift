@@ -5,17 +5,17 @@ struct ContentView: View {
     
     private static let nullUuid = UUID(uuidString: "00000000-0000-0000-0000-000000000000")!
     
-    @State var searchTerm = ""
-    @State var starredOnly = false
-    @State var isSidebarHidden = false
-    @State var selectedInstance: Instance? = nil
-    @State var selectedAccount = ContentView.nullUuid
-    @State var cachedAccounts: [AdaptedAccount] = []
+    @State private var searchTerm = ""
+    @State private var starredOnly = false
+    @State private var isSidebarHidden = false
+    @State private var selectedInstance: Instance? = nil
+    @State private var selectedAccount = ContentView.nullUuid
+    @State private var cachedAccounts: [AdaptedAccount] = []
     
-    @State var sheetNewInstance = false
-    @State var sheetDuplicateInstance = false
-    @State var sheetDeleteInstance = false
-    @State var sheetExportInstance = false
+    @State private var sheetCreate = false
+    @State private var sheetDuplicate = false
+    @State private var sheetDelete = false
+    @State private var sheetExport = false
     
     var body: some View {
         NavigationView {
@@ -57,19 +57,19 @@ struct ContentView: View {
                     }
                 }
             }
-            .sheet($sheetNewInstance) {
+            .sheet($sheetCreate) {
                 NewInstanceView()
             }
-            .sheet($sheetDeleteInstance) {
+            .sheet($sheetDelete) {
                 InstanceDeleteSheet(
                     selectedInstance: $selectedInstance,
                     instanceToDelete: selectedInstance!
                 )
             }
-            .sheet($sheetDuplicateInstance) {
+            .sheet($sheetDuplicate) {
                 InstanceDuplicationSheet(instance: selectedInstance!)
             }
-            .sheet($sheetExportInstance) {
+            .sheet($sheetExport) {
                 InstanceExportSheet(instance: selectedInstance!)
             }
             .onReceive(launcherData.$instances) { newValue in
@@ -169,13 +169,13 @@ struct ContentView: View {
         .help("Show starred instances")
         
         Button {
-            sheetNewInstance = true
+            sheetCreate = true
         } label: {
             Image(systemName: "plus")
         }
         .onReceive(launcherData.$newInstanceRequested) { req in
             if req {
-                sheetNewInstance = true
+                sheetCreate = true
                 launcherData.newInstanceRequested = false
             }
         }
@@ -184,7 +184,7 @@ struct ContentView: View {
     @ViewBuilder
     func createPrimaryToolbar() -> some View {
         Button {
-            sheetDeleteInstance = true
+            sheetDelete = true
         } label: {
             Image(systemName: "trash")
         }
@@ -192,7 +192,7 @@ struct ContentView: View {
         .help("Delete")
         
         Button {
-            sheetDuplicateInstance = true
+            sheetDuplicate = true
         } label: {
             Image(systemName: "doc.on.doc")
         }
@@ -200,7 +200,7 @@ struct ContentView: View {
         .help("Duplicate")
         
         Button {
-            sheetExportInstance = true
+            sheetExport = true
         } label: {
             Image(systemName: "square.and.arrow.up")
         }
