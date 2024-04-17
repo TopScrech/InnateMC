@@ -11,7 +11,7 @@ struct InstanceNavigationLink: View {
     
     var body: some View {
         NavigationLink {
-            InstanceView(instance: instance)
+            InstanceView(instance)
                 .padding(.top, 10)
         } label: {
             HStack {

@@ -5,6 +5,10 @@ struct InstanceView: View {
     @StateObject var instance: Instance
     @EnvironmentObject private var launcherData: LauncherData
     
+    init(_ instance: Instance) {
+        _instance = StateObject(wrappedValue: instance)
+    }
+    
     @State var disabled = false
     @State var starHovered = false
     @State var logoHovered = false
