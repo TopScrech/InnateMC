@@ -3,7 +3,6 @@ import Swifter
 
 final class AccountManager: ObservableObject {
     static let accountsPath = try! FileHandler.getOrCreateFolder().appendingPathComponent("Accounts.plist")
-    static let plistEncoder = PropertyListEncoder()
     
     let server: HttpServer
     var serverThread: DispatchQueue?

@@ -26,7 +26,7 @@ extension MinecraftAccount {
         hasher.combine(username)
     }
     
-    static func createFromDict(_ dict: [String:Any]) -> Self {
+    static func createFromDict(_ dict: [String: Any]) -> Self {
         let data = try! PropertyListSerialization.data(fromPropertyList: dict, format: .binary, options: 0)
         
         let decoded = try! minecraftAccountDecoder.decode(Self.self, from: data)

@@ -30,11 +30,11 @@ final class AssetIndex: Codable {
     }
     
     static func fromJson(_ jsonData: Data, version: String) throws -> AssetIndex {
-        let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [String:Any]
-        let objects = jsonObject["objects"] as! [String:Any]
+        let jsonObject = try JSONSerialization.jsonObject(with: jsonData, options: []) as! [String: Any]
+        let objects = jsonObject["objects"] as! [String: Any]
         
         let strs = objects.mapValues {
-            ($0 as! [String:Any]).mapValues { v -> String in
+            ($0 as! [String: Any]).mapValues { v -> String in
                 if let stringValue = v as? String {
                     return stringValue
                 } else if let numberValue = v as? NSNumber {

@@ -101,88 +101,36 @@ extension Instance {
         let original = self.getPath()
         
         DispatchQueue.global(qos: .userInteractive).async {
-            let original = self.getPath()
-            
             do {
-                // Step 1: Copy the original item to the new location
                 try FileManager.default.copyItem(at: original, to: Instance.getInstancePath(for: newName))
                 
-                DispatchQueue.main.async {
-                    self.name = newName  // Update the instance name
+                do {
+                    try FileManager.default.removeItem(at: original)
                     
-                    // Step 2: Attempt to remove the original item
-                    DispatchQueue.global(qos: .userInteractive).async {
-                        do {
-                            try FileManager.default.removeItem(at: original)
-                            logger.info("Successfully renamed instance \(oldName) to \(newName)")
-                            completion(true)
-                        } catch {
-                            logger.error("Error deleting old instance \(oldName) during rename", error: error)
-                            ErrorTracker.instance.error(
-                                error: error,
-                                description: "Error deleting old instance \(oldName) during rename"
-                            )
-                            completion(false)
-                        }
-                    }
+                    logger.info("Successfully renamed instance \(oldName) to \(newName)")
+                    self.name = newName
+                    
+                    completion(true)
+                } catch {
+                    logger.error("Error deleting old instance \(oldName) during rename", error: error)
+                    
+                    ErrorTracker.instance.error(
+                        error: error,
+                        description: "Error deleting old instance \(oldName) during rename"
+                    )
+                    
+                    completion(false)
                 }
             } catch {
                 logger.error("Error copying instance \(oldName) during rename", error: error)
+                
                 ErrorTracker.instance.error(
                     error: error,
                     description: "Error copying instance \(oldName) during rename"
                 )
+                
                 completion(false)
             }
         }
     }
-
-    
-//    func rename(_ newName: String, complition: @escaping (Bool) -> ()) {
-//        let oldName = name
-//        
-//        DispatchQueue.global(qos: .userInteractive).async {
-//            let original = self.getPath()
-//            
-//            do {
-//                try FileManager.default.copyItem(at: original, to: Instance.getInstancePath(for: newName))
-//                
-//                complition(true)
-//                
-//            } catch {
-//                logger.error("Error copying instance \(self.name) during rename", error: error)
-//                
-//                ErrorTracker.instance.error(
-//                    error: error,
-//                    description: "Error copying instance \(self.name) during rename"
-//                )
-//                
-//                complition(false)
-//            }
-//            
-//            DispatchQueue.main.async {
-//                self.name = newName
-//                
-//                DispatchQueue.global(qos: .userInteractive).async {
-//                    do {
-//                        try FileManager.default.removeItem(at: original)
-//                        
-//                        logger.info("Successfully renamed instance \(oldName) to \(newName)")
-//                        
-//                        complition(true)
-//                        
-//                    } catch {
-//                        logger.error("Error deleting old instance \(self.name) during rename", error: error)
-//                        
-//                        ErrorTracker.instance.error(
-//                            error: error,
-//                            description: "Error deleting old instance \(self.name) during rename"
-//                        )
-//                        
-//                        complition(false)
-//                    }
-//                }
-//            }
-//        }
-//    }
 }

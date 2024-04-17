@@ -6,7 +6,7 @@ extension AccountManager {
         
 #warning("Error handling")
         if let data = try FileHandler.getData(AccountManager.accountsPath) {
-            let plist = try PropertyListSerialization.propertyList(from: data, format: nil) as! [String:Any]
+            let plist = try PropertyListSerialization.propertyList(from: data, format: nil) as! [String: Any]
             
             var currentSelected: UUID? = nil
             
@@ -14,7 +14,7 @@ extension AccountManager {
                 currentSelected = UUID(uuidString: currentSelectedE)!
             }
             
-            let accounts = plist["Accounts"] as! [String:[String:Any]]
+            let accounts = plist["Accounts"] as! [String:[String: Any]]
             var deserializedAccounts: [UUID:any MinecraftAccount] = [:]
             
             for (_, account) in accounts {
@@ -45,16 +45,17 @@ extension AccountManager {
     }
     
     func saveThrow() {
-        var plist: [String:Any] = [:]
+        let encoder = PropertyListEncoder()
+        var plist: [String: Any] = [:]
         
         if let currentSelected {
             plist["Current"] = currentSelected.uuidString
         }
         
-        var accounts: [String:Any] = [:]
+        var accounts: [String: Any] = [:]
         
         for (thing, account) in self.accounts {
-            accounts[thing.uuidString] = try! PropertyListSerialization.propertyList(from: try! AccountManager.plistEncoder.encode(account), format: nil)
+            accounts[thing.uuidString] = try! PropertyListSerialization.propertyList(from: try encoder.encode(account), format: nil)
         }
         
         plist["Accounts"] = accounts
