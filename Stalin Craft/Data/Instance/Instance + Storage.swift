@@ -43,6 +43,8 @@ extension Instance {
             
             do {
                 instance = try Instance.loadFromDirectory(url)
+                
+                instance.name = url.deletingPathExtension().lastPathComponent
             } catch {
                 logger.error("Error loading instance at \(url.path)", error: error)
                 
@@ -108,6 +110,7 @@ extension Instance {
                     try FileManager.default.removeItem(at: original)
                     
                     logger.info("Successfully renamed instance \(oldName) to \(newName)")
+                    
                     self.name = newName
                     
                     completion(true)
