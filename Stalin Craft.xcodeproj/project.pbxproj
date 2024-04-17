@@ -659,11 +659,11 @@
 		64F7C5FC297D64920086ABC1 /* Instance */ = {
 			isa = PBXGroup;
 			children = (
+				64F7C5FD297D64A40086ABC1 /* Instance.swift */,
 				64A5150D29E2DED100AFE3AE /* Minecraft Jar.swift */,
 				64A5151529E2DF2300AFE3AE /* Instance Logo.swift */,
 				64A5151729E2DF3300AFE3AE /* File Type.swift */,
 				64A5151F29E2E6A300AFE3AE /* Instance Data.swift */,
-				64F7C5FD297D64A40086ABC1 /* Instance.swift */,
 				64A5151D29E2DFE000AFE3AE /* Instance + Prelaunch.swift */,
 				64A5151B29E2DFAD00AFE3AE /* Instance + Storage.swift */,
 				64F7C5FF297D64B50086ABC1 /* Instance Creator.swift */,

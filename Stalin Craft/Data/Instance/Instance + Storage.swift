@@ -1,4 +1,4 @@
-import Foundation
+import ScrechKit
 
 extension Instance {
     func save() throws {
@@ -42,9 +42,11 @@ extension Instance {
             let instance: Instance
             
             do {
-                instance = try Instance.loadFromDirectory(url)
+                let loadedInstance = try Instance.loadFromDirectory(url)
                 
-                instance.name = url.deletingPathExtension().lastPathComponent
+                loadedInstance.name = url.deletingPathExtension().lastPathComponent
+                
+                instance = loadedInstance
             } catch {
                 logger.error("Error loading instance at \(url.path)", error: error)
                 
@@ -66,7 +68,7 @@ extension Instance {
         
         return instances
     }
-        
+    
     func createAsNewInstance() throws {
         let instancePath = getPath()
         let fm = FileManager.default
@@ -111,7 +113,9 @@ extension Instance {
                     
                     logger.info("Successfully renamed instance \(oldName) to \(newName)")
                     
-                    self.name = newName
+                    main {
+                        self.name = newName
+                    }
                     
                     completion(true)
                 } catch {
