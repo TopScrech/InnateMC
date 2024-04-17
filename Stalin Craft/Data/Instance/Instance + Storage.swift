@@ -96,11 +96,10 @@ extension Instance {
         }
     }
     
-    func rename(_ newName: String) {
+    func rename(_ newName: String, complition: @escaping (Bool) -> ()) {
         let oldName = name
         
         DispatchQueue.global(qos: .userInteractive).async {
-#warning("Handle the errors")
             let original = self.getPath()
             
             do {
