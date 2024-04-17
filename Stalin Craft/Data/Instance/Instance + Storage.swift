@@ -101,6 +101,8 @@ extension Instance {
         let original = self.getPath()
         
         DispatchQueue.global(qos: .userInteractive).async {
+            let original = self.getPath()
+            
             do {
                 // Step 1: Copy the original item to the new location
                 try FileManager.default.copyItem(at: original, to: Instance.getInstancePath(for: newName))
