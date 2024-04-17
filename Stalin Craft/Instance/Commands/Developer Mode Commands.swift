@@ -1,32 +1,15 @@
 import SwiftUI
 
 struct DeveloperModeCommands: Commands {
-    @AppStorage("developerMode") var developerMode = true
+    @AppStorage("devMode") var devMode = true
     
     var body: some Commands {
         getCommands()
     }
     
-    func getCommands() -> some Commands {
-        if #available(macOS 13, *) {
-            return getNewCommands()
-        } else {
-            return getOldCommands()
-        }
-    }
-    
-    @CommandsBuilder
-    func getOldCommands() -> some Commands {
-        CommandMenu("Develop") {
-            if developerMode {
-                createView()
-            }
-        }
-    }
-    
     @ViewBuilder
     func createView() -> some View {
-        Button("Show console") {
+        Button("Open console") {
             Task {
                 let workspace = NSWorkspace.shared
                 let consoleURL = URL(fileURLWithPath: "/System/Applications/Utilities/Console.app")
@@ -35,7 +18,7 @@ struct DeveloperModeCommands: Commands {
                 
                 config.arguments = [appURL.path]
                 
-                try! await workspace.openApplication(at: consoleURL, configuration: config)
+                try await workspace.openApplication(at: consoleURL, configuration: config)
             }
         }
         
@@ -45,10 +28,9 @@ struct DeveloperModeCommands: Commands {
     }
     
     @CommandsBuilder
-    @available(macOS 13, *)
-    func getNewCommands() -> some Commands {
-        if developerMode {
-            CommandMenu("Develop") {
+    func getCommands() -> some Commands {
+        CommandMenu("Develop") {
+            if devMode {
                 createView()
             }
         }

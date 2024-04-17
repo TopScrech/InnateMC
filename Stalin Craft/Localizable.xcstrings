@@ -881,6 +881,9 @@
         }
       }
     },
+    "Open console" : {
+
+    },
     "Open in Finder" : {
       "extractionState" : "manual",
       "localizations" : {
