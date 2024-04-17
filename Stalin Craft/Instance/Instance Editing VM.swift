@@ -34,9 +34,13 @@ final class InstanceEditingVM: ObservableObject {
                 return
             }
             
-            instance.rename(name)
-            
-            logger.info("Successfully edited instance \(instance.name)")
+            instance.rename(name) { result in
+                if result {
+                    logger.info("Successfully edited instance \(instance.name)")
+                } else {
+                    logger.error("Error editing instance \(instance.name)")
+                }
+            }
         }
     }
 }
