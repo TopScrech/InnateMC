@@ -1,18 +1,18 @@
 import Foundation
 
 enum LaunchError: Error {
-    case errorDownloading(error: Error?),
-         invalidShaHash(error: Error?),
-         unknownError(error: Error?),
-         accessTokenFetchError(error: Error?),
-         errorCreatingFile(error: Error?)
+    case errorDownloading  (_ error: Error?),
+         invalidShaHash    (_ error: Error?),
+         unknown           (_ error: Error?),
+         accessTokenFetch  (_ error: Error?),
+         errorCreatingFile (_ error: Error?)
     
     var cause: Error? {
         switch(self) {
         case .errorDownloading(let error),
                 .invalidShaHash(let error),
-                .unknownError(let error),
-                .accessTokenFetchError(let error),
+                .unknown(let error),
+                .accessTokenFetch(let error),
                 .errorCreatingFile(let error):
             
             return error
@@ -27,10 +27,10 @@ enum LaunchError: Error {
         case .invalidShaHash(_):
             NSLocalizedString("Invalid SHA hash found", comment: "no u")
             
-        case .unknownError(_):
+        case .unknown(_):
             NSLocalizedString("An unknown error occurred while downloading. This is a bug!", comment: "no u")
             
-        case .accessTokenFetchError(_):
+        case .accessTokenFetch(_):
             NSLocalizedString("Couldn't fetch Minecraft access token", comment: "no u")
             
         case .errorCreatingFile(_):

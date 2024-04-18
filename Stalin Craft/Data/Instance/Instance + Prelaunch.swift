@@ -84,17 +84,13 @@ extension Instance {
                 do {
                     try fileManager.copyItem(at: fileURL, to: outputURL)
                 } catch {
-                    ErrorTracker.instance.error(
-                        description: "Failed to copy \(fileURL.path) to \(outputURL.path)"
-                    )
+                    ErrorTracker.instance.error("Failed to copy \(fileURL.path) to \(outputURL.path)", error)
                 }
             }
             
             try fileManager.removeItem(at: unzipDirectory)
         } catch {
-            ErrorTracker.instance.error(
-                description: "Failed to extract zip file: \(error)"
-            )
+            ErrorTracker.instance.error("Failed to extract zip file: \(error)", error)
         }
     }
     
@@ -119,7 +115,7 @@ extension Instance {
         do {
             index = try AssetIndex.get(version: assetIndex.id, urlStr: assetIndex.url)
         } catch {
-            onError(.errorDownloading(error: error))
+            onError(.errorDownloading(error))
             return nil
         }
         

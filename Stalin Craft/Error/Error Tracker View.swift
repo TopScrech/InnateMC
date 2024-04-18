@@ -3,6 +3,10 @@ import SwiftUI
 struct ErrorTrackerView: View {
     @StateObject var errorTracker: ErrorTracker
     
+    init(_ errorTracker: ErrorTracker) {
+        _errorTracker = StateObject(wrappedValue: errorTracker)
+    }
+    
     @State private var selection: ErrorTrackerEntry? = nil
     
     var body: some View {
@@ -40,11 +44,11 @@ struct ErrorTrackerView: View {
     let errorTracker = {
         let tracker = ErrorTracker()
         tracker.nonEssentialError(description: "Something happened!")
-        tracker.error(error: LaunchError.errorDownloading(error: nil), description: "Something bad happened!")
+        tracker.error("Something bad happened!", LaunchError.errorDownloading(nil))
         tracker.nonEssentialError(description: "Something happened but it wasn't that bad")
         
         return tracker
     }()
     
-    return ErrorTrackerView(errorTracker: errorTracker)
+    return ErrorTrackerView(errorTracker)
 }

@@ -88,17 +88,22 @@ struct NewVanillaInstanceView: View {
                         popoverDuplicateName = false
                         popoverInvalidVersion = false
                         
-                        let instance = VanillaInstanceCreator(name: trimmedName, versionUrl: URL(string: selectedVersion.url)!, sha1: selectedVersion.sha1, notes: nil, data: launcherData)
+                        let instance = VanillaInstanceCreator(
+                            name: trimmedName, 
+                            versionUrl: URL(string: selectedVersion.url)!,
+                            sha1: selectedVersion.sha1,
+                            notes: nil,
+                            data: launcherData
+                        )
+                        
                         do {
                             launcherData.instances.append(try instance.install())
                             name = NSLocalizedString("New Instance", comment: "New Instance")
                             cachedVersionId = ""
                             dismiss()
+                            
                         } catch {
-                            ErrorTracker.instance.error(
-                                error: error,
-                                description: "Error creating instance"
-                            )
+                            ErrorTracker.instance.error("Error creating instance", error)
                         }
                     }
                     .keyboardShortcut(.defaultAction)

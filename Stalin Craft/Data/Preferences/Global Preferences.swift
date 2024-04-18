@@ -31,10 +31,7 @@ extension GlobalPreferences {
         } catch {
             logger.error("Could not serialize preferences")
             
-            ErrorTracker.instance.error(
-                error: error,
-                description: "Could not serialize preferences"
-            )
+            ErrorTracker.instance.error("Could not serialize preferences", error)
         }
     }
 }

@@ -7,16 +7,14 @@ final class MicrosoftAccountVM: ObservableObject {
     @Published var sheetMicrosoftAccount = false
     
     @MainActor func error(_ error: MicrosoftAuthError) {
-        ErrorTracker.instance.error(
-            error: error,
-            description: NSLocalizedString("Caught error while adding Microsoft account", comment: "")
-        )
+        ErrorTracker.instance.error(NSLocalizedString("Caught error while adding Microsoft account", comment: ""), error)
         
         self.error = error
     }
     
     @MainActor func prepareAndOpenSheet(launcherData: LauncherData) {
         sheetMicrosoftAccount = true
+        
         launcherData.accountManager.msAccountVM = self
         launcherData.accountManager.createAuthWindow().showWindow(StalinCraftApp.self)
     }

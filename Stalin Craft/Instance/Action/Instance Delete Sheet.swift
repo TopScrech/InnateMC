@@ -22,6 +22,7 @@ struct InstanceDeleteSheet: View {
                         }
                         
                         let instance = launcherData.instances.remove(at: index)
+                        
                         instance.delete()
                     }
                     

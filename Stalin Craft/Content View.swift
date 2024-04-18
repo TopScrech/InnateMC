@@ -125,10 +125,7 @@ struct ContentView: View {
                         } catch {
                             logger.error("Invalid instance imported")
                             
-                            ErrorTracker.instance.error(
-                                error: error,
-                                description: "Invalid instance imported \(folderURL)"
-                            )
+                            ErrorTracker.instance.error("Invalid instance imported \(folderURL)", error)
                             
                             logger.notice("Disabling invalid instance at \(folderURL.path)")
                             

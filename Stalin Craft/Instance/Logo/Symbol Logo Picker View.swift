@@ -6,7 +6,7 @@ struct SymbolLogoPickerView: View {
     @Binding var logo: InstanceLogo
     
     var body: some View {
-        SymbolPicker(symbol: .init {
+        SymbolPicker(.init {
             if logo.logoType == .file {
                 return ""
             }

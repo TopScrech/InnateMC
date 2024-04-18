@@ -46,7 +46,7 @@ struct ParallelDownloader {
                         session.invalidateAndCancel()
                         
                         DispatchQueue.main.async {
-                            onError(.errorDownloading(error: error))
+                            onError(.errorDownloading(error))
                         }
                         
                         downloadGroup.leave()
@@ -57,7 +57,7 @@ struct ParallelDownloader {
                         do {
                             // Verify sha hash
                             if !checkHash(path: tempUrl, expected: task.sha1) {
-                                throw LaunchError.invalidShaHash(error: nil)
+                                throw LaunchError.invalidShaHash(nil)
                             }
                             
                             let fileManager = FileManager.default
@@ -83,7 +83,7 @@ struct ParallelDownloader {
                                 }
                             } else {
                                 DispatchQueue.main.async {
-                                    onError(.unknownError(error: error))
+                                    onError(.unknown(error))
                                 }
                             }
                         }

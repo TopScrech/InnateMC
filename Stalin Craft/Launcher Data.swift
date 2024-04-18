@@ -56,10 +56,7 @@ final class LauncherData: ObservableObject {
             } catch {
                 logger.error("Could not load instances", error: error)
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Could not load instances"
-                )
+                ErrorTracker.instance.error("Could not load instances", error)
             }
         }
         
@@ -77,10 +74,7 @@ final class LauncherData: ObservableObject {
                 logger.error("Could not load version manifest", error: error)
                 logger.error("Instance creation support is limited")
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Could not load version manifest"
-                )
+                ErrorTracker.instance.error("Could not load version manifest", error)
             }
         }
         
@@ -98,10 +92,7 @@ final class LauncherData: ObservableObject {
                 logger.error("Could not load preferences", error: error)
                 logger.error("Using default values")
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Could not load preferences"
-                )
+                ErrorTracker.instance.error("Could not load preferences", error)
             }
         }
         
@@ -119,10 +110,7 @@ final class LauncherData: ObservableObject {
                 logger.error("Could not load saved java runtimes", error: error)
                 logger.error("Instance launch support is limited")
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Could not load saved java runtimes"
-                )
+                ErrorTracker.instance.error("Could not load saved java runtimes", error)
             }
         }
         
@@ -141,10 +129,7 @@ final class LauncherData: ObservableObject {
                 logger.error("Could not load account manager", error: error)
                 logger.error("Accounts support is limited")
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Could not load account manager"
-                )
+                ErrorTracker.instance.error("Could not load account manager", error)
                 
                 self.accountManager.setupForAuth()
             }

@@ -220,10 +220,7 @@ final class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 do {
                     urls = try fm.contentsOfDirectory(at: folder, includingPropertiesForKeys: nil)
                 } catch {
-                    ErrorTracker.instance.error(
-                        error: error,
-                        description: "Error reading screenshots folder for instance \(name)"
-                    )
+                    ErrorTracker.instance.error("Error reading screenshots folder for instance \(name)", error)
                     
                     return
                 }
@@ -264,10 +261,7 @@ final class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 } catch {
                     logger.error("Error reading mods folder for instance \(name)", error: error)
                     
-                    ErrorTracker.instance.error(
-                        error: error,
-                        description: "Error reading mods folder for instance \(name)"
-                    )
+                    ErrorTracker.instance.error("Error reading mods folder for instance \(name)", error)
                     
                     return
                 }
@@ -309,10 +303,7 @@ final class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
                 } catch {
                     logger.error("Error reading mods folder for instance \(name)", error: error)
                     
-                    ErrorTracker.instance.error(
-                        error: error,
-                        description: "Error reading mods folder for instance \(name)"
-                    )
+                    ErrorTracker.instance.error("Error reading mods folder for instance \(name)", error)
                     
                     return
                 }

@@ -8,11 +8,13 @@ final class InstanceProcess: ObservableObject {
     init(instance: Instance, account: any MinecraftAccount, accessToken: String = "nou") {
         var maxMemory = setting(\.runtime.maxMemory)
         var minMemory = setting(\.runtime.minMemory)
+        
         var javaInstallation = setting(\.runtime.defaultJava)
         
         if instance.preferences.runtime.valid {
             maxMemory = setting(\.runtime.maxMemory, for: instance)
             minMemory = setting(\.runtime.minMemory, for: instance)
+            
             javaInstallation = setting(\.runtime.defaultJava, for: instance)
         }
         
@@ -92,16 +94,16 @@ final class InstanceProcess: ObservableObject {
 }
 
 #warning("Unused")
-fileprivate extension Process {
-    func getRunCommand() -> String {
-        var command = launchPath ?? ""
-
-        if let arguments {
-            for arg in arguments {
-                command += " \(arg)"
-            }
-        }
-
-        return command
-    }
-}
+//fileprivate extension Process {
+//    func getRunCommand() -> String {
+//        var command = launchPath ?? ""
+//        
+//        if let arguments {
+//            for arg in arguments {
+//                command += " \(arg)"
+//            }
+//        }
+//        
+//        return command
+//    }
+//}

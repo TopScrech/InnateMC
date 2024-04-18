@@ -75,10 +75,7 @@ final class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
                 } catch {
                     logger.error("Could not save java runtime index", error: error)
                     
-                    ErrorTracker.instance.error(
-                        error: error,
-                        description: "Could not save java runtime index"
-                    )
+                    ErrorTracker.instance.error("Could not save java runtime index", error)
                 }
             }
         }

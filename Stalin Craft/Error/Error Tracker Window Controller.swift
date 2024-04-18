@@ -7,8 +7,14 @@ final class ErrorTrackerWindowController: NSWindowController {
     }
     
     convenience init() {
-        let window = NSWindow(contentRect: NSRect(x: 0, y: 0, width: 400, height: 600), styleMask: [.titled, .resizable, .closable], backing: .buffered, defer: false)
-        window.contentView = NSHostingView(rootView: ErrorTrackerView(errorTracker: .instance))
+        let window = NSWindow(
+            contentRect: .init(x: 0, y: 0, width: 400, height: 600),
+            styleMask: [.titled, .resizable, .closable],
+            backing: .buffered,
+            defer: false
+        )
+        
+        window.contentView = NSHostingView(rootView: ErrorTrackerView(.instance))
         window.title = NSLocalizedString("errors", comment: "Errors")
         
         self.init(window: window)

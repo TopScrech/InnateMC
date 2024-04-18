@@ -34,14 +34,13 @@ struct InstanceDuplicationSheet: View {
                     DispatchQueue.global(qos: .userInteractive).async {
                         do {
                             try newInstance.createAsNewInstance()
+                            
                             logger.info("Successfully duplicated instance")
+                            
                         } catch {
                             logger.error("Could not duplicate instance \(newName)", error: error)
                             
-                            ErrorTracker.instance.error(
-                                error: error,
-                                description: "Could not duplicate instance \(newName)"
-                            )
+                            ErrorTracker.instance.error("Could not duplicate instance \(newName)", error)
                         }
                     }
                     

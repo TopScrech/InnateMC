@@ -2,43 +2,27 @@ import SwiftUI
 
 /// A simple and cross-platform SFSymbol picker for SwiftUI.
 struct SymbolPicker: View {
+    @Environment(\.presentationMode) private var presentationMode
+    
     private let symbols = SFSymbolsList.getAll()
     
-    private static var gridDimension: CGFloat {
-        48
-    }
-    
-    private static var symbolSize: CGFloat {
-        24
-    }
-    
-    private static var symbolCornerRadius: CGFloat {
-        8
-    }
-    
-    private static var unselectedItemBackgroundColor: Color {
-        .clear
-    }
-    
-    private static var selectedItemBackgroundColor: Color {
-        .accentColor
-    }
-    
-    private static var backgroundColor: Color {
-        .clear
-    }
+    private let symbolSize: CGFloat = 24
+    private let gridDimension: CGFloat = 48
+    private let symbolCornerRadius: CGFloat = 8
+    private let unselectedItemBackgroundColor: Color = .clear
+    private let selectedItemBackgroundColor: Color = .accentColor
+    private let ackgroundColor: Color = .clear
     
     // MARK: - Properties
     @Binding var symbol: String
-    @State private var searchText = ""
     
-    @Environment(\.presentationMode) private var presentationMode
+    @State private var searchText = ""
     
     // MARK: - Public Init
     /// Initializes `SymbolPicker` with a string binding that captures the raw value of
     /// user-selected SFSymbol.
     /// - Parameter symbol: String binding to store user selection.
-    init(symbol: Binding<String>) {
+    init(_ symbol: Binding<String>) {
         _symbol = symbol
     }
     
@@ -71,7 +55,7 @@ struct SymbolPicker: View {
     
     private var symbolGrid: some View {
         ScrollView {
-            LazyVGrid(columns: [GridItem(.adaptive(minimum: Self.gridDimension, maximum: Self.gridDimension))]) {
+            LazyVGrid(columns: [GridItem(.adaptive(minimum: gridDimension, maximum: gridDimension))]) {
                 ForEach(symbols.filter { searchText.isEmpty ? true : $0.localizedCaseInsensitiveContains(searchText) }, id: \.self) { thisSymbol in
                     Button {
                         symbol = thisSymbol
@@ -79,17 +63,17 @@ struct SymbolPicker: View {
                     } label: {
                         if thisSymbol == symbol {
                             Image(systemName: thisSymbol)
-                                .fontSize(Self.symbolSize)
-                                .frame(maxWidth: .infinity, minHeight: Self.gridDimension)
-                                .background(Self.selectedItemBackgroundColor)
-                                .cornerRadius(Self.symbolCornerRadius)
+                                .fontSize(symbolSize)
+                                .frame(maxWidth: .infinity, minHeight: gridDimension)
+                                .background(selectedItemBackgroundColor)
+                                .cornerRadius(symbolCornerRadius)
                                 .foregroundColor(.white)
                         } else {
                             Image(systemName: thisSymbol)
-                                .fontSize(Self.symbolSize)
-                                .frame(maxWidth: .infinity, minHeight: Self.gridDimension)
-                                .background(Self.unselectedItemBackgroundColor)
-                                .cornerRadius(Self.symbolCornerRadius)
+                                .fontSize(symbolSize)
+                                .frame(maxWidth: .infinity, minHeight: gridDimension)
+                                .background(unselectedItemBackgroundColor)
+                                .cornerRadius(symbolCornerRadius)
                                 .foregroundColor(.primary)
                         }
                     }
@@ -106,5 +90,5 @@ struct SymbolPicker: View {
 }
 
 #Preview {
-    SymbolPicker(symbol: .constant("square.and.arrow.up"))
+    SymbolPicker(.constant("square.and.arrow.up"))
 }

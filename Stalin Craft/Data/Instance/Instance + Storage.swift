@@ -54,10 +54,7 @@ extension Instance {
             } catch {
                 logger.error("Error loading instance at \(url.path)", error: error)
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Error loading instance at \(url.path)"
-                )
+                ErrorTracker.instance.error("Error loading instance at \(url.path)", error)
                 
                 logger.notice("Disabling invalid instance at \(url.path)")
                 
@@ -97,10 +94,7 @@ extension Instance {
         } catch {
             logger.error("Error deleting instance \(name)", error: error)
             
-            ErrorTracker.instance.error(
-                error: error,
-                description: "Error deleting instance \(name)"
-            )
+            ErrorTracker.instance.error("Error deleting instance \(name)", error)
         }
     }
     
@@ -125,20 +119,14 @@ extension Instance {
                 } catch {
                     logger.error("Error deleting old instance \(oldName) during rename", error: error)
                     
-                    ErrorTracker.instance.error(
-                        error: error,
-                        description: "Error deleting old instance \(oldName) during rename"
-                    )
+                    ErrorTracker.instance.error("Error deleting old instance \(oldName) during rename", error)
                     
                     completion(false)
                 }
             } catch {
                 logger.error("Error copying instance \(oldName) during rename", error: error)
                 
-                ErrorTracker.instance.error(
-                    error: error,
-                    description: "Error copying instance \(oldName) during rename"
-                )
+                ErrorTracker.instance.error("Error copying instance \(oldName) during rename", error)
                 
                 completion(false)
             }

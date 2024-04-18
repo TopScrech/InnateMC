@@ -25,7 +25,7 @@ struct InstanceView: View {
     @State private var popoverNoName = false
     @State private var popoverDuplicate = false
     @State private var sheetError = false
-    @State private var sheetPreLaunch = false
+    @State private var sheetPrelaunch = false
     @State private var sheetChooseAccount = false
     @State private var sheetLogo = false
     
@@ -115,7 +115,7 @@ struct InstanceView: View {
             .sheet($sheetError) {
                 LaunchErrorSheet(launchError: $launchError)
             }
-            .sheet($sheetPreLaunch, content: createPrelaunchSheet)
+            .sheet($sheetPrelaunch, content: createPrelaunchSheet)
             .sheet($sheetChooseAccount) {
                 InstanceChooseAccountSheet()
             }
@@ -125,7 +125,7 @@ struct InstanceView: View {
             .onReceive(launcherData.$launchRequestedInstances) { value in
                 if value.contains(where: { $0 == instance }) {
                     if launcherData.accountManager.currentSelected != nil {
-                        sheetPreLaunch = true
+                        sheetPrelaunch = true
                         downloadProgress.cancelled = false
                     } else {
                         sheetChooseAccount = true
@@ -184,7 +184,7 @@ struct InstanceView: View {
             Button("Abort") {
                 logger.info("Aborting instance launch")
                 downloadSession?.invalidateAndCancel()
-                sheetPreLaunch = false
+                sheetPrelaunch = false
                 downloadProgress.cancelled = true
                 downloadProgress = TaskProgress(current: 0, total: 1)
             }
@@ -235,12 +235,12 @@ struct InstanceView: View {
                                         
                                         launcherData.launchedInstances[instance] = process
                                         launchedInstanceProcess = process
-                                        sheetPreLaunch = false
+                                        sheetPrelaunch = false
                                     }
                                 }
                             } catch {
                                 DispatchQueue.main.async {
-                                    onPrelaunchError(.accessTokenFetchError(error: error))
+                                    onPrelaunchError(.accessTokenFetch(error))
                                 }
                             }
                         }
@@ -272,21 +272,15 @@ struct InstanceView: View {
         
         logger.error("Caught error during prelaunch", error: error)
         
-        ErrorTracker.instance.error(
-            error: error,
-            description: "Caught error during prelaunch"
-        )
+        ErrorTracker.instance.error("Caught error during prelaunch", error)
         
         if let cause = error.cause {
             logger.error("Cause", error: cause)
             
-            ErrorTracker.instance.error(
-                error: error,
-                description: "Causative error during prelaunch"
-            )
+            ErrorTracker.instance.error("Causative error during prelaunch", error)
         }
         
-        sheetPreLaunch = false
+        sheetPrelaunch = false
         sheetError = true
         downloadProgress.cancelled = true
         launchError = error

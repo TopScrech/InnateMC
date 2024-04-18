@@ -44,10 +44,7 @@ struct MicrosoftAccount: MinecraftAccount {
             } catch let err as MicrosoftAuthError {
                 logger.error("Could not refresh token", error: err)
                 
-                ErrorTracker.instance.error(
-                    error: err,
-                    description: NSLocalizedString("Could not refresh Microsoft account token", comment: "")
-                )
+                ErrorTracker.instance.error(NSLocalizedString("Could not refresh Microsoft account token", comment: ""), err)
                 
                 return "nou"
             }

@@ -15,8 +15,8 @@ struct LaunchErrorSheet: View {
                         if let launchError {
                             Text(launchError.localizedDescription)
                             
-                            if let err = launchError.cause {
-                                Text(err.localizedDescription)
+                            if let cause = launchError.cause {
+                                Text(cause.localizedDescription)
                             }
                         }
                     }

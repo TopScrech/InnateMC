@@ -13,11 +13,16 @@ struct ErrorTrackerEntry: Hashable {
         self.error = error
         self.timestamp = timestamp
         Self.counterGlobal += 1
-        self.counter = Self.counterGlobal
+        counter = Self.counterGlobal
     }
     
     init(type: TrackedErrorType, description: String, timestamp: Double) {
-        self.init(type: type, description: description, error: nil, timestamp: timestamp)
+        self.init(
+            type: type,
+            description: description,
+            error: nil,
+            timestamp: timestamp
+        )
     }
     
     static func == (lhs: ErrorTrackerEntry, rhs: ErrorTrackerEntry) -> Bool {
