@@ -7,9 +7,7 @@ func findFilePath(_ fileName: String, in directoryPath: String) -> String? {
         let items = try fileManager.contentsOfDirectory(atPath: directoryPath)
         
         if let foundFileName = items.first(where: { $0 == fileName }) {
-            let filePath = (directoryPath as NSString).appendingPathComponent(foundFileName)
-            
-            return filePath
+            return (directoryPath as NSString).appendingPathComponent(foundFileName)
         } else {
             logger.error("File not found")
         }
@@ -26,6 +24,7 @@ struct Mod: Identifiable, Hashable {
     var enabled: Bool
     var path: URL
     var meta: FabricMod?
+#warning("Universal meta for all mod types")
     
     static func == (lhs: Mod, rhs: Mod) -> Bool {
         lhs.path == rhs.path && lhs.enabled == rhs.enabled
