@@ -68,15 +68,11 @@ final class SavedJavaInstallation: Codable, Identifiable, ObservableObject {
                 launcherData.javaInstallations.append(self)
             }
             
-            DispatchQueue.global(qos: .utility).async {
-                do {
-                    try launcherData.javaInstallations.save()
-                    
-                } catch {
-                    logger.error("Could not save java runtime index", error: error)
-                    
-                    ErrorTracker.instance.error("Could not save java runtime index", error)
-                }
+            do {
+                try launcherData.javaInstallations.save()
+            } catch {
+                logger.error("Could not save java runtime index", error: error)
+                ErrorTracker.instance.error("Could not save java runtime index", error)
             }
         }
     }
@@ -154,12 +150,9 @@ extension SavedJavaInstallation {
         
         do {
             let versions = try decoder.decode([SavedJavaInstallation].self, from: data)
-            
             return versions
-            
         } catch {
             try FileManager.default.removeItem(at: filePath)
-            
             return []
         }
     }
@@ -175,7 +168,7 @@ extension SavedJavaInstallation: Hashable {
     }
 }
 
-extension Array where Element == SavedJavaInstallation {
+fileprivate extension Array where Element == SavedJavaInstallation {
     func save() throws {
         SavedJavaInstallation.encoder.outputFormat = .xml
         
@@ -185,7 +178,7 @@ extension Array where Element == SavedJavaInstallation {
     }
 }
 
-extension Array where Element == LinkedJavaInstallation {
+fileprivate extension Array where Element == LinkedJavaInstallation {
     func toSaved() -> [SavedJavaInstallation] {
         self.map {
             .init(linkedJavaInstallation: $0)

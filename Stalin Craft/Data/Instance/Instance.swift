@@ -315,3 +315,27 @@ final class Instance: Identifiable, Hashable, InstanceData, ObservableObject {
         }
     }
 }
+
+fileprivate extension Array where Element == URL {
+    func deserializeToMods() -> [Mod] {
+        self.filter(Mod.isValidMod).compactMap {
+            try? Mod.from(url: $0)
+        }
+    }
+    
+    func deserializeToScreenshots() -> [Screenshot] {
+        self.filter {
+            $0.isValidImageURL()
+        }
+        .map(Screenshot.init)
+    }
+    
+    func deserializeToWorlds() -> [World] {
+        self.filter {
+            $0.hasDirectoryPath
+        }
+        .compactMap {
+            .init(folder: $0.lastPathComponent)
+        }
+    }
+}

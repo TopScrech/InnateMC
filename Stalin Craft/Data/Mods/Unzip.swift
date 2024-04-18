@@ -6,22 +6,20 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
         return nil
     }
     
-    let fabricMod = "fabric.mod.json"
-    
     do {
         let unzip = try Zip.quickUnzipFile(url).path
         
-        if let path = findFilePath(fabricMod, in: unzip) {
-            return decodeFabricModJson(path)
+        if let path = findFilePath("fabric.mod.json", in: unzip) {
+            return decodeFabricMod(path)
         }
     } catch {
-        logger.error("Failed to start the unzip process", error: error)
+        logger.error("Failed to unzip", error: error)
     }
     
     return nil
 }
 
-func decodeFabricModJson(_ filePath: String) -> FabricMod? {
+func decodeFabricMod(_ filePath: String) -> FabricMod? {
     guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
         logger.error("Failed to read file")
         
@@ -32,12 +30,9 @@ func decodeFabricModJson(_ filePath: String) -> FabricMod? {
     
     do {
         let mod = try decoder.decode(FabricMod.self, from: data)
-        
         return mod
-        
     } catch {
         logger.error("Failed to decode JSON", error: error)
-        
         return nil
     }
 }

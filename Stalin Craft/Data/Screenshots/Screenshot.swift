@@ -12,15 +12,6 @@ struct Screenshot: Hashable, Comparable {
     }
 }
 
-extension Array where Element == URL {
-    func deserializeToScreenshots() -> [Screenshot] {
-        self.filter {
-            $0.isValidImageURL()
-        }
-        .map(Screenshot.init)
-    }
-}
-
 extension URL {
     func isValidImageURL() -> Bool {
         let validExtensions = ["jpg", "jpeg", "png", "gif"]

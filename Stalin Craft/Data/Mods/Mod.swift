@@ -26,7 +26,6 @@ struct Mod: Identifiable, Hashable {
     var enabled: Bool
     var path: URL
     var meta: FabricMod?
-//    var meta: Mod.Metadata
     
     static func == (lhs: Mod, rhs: Mod) -> Bool {
         lhs.path == rhs.path && lhs.enabled == rhs.enabled
@@ -40,12 +39,6 @@ struct Mod: Identifiable, Hashable {
         hasher.combine(enabled)
         hasher.combine(path)
         hasher.combine(meta?.name)
-    }
-    
-    struct Metadata {
-        let name: String
-        let description: String
-        let version: String
     }
     
     static func isValidMod(url: URL) -> Bool {
@@ -98,12 +91,7 @@ struct Mod: Identifiable, Hashable {
                 return .init(
                     enabled: isEnabled(url),
                     path: url,
-                    meta: .init(
-                        fabric
-//                        name: fabric.name,
-//                        description: fabric.description,
-//                        version: fabric.version
-                    )
+                    meta: fabric
                 )
             }
         } else {
@@ -114,18 +102,6 @@ struct Mod: Identifiable, Hashable {
             enabled: isEnabled(url),
             path: url,
             meta: nil
-//                    .init(
-//                name: url.lastPathComponent,
-//                description: "Error"
-//            )
         )
-    }
-}
-
-extension Array where Element == URL {
-    func deserializeToMods() -> [Mod] {
-        self.filter(Mod.isValidMod).compactMap {
-            try? Mod.from(url: $0)
-        }
     }
 }
