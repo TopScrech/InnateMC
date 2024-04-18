@@ -1,6 +1,6 @@
 import Foundation
 
-func findFilePath(in directoryPath: String, fileName: String) -> String? {
+func findFilePath(_ fileName: String, in directoryPath: String) -> String? {
     let fileManager = FileManager.default
     
     do {
@@ -25,7 +25,8 @@ struct Mod: Identifiable, Hashable {
     var id: Mod { self }
     var enabled: Bool
     var path: URL
-    var meta: Mod.Metadata
+    var meta: FabricMod?
+//    var meta: Mod.Metadata
     
     static func == (lhs: Mod, rhs: Mod) -> Bool {
         lhs.path == rhs.path && lhs.enabled == rhs.enabled
@@ -38,12 +39,13 @@ struct Mod: Identifiable, Hashable {
     func hash(into hasher: inout Hasher) {
         hasher.combine(enabled)
         hasher.combine(path)
-        hasher.combine(meta.name)
+        hasher.combine(meta?.name)
     }
     
     struct Metadata {
         let name: String
         let description: String
+        let version: String
     }
     
     static func isValidMod(url: URL) -> Bool {
@@ -97,8 +99,10 @@ struct Mod: Identifiable, Hashable {
                     enabled: isEnabled(url),
                     path: url,
                     meta: .init(
-                        name: fabric.name,
-                        description: fabric.description
+                        fabric
+//                        name: fabric.name,
+//                        description: fabric.description,
+//                        version: fabric.version
                     )
                 )
             }
@@ -109,10 +113,11 @@ struct Mod: Identifiable, Hashable {
         return .init(
             enabled: isEnabled(url),
             path: url,
-            meta: .init(
-                name: url.lastPathComponent,
-                description: "Error"
-            )
+            meta: nil
+//                    .init(
+//                name: url.lastPathComponent,
+//                description: "Error"
+//            )
         )
     }
 }

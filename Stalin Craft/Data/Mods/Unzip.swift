@@ -1,42 +1,17 @@
 import ScrechKit
+import Zip
 
 func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
-    let process = Process()
-    let outputPipe = Pipe()
-    let errorPipe = Pipe()
-    
-    process.executableURL = URL(fileURLWithPath: "/usr/bin/env")
-    process.arguments = ["unzip", jarFilePath, "-d", destinationPath]
-    process.standardOutput = outputPipe
-    process.standardError = errorPipe
-    
-    outputPipe.fileHandleForReading.readabilityHandler = { fileHandle in
-        let data = fileHandle.availableData
-        
-        if let output = String(data: data, encoding: .utf8) {
-            logger.debug("Output pipe: \(output)")
-        }
+    guard let url = URL(string: jarFilePath) else {
+        return nil
     }
     
-    errorPipe.fileHandleForReading.readabilityHandler = { fileHandle in
-        let data = fileHandle.availableData
-        
-        if let output = String(data: data, encoding: .utf8) {
-            logger.debug("Error pipe: \(output)")
-        }
-    }
+    let fabricMod = "fabric.mod.json"
     
     do {
-        try process.run()
-        process.waitUntilExit()
+        let unzip = try Zip.quickUnzipFile(url).path
         
-        // Clean up
-        outputPipe.fileHandleForReading.readabilityHandler = nil
-        errorPipe.fileHandleForReading.readabilityHandler = nil
-        
-        let fileName = "fabric.mod.json"
-        
-        if let path = findFilePath(in: destinationPath, fileName: fileName) {
+        if let path = findFilePath(fabricMod, in: unzip) {
             return decodeFabricModJson(path)
         }
     } catch {

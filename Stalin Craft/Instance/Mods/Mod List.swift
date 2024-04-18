@@ -5,7 +5,7 @@ struct ModList: View {
     
     @State private var selected: Set<Mod> = []
     @State private var sortOrder: [KeyPathComparator<Mod>] = [
-        .init(\.meta.name, order: .forward)
+        .init(\.meta?.name, order: .forward)
     ]
     
     @State private var alertDelete = false
@@ -48,11 +48,17 @@ struct ModList: View {
                 .width(50)
                 
                 TableColumn("Name") { mod in
-                    Text(mod.meta.name)
+                    Text(mod.meta?.name ?? mod.path.deletingPathExtension().lastPathComponent)
                         .foregroundStyle(mod.enabled ? .primary : Color.red)
                 }
                 
-                TableColumn("Description", value: \.meta.description)
+                TableColumn("Description") { mod in
+                    Text(mod.meta?.description ?? "-")
+                }
+                
+                TableColumn("Version") { mod in
+                    Text(mod.meta?.version ?? "-")
+                }
                 
                 TableColumn("File", value: \.path.lastPathComponent)
             }
