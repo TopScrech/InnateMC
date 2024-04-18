@@ -50,11 +50,11 @@ extension Instance {
         var extractTasks: [() -> Void] = []
         
         for nativeLibrary in nativeLibraries {
-            extractTasks.append({
-                let nativeLibraryPath = nativeLibrary.getAbsolutePath()
-                
-                logger.info("Extracting natives in \(nativeLibraryPath.path)")
-                
+            let nativeLibraryPath = nativeLibrary.getAbsolutePath()
+            
+            logger.info("Extracting natives in \(nativeLibraryPath.path)")
+            
+            extractTasks.append ({
                 Instance.extractNativesFrom(
                     library: nativeLibraryPath,
                     output: self.getNativesFolder()
@@ -99,10 +99,8 @@ extension Instance {
     }
     
     func downloadLibs(progress: TaskProgress, onFinish: @escaping () -> Void, onError: @escaping (LaunchError) -> Void) -> URLSession {
-        let tasks = getLibrariesAsTasks()
-        
-        return ParallelDownloader.download(
-            tasks,
+        ParallelDownloader.download(
+            getLibrariesAsTasks(),
             progress: progress,
             onFinish: onFinish,
             onError: onError
