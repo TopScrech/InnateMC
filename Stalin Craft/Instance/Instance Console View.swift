@@ -58,7 +58,7 @@ struct InstanceConsoleView: View {
                     ZStack {
                         
                     }
-                    .onAppear {
+                    .task {
                         withAnimation {
                             proxy.scrollTo(logMessages.last, anchor: .bottom)
                         }

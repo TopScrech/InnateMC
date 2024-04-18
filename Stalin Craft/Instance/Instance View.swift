@@ -104,7 +104,7 @@ struct InstanceView: View {
                 .padding(4)
             }
             .padding(6)
-            .onAppear {
+            .task {
                 launcherData.launchRequestedInstances.removeAll {
                     $0 == instance
                 }
@@ -193,7 +193,7 @@ struct InstanceView: View {
             }
             .padding()
         }
-        .onAppear {
+        .task {
             onPrelaunchSheetAppear()
         }
         .padding(10)

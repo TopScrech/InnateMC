@@ -11,11 +11,3 @@ struct Screenshot: Hashable, Comparable {
         lhs.path.lastPathComponent < rhs.path.lastPathComponent
     }
 }
-
-extension URL {
-    func isValidImageURL() -> Bool {
-        let validExtensions = ["jpg", "jpeg", "png", "gif"]
-        
-        return validExtensions.contains(self.pathExtension.lowercased())
-    }
-}

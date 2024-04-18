@@ -14,7 +14,7 @@ protocol MinecraftAccount: Codable, Hashable {
     func createAccessToken() async throws -> String
 }
 
-fileprivate let minecraftAccountDecoder = PropertyListDecoder()
+fileprivate let decoder = PropertyListDecoder()
 
 extension MinecraftAccount {
     static func == (lhs: Self, rhs: Self) -> Bool {
@@ -29,7 +29,7 @@ extension MinecraftAccount {
     static func createFromDict(_ dict: [String: Any]) -> Self {
         let data = try! PropertyListSerialization.data(fromPropertyList: dict, format: .binary, options: 0)
         
-        let decoded = try! minecraftAccountDecoder.decode(Self.self, from: data)
+        let decoded = try! decoder.decode(Self.self, from: data)
         
         return decoded
     }

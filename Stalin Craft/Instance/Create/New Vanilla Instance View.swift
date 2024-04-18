@@ -111,7 +111,7 @@ struct NewVanillaInstanceView: View {
                 .padding([.trailing, .bottom])
             }
         }
-        .onAppear {
+        .task {
             versionManifest = launcherData.versionManifest
             recomputeVersions()
         }

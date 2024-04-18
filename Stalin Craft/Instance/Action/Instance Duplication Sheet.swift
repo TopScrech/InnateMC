@@ -55,7 +55,7 @@ struct InstanceDuplicationSheet: View {
                 .padding()
             }
         }
-        .onAppear {
+        .task {
 #warning("localize")
             newName = "Copy of \(instance.name)"
         }

@@ -25,7 +25,7 @@ struct RuntimePreferencesView: View {
                     .frame(maxWidth: .infinity, alignment: .leading)
                     .textFieldStyle(.roundedBorder)
             }
-            .onAppear {
+            .task {
                 cachedDefaultJava = launcherData.globalPreferences.runtime.defaultJava
             }
             .onReceive(launcherData.globalPreferences.runtime.$defaultJava) {

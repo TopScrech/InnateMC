@@ -35,7 +35,7 @@ struct PreferencesView: View {
                     Label("Misc", systemImage: "slider.horizontal.3")
                 }
         }
-        .onAppear {
+        .task {
             DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
                 launcherData.initializePreferenceListenerIfNot()
             }

@@ -3,9 +3,7 @@ import Foundation
 final class GlobalPreferences: Codable, ObservableObject {
     @Published var runtime = RuntimePreferences()
     @Published var ui = UiPreferences()
-}
-
-extension GlobalPreferences {
+    
     static let filePath = try! FileHandler.getOrCreateFolder().appendingPathComponent("Preferences.plist")
     
     static func load() throws -> GlobalPreferences {

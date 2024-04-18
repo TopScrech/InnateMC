@@ -8,7 +8,7 @@ private final class PublishedWrapper<T> {
     }
 }
 
-extension Published {
+fileprivate extension Published {
     var unofficialValue: Value {
         PublishedWrapper(self).value
     }

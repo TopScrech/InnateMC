@@ -339,3 +339,11 @@ fileprivate extension Array where Element == URL {
         }
     }
 }
+
+fileprivate extension URL {
+    func isValidImageURL() -> Bool {
+        let validExtensions = ["jpg", "jpeg", "png", "gif"]
+        
+        return validExtensions.contains(self.pathExtension.lowercased())
+    }
+}

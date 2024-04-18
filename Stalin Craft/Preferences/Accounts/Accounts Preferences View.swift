@@ -50,7 +50,7 @@ struct AccountsPreferencesView: View {
                 Spacer()
             }
         }
-        .onAppear {
+        .task {
             cachedAccounts = launcherData.accountManager.accounts
             
             cachedAccountsOnly = Array(cachedAccounts.values).map { AdaptedAccount(from: $0)

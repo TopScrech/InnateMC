@@ -129,7 +129,10 @@ struct ContentView: View {
                             
                             logger.notice("Disabling invalid instance at \(folderURL.path)")
                             
-                            try FileManager.default.moveItem(at: folderURL, to: folderURL.appendingPathExtension("_old"))
+                            try FileManager.default.moveItem(
+                                at: folderURL,
+                                to: folderURL.appendingPathExtension("_old")
+                            )
                         }
                     } catch {
                         print("Error copying folder: \(error)")
@@ -271,7 +274,7 @@ struct ContentView: View {
             }
         }
         .frame(height: 40)
-        .onAppear {
+        .task {
             selectedAccount = launcherData.accountManager.currentSelected ?? ContentView.nullUuid
             
             cachedAccounts = Array(launcherData.accountManager.accounts.values).map {
@@ -309,7 +312,7 @@ struct ContentView: View {
     }
 }
 
-extension NavigationView {
+fileprivate extension NavigationView {
     @ViewBuilder
     func bindInstanceFocusValue(_ i: Instance?) -> some View {
         if #available(macOS 13, *) {

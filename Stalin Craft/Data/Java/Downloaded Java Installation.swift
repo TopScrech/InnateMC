@@ -11,9 +11,7 @@ extension DownloadedJavaInstallation {
     static let decoder = PropertyListDecoder()
     
     static func load() throws -> [DownloadedJavaInstallation] {
-        let data = try FileHandler.getData(filePath)
-        
-        guard let data else {
+        guard let data = try FileHandler.getData(filePath) else {
             return []
         }
         
@@ -22,14 +20,13 @@ extension DownloadedJavaInstallation {
             logger.info("Loaded \(versions.count) downloaded java installations")
             
             return versions
-            
         } catch {
             return []
         }
     }
 }
 
-extension Array where Element == DownloadedJavaInstallation {
+fileprivate extension Array where Element == DownloadedJavaInstallation {
     func save() throws {
         DownloadedJavaInstallation.encoder.outputFormat = .xml
         
