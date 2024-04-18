@@ -22,7 +22,6 @@ func unzipModJar(jarFilePath: String, destinationPath: String) -> FabricMod? {
 func decodeFabricMod(_ filePath: String) -> FabricMod? {
     guard let data = try? Data(contentsOf: URL(fileURLWithPath: filePath)) else {
         logger.error("Failed to read file")
-        
         return nil
     }
     
